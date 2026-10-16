@@ -1,5 +1,6 @@
-import { Link, useLocation, useParams, useSearchParams } from 'react-router';
-import { ArrowLeft, ArrowRight, BookOpen, Check, CircleHelp, Mail, MapPin, Phone, Target } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { useLocation, useParams, useSearchParams } from 'react-router';
+import { ArrowLeft, ArrowRight, BookOpen, Check, CircleHelp, Mail, MapPin, Phone, Target, X } from 'lucide-react';
 import { guideSteps, modules } from '../data/catalog';
 import { moduleIcons } from '../components/module-icons';
 import { Button, ButtonLink, Card, PageHeading, ProgressIndicator, StatusBadge } from '../components/ui';
@@ -10,13 +11,57 @@ export function NotFound() {
 
 function GoalsPage() {
   const { moduleId } = useParams();
-  const selected = modules.find(module => module.id === (moduleId ?? 'mod-01'));
-  if (!selected) return <NotFound />;
-  return <><PageHeading eyebrow="تعلم يبدأ بهدف" title="أهداف البيئة">اختر موديولًا لاستعراض أهدافه. الاطلاع على الأهداف متاح للجميع ولا يفتح المحتوى المقفل.</PageHeading>
-    <div className="goals-grid">{modules.map((module, index) => {
-      const Icon = moduleIcons[index] ?? Target;
-      return <Link key={module.id} to={`/goals/${module.id}`} className={`card goal-card ${selected.id === module.id ? 'goal-card--selected' : ''}`} aria-current={selected.id === module.id ? 'true' : undefined}><span className={`module-symbol module-symbol--${index}`}><Icon size={25} aria-hidden="true" /></span><span className="eyebrow">الموديول {index + 1}</span><h2>{module.title}</h2><span className="text-link">عرض الأهداف <ArrowLeft size={16} aria-hidden="true" /></span></Link>;
-    })}</div><Card className="goals-detail" aria-live="polite"><span className="eyebrow">أهداف الموديول {selected.order}</span><h2>{selected.title}</h2><ul>{selected.objectives.map(objective => <li key={objective}><Check size={19} aria-hidden="true" />{objective}</li>)}</ul><p className="quiet-note">أهداف أولية بانتظار المراجعة والاعتماد. لا يغير عرضها حالة فتح المحتوى.</p></Card></>;
+  const [pinnedId, setPinnedId] = useState<string | null>(moduleId ?? null);
+  const [hoverId, setHoverId] = useState<string | null>(null);
+  const [compact, setCompact] = useState(() => window.matchMedia('(max-width: 899px), (max-height: 700px)').matches);
+  const triggers = useRef<Record<string, HTMLButtonElement | null>>({});
+  const closes = useRef<Record<string, HTMLButtonElement | null>>({});
+  const pendingFocus = useRef<{ id: string; target: 'trigger' | 'close' } | null>(null);
+  const activeId = hoverId ?? pinnedId;
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 899px), (max-height: 700px)');
+    const update = () => setCompact(query.matches);
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, []);
+  useEffect(() => {
+    const request = pendingFocus.current;
+    if (!request) return;
+    (request.target === 'close' ? closes : triggers).current[request.id]?.focus({ preventScroll: true });
+    pendingFocus.current = null;
+  }, [activeId]);
+  const pin = (id: string, keyboard = false) => {
+    if (keyboard) {
+      if (activeId === id) closes.current[id]?.focus({ preventScroll: true });
+      else pendingFocus.current = { id, target: 'close' };
+    }
+    setPinnedId(id); setHoverId(null);
+  };
+  const close = (id: string) => {
+    pendingFocus.current = { id, target: 'trigger' };
+    setPinnedId(null); setHoverId(null);
+  };
+  if (moduleId && !modules.some(module => module.id === moduleId)) return <NotFound />;
+  return <section className="goals-page" aria-labelledby="goals-title">
+    <div className="goals-heading"><h1 id="goals-title">أهداف البيئة</h1><p>مرّر على الكارت أو اضغط عليه لاستعراض أهداف الموديول.</p></div>
+    <div className="goals-deck" data-compact={compact} onKeyDown={event => { if (event.key === 'Escape' && activeId) { event.preventDefault(); event.stopPropagation(); close(activeId); } }}>
+      {modules.map((module, index) => {
+        const Icon = moduleIcons[index] ?? Target;
+        const active = activeId === module.id;
+        return <div key={module.id} className={`goal-slot${active ? ' goal-slot--active' : ''}`} data-muted={Boolean(activeId) && !active} inert={compact && Boolean(activeId) && !active}
+          onPointerEnter={event => { if (event.pointerType === 'mouse' && window.matchMedia('(hover: hover) and (pointer: fine)').matches) setHoverId(module.id); }}
+          onPointerLeave={() => setHoverId(null)}>
+          <article className="card goal-tile" onClick={() => pin(module.id)}>
+            <h2 className="goal-card-heading"><button ref={node => { triggers.current[module.id] = node; }} type="button" className="goal-card-trigger" aria-label={`عرض أهداف الموديول ${module.order}: ${module.title}`} aria-expanded={active} aria-controls={`objectives-${module.id}`} onClick={event => { event.stopPropagation(); pin(module.id, event.detail === 0); }}>
+              <span className="goal-card-meta"><span className={`module-symbol module-symbol--${index}`}><Icon size={20} aria-hidden="true" /></span><span>الموديول {module.order}</span></span>
+              <span className="goal-card-name">{module.title}</span>
+            </button></h2>
+            {active && <button ref={node => { closes.current[module.id] = node; }} type="button" className="goal-card-close" aria-label={`إغلاق أهداف ${module.title}`} onClick={event => { event.stopPropagation(); close(module.id); }}><X size={19} aria-hidden="true" /></button>}
+            <section id={`objectives-${module.id}`} className="goal-card-objectives" aria-label={`أهداف ${module.title}`} hidden={!active}><ul>{module.objectives.map(objective => <li key={objective}><Check size={16} aria-hidden="true" /><span>{objective}</span></li>)}</ul></section>
+          </article>
+        </div>;
+    })}</div>
+  </section>;
 }
 
 function GuidePage() {
