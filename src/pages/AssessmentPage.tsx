@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Navigate, useNavigate, useParams, useSearchParams } from 'react-router';
-import { ArrowLeft, ArrowRight, Check, Clock3 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import type { AssessmentDefinition } from '../../docs/contracts';
 import { useTraining } from '../state/training-context';
 import { assessmentAccess, eligibility, isSelfPassed, lessonComplete, lessonRoute } from '../domain/training';
@@ -20,9 +20,22 @@ function Engine({ definition: d, base, instructions }: { definition: AssessmentD
   async function start() { const r = await adapter.execute({ type: 'start-attempt', assessmentId: d.id }); if (r.ok && r.value.attemptId) navigate(`${base}/attempt/${r.value.attemptId}`); else if (!r.ok) setError(r.error); }
   if (!attemptId) {
     const counts = d.questionIds.reduce((out, id) => { const type = catalog.questions.find(q => q.id === id)!.type; out[type] = (out[type] ?? 0) + 1; return out; }, {} as Record<string, number>);
-    return <><Card className="assessment-instructions"><div className="reading-header"><span className="icon-tile"><Clock3 size={25} aria-hidden="true" /></span><h2>تعليمات {d.title}</h2><StatusBadge tone={access.allowed ? 'available' : 'locked'}>{access.allowed ? 'متاح' : 'مقفل'}</StatusBadge></div><p>{d.purpose}.</p><ul><li>{d.questionIds.length} مفردة: {counts['single-choice'] ?? 0} اختيار من متعدد، و{counts['true-false'] ?? 0} صح/خطأ؛ أوزان متساوية في نموذج العرض.</li><li>سؤال واحد واختيار بديل واحد في كل شاشة. يمكنك الرجوع وتعديل الإجابات قبل التسليم.</li><li>لا وقت محدد، والمحاولات متعددة دون حد مخطط.</li><li>أجب عن الجميع، ثم راجع وأكد التسليم. لا تعديل لمحاولة مسلّمة؛ الإعادة محاولة مستقلة.</li><li>تُحفظ المسودة بعد الاختيار والتنقل في المتصفح نفسه على الجهاز نفسه. حذف بيانات المتصفح يفقدها؛ لا توجد مزامنة بين الأجهزة.</li><li>{d.feedback === 'score-only' ? 'لا تُعرض الإجابات الصحيحة أو التصحيح التفصيلي في هذا التقويم.' : 'تظهر الإجابات والتفسيرات بعد التسليم فقط.'}</li>{d.scope.kind === 'pre' && <li>في هذا العرض، أول قبلي مُسلّم وحده يحدد الأهلية: نسبة 50% فأقل تتيح المسار. لا تغيرها الإعادات ولا تمنح نقاطًا.</li>}{d.scope.kind === 'self' && <li>50% فأكثر اجتياز؛ يمكنك الإعادة والمراجعة دون إلغاء نجاح سابق.</li>}{d.scope.kind === 'activity' && <li>يُفتح الذاتي بعد تسليم إجابات النشاط كاملة مهما كانت درجته.</li>}{d.scope.kind === 'post' && <li>تعرض نسبة كل محاولة دون حد نجاح أو شهادة أو اختيار محاولة للتحليل.</li>}</ul><p className="quiet-note">أسئلة تدريبية أولية بانتظار اعتماد الباحث.</p></Card>
+    return <><Card className="assessment-instructions"><div className="reading-header"><h2>قبل أن تبدأ</h2><StatusBadge tone={access.allowed ? 'available' : 'locked'}>{access.allowed ? 'متاح' : 'مقفل'}</StatusBadge></div>
+      <p>{d.purpose}.</p><p className="assessment-count">{d.questionIds.length} سؤالًا: {counts['single-choice'] ?? 0} اختيار من متعدد، و{counts['true-false'] ?? 0} صح/خطأ.</p>
+      <p>سؤال واحد في كل شاشة. اختر إجابة واحدة، وأجب عن الجميع، ثم راجع وأكد التسليم.</p>
+      {d.scope.kind === 'pre' && <p className="assessment-rule">أول قبلي مُسلّم يحدد الأهلية: 50% فأقل تتيح المسار، والإعادات لا تغير الأهلية.</p>}
+      {d.scope.kind === 'self' && <p className="assessment-rule">50% فأكثر اجتياز. يمكنك الإعادة دون إلغاء نجاح سابق.</p>}
+      {d.scope.kind === 'activity' && <p className="assessment-rule">تسليم النشاط مكتمل الإجابات يفتح الذاتي مهما كانت الدرجة.</p>}
+      {d.scope.kind === 'post' && <p className="assessment-rule">تُحفظ نتيجة كل محاولة دون حد نجاح أو شهادة أو اختيار محاولة للتحليل.</p>}
+      <details className="assessment-more"><summary>تفاصيل الحفظ والتسليم والنتائج</summary><ul>
+        <li>يمكنك الرجوع وتعديل الإجابات قبل التسليم. الأوزان متساوية في نموذج العرض.</li><li>لا وقت محدد، والمحاولات متعددة دون حد مخطط.</li>
+        <li>بعد التسليم لا يمكن تعديل المحاولة؛ الإعادة محاولة مستقلة.</li><li>تُحفظ المسودة بعد الاختيار والتنقل في المتصفح نفسه وعلى الجهاز نفسه؛ حذف بيانات المتصفح يفقدها ولا توجد مزامنة بين الأجهزة.</li>
+        <li>{d.feedback === 'score-only' ? 'لا تُعرض الإجابات الصحيحة أو التصحيح التفصيلي في هذا التقويم.' : 'تظهر الإجابات والتفسيرات بعد التسليم فقط.'}</li>
+        {d.scope.kind === 'pre' && <li>القبلي لا يمنح نقاطًا، وأول قبلي مُسلّم وحده يحدد الأهلية.</li>}
+      </ul><p className="quiet-note">أسئلة تدريبية أولية بانتظار اعتماد الباحث.</p></details>
+    </Card>
       <TrainingGuard access={access}><Card className="assessment-start"><Button onClick={start}>{attempts.some(a => a.status === 'draft') ? 'استكمال المحاولة' : `بدء ${d.title}`}</Button>{error && <p role="alert">{error}</p>}</Card></TrainingGuard>
-      {state.learner.active && !!attempts.length && <Card className="attempt-history"><h2>سجل المحاولات</h2><ol>{attempts.map((a, i) => <li key={a.id}><span>المحاولة {i + 1} — {a.status === 'draft' ? 'مسودة' : `${a.score!.earned} / ${a.score!.possible} (${(a.score!.earned / a.score!.possible * 100).toFixed(2)}%)`}</span><ButtonLink variant="ghost" to={`${base}/attempt/${a.id}${a.status === 'submitted' ? '/result' : ''}`}>{a.status === 'draft' ? 'استكمال' : 'عرض النتيجة'}</ButtonLink></li>)}</ol></Card>}
+      {state.learner.active && !!attempts.length && <details className="card attempt-history"><summary>سجل المحاولات ({attempts.length})</summary><ol>{attempts.map((a, i) => <li key={a.id}><span>المحاولة {i + 1} — {a.status === 'draft' ? 'مسودة' : `${a.score!.earned} / ${a.score!.possible} (${(a.score!.earned / a.score!.possible * 100).toFixed(2)}%)`}</span><ButtonLink variant="ghost" to={`${base}/attempt/${a.id}${a.status === 'submitted' ? '/result' : ''}`}>{a.status === 'draft' ? 'استكمال' : 'عرض النتيجة'}</ButtonLink></li>)}</ol></details>}
     </>;
   }
   if (!state.learner.active) return <TrainingGuard access={access}><span /></TrainingGuard>;
@@ -45,7 +58,7 @@ function Engine({ definition: d, base, instructions }: { definition: AssessmentD
       {d.scope.kind === 'activity' && <p>اكتمل تسليم النشاط وأصبح التقويم الذاتي متاحًا، دون اشتراط درجة نجاح.</p>}
       {d.scope.kind === 'post' && <p>حُفظت هذه المحاولة مستقلة. لا حد نجاح أو شهادة معتمدة، ولم تُختر محاولة للتحليل البحثي.</p>}
       <div className="button-row">{d.scope.kind === 'pre' && pre.status === 'eligible' ? <ButtonLink to="/content">ابدأ المسار</ButtonLink> : (d.scope.kind === 'activity' || (d.scope.kind === 'self' && lesson && lessonComplete(state, catalog, lesson.id))) ? <ButtonLink to={nextRoute}>الانتقال إلى الخطوة التالية <ArrowLeft size={17} aria-hidden="true" /></ButtonLink> : <ButtonLink to="/content" variant="secondary">المسار التدريبي</ButtonLink>}<Button variant="secondary" onClick={start}>محاولة جديدة</Button><ButtonLink variant="ghost" to={instructions}>سجل المحاولات والتعليمات</ButtonLink>{lesson && <ButtonLink variant="ghost" to={`${lessonRoute(lesson.moduleId, lesson.id)}/elements`}>مراجعة العناصر</ButtonLink>}</div>
-      {view.feedback && <section className="feedback-list" aria-label="التغذية الراجعة التعليمية"><h2>مراجعة إجاباتك</h2>{view.feedback.map(f => { const q = view.questions.find(q => q.id === f.questionId)!; return <div className="feedback-card" key={f.questionId}><h3>{q.prompt}</h3><p>إجابتك: {q.options.find(o => o.id === f.selected)!.text}</p><p><Check size={15} aria-hidden="true" />الإجابة الصحيحة: {q.options.find(o => o.id === f.correct)!.text}</p><p>{f.explanation}</p>{f.sources.map(source => <a href={source.url} key={source.id} target="_blank" rel="noreferrer">{source.title} <span className="sr-only">يفتح في نافذة جديدة</span></a>)}</div>; })}</section>}
+      {view.feedback && <details className="feedback-list" aria-label="التغذية الراجعة التعليمية"><summary>مراجعة إجاباتك والتفسيرات</summary>{view.feedback.map(f => { const q = view.questions.find(q => q.id === f.questionId)!; return <div className="feedback-card" key={f.questionId}><h3>{q.prompt}</h3><p>إجابتك: {q.options.find(o => o.id === f.selected)!.text}</p><p><Check size={15} aria-hidden="true" />الإجابة الصحيحة: {q.options.find(o => o.id === f.correct)!.text}</p><p>{f.explanation}</p>{f.sources.map(source => <a href={source.url} key={source.id} target="_blank" rel="noreferrer">{source.title} <span className="sr-only">يفتح في نافذة جديدة</span></a>)}</div>; })}</details>}
       {error && <p role="alert">{error}</p>}
     </Card>;
   }
@@ -76,15 +89,15 @@ function QuestionAnswer({ attemptId, index, onNavigate, reviewUrl }: { attemptId
   const [selected, setSelected] = useState(a.answers[q.id] ?? ''), [error, setError] = useState('');
   const saved = selected === (a.answers[q.id] ?? '');
   async function save(value: string) { setSelected(value); const r = await adapter.execute({ type: 'answer', attemptId, questionId: q.id, optionId: value }); setError(r.ok ? '' : r.error); }
-  return <Card className="reading-card quiz-card"><div className="quiz-meta"><span>السؤال {index + 1} من {view.questions.length}</span><StatusBadge>{q.type === 'true-false' ? 'صح / خطأ' : 'اختيار من متعدد'}</StatusBadge></div><ProgressIndicator value={Object.keys(a.answers).length} max={a.questionIds.length} label="الأسئلة المجاب عنها" />
-    <fieldset><legend className="question-prompt">{q.prompt}</legend><div className="answer-options">{q.options.map(option => <label key={option.id} className={selected === option.id ? 'answer-option selected' : 'answer-option'}><input type="radio" name={q.id} value={option.id} checked={selected === option.id} onChange={() => void save(option.id)} /><span>{option.text}</span></label>)}</div></fieldset>
+  return <Card className="reading-card quiz-card"><div className="quiz-meta"><span>{view.definition.title} · السؤال {index + 1} من {view.questions.length}</span><StatusBadge>{q.type === 'true-false' ? 'صح / خطأ' : 'اختيار من متعدد'}</StatusBadge></div><ProgressIndicator value={Object.keys(a.answers).length} max={a.questionIds.length} label="الأسئلة المجاب عنها" />
+    <fieldset><legend className="question-prompt">{q.prompt}</legend><div className={`answer-options answer-options--${q.type}`}>{q.options.map((option, optionIndex) => <label key={option.id} className={selected === option.id ? 'answer-option selected' : 'answer-option'}><input type="radio" name={q.id} value={option.id} checked={selected === option.id} onChange={() => void save(option.id)} /><span>{q.type === 'single-choice' && <b className="answer-letter">{['أ', 'ب', 'ج', 'د'][optionIndex]}. </b>}{option.text}</span></label>)}</div></fieldset>
     <p className="save-indicator" role="status">{saved ? selected ? 'حُفظت الإجابة محليًا في هذا المتصفح.' : 'يمكنك الاختيار الآن أو العودة إلى السؤال لاحقًا.' : 'الإجابة الحالية لم تُحفظ بعد.'}</p>{error && <div role="alert"><p>{error}</p><Button onClick={() => save(selected)}>إعادة حفظ الإجابة</Button></div>}
     <div className="quiz-navigation"><Button variant="secondary" disabled={index === 0 || !saved} onClick={() => onNavigate(index - 1)}><ArrowRight size={17} aria-hidden="true" />السابق</Button>{index < view.questions.length - 1 && <Button disabled={!saved} onClick={() => onNavigate(index + 1)}>التالي <ArrowLeft size={17} aria-hidden="true" /></Button>}<Button variant="ghost" disabled={!saved} onClick={async () => { const r = await adapter.execute({ type: 'position', attemptId, position: index }); if (r.ok) navigate(reviewUrl); else setError(r.error); }}>مراجعة الإجابات</Button></div>
   </Card>;
 }
 
 export default function AssessmentPage({ scope = 'global' }: { scope?: 'global' | 'activity' | 'self' }) {
-  const { kind, moduleId, lessonId } = useParams();
+  const { kind, moduleId, lessonId, attemptId, stage } = useParams();
   const { catalog, snapshot } = useTraining();
   if (!snapshot.data) return <StorageProblem />;
   const lesson = catalog.lessons.find(l => l.id === lessonId && l.moduleId === moduleId);
@@ -94,5 +107,6 @@ export default function AssessmentPage({ scope = 'global' }: { scope?: 'global' 
   const section = scope === 'self' ? 'self-assessment' : 'activity';
   const base = scope === 'global' ? `/assessment/${kind}` : `${lessonRoute(moduleId!, lessonId!)}/${section}`;
   const engine = <Engine definition={definition} base={base} instructions={scope === 'global' ? `${base}/instructions` : base} />;
+  if (attemptId) return <section className="assessment-focus"><h1 className="sr-only">{definition.title}{lesson ? ` — الدرس ${lesson.order}: ${lesson.title}` : ''}</h1>{stage && <p className="assessment-context">{definition.title}{lesson ? ` — الدرس ${lesson.order}` : ''}</p>}{engine}</section>;
   return <><Breadcrumbs items={[{ label: 'المحتوى التعليمي', to: '/content' }, ...(lesson ? [{ label: `الموديول ${catalog.modules.find(m => m.id === lesson.moduleId)!.order}`, to: `/modules/${lesson.moduleId}/lessons` }, { label: `الدرس ${lesson.order}`, to: `${lessonRoute(lesson.moduleId, lesson.id)}/intro` }] : []), { label: definition.title }]} /><PageHeading eyebrow="تقويم تدريبي — بيانات محلية مؤقتة" title={lesson ? `${definition.title} — الدرس ${lesson.order}: ${lesson.title}` : definition.title} />{lesson ? <LearningLayout kind="lesson" section={section} moduleId={lesson.moduleId} lessonId={lesson.id}>{engine}</LearningLayout> : engine}</>;
 }

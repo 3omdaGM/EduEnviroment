@@ -16,8 +16,8 @@ export function StatusBadge({ tone = 'neutral', children }: { tone?: 'neutral' |
   const Icon = tone === 'locked' ? LockKeyhole : tone === 'complete' ? Check : Info;
   return <span className={`status status--${tone}`}><Icon size={13} aria-hidden="true" />{children}</span>;
 }
-export function PageHeading({ eyebrow, title, children }: { eyebrow: string; title: string; children?: ReactNode }) {
-  return <div className="page-heading"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1>{children && <p className="page-description">{children}</p>}</div>;
+export function PageHeading({ eyebrow, title, children }: { eyebrow?: string; title: string; children?: ReactNode }) {
+  return <div className="page-heading">{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h1>{title}</h1>{children && <p className="page-description">{children}</p>}</div>;
 }
 export function Breadcrumbs({ items }: { items: readonly { label: string; to?: string }[] }) {
   return <nav aria-label="مسار الصفحة" className="breadcrumbs"><ol>{items.map((item, index) => <li key={`${item.label}-${index}`}>

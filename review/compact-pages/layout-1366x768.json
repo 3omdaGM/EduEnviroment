@@ -1,0 +1,191 @@
+[
+  {
+    "route": "/guide?step=1",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/guide?step=2",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/guide?step=3",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/guide?step=4",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/guide?step=5",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/guide?step=6",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/guide?step=7",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/guide?step=8",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/guide?step=9",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/goals",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/contact",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/login",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/register",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/recover",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/content",
+    "height": 869,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/content",
+    "height": 788,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/modules/mod-01/intro",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/modules/mod-01/objectives",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/modules/mod-01/lessons",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/intro",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/objectives",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements",
+    "height": 896,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements/el-01-01-01",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/assessment/pre/instructions",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/assessment/pre/attempt/responsive-pre?question=pre-q-1",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  },
+  {
+    "route": "/assessment/pre/attempt/responsive-pre/review",
+    "height": 768,
+    "width": 1366,
+    "viewportHeight": 768,
+    "viewportWidth": 1366
+  }
+]

@@ -22,10 +22,9 @@ export async function exam(page: Page, catalog: TrainingCatalog, id: string, cor
   for (let index = 0; index < d.questionIds.length; index++) {
     const q = catalog.questions.find(q => q.id === d.questionIds[index])!;
     const value = index < correct ? q.answerKey.correctOptionId : q.options.find(o => o.id !== q.answerKey.correctOptionId)!.id;
-    const text = q.options.find(o => o.id === value)!.text;
-    await page.getByRole('radio', { name: text, exact: true }).check();
+    await page.locator(`input[type="radio"][value="${value}"]`).check();
     await expect(page.getByRole('status').filter({ hasText: 'حُفظت الإجابة' })).toBeVisible();
-    if (index === 0 && options.refresh) { await page.reload(); await expect(page.getByRole('radio', { name: text, exact: true })).toBeChecked(); }
+    if (index === 0 && options.refresh) { await page.reload(); await expect(page.locator(`input[type="radio"][value="${value}"]`)).toBeChecked(); }
     if (index < d.questionIds.length - 1) await page.getByRole('button', { name: 'التالي', exact: true }).click();
   }
   await page.getByRole('button', { name: 'مراجعة الإجابات', exact: true }).click();

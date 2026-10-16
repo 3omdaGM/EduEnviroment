@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { environmentName, modules } from '../src/data/catalog';
 
+const reviewRoot = process.env.REVIEW_OUTPUT_DIR ?? 'review/phase-4';
+
 for (const width of [1366, 390]) {
   test(`additional pages: goals, guide, contact and accounts at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: width === 390 ? 844 : 768 });
@@ -13,7 +15,7 @@ for (const width of [1366, 390]) {
       await expect(page.locator('.environment-name')).toHaveText(environmentName);
       await page.evaluate(() => document.fonts.ready);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-      await page.screenshot({ path: `review/phase-4/extra-${route}-${width}.png`, fullPage: true, animations: 'disabled' });
+      await page.screenshot({ path: `${reviewRoot}/extra-${route}-${width}.png`, fullPage: true, animations: 'disabled' });
     }
     for (const module of modules) {
       await page.goto(`/goals/${module.id}`);

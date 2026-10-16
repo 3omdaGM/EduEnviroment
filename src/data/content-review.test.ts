@@ -36,7 +36,7 @@ describe('phase 4 editorial integrity', () => {
       expect(q.answerKey.sourceIds.every(id => sourceIds.has(id)), q.id).toBe(true);
       expect(q.options.filter(o => o.id === q.answerKey.correctOptionId), q.id).toHaveLength(1);
       expect(new Set(q.options.map(o => o.text.trim())).size, q.id).toBe(q.options.length);
-      expect(q.options).toHaveLength(q.type === 'single-choice' ? 3 : 2);
+      expect(q.options).toHaveLength(q.type === 'single-choice' ? 4 : 2);
       expect(q.editorial.approval.status).toBe('draft');
     }
   });
@@ -56,9 +56,11 @@ describe('phase 4 editorial integrity', () => {
       expect(e.parts.map(p => p.order)).toEqual([1, 2]);
       expect(e.parts.every(p => p.nodes.some(n => n.kind === 'paragraph' && n.text.length > 100))).toBe(true);
     }
-    const state = freshState(fullCatalog); state.contentVersion = '0.3.0-draft';
-    const raw = JSON.stringify(state);
-    expect(() => parseState(raw, fullCatalog)).toThrow();
-    expect(JSON.parse(raw).contentVersion).toBe('0.3.0-draft');
+    for (const oldVersion of ['0.3.0-draft', '0.4.0-draft']) {
+      const state = freshState(fullCatalog); state.contentVersion = oldVersion;
+      const raw = JSON.stringify(state);
+      expect(() => parseState(raw, fullCatalog)).toThrow();
+      expect(JSON.parse(raw).contentVersion).toBe(oldVersion);
+    }
   });
 });
