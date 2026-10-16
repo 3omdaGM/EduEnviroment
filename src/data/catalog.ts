@@ -1,8 +1,9 @@
 import type { ContentBlock, EditorialMeta, Element, Lesson, Module, PersonCard } from '../../docs/contracts';
+import { metaFor, outlines, sources } from './course-extension';
 
 export const environmentName = 'بيئة تدريبية قائمة على محفزات الألعاب الرقمية لتنمية بعض مهارات دمج التكنولوجيا في التعليم لدى أعضاء الهيئة المعاونة بالكلية';
 export const editorial: EditorialMeta = {
-  contentVersion: '0.2.0-preview', approval: { status: 'draft' },
+  contentVersion: '0.3.0-draft', approval: { status: 'draft' },
   sources: [{ id: 'unesco-ict-cft', title: 'UNESCO ICT Competency Framework for Teachers', publisher: 'UNESCO',
     url: 'https://www.unesco.org/en/digital-competencies-skills/ict-cft', productOrFramework: 'ICT-CFT v3',
     accessedOn: '2026-10-16', verification: 'verified' }],
@@ -19,7 +20,7 @@ export const people: readonly PersonCard[] = [
   { id: 'academic-03', displayName: 'اسم الدكتور الثالث', position: 'المنصب — قيد التزويد', roleLabel: 'الصفة — قيد الاعتماد', placeholder: true },
 ];
 
-export const modules: readonly Module[] = [
+const baseModules: readonly Module[] = [
   { id: 'mod-01', order: 1, title: 'خلفية نظرية عن دمج التكنولوجيا في التعليم', editorial,
     introduction: [block('mod-01-intro', 'ابدأ بفهم العلاقة بين الأهداف التعليمية والتكنولوجيا، ثم تأمل كيف تختار الأداة المناسبة للموقف التعليمي.')],
     objectives: ['توضيح مفهوم دمج التكنولوجيا في التعليم.', 'تمييز الغرض التعليمي من استخدام الأداة الرقمية.', 'تحديد متطلبات توظيف التكنولوجيا في موقف تعليمي.'],
@@ -36,7 +37,7 @@ export const badgeNames: Record<string, string> = {
   'badge-mod-03': 'التواصل التعليمي', 'badge-mod-04': 'البحث والمراجع الرقمية',
 };
 export const elementTitles = ['المفهوم', 'الأهمية', 'الأهداف', 'المتطلبات', 'المقومات'] as const;
-export const elements: readonly Element[] = elementTitles.map((title, index) => {
+const baseElements: readonly Element[] = elementTitles.map((title, index) => {
   const id = `el-01-01-0${index + 1}`;
   const text = [
     'دمج التكنولوجيا هو توظيف الأدوات والموارد الرقمية في موقف تعليمي يرتبط بهدف واضح، ويشارك فيه المتعلم بنشاط.',
@@ -48,11 +49,11 @@ export const elements: readonly Element[] = elementTitles.map((title, index) => 
   return { id, title, order: index + 1, moduleId: 'mod-01', lessonId: 'les-01-01', editorial,
     parts: [block(`${id}-part-01`, text), ...(index === 0 ? [block(`${id}-part-02`, 'مثال: يجيب المتعلم عن سؤال قصير، ثم يستخدم المعلم الاستجابات لمناقشة مواضع الالتباس؛ هنا تخدم الأداة قرارًا تعليميًا.', 2)] : [])] };
 });
-export const lessons: readonly Lesson[] = [
+const baseLessons: readonly Lesson[] = [
   { id: 'les-01-01', moduleId: 'mod-01', order: 1, title: 'مقدمة عن دمج التكنولوجيا في التعليم', editorial,
     introduction: [block('les-01-01-intro', 'كيف يمكن أن تخدم التكنولوجيا تعلمًا مقصودًا؟ في هذا الدرس نتأمل مفهوم الدمج وأهميته وأهدافه ومتطلباته ومقوماته، من خلال أجزاء قصيرة ومثال تعليمي.')],
     objectives: ['أن توضح معنى دمج التكنولوجيا في التعليم.', 'أن تربط استخدام أداة رقمية بهدف تعليمي.', 'أن تتعرف إلى متطلبات الدمج ومقوماته.'],
-    elementIds: elements.map(e => e.id), activityAssessmentId: 'activity-les-01-01', selfAssessmentId: 'self-les-01-01' },
+    elementIds: baseElements.map(e => e.id), activityAssessmentId: 'activity-les-01-01', selfAssessmentId: 'self-les-01-01' },
   ...['بعض مهارات دمج التكنولوجيا في التعليم', 'مهارات التصميم التعليمي كأحد مهارات دمج التكنولوجيا في التعليم'].map((title, i): Lesson => ({
     id: `les-01-0${i + 2}`, moduleId: 'mod-01', order: i + 2, title, editorial, introduction: [], objectives: [], elementIds: [],
     activityAssessmentId: `activity-les-01-0${i + 2}`, selfAssessmentId: `self-les-01-0${i + 2}`,
@@ -66,13 +67,35 @@ export const lessonSections = [
 ] as const;
 
 export const guideSteps = [
-  { title: 'التسجيل والدخول', text: 'تبدأ الرحلة بحساب المتدرب عند تفعيل التسجيل. النسخة الحالية تتيح معاينة الواجهة فقط ولا تنشئ حسابات حقيقية.' },
-  { title: 'التقويم القبلي', text: 'أجب عن التقويم القبلي قبل بدء المسار عند تفعيله. يمكنك المراجعة قبل التسليم، ولا يوجد وقت محدد.' },
+  { title: 'التسجيل والدخول', text: 'استخدم تجربة بحساب تجريبي؛ لا تُنشأ حسابات حقيقية ولا نطلب كلمات مرور فعلية. الرمز المعلن للتجربة هو DEMO.' },
+  { title: 'التقويم القبلي', text: 'أجب عن التقويم القبلي قبل بدء المسار. يمكنك المراجعة قبل التسليم، ولا يوجد وقت محدد.' },
   { title: 'أهلية المشاركة', text: 'وفق شروط الدراسة، تتيح نسبة 50% فأقل بدء المسار. إذا تجاوزت النسبة 50% فلا يتاح المسار التدريبي ضمن هذه الدراسة.' },
   { title: 'الموديولات', text: 'تنتقل بين أربع محطات بالترتيب: الخلفية النظرية، Google Forms، Teams، ثم Mendeley.' },
   { title: 'عناصر الدرس', text: 'اقرأ الأجزاء بالترتيب، ثم اختر «تم الاطلاع — التالي». يمكنك الرجوع إلى ما اطلعت عليه؛ الإقرار بالاطلاع لا يقيس الفهم.' },
   { title: 'النشاط', text: 'بعد إكمال العناصر يفتح النشاط. أجب عن كل أسئلته وسلمه؛ لا تشترط درجة معينة لفتح التقويم الذاتي.' },
   { title: 'التقويم الذاتي', text: 'تتيح نسبة 50% فأكثر إكمال الدرس والانتقال إلى التالي. عند نتيجة أقل يمكنك المراجعة والإعادة دون عقوبة.' },
-  { title: 'التقويم البعدي', text: 'يفتح بعد إكمال جميع الدروس. سياسة اعتماد المحاولة للتحليل والشهادة لم تعتمد بعد، ولا ينفذ التقويم في هذه المعاينة.' },
-  { title: 'الاستكمال والخروج', text: 'في هذه المعاينة يبقى ترتيب الاطلاع خلال فتح الصفحة فقط، ويعاد عند تحديثها. لا يوجد حفظ للحسابات أو مزامنة بين الأجهزة.' },
+  { title: 'التقويم البعدي', text: 'يفتح بعد إكمال جميع الدروس. سياسة اعتماد المحاولة للتحليل والشهادة لم تعتمد بعد، ولا تصدر هذه النسخة شهادة.' },
+  { title: 'الاستكمال والخروج', text: 'تُحفظ الإجابات والتقدم محليًا في هذا المتصفح على الجهاز نفسه. الخروج لا يمحوها، لكن حذف بيانات المتصفح يفقدها؛ لا توجد مزامنة أو هوية حقيقية.' },
 ];
+
+export const elements: readonly Element[] = [...baseElements, ...outlines.flatMap(outline => outline.items.map(([title, text], i): Element => {
+  const id = `el-${outline.id.slice(4)}-0${i + 1}`;
+  const meta = metaFor(outline.source);
+  return { id, title, order: i + 1, moduleId: outline.moduleId, lessonId: outline.id, editorial: meta,
+    parts: [{ id: `${id}-part-01`, title: '', order: 1, editorial: meta, nodes: [{ kind: 'paragraph', text }] }] };
+}))];
+export const lessons: readonly Lesson[] = [baseLessons[0]!, ...outlines.map((outline): Lesson => ({
+  id: outline.id, title: outline.title, moduleId: outline.moduleId, order: Number(outline.id.slice(-2)), editorial: metaFor(outline.source),
+  introduction: [{ ...block(`${outline.id}-intro`, `نتناول في هذا الدرس ${outline.title} من خلال قراءة قصيرة وتطبيق وتقويم ذاتي.`), editorial: metaFor(outline.source) }],
+  objectives: outline.items.map(([title]) => `توظيف فهم ${title} في موقف تعليمي أو أكاديمي.`),
+  elementIds: elements.filter(e => e.lessonId === outline.id).map(e => e.id),
+  activityAssessmentId: `activity-${outline.id}`, selfAssessmentId: `self-${outline.id}`,
+}))];
+export const modules: readonly Module[] = baseModules.map((module, index) => {
+  const refs = [sources.theory, sources.forms, sources.teams, sources.mendeley];
+  const meta = metaFor(refs[index]!);
+  return { ...module, editorial: meta, lessonIds: lessons.filter(l => l.moduleId === module.id).map(l => l.id),
+    introduction: module.introduction.length ? module.introduction : [{ ...block(`${module.id}-intro`, `يركز هذا الموديول على ${module.title} في مواقف مهنية مختصرة قابلة للممارسة.`), editorial: meta }],
+    objectives: index === 0 ? module.objectives : lessons.filter(l => l.moduleId === module.id).map(l => l.title),
+  };
+});
