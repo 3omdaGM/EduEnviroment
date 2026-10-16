@@ -4,6 +4,11 @@ import type { SourceKey } from './course-extension';
 import { lessonContent, moduleContent } from './course-content';
 
 export const environmentName = 'بيئة تدريبية قائمة على محفزات الألعاب الرقمية لتنمية بعض مهارات دمج التكنولوجيا في التعليم لدى أعضاء الهيئة المعاونة بالكلية';
+/** Homepage introduction supplied verbatim by the user; independent of the existing environment name. */
+export const homeIntroduction = {
+  description: 'بيئة تعلم الجانب التطبيقي لرسالة دكتوراه الفلسفة في التربية النوعية تخصص تكنولوجيا التعليم بعنوان',
+  thesisTitle: 'أثر التفاعل بين أنماط الدعم وأساليب التعلم في بيئة التعلم المدمج على تنمية مهارات إنتاج الدروس التفاعلية لدى طلاب كلية التربية النوعية',
+};
 export const editorial = metaFor(sources.theory);
 const textBlock = (id: string, title: string, text: string, keys: readonly SourceKey[]): ContentBlock => ({
   id, title, order: 1, editorial: metaFor(...keys.map(k => sources[k])), nodes: [{ kind: 'paragraph', text }],
