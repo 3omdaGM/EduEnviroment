@@ -65,18 +65,18 @@ test('real 20-item pre saves draft, question position and review; guards apply t
   await expect(page.getByRole('heading', { name: 'المحتوى مقفل' })).toBeVisible();
   await page.goto(`${lessonBase}/elements/el-01-01-02`); await expect(page.getByRole('heading', { name: 'المحتوى مقفل' })).toBeVisible();
   await page.goto('/modules/mod-01/lessons/les-01-02/intro'); await expect(page.getByRole('heading', { name: 'المحتوى مقفل' })).toBeVisible();
-  await page.goto('/modules/mod-02/intro'); await expect(page.getByRole('heading', { name: 'المحتوى مقفل' })).toBeVisible();
+  await page.goto('/modules/mod-02/lessons/les-02-01/intro'); await expect(page.getByRole('heading', { name: 'المحتوى مقفل' })).toBeVisible();
   await page.goto('/modules/mod-02/lessons/les-01-01/intro'); await expect(page.getByRole('heading', { name: 'لم نعثر على هذه الصفحة' })).toBeVisible();
 });
 
 test('five tools states and explicit corrupt-state recovery', async ({ page }) => {
   await scenario(page, 'قبل القبلي'); expect((await stored(page)).attempts).toHaveLength(0);
   await scenario(page, 'مؤهل عند 50%'); await page.goto('/modules/mod-01/intro'); await expect(page.getByRole('heading', { name: 'مقدمة الموديول', exact: true })).toBeVisible();
-  await page.goto('/assessment/pre/instructions'); await page.locator('.attempt-history summary').click(); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click(); await page.waitForTimeout(270); await page.screenshot({ path: `${reviewRoot}/pre-result-50.png`, fullPage: true });
-  await scenario(page, 'غير مؤهل فوق 50%'); await page.goto('/content'); await expect(page.locator('.notice').filter({ hasText: 'وفقًا لشروط المشاركة' })).toBeVisible();
-  await scenario(page, 'درس غير مجتاز'); await page.goto(`${lessonBase}/self-assessment`); await page.locator('.attempt-history summary').click(); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click(); await expect(page.getByRole('status').filter({ hasText: 'لم تجتز' })).toBeVisible();
+  await page.goto('/assessment/pre/instructions'); await page.getByRole('button', { name: /^سجل المحاولات/ }).click(); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click(); await page.waitForTimeout(270); await page.screenshot({ path: `${reviewRoot}/pre-result-50.png`, fullPage: true });
+  await scenario(page, 'غير مؤهل فوق 50%'); await page.goto('/content'); await expect(page.locator('.hub-eligibility')).toBeVisible();
+  await scenario(page, 'درس غير مجتاز'); await page.goto(`${lessonBase}/self-assessment`); await page.getByRole('button', { name: /^سجل المحاولات/ }).click(); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click(); await expect(page.getByRole('status').filter({ hasText: 'لم تجتز' })).toBeVisible();
   await page.waitForTimeout(270); await page.screenshot({ path: `${reviewRoot}/self-failed-result.png`, fullPage: true });
-  await scenario(page, 'إكمال البيئة'); await page.goto('/content'); await expect(page.getByText('المستوى 4', { exact: false })).toBeVisible(); expect((await stored(page)).rewards.reduce((n, r) => n + r.points, 0)).toBe(470);
+  await scenario(page, 'إكمال البيئة'); await page.goto('/content'); await page.getByRole('button', { name: 'تقدمك والتقويم', exact: true }).click(); await expect(page.getByText('المستوى 4', { exact: false })).toBeVisible(); expect((await stored(page)).rewards.reduce((n, r) => n + r.points, 0)).toBe(470); await page.getByRole('button', { name: 'إغلاق تقدمك والتقويم', exact: true }).click();
   await page.setViewportSize({ width: 390, height: 844 }); await page.getByRole('button', { name: 'قائمة التنقل الرئيسية', exact: true }).click();
   await expect(page.getByRole('dialog').getByRole('link', { name: 'التقويم البعدي متاح', exact: true })).toBeVisible(); await page.keyboard.press('Escape');
   await page.evaluate(key => localStorage.setItem(key, '{broken'), STORAGE_KEY); await page.reload(); await expect(page.getByRole('heading', { name: 'تعذر استعادة التجربة' })).toBeVisible();
@@ -92,7 +92,7 @@ test('mobile touch, keyboard, focus, long content, reduced motion and zoom', asy
   await page.locator('.skip-link').focus(); await page.keyboard.press('Enter'); await expect(page.locator('main')).toBeFocused();
   const nav = page.getByRole('button', { name: 'قائمة التنقل الرئيسية', exact: true }); await nav.tap(); await expect(page.getByRole('dialog')).toBeVisible(); await page.keyboard.press('Escape'); await expect(nav).toBeFocused();
   await page.goto(`${lessonBase}/intro`); const sections = page.getByRole('button', { name: 'أقسام الدرس', exact: true }); await sections.tap(); await page.keyboard.press('Tab'); expect(await page.getByRole('dialog').evaluate(el => el.contains(document.activeElement))).toBe(true); await page.keyboard.press('Escape'); await expect(sections).toBeFocused();
-  await page.goto(first); await page.locator('.reading-support summary').click(); await page.getByRole('button', { name: 'تكبير الرسم' }).tap(); await page.keyboard.press('Escape'); await expect(page.getByRole('button', { name: 'تكبير الرسم' })).toBeFocused();
+  await page.goto(first); await page.getByRole('button', { name: 'المراجع والرسم', exact: true }).click(); await page.getByRole('button', { name: 'تكبير الرسم' }).tap(); await page.keyboard.press('Escape'); await expect(page.getByRole('button', { name: 'تكبير الرسم' })).toBeFocused();
   await page.goto(`${lessonBase}/intro`); await page.setViewportSize({ width: 1366, height: 768 }); await page.evaluate(() => { document.body.style.zoom = '2'; }); await page.locator('.reading-text').evaluate(el => { el.textContent = `${el.textContent} `.repeat(18); });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true); await page.screenshot({ path: `${reviewRoot}/long-content-200percent.png`, fullPage: true });
   await page.evaluate(() => { document.body.style.zoom = '1'; }); await page.emulateMedia({ reducedMotion: 'reduce' }); await page.goto('/content'); expect(await page.locator('.page-transition').evaluate(el => getComputedStyle(el).animationName)).toBe('none');
@@ -102,7 +102,7 @@ test('mobile touch, keyboard, focus, long content, reduced motion and zoom', asy
 test('write failure preserves previous state and does not falsely report a saved answer', async ({ page }) => {
   await login(page); await page.goto('/assessment/pre/instructions'); await page.getByRole('button', { name: 'بدء التقويم القبلي' }).click();
   await page.evaluate(() => { Storage.prototype.setItem = () => { throw new DOMException('quota', 'QuotaExceededError'); }; });
-  await page.getByRole('radio').first().check(); await expect(page.getByRole('alert')).toContainText('تعذر حفظ'); await expect(page.getByRole('radio').first()).toBeChecked(); await expect(page.getByRole('button', { name: 'التالي', exact: true })).toBeDisabled();
+  await page.getByRole('radio').first().check(); await expect(page.getByRole('alert')).toContainText('تعذر حفظ'); await expect(page.getByRole('radio').first()).toBeChecked(); await expect(page.getByRole('button', { name: 'التالي', exact: true })).toBeDisabled(); await expect(page.getByRole('button', { name: 'تسليم', exact: true })).toBeDisabled();
   expect(Object.keys((await stored(page)).attempts[0]!.answers)).toHaveLength(0);
 });
 
@@ -159,10 +159,10 @@ test('presentation: full content failed self then exactly 50% opens the next les
   const { fullCatalog } = await import('../src/data/assessments');
   const { exam } = await import('./phase3-support');
   await scenario(page, 'مؤهل عند 50%');
-  await page.goto('/assessment/pre/instructions'); await page.locator('.attempt-history summary').click(); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click();
+  await page.goto('/assessment/pre/instructions'); await page.getByRole('button', { name: /^سجل المحاولات/ }).click(); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click();
   await expect(page.locator('.score-display strong')).toHaveText('50.00%');
   await scenario(page, 'درس غير مجتاز');
-  await page.goto(`${lessonBase}/self-assessment`); await page.locator('.attempt-history summary').click(); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click();
+  await page.goto(`${lessonBase}/self-assessment`); await page.getByRole('button', { name: /^سجل المحاولات/ }).click(); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click();
   await expect(page.locator('.score-display strong')).toHaveText('0.00%');
   await page.goto(`${lessonBase}/self-assessment`); await exam(page, fullCatalog, 'self-les-01-01', 1, { refresh: true });
   await expect(page.locator('.score-display strong')).toHaveText('50.00%');
@@ -174,7 +174,7 @@ test('presentation: full content failed self then exactly 50% opens the next les
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.getByRole('link', { name: 'الانتقال إلى الخطوة التالية', exact: false }).click();
   await expect(page).toHaveURL('/modules/mod-01/lessons/les-01-02/intro');
-  await page.goto('/modules/mod-02/intro'); await expect(page.getByRole('heading', { name: 'المحتوى مقفل' })).toBeVisible();
+  await page.goto('/modules/mod-02/lessons/les-02-01/intro'); await expect(page.getByRole('heading', { name: 'المحتوى مقفل' })).toBeVisible();
   const xp = (await stored(page)).rewards.reduce((n, r) => n + r.points, 0); expect(xp).toBe(30);
   await page.goto(`${lessonBase}/self-assessment`); await exam(page, fullCatalog, 'self-les-01-01', 0);
   await expect(page.getByRole('status').filter({ hasText: 'يبقى اجتيازك السابق' })).toBeVisible();

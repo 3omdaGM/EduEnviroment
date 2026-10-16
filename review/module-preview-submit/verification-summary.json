@@ -1,0 +1,88 @@
+{
+  "unitTests": 27,
+  "distinctBrowserTests": 45,
+  "additionalFocusedExamReruns": 4,
+  "reports": {
+    "test": {
+      "startTime": "2026-10-16T14:08:18.361Z",
+      "duration": 444526.566,
+      "expected": 19,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "public": {
+      "startTime": "2026-10-16T14:09:29.920Z",
+      "duration": 129060.85699999999,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "regression": {
+      "startTime": "2026-10-16T14:09:31.726Z",
+      "duration": 162851.402,
+      "expected": 10,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "exam": {
+      "startTime": "2026-10-16T14:16:10.594Z",
+      "duration": 22053.523,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "journey": {
+      "startTime": "2026-10-16T14:16:37.904Z",
+      "duration": 21717.978000000003,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "production": {
+      "startTime": "2026-10-16T14:17:05.416Z",
+      "duration": 3537.957,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "measurements": {
+    "layout": {
+      "files": 8,
+      "views": 104,
+      "horizontalOverflow": 0,
+      "verticalOverflowOverOnePixel": 0
+    },
+    "public": {
+      "files": 8,
+      "views": 56,
+      "horizontalOverflow": 0,
+      "verticalOverflowOverOnePixel": 0
+    },
+    "reading": {
+      "files": 3,
+      "views": 492,
+      "horizontalOverflow": 0,
+      "verticalOverflowOverOnePixel": 0
+    },
+    "questions": {
+      "files": 4,
+      "views": 304,
+      "horizontalOverflow": 0,
+      "verticalOverflowOverOnePixel": 0
+    },
+    "exam-stages": {
+      "files": 4,
+      "views": 28,
+      "horizontalOverflow": 0,
+      "verticalOverflowOverOnePixel": 0
+    }
+  },
+  "scope": "Chromium emulated viewports; default states and visited content pages; natural reflow remains available for enlarged text and validation errors."
+}

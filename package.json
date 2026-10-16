@@ -26,7 +26,12 @@
     "test:compact": "playwright test --config=playwright.compact.config.ts",
     "test:compact:regression": "playwright test --config=playwright.compact-regression.config.ts",
     "test:compact:journey": "playwright test --config=playwright.compact-validation.config.ts",
-    "test:compact:production": "playwright test --config=playwright.compact-production.config.ts"
+    "test:compact:production": "playwright test --config=playwright.compact-production.config.ts",
+    "test:module": "playwright test --config=playwright.module.config.ts",
+    "test:module:regression": "playwright test --config=playwright.module-regression.config.ts",
+    "test:module:journey": "playwright test --config=playwright.module-validation.config.ts",
+    "test:module:production": "playwright test --config=playwright.module-production.config.ts",
+    "test:module:public": "playwright test --config=playwright.module-public.config.ts"
   },
   "dependencies": {
     "@fontsource/cairo": "5.3.0",

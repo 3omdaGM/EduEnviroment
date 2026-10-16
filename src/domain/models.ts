@@ -14,7 +14,7 @@ export interface PublicQuestion { id: string; prompt: string; type: Question['ty
 export interface LearnerCatalog extends ProgressCatalog { questions: readonly PublicQuestion[]; }
 export interface AttemptPresentation {
   attempt: DemoAttempt; definition: AssessmentDefinition; questions: readonly PublicQuestion[];
-  feedback: readonly { questionId: string; selected: string; correct: string; explanation: string; sources: readonly SourceReference[] }[] | null;
+  feedback: readonly { questionId: string; selected: string | null; correct: string; explanation: string; sources: readonly SourceReference[] }[] | null;
 }
 const scoreSchema = z.object({ earned: z.number().int().nonnegative(), possible: z.number().int().positive() }).strict().refine(s => s.earned <= s.possible);
 export const attemptSchema = z.object({
@@ -36,9 +36,10 @@ export interface Access { allowed: boolean; reason: string; nextRoute: string; }
 export interface DemoPolicy {
   scope: 'demo-only';
   eligibilityAttempt: 'first-submitted-pre';
+  minimumAnswers: number;
   points: { activity: number; lesson: number; module: number };
 }
-export const demoPolicy: DemoPolicy = { scope: 'demo-only', eligibilityAttempt: 'first-submitted-pre', points: { activity: 10, lesson: 20, module: 50 } };
+export const demoPolicy: DemoPolicy = { scope: 'demo-only', eligibilityAttempt: 'first-submitted-pre', minimumAnswers: 5, points: { activity: 10, lesson: 20, module: 50 } };
 export type Command =
   | { type: 'login'; name: string }
   | { type: 'logout' }

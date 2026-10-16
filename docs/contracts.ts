@@ -201,6 +201,7 @@ export interface AssessmentDefinition {
   timeLimitSeconds: null;
   attemptLimit: number | null; // null = unlimited; pre/post/self initially null.
   submitRequiresAllAnswers: boolean;
+  minimumAnsweredQuestions: number; // min(5, question count) in the current demo policy.
   feedback: 'after-submit-educational' | 'score-only';
 }
 
@@ -241,7 +242,7 @@ export type Attempt =
 
 export interface QuestionFeedback {
   questionId: Id;
-  selectedOptionId: Id;
+  selectedOptionId: Id | null; // null for a skipped question.
   correctOptionId: Id;
   rationale: string;
   references: readonly { label: string; url: string }[];
@@ -351,6 +352,7 @@ export interface AssessmentInstructions {
   timeLimitSeconds: null;
   attemptLimit: number | null;
   submitRequiresAllAnswers: boolean;
+  minimumAnsweredQuestions: number; // min(5, question count) in the current demo policy.
   feedbackPolicyLabel: string;
   actualSavePolicyLabel: string;
   startAccess: Access;

@@ -56,7 +56,7 @@ export class DemoAdapter implements TrainingPort {
       return { id: q.id, prompt: q.prompt, type: q.type, options: q.options, weight: q.weight, order: q.order };
     }), feedback: attempt.status === 'submitted' && d.feedback === 'after-submit-educational' ? attempt.questionIds.map(id => {
       const q = this.authoring.questions.find(q => q.id === id)!;
-      return { questionId: id, selected: attempt.answers[id]!, correct: q.answerKey.correctOptionId, explanation: q.answerKey.rationale, sources: q.editorial.sources };
+      return { questionId: id, selected: attempt.answers[id] ?? null, correct: q.answerKey.correctOptionId, explanation: q.answerKey.rationale, sources: q.editorial.sources };
     }) : null };
   }
 }

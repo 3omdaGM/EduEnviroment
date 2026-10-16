@@ -1,4 +1,5 @@
 import type { AssessmentDefinition, Question } from '../../docs/contracts';
+import { demoPolicy } from '../domain/models';
 import type { TrainingCatalog } from '../domain/models';
 import { elements, lessons, modules, objectiveId } from './catalog';
 import { contentVersion, metaFor, sources } from './course-extension';
@@ -53,7 +54,7 @@ const statements = [
 function addDefinition(id: string, title: string, scope: AssessmentDefinition['scope'], items: Question[]) {
   questions.push(...items);
   const refs = [...new Map(items.flatMap(q => q.editorial.sources).map(s => [s.id, s])).values()];
-  assessments.push({ id, title, purpose: scope.kind === 'pre' ? 'تحديد أهلية المشاركة وفق شروط الدراسة' : scope.kind === 'post' ? 'تقدير الأداء بعد إكمال المسار' : scope.kind === 'activity' ? 'تطبيق قرارات الدرس في مواقف مهنية والحصول على تغذية راجعة' : 'مراجعة هدفي الدرس وتحديد الانتقال إلى التالي', scope, contentVersion, assessmentVersion: contentVersion, editorial: { ...metaFor(...refs), assessmentVersion: contentVersion }, questionIds: items.map(q => q.id), expectedTypes: [...new Set(items.map(q => q.type))], timeLimitSeconds: null, attemptLimit: null, submitRequiresAllAnswers: true, feedback: ['pre', 'post'].includes(scope.kind) ? 'score-only' : 'after-submit-educational' });
+  assessments.push({ id, title, purpose: scope.kind === 'pre' ? 'تحديد أهلية المشاركة وفق شروط الدراسة' : scope.kind === 'post' ? 'تقدير الأداء بعد إكمال المسار' : scope.kind === 'activity' ? 'تطبيق قرارات الدرس في مواقف مهنية والحصول على تغذية راجعة' : 'مراجعة هدفي الدرس وتحديد الانتقال إلى التالي', scope, contentVersion, assessmentVersion: contentVersion, editorial: { ...metaFor(...refs), assessmentVersion: contentVersion }, questionIds: items.map(q => q.id), expectedTypes: [...new Set(items.map(q => q.type))], timeLimitSeconds: null, attemptLimit: null, submitRequiresAllAnswers: items.length <= demoPolicy.minimumAnswers, minimumAnsweredQuestions: Math.min(demoPolicy.minimumAnswers, items.length), feedback: ['pre', 'post'].includes(scope.kind) ? 'score-only' : 'after-submit-educational' });
 }
 const globalSkills = [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 17];
 for (const kind of ['pre', 'post'] as const) {

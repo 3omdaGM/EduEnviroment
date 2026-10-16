@@ -85,6 +85,11 @@ export function assessmentAccess(state: DemoState, catalog: ProgressCatalog, ass
   if (definition.scope.kind === 'activity') return lesson.elementIds.length > 0 && lesson.elementIds.every(id => elementComplete(state, catalog, id)) ? allow : deny('أكمل جميع أجزاء عناصر الدرس لفتح النشاط.', `${lessonRoute(lesson.moduleId, lesson.id)}/elements`);
   return submittedFor(state, lesson.activityAssessmentId).length ? allow : deny('أجب عن جميع أسئلة النشاط وسلمه أولًا؛ لا تُشترط درجة نجاح.', `${lessonRoute(lesson.moduleId, lesson.id)}/activity`);
 }
+export function submissionReadiness(attempt: Pick<DemoAttempt, 'questionIds' | 'answers'>) {
+  const answered = attempt.questionIds.filter(id => attempt.answers[id] !== undefined).length;
+  const minimum = Math.min(demoPolicy.minimumAnswers, attempt.questionIds.length);
+  return { answered, minimum, missing: attempt.questionIds.length - answered, canSubmit: answered >= minimum };
+}
 export function grade(catalog: TrainingCatalog, attempt: Pick<DemoAttempt, 'questionIds' | 'answers'>): Score {
   let earned = 0, possible = 0;
   if (!attempt.questionIds.length || new Set(attempt.questionIds).size !== attempt.questionIds.length) throw new TrainingError('قائمة الأسئلة غير صالحة.');
@@ -92,7 +97,7 @@ export function grade(catalog: TrainingCatalog, attempt: Pick<DemoAttempt, 'ques
     const q = catalog.questions.find(q => q.id === id);
     if (!q || !Number.isSafeInteger(q.weight) || q.weight <= 0) throw new TrainingError('سؤال أو وزن غير صالح.');
     const answer = attempt.answers[id];
-    if (!answer || !q.options.some(o => o.id === answer)) throw new TrainingError('أجب عن جميع الأسئلة باختيار صالح قبل التسليم.');
+    if (answer !== undefined && !q.options.some(o => o.id === answer)) throw new TrainingError('توجد إجابة لا تنتمي إلى بدائل السؤال.');
     possible += q.weight; if (answer === q.answerKey.correctOptionId) earned += q.weight;
   }
   const score = { earned, possible }; validScore(score); return score;
@@ -133,6 +138,8 @@ export function reduceCommand(state: DemoState, catalog: TrainingCatalog, comman
       if (!Number.isInteger(command.position) || command.position < 0 || command.position >= attempt.questionIds.length) throw new TrainingError('موضع السؤال غير صالح.');
       attempt.position = command.position;
     } else if (command.type === 'submit') {
+      const readiness = submissionReadiness(attempt);
+      if (!readiness.canSubmit) throw new TrainingError(`أجب عن ${readiness.minimum} أسئلة على الأقل قبل التسليم؛ أجبت عن ${readiness.answered}.`);
       attempt.score = grade(catalog, attempt); attempt.status = 'submitted'; attempt.submittedAt = now;
       attempt.sequence = state.attempts.filter(a => a.status === 'submitted').length + 1;
       const d = catalog.assessments.find(a => a.id === attempt.assessmentId)!;
@@ -160,7 +167,7 @@ export function parseState(raw: string, catalog: TrainingCatalog): DemoState {
     if (!d || attempt.contentVersion !== catalog.version || attempt.assessmentVersion !== d.assessmentVersion || JSON.stringify(attempt.questionIds) !== JSON.stringify(d.questionIds) || attempt.position >= attempt.questionIds.length) throw new TrainingError('نسخة أو أسئلة المحاولة غير صالحة.');
     for (const [id, answer] of Object.entries(attempt.answers)) if (!attempt.questionIds.includes(id) || !catalog.questions.find(q => q.id === id)?.options.some(o => o.id === answer)) throw new TrainingError('إجابة غير صالحة.');
     if (attempt.status === 'submitted') {
-      if (!attempt.submittedAt || !attempt.score || JSON.stringify(grade(catalog, attempt)) !== JSON.stringify(attempt.score)) throw new TrainingError('نتيجة المحاولة غير صالحة.');
+      if (!submissionReadiness(attempt).canSubmit || !attempt.submittedAt || !attempt.score || JSON.stringify(grade(catalog, attempt)) !== JSON.stringify(attempt.score)) throw new TrainingError('نتيجة المحاولة غير صالحة.');
     } else if (attempt.score || attempt.submittedAt || attempt.sequence) throw new TrainingError('المسودة تحتوي نتيجة غير مسلّمة.');
   }
   for (const partId of state.readPartIds) {

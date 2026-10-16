@@ -1,0 +1,170 @@
+[
+  {
+    "route": "/content",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/content",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/intro",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/intro",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/objectives",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/objectives",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "visitor lesson lock",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/activity",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/self-assessment",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements/el-01-01-01",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements/el-01-01-01",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements/el-01-01-01",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  },
+  {
+    "route": "/assessment/pre/instructions",
+    "width": 320,
+    "height": 568,
+    "pageWidth": 320,
+    "pageHeight": 568,
+    "scrollY": 0
+  }
+]

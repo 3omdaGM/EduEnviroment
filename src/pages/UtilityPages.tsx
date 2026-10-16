@@ -76,7 +76,7 @@ function GuidePage() {
 }
 
 function ContactPage() {
-  return <><PageHeading eyebrow="نسعد بتواصلك" title="اتصل بنا">تُضاف بيانات الاتصال المعتمدة عند تزويدها من الباحث.</PageHeading><Card className="contact-card"><div className="contact-heading"><h2>اسم الباحث</h2><StatusBadge>بيانات مؤقتة</StatusBadge></div><p>الدرجة العلمية والصفة — قيد التزويد</p><ul className="contact-list"><li><Mail size={21} aria-hidden="true" /><div><span>البريد الإلكتروني المؤقت</span><bdi>researcher@example.com</bdi></div></li><li><Phone size={21} aria-hidden="true" /><div><span>رقم الهاتف</span><strong>غير متاح حاليًا</strong></div></li><li><MapPin size={21} aria-hidden="true" /><div><span>جهة الدراسة</span><strong>كلية التربية النوعية — جامعة الزقازيق</strong></div></li></ul><p className="quiet-note">وسائل الاتصال المعروضة غير مفعلة. لا توجد خدمة إرسال رسائل في هذه النسخة.</p></Card></>;
+  return <><PageHeading title="اتصل بنا" /><Card className="contact-card"><div className="contact-heading"><h2>اسم الباحث</h2><StatusBadge>بيانات مؤقتة</StatusBadge></div><ul className="contact-list"><li><Mail size={21} aria-hidden="true" /><div><span>البريد الإلكتروني المؤقت</span><bdi>researcher@example.com</bdi></div></li><li><Phone size={21} aria-hidden="true" /><div><span>رقم الهاتف</span><strong>غير متاح حاليًا</strong></div></li><li><MapPin size={21} aria-hidden="true" /><div><span>جهة الدراسة</span><strong>كلية التربية النوعية — جامعة الزقازيق</strong></div></li></ul><p className="quiet-note">وسائل الاتصال المعروضة غير مفعلة. لا توجد خدمة إرسال رسائل في هذه النسخة.</p></Card></>;
 }
 
 export default function UtilityPages() {

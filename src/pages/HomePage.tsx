@@ -1,5 +1,6 @@
 import { homeIntroduction, people } from '../data/catalog';
 import { Card } from '../components/ui';
+import FitPages from '../components/FitPages';
 
 export default function HomePage() {
   const [researcher, ...supervisors] = people;
@@ -11,7 +12,7 @@ export default function HomePage() {
     <section className="research-team" aria-label="الباحثة والمشرفون">
       {researcher && <Card className="person-card researcher-card"><p className="person-role">{researcher.roleLabel}</p><h2>{researcher.displayName}</h2></Card>}
       <h2 className="supervision-heading">إشراف</h2>
-      <div className="supervisors-grid">{supervisors.map(person => <Card key={person.id} className="person-card supervisor-card"><h3>{person.displayName}</h3><p className="person-position">{person.position}</p></Card>)}</div>
+      <FitPages label="أعضاء الإشراف" className="supervisors-grid" items={supervisors.map(person => <Card key={person.id} className="person-card supervisor-card"><h3>{person.displayName}</h3><p className="person-position">{person.position}</p></Card>)} />
     </section>
   </div>;
 }
