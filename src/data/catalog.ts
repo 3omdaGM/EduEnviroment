@@ -12,11 +12,12 @@ const lessonSources = (id: string) => [...new Set(lessonContent.find(l => l.id =
 export const objectiveId = (lessonId: string, order: number) => `obj-${lessonId.slice(4)}-${order}`;
 export const learningObjectives = lessonContent.flatMap(lesson => lesson.objectives.map((text, i) => ({ id: objectiveId(lesson.id, i + 1), lessonId: lesson.id, text })));
 
+/** Names, ranks and affiliations supplied explicitly by the user; no inferred researcher rank. */
 export const people: readonly PersonCard[] = [
-  { id: 'researcher', displayName: 'اسم الباحث', position: 'الدرجة العلمية — قيد التزويد', roleLabel: 'إعداد الباحث', placeholder: true },
-  { id: 'academic-01', displayName: 'اسم الدكتور الأول', position: 'المنصب — قيد التزويد', roleLabel: 'الصفة — قيد الاعتماد', placeholder: true },
-  { id: 'academic-02', displayName: 'اسم الدكتور الثاني', position: 'المنصب — قيد التزويد', roleLabel: 'الصفة — قيد الاعتماد', placeholder: true },
-  { id: 'academic-03', displayName: 'اسم الدكتور الثالث', position: 'المنصب — قيد التزويد', roleLabel: 'الصفة — قيد الاعتماد', placeholder: true },
+  { id: 'researcher', displayName: 'سلوى نبوي غنيم', position: '', roleLabel: 'إعداد الباحثة', placeholder: false },
+  { id: 'academic-01', displayName: 'أ.د / عبدالعزيز طلبة عبد الحميد', position: 'أستاذ تكنولوجيا التعليم\nكلية التربية - جامعة المنصورة', roleLabel: 'إشراف', placeholder: false },
+  { id: 'academic-02', displayName: 'أ.د / صالح شاكر', position: 'أستاذ تكنولوجيا التعليم\nكلية التربية النوعية - جامعة المنصورة', roleLabel: 'إشراف', placeholder: false },
+  { id: 'academic-03', displayName: 'أ.م.د / أمل السيد أحمد الظاهر', position: 'أستاذ تكنولوجيا التعليم المساعد\nكلية التربية النوعية - جامعة الزقازيق', roleLabel: 'إشراف', placeholder: false },
 ];
 
 export const badgeNames: Record<string, string> = {
