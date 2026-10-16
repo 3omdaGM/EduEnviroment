@@ -1,7 +1,7 @@
 {
   "name": "edu-environment",
   "private": true,
-  "version": "0.3.0",
+  "version": "0.4.0",
   "type": "module",
   "engines": {
     "node": ">=22.22.0"
@@ -17,7 +17,11 @@
     "build:demo": "npm run typecheck && vite build --mode demo",
     "build:e2e": "npm run typecheck && vite build --mode e2e",
     "test:journey": "playwright test --config=playwright.journey.config.ts",
-    "test:production": "playwright test --config=playwright.production.config.ts"
+    "test:production": "playwright test --config=playwright.production.config.ts",
+    "content:manifest": "node scripts/write-content-manifest.mjs",
+    "test:phase4": "playwright test --config=playwright.phase4.config.ts",
+    "test:phase4:journey": "playwright test --config=playwright.phase4.journey.config.ts",
+    "test:phase4:production": "playwright test --config=playwright.phase4.production.config.ts"
   },
   "dependencies": {
     "@fontsource/cairo": "5.3.0",

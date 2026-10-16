@@ -1,0 +1,3342 @@
+{
+  "manifestVersion": 1,
+  "contentVersion": "0.4.0-draft",
+  "approval": {
+    "status": "draft",
+    "researcherApproved": false
+  },
+  "reviewedOn": "2026-10-16",
+  "authoring": "صياغة تعليمية عربية وأمثلة مهنية أصلية لنسخة العرض، مع مراجعة الحقائق التقنية في المصادر الرسمية؛ ليست ترجمة أو اعتمادًا من الناشرين.",
+  "userAssets": {
+    "suppliedLogos": [],
+    "suppliedPortraits": [],
+    "suppliedContactDetails": [],
+    "suppliedApprovedQuestions": [],
+    "requestFile": {
+      "name": "Pasted text.txt",
+      "bytes": 26681,
+      "stage": 4
+    }
+  },
+  "pending": [
+    "أسماء الباحث والدكاترة وأدوارهم ومناصبهم",
+    "الشعارات الرسمية وحقوق استخدامها",
+    "وسائل الاتصال المعتمدة",
+    "اعتماد النصوص والأهداف والأسئلة ومخطط توزيعها",
+    "اعتماد أعداد وعناوين دروس الموديولات2–4",
+    "السياسات البحثية للقبلي والبعدي والشهادة",
+    "اعتماد محفزات الألعاب وقيمها"
+  ],
+  "temporaryLessonCounts": {
+    "mod-01": 3,
+    "mod-02": 2,
+    "mod-03": 2,
+    "mod-04": 2
+  },
+  "sourceReferences": [
+    {
+      "id": "unesco-ict-cft",
+      "title": "ICT Competency Framework for Teachers v3",
+      "publisher": "UNESCO",
+      "url": "https://www.unesco.org/en/digital-competencies-skills/ict-cft",
+      "productOrFramework": "ICT-CFT v3؛ إطار مرجعي، والأمثلة التعليمية من إعداد نسخة العرض",
+      "accessedOn": "2026-10-16",
+      "verification": "verified"
+    },
+    {
+      "id": "google-forms-quiz",
+      "title": "Create and grade quizzes",
+      "publisher": "Google",
+      "url": "https://support.google.com/docs/answer/7032287",
+      "productOrFramework": "Google Forms — واجهة الويب",
+      "accessedOn": "2026-10-16",
+      "verification": "verified"
+    },
+    {
+      "id": "google-quiz-learning",
+      "title": "Create a quiz with Google Forms",
+      "publisher": "Google",
+      "url": "https://support.google.com/a/users/answer/13344425?hl=en",
+      "productOrFramework": "Google Forms — واجهة الويب",
+      "accessedOn": "2026-10-16",
+      "verification": "verified"
+    },
+    {
+      "id": "google-forms-sharing",
+      "title": "Publish and share your form with responders",
+      "publisher": "Google",
+      "url": "https://support.google.com/docs/answer/2839588",
+      "productOrFramework": "Google Forms — النشر ووصول المجيبين بحسب إعدادات الحساب",
+      "accessedOn": "2026-10-16",
+      "verification": "verified"
+    },
+    {
+      "id": "teams-files",
+      "title": "Share files in Microsoft Teams",
+      "publisher": "Microsoft",
+      "url": "https://support.microsoft.com/en-us/teams/files/share-files-in-microsoft-teams",
+      "productOrFramework": "Teams للعمل أو التعليم؛ الإتاحة تخضع للحساب والسياسات",
+      "accessedOn": "2026-10-16",
+      "verification": "verified"
+    },
+    {
+      "id": "teams-channels",
+      "title": "Overview of teams and channels",
+      "publisher": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-channels-overview",
+      "productOrFramework": "Teams للعمل أو التعليم؛ لا افتراض لتراخيص أو صلاحيات إدارية",
+      "accessedOn": "2026-10-16",
+      "verification": "verified"
+    },
+    {
+      "id": "teams-meeting-chat",
+      "title": "Chat in Microsoft Teams meetings",
+      "publisher": "Microsoft",
+      "url": "https://support.microsoft.com/en-us/teams/meetings/chat-in-microsoft-teams-meetings",
+      "productOrFramework": "Teams؛ وصول المحادثة يتأثر بالعضوية وإعدادات المنظم والمؤسسة",
+      "accessedOn": "2026-10-16",
+      "verification": "verified"
+    },
+    {
+      "id": "mendeley-add",
+      "title": "Adding references — Reference Manager",
+      "publisher": "Mendeley",
+      "url": "https://static.mendeley.com/md-stitch/releases/live/02-adding-references.e005845c.html",
+      "productOrFramework": "Mendeley Reference Manager؛ ليس Mendeley Desktop القديم",
+      "accessedOn": "2026-10-16",
+      "verification": "verified"
+    },
+    {
+      "id": "mendeley-organize",
+      "title": "Searching and organizing references",
+      "publisher": "Mendeley",
+      "url": "https://static.mendeley.com/md-stitch/releases/live/03-searching-and-organizing-references.9a92d93d.html",
+      "productOrFramework": "Mendeley Reference Manager",
+      "accessedOn": "2026-10-16",
+      "verification": "verified"
+    },
+    {
+      "id": "mendeley-cite",
+      "title": "Getting started with Mendeley Cite",
+      "publisher": "Mendeley",
+      "url": "https://static.mendeley.com/md-stitch/releases/live/mendeley-cite-introduction.0d18bf79.html",
+      "productOrFramework": "Mendeley Cite — إضافة Word المعاصرة",
+      "accessedOn": "2026-10-16",
+      "verification": "verified"
+    }
+  ],
+  "assets": [
+    {
+      "id": "cairo",
+      "path": "public/fonts/Cairo-OFL.txt",
+      "kind": "font-license",
+      "origin": "@fontsource/cairo",
+      "license": "SIL OFL 1.1",
+      "officialLogo": false
+    },
+    {
+      "id": "lucide",
+      "path": "public/licenses/lucide-LICENSE.txt",
+      "kind": "icon-license",
+      "origin": "lucide-react",
+      "license": "ISC؛ وأيقونات مشتقة من Feather تحت MIT كما في الترخيص",
+      "officialLogo": false
+    },
+    {
+      "id": "favicon",
+      "path": "public/favicon.svg",
+      "kind": "original-vector",
+      "origin": "رسم مجرد للمشروع",
+      "license": "أصل مؤلف للمشروع، دون اقتباس شعار رسمي",
+      "officialLogo": false
+    },
+    {
+      "id": "illustrations",
+      "path": "src/components/illustrations.tsx",
+      "kind": "original-vector",
+      "origin": "رسوم تعليمية وزخرفية للمشروع؛ النص في HTML",
+      "license": "أصل مؤلف للمشروع، دون صور خارجية",
+      "officialLogo": false
+    }
+  ],
+  "placeholders": [
+    {
+      "id": "researcher",
+      "displayName": "اسم الباحث",
+      "roleLabel": "إعداد الباحث",
+      "placeholder": true
+    },
+    {
+      "id": "academic-01",
+      "displayName": "اسم الدكتور الأول",
+      "roleLabel": "الصفة — قيد الاعتماد",
+      "placeholder": true
+    },
+    {
+      "id": "academic-02",
+      "displayName": "اسم الدكتور الثاني",
+      "roleLabel": "الصفة — قيد الاعتماد",
+      "placeholder": true
+    },
+    {
+      "id": "academic-03",
+      "displayName": "اسم الدكتور الثالث",
+      "roleLabel": "الصفة — قيد الاعتماد",
+      "placeholder": true
+    }
+  ],
+  "modules": [
+    {
+      "id": "mod-01",
+      "title": "خلفية نظرية عن دمج التكنولوجيا في التعليم",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "introductionPartIds": [
+        "mod-01-intro"
+      ],
+      "objectives": [
+        "يميز الدمج المقصود من استخدام التقنية للعرض فقط.",
+        "يختار موارد وأنشطة تراعي الهدف وإمكان الوصول.",
+        "يطابق هدفًا قابلًا للملاحظة مع دليل تقويم مناسب."
+      ],
+      "lessonIds": [
+        "les-01-01",
+        "les-01-02",
+        "les-01-03"
+      ]
+    },
+    {
+      "id": "mod-02",
+      "title": "مهارات التقويم الإلكتروني باستخدام برنامج Google Forms",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz",
+        "google-quiz-learning",
+        "google-forms-sharing"
+      ],
+      "introductionPartIds": [
+        "mod-02-intro"
+      ],
+      "objectives": [
+        "يصوغ مفردة مرتبطة بهدف ويعد مفتاحها ونقاطها.",
+        "يختار تغذية راجعة وإجراء مراجعة للتقدير.",
+        "يحدد جمهور النموذج وما يجوز إظهاره من ردود."
+      ],
+      "lessonIds": [
+        "les-02-01",
+        "les-02-02"
+      ]
+    },
+    {
+      "id": "mod-03",
+      "title": "مهارات الاتصال الإلكتروني باستخدام منصة Teams",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-channels",
+        "teams-files",
+        "teams-meeting-chat"
+      ],
+      "introductionPartIds": [
+        "mod-03-intro"
+      ],
+      "objectives": [
+        "يختار قناة أو محادثة مناسبة للمهمة والجمهور.",
+        "يحدد صلاحية ملف ويرفقه بتعليمات واضحة.",
+        "ينظم تفاعل اجتماع مع التحقق من وصول المحادثة والموارد."
+      ],
+      "lessonIds": [
+        "les-03-01",
+        "les-03-02"
+      ]
+    },
+    {
+      "id": "mod-04",
+      "title": "مهارات الثقافة الرقمية باستخدام برنامج Mendeley",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-add",
+        "mendeley-organize",
+        "mendeley-cite"
+      ],
+      "introductionPartIds": [
+        "mod-04-intro"
+      ],
+      "objectives": [
+        "يضيف مرجعًا ويراجع بياناته وينظمه في collection.",
+        "يميز إدارة المكتبة من إدراج الاستشهادات في Word.",
+        "يراجع نمط التوثيق واتساق الاستشهاد والقائمة."
+      ],
+      "lessonIds": [
+        "les-04-01",
+        "les-04-02"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "les-01-01",
+      "moduleId": "mod-01",
+      "title": "مقدمة عن دمج التكنولوجيا في التعليم",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "introductionPartIds": [
+        "les-01-01-intro"
+      ],
+      "objectives": [
+        {
+          "id": "obj-01-01-1",
+          "lessonId": "les-01-01",
+          "text": "يميز توظيف الأداة المرتبط بهدف ودليل تعلم من مجرد عرض المحتوى."
+        },
+        {
+          "id": "obj-01-01-2",
+          "lessonId": "les-01-01",
+          "text": "يحدد متطلبات الدمج ويختار ترتيبًا مناسبًا بين الهدف والنشاط والأداة."
+        }
+      ],
+      "elementIds": [
+        "el-01-01-01",
+        "el-01-01-02",
+        "el-01-01-03",
+        "el-01-01-04",
+        "el-01-01-05"
+      ],
+      "activityAssessmentId": "activity-les-01-01",
+      "selfAssessmentId": "self-les-01-01"
+    },
+    {
+      "id": "les-01-02",
+      "moduleId": "mod-01",
+      "title": "بعض مهارات دمج التكنولوجيا في التعليم",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "introductionPartIds": [
+        "les-01-02-intro"
+      ],
+      "objectives": [
+        {
+          "id": "obj-01-02-1",
+          "lessonId": "les-01-02",
+          "text": "يختار موردًا رقميًا وفق الهدف ووضوحه وإمكان الوصول إليه."
+        },
+        {
+          "id": "obj-01-02-2",
+          "lessonId": "les-01-02",
+          "text": "يحدد تعديلًا للنشاط أو الدعم استنادًا إلى استجابات المتعلمين."
+        }
+      ],
+      "elementIds": [
+        "el-01-02-01",
+        "el-01-02-02",
+        "el-01-02-03"
+      ],
+      "activityAssessmentId": "activity-les-01-02",
+      "selfAssessmentId": "self-les-01-02"
+    },
+    {
+      "id": "les-01-03",
+      "moduleId": "mod-01",
+      "title": "مهارات التصميم التعليمي كأحد مهارات دمج التكنولوجيا في التعليم",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "introductionPartIds": [
+        "les-01-03-intro"
+      ],
+      "objectives": [
+        {
+          "id": "obj-01-03-1",
+          "lessonId": "les-01-03",
+          "text": "يصوغ هدفًا يصف أداءً محددًا يمكن ملاحظته."
+        },
+        {
+          "id": "obj-01-03-2",
+          "lessonId": "les-01-03",
+          "text": "يطابق الهدف مع النشاط ودليل التقويم ويقترح تحسينًا للتصميم."
+        }
+      ],
+      "elementIds": [
+        "el-01-03-01",
+        "el-01-03-02",
+        "el-01-03-03"
+      ],
+      "activityAssessmentId": "activity-les-01-03",
+      "selfAssessmentId": "self-les-01-03"
+    },
+    {
+      "id": "les-02-01",
+      "moduleId": "mod-02",
+      "title": "بناء اختبار إلكتروني في Google Forms",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz",
+        "google-quiz-learning"
+      ],
+      "introductionPartIds": [
+        "les-02-01-intro"
+      ],
+      "objectives": [
+        {
+          "id": "obj-02-01-1",
+          "lessonId": "les-02-01",
+          "text": "يصوغ مفردة اختيار واحد تقيس هدفًا واضحًا ببدائل معقولة."
+        },
+        {
+          "id": "obj-02-01-2",
+          "lessonId": "les-02-01",
+          "text": "يحدد مفتاح الإجابة والنقاط ويختار تغذية راجعة مرتبطة بالخطأ."
+        }
+      ],
+      "elementIds": [
+        "el-02-01-01",
+        "el-02-01-02",
+        "el-02-01-03"
+      ],
+      "activityAssessmentId": "activity-les-02-01",
+      "selfAssessmentId": "self-les-02-01"
+    },
+    {
+      "id": "les-02-02",
+      "moduleId": "mod-02",
+      "title": "مراجعة الاستجابات والتغذية الراجعة",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-quiz-learning",
+        "google-forms-quiz",
+        "google-forms-sharing"
+      ],
+      "introductionPartIds": [
+        "les-02-02-intro"
+      ],
+      "objectives": [
+        {
+          "id": "obj-02-02-1",
+          "lessonId": "les-02-02",
+          "text": "يفسر استجابات سؤال ويختار مراجعة أو دعمًا مناسبًا قبل إعلان التقدير."
+        },
+        {
+          "id": "obj-02-02-2",
+          "lessonId": "les-02-02",
+          "text": "يميز وصول المجيب من التعاون في التحرير ويحدد إعداد مشاركة يحمي الردود."
+        }
+      ],
+      "elementIds": [
+        "el-02-02-01",
+        "el-02-02-02",
+        "el-02-02-03"
+      ],
+      "activityAssessmentId": "activity-les-02-02",
+      "selfAssessmentId": "self-les-02-02"
+    },
+    {
+      "id": "les-03-01",
+      "moduleId": "mod-03",
+      "title": "مشاركة الموارد وتنظيم التواصل في Teams",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-channels",
+        "teams-files"
+      ],
+      "introductionPartIds": [
+        "les-03-01-intro"
+      ],
+      "objectives": [
+        {
+          "id": "obj-03-01-1",
+          "lessonId": "les-03-01",
+          "text": "يختار مساحة تواصل مناسبة للجمهور والغرض التعليمي."
+        },
+        {
+          "id": "obj-03-01-2",
+          "lessonId": "les-03-01",
+          "text": "يحدد صلاحية ملف ورسالة مشاركة توضح المطلوب دون توسيع الوصول بلا حاجة."
+        }
+      ],
+      "elementIds": [
+        "el-03-01-01",
+        "el-03-01-02",
+        "el-03-01-03"
+      ],
+      "activityAssessmentId": "activity-les-03-01",
+      "selfAssessmentId": "self-les-03-01"
+    },
+    {
+      "id": "les-03-02",
+      "moduleId": "mod-03",
+      "title": "توظيف المحادثة في اجتماعات Teams",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat",
+        "teams-files"
+      ],
+      "introductionPartIds": [
+        "les-03-02-intro"
+      ],
+      "objectives": [
+        {
+          "id": "obj-03-02-1",
+          "lessonId": "les-03-02",
+          "text": "يختار استخدامًا للمحادثة يساند هدف الاجتماع دون تشتيت المتحدث."
+        },
+        {
+          "id": "obj-03-02-2",
+          "lessonId": "les-03-02",
+          "text": "يحدد إجراءً مناسبًا عند تقييد وصول المحادثة وينظم متابعة النقاش."
+        }
+      ],
+      "elementIds": [
+        "el-03-02-01",
+        "el-03-02-02",
+        "el-03-02-03"
+      ],
+      "activityAssessmentId": "activity-les-03-02",
+      "selfAssessmentId": "self-les-03-02"
+    },
+    {
+      "id": "les-04-01",
+      "moduleId": "mod-04",
+      "title": "إضافة المراجع إلى Mendeley Reference Manager",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-add",
+        "mendeley-organize"
+      ],
+      "introductionPartIds": [
+        "les-04-01-intro"
+      ],
+      "objectives": [
+        {
+          "id": "obj-04-01-1",
+          "lessonId": "les-04-01",
+          "text": "يختار طريقة لإضافة مرجع ويراجع حقوله قبل استخدامه."
+        },
+        {
+          "id": "obj-04-01-2",
+          "lessonId": "les-04-01",
+          "text": "ينظم مراجع في collection ويحدد طريقة لاسترجاعها دون خلط التنظيم بالحذف."
+        }
+      ],
+      "elementIds": [
+        "el-04-01-01",
+        "el-04-01-02",
+        "el-04-01-03"
+      ],
+      "activityAssessmentId": "activity-les-04-01",
+      "selfAssessmentId": "self-les-04-01"
+    },
+    {
+      "id": "les-04-02",
+      "moduleId": "mod-04",
+      "title": "الاستشهاد وإعداد قائمة المراجع باستخدام Mendeley Cite",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "introductionPartIds": [
+        "les-04-02-intro"
+      ],
+      "objectives": [
+        {
+          "id": "obj-04-02-1",
+          "lessonId": "les-04-02",
+          "text": "يميز دور Cite من Reference Manager ويختار مرجعًا مناسبًا للاستشهاد في Word."
+        },
+        {
+          "id": "obj-04-02-2",
+          "lessonId": "les-04-02",
+          "text": "يختار نمط توثيق مطلوبًا ويراجع اتساق الاستشهادات وقائمة المراجع."
+        }
+      ],
+      "elementIds": [
+        "el-04-02-01",
+        "el-04-02-02",
+        "el-04-02-03"
+      ],
+      "activityAssessmentId": "activity-les-04-02",
+      "selfAssessmentId": "self-les-04-02"
+    }
+  ],
+  "elements": [
+    {
+      "id": "el-01-01-01",
+      "lessonId": "les-01-01",
+      "title": "المفهوم",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "parts": [
+        {
+          "id": "el-01-01-01-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        },
+        {
+          "id": "el-01-01-01-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-01-01-02",
+      "lessonId": "les-01-01",
+      "title": "الأهمية",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "parts": [
+        {
+          "id": "el-01-01-02-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        },
+        {
+          "id": "el-01-01-02-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-01-01-03",
+      "lessonId": "les-01-01",
+      "title": "الأهداف",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "parts": [
+        {
+          "id": "el-01-01-03-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        },
+        {
+          "id": "el-01-01-03-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-01-01-04",
+      "lessonId": "les-01-01",
+      "title": "المتطلبات",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "parts": [
+        {
+          "id": "el-01-01-04-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        },
+        {
+          "id": "el-01-01-04-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-01-01-05",
+      "lessonId": "les-01-01",
+      "title": "المقومات",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "parts": [
+        {
+          "id": "el-01-01-05-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        },
+        {
+          "id": "el-01-01-05-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-01-02-01",
+      "lessonId": "les-01-02",
+      "title": "اختيار المورد",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "parts": [
+        {
+          "id": "el-01-02-01-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        },
+        {
+          "id": "el-01-02-01-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-01-02-02",
+      "lessonId": "les-01-02",
+      "title": "التفاعل والمشاركة",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "parts": [
+        {
+          "id": "el-01-02-02-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        },
+        {
+          "id": "el-01-02-02-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-01-02-03",
+      "lessonId": "les-01-02",
+      "title": "مراجعة الممارسة",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "parts": [
+        {
+          "id": "el-01-02-03-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        },
+        {
+          "id": "el-01-02-03-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-01-03-01",
+      "lessonId": "les-01-03",
+      "title": "تحديد الهدف",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "parts": [
+        {
+          "id": "el-01-03-01-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        },
+        {
+          "id": "el-01-03-01-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-01-03-02",
+      "lessonId": "les-01-03",
+      "title": "تصميم النشاط",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "parts": [
+        {
+          "id": "el-01-03-02-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        },
+        {
+          "id": "el-01-03-02-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-01-03-03",
+      "lessonId": "les-01-03",
+      "title": "التقويم والتحسين",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "parts": [
+        {
+          "id": "el-01-03-03-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        },
+        {
+          "id": "el-01-03-03-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "unesco-ict-cft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-02-01-01",
+      "lessonId": "les-02-01",
+      "title": "إعداد الاختبار",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz"
+      ],
+      "parts": [
+        {
+          "id": "el-02-01-01-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "google-forms-quiz"
+          ]
+        },
+        {
+          "id": "el-02-01-01-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "google-forms-quiz"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-02-01-02",
+      "lessonId": "les-02-01",
+      "title": "مفتاح الإجابة",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz"
+      ],
+      "parts": [
+        {
+          "id": "el-02-01-02-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "google-forms-quiz"
+          ]
+        },
+        {
+          "id": "el-02-01-02-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "google-forms-quiz"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-02-01-03",
+      "lessonId": "les-02-01",
+      "title": "مراجعة النموذج",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz",
+        "google-quiz-learning"
+      ],
+      "parts": [
+        {
+          "id": "el-02-01-03-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "google-forms-quiz",
+            "google-quiz-learning"
+          ]
+        },
+        {
+          "id": "el-02-01-03-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "google-forms-quiz",
+            "google-quiz-learning"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-02-02-01",
+      "lessonId": "les-02-02",
+      "title": "قراءة الاستجابات",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-quiz-learning"
+      ],
+      "parts": [
+        {
+          "id": "el-02-02-01-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "google-quiz-learning"
+          ]
+        },
+        {
+          "id": "el-02-02-01-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "google-quiz-learning"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-02-02-02",
+      "lessonId": "les-02-02",
+      "title": "مراجعة التقدير",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz",
+        "google-quiz-learning"
+      ],
+      "parts": [
+        {
+          "id": "el-02-02-02-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "google-forms-quiz",
+            "google-quiz-learning"
+          ]
+        },
+        {
+          "id": "el-02-02-02-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "google-forms-quiz",
+            "google-quiz-learning"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-02-02-03",
+      "lessonId": "les-02-02",
+      "title": "إعلان النتائج والمشاركة والخصوصية",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-sharing"
+      ],
+      "parts": [
+        {
+          "id": "el-02-02-03-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "google-forms-sharing"
+          ]
+        },
+        {
+          "id": "el-02-02-03-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "google-forms-sharing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-03-01-01",
+      "lessonId": "les-03-01",
+      "title": "اختيار مساحة المشاركة",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-channels"
+      ],
+      "parts": [
+        {
+          "id": "el-03-01-01-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "teams-channels"
+          ]
+        },
+        {
+          "id": "el-03-01-01-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "teams-channels"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-03-01-02",
+      "lessonId": "les-03-01",
+      "title": "صلاحيات الملف",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-files"
+      ],
+      "parts": [
+        {
+          "id": "el-03-01-02-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "teams-files"
+          ]
+        },
+        {
+          "id": "el-03-01-02-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "teams-files"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-03-01-03",
+      "lessonId": "les-03-01",
+      "title": "رسالة واضحة",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-files"
+      ],
+      "parts": [
+        {
+          "id": "el-03-01-03-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "teams-files"
+          ]
+        },
+        {
+          "id": "el-03-01-03-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "teams-files"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-03-02-01",
+      "lessonId": "les-03-02",
+      "title": "تبادل المعلومات",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat"
+      ],
+      "parts": [
+        {
+          "id": "el-03-02-01-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "teams-meeting-chat"
+          ]
+        },
+        {
+          "id": "el-03-02-01-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "teams-meeting-chat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-03-02-02",
+      "lessonId": "les-03-02",
+      "title": "مشاركة مورد",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat",
+        "teams-files"
+      ],
+      "parts": [
+        {
+          "id": "el-03-02-02-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "teams-meeting-chat",
+            "teams-files"
+          ]
+        },
+        {
+          "id": "el-03-02-02-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "teams-meeting-chat",
+            "teams-files"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-03-02-03",
+      "lessonId": "les-03-02",
+      "title": "تنظيم الحوار",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat"
+      ],
+      "parts": [
+        {
+          "id": "el-03-02-03-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "teams-meeting-chat"
+          ]
+        },
+        {
+          "id": "el-03-02-03-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "teams-meeting-chat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-04-01-01",
+      "lessonId": "les-04-01",
+      "title": "إضافة مرجع",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-add"
+      ],
+      "parts": [
+        {
+          "id": "el-04-01-01-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "mendeley-add"
+          ]
+        },
+        {
+          "id": "el-04-01-01-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "mendeley-add"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-04-01-02",
+      "lessonId": "les-04-01",
+      "title": "بيانات المرجع",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-add"
+      ],
+      "parts": [
+        {
+          "id": "el-04-01-02-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "mendeley-add"
+          ]
+        },
+        {
+          "id": "el-04-01-02-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "mendeley-add"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-04-01-03",
+      "lessonId": "les-04-01",
+      "title": "مكتبة قابلة للاستخدام",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-organize"
+      ],
+      "parts": [
+        {
+          "id": "el-04-01-03-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "mendeley-organize"
+          ]
+        },
+        {
+          "id": "el-04-01-03-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "mendeley-organize"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-04-02-01",
+      "lessonId": "les-04-02",
+      "title": "الاستشهاد داخل النص",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "parts": [
+        {
+          "id": "el-04-02-01-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "mendeley-cite"
+          ]
+        },
+        {
+          "id": "el-04-02-01-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "mendeley-cite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-04-02-02",
+      "lessonId": "les-04-02",
+      "title": "نمط التوثيق",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "parts": [
+        {
+          "id": "el-04-02-02-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "mendeley-cite"
+          ]
+        },
+        {
+          "id": "el-04-02-02-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "mendeley-cite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "el-04-02-03",
+      "lessonId": "les-04-02",
+      "title": "قائمة المراجع",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "parts": [
+        {
+          "id": "el-04-02-03-part-01",
+          "title": "الفكرة الأساسية",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "mendeley-cite"
+          ]
+        },
+        {
+          "id": "el-04-02-03-part-02",
+          "title": "موقف للتطبيق والمراجعة",
+          "approval": {
+            "status": "draft"
+          },
+          "sourceIds": [
+            "mendeley-cite"
+          ]
+        }
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "id": "pre",
+      "scope": {
+        "kind": "pre"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft",
+        "google-forms-quiz",
+        "google-quiz-learning",
+        "google-forms-sharing",
+        "teams-channels",
+        "teams-files",
+        "teams-meeting-chat",
+        "mendeley-add",
+        "mendeley-cite",
+        "mendeley-organize"
+      ],
+      "questionIds": [
+        "pre-q-1",
+        "pre-q-2",
+        "pre-q-3",
+        "pre-q-4",
+        "pre-q-5",
+        "pre-q-6",
+        "pre-q-7",
+        "pre-q-8",
+        "pre-q-9",
+        "pre-q-10",
+        "pre-q-11",
+        "pre-q-12",
+        "pre-q-13",
+        "pre-q-14",
+        "pre-q-15",
+        "pre-q-16",
+        "pre-q-17",
+        "pre-q-18",
+        "pre-q-19",
+        "pre-q-20"
+      ]
+    },
+    {
+      "id": "post",
+      "scope": {
+        "kind": "post"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft",
+        "google-forms-quiz",
+        "google-quiz-learning",
+        "google-forms-sharing",
+        "teams-channels",
+        "teams-files",
+        "teams-meeting-chat",
+        "mendeley-add",
+        "mendeley-cite",
+        "mendeley-organize"
+      ],
+      "questionIds": [
+        "post-q-1",
+        "post-q-2",
+        "post-q-3",
+        "post-q-4",
+        "post-q-5",
+        "post-q-6",
+        "post-q-7",
+        "post-q-8",
+        "post-q-9",
+        "post-q-10",
+        "post-q-11",
+        "post-q-12",
+        "post-q-13",
+        "post-q-14",
+        "post-q-15",
+        "post-q-16",
+        "post-q-17",
+        "post-q-18",
+        "post-q-19",
+        "post-q-20"
+      ]
+    },
+    {
+      "id": "activity-les-01-01",
+      "scope": {
+        "kind": "activity",
+        "moduleId": "mod-01",
+        "lessonId": "les-01-01"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "questionIds": [
+        "activity-les-01-01-q-1",
+        "activity-les-01-01-q-2"
+      ]
+    },
+    {
+      "id": "self-les-01-01",
+      "scope": {
+        "kind": "self",
+        "moduleId": "mod-01",
+        "lessonId": "les-01-01"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "questionIds": [
+        "self-les-01-01-q-1",
+        "self-les-01-01-q-2"
+      ]
+    },
+    {
+      "id": "activity-les-01-02",
+      "scope": {
+        "kind": "activity",
+        "moduleId": "mod-01",
+        "lessonId": "les-01-02"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "questionIds": [
+        "activity-les-01-02-q-1",
+        "activity-les-01-02-q-2"
+      ]
+    },
+    {
+      "id": "self-les-01-02",
+      "scope": {
+        "kind": "self",
+        "moduleId": "mod-01",
+        "lessonId": "les-01-02"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "questionIds": [
+        "self-les-01-02-q-1",
+        "self-les-01-02-q-2"
+      ]
+    },
+    {
+      "id": "activity-les-01-03",
+      "scope": {
+        "kind": "activity",
+        "moduleId": "mod-01",
+        "lessonId": "les-01-03"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "questionIds": [
+        "activity-les-01-03-q-1",
+        "activity-les-01-03-q-2"
+      ]
+    },
+    {
+      "id": "self-les-01-03",
+      "scope": {
+        "kind": "self",
+        "moduleId": "mod-01",
+        "lessonId": "les-01-03"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "questionIds": [
+        "self-les-01-03-q-1",
+        "self-les-01-03-q-2"
+      ]
+    },
+    {
+      "id": "activity-les-02-01",
+      "scope": {
+        "kind": "activity",
+        "moduleId": "mod-02",
+        "lessonId": "les-02-01"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz"
+      ],
+      "questionIds": [
+        "activity-les-02-01-q-1",
+        "activity-les-02-01-q-2"
+      ]
+    },
+    {
+      "id": "self-les-02-01",
+      "scope": {
+        "kind": "self",
+        "moduleId": "mod-02",
+        "lessonId": "les-02-01"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz"
+      ],
+      "questionIds": [
+        "self-les-02-01-q-1",
+        "self-les-02-01-q-2"
+      ]
+    },
+    {
+      "id": "activity-les-02-02",
+      "scope": {
+        "kind": "activity",
+        "moduleId": "mod-02",
+        "lessonId": "les-02-02"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-quiz-learning",
+        "google-forms-sharing"
+      ],
+      "questionIds": [
+        "activity-les-02-02-q-1",
+        "activity-les-02-02-q-2"
+      ]
+    },
+    {
+      "id": "self-les-02-02",
+      "scope": {
+        "kind": "self",
+        "moduleId": "mod-02",
+        "lessonId": "les-02-02"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-quiz-learning",
+        "google-forms-sharing"
+      ],
+      "questionIds": [
+        "self-les-02-02-q-1",
+        "self-les-02-02-q-2"
+      ]
+    },
+    {
+      "id": "activity-les-03-01",
+      "scope": {
+        "kind": "activity",
+        "moduleId": "mod-03",
+        "lessonId": "les-03-01"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-channels",
+        "teams-files"
+      ],
+      "questionIds": [
+        "activity-les-03-01-q-1",
+        "activity-les-03-01-q-2"
+      ]
+    },
+    {
+      "id": "self-les-03-01",
+      "scope": {
+        "kind": "self",
+        "moduleId": "mod-03",
+        "lessonId": "les-03-01"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-channels",
+        "teams-files"
+      ],
+      "questionIds": [
+        "self-les-03-01-q-1",
+        "self-les-03-01-q-2"
+      ]
+    },
+    {
+      "id": "activity-les-03-02",
+      "scope": {
+        "kind": "activity",
+        "moduleId": "mod-03",
+        "lessonId": "les-03-02"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat"
+      ],
+      "questionIds": [
+        "activity-les-03-02-q-1",
+        "activity-les-03-02-q-2"
+      ]
+    },
+    {
+      "id": "self-les-03-02",
+      "scope": {
+        "kind": "self",
+        "moduleId": "mod-03",
+        "lessonId": "les-03-02"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat"
+      ],
+      "questionIds": [
+        "self-les-03-02-q-1",
+        "self-les-03-02-q-2"
+      ]
+    },
+    {
+      "id": "activity-les-04-01",
+      "scope": {
+        "kind": "activity",
+        "moduleId": "mod-04",
+        "lessonId": "les-04-01"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-add",
+        "mendeley-organize"
+      ],
+      "questionIds": [
+        "activity-les-04-01-q-1",
+        "activity-les-04-01-q-2"
+      ]
+    },
+    {
+      "id": "self-les-04-01",
+      "scope": {
+        "kind": "self",
+        "moduleId": "mod-04",
+        "lessonId": "les-04-01"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-add",
+        "mendeley-organize"
+      ],
+      "questionIds": [
+        "self-les-04-01-q-1",
+        "self-les-04-01-q-2"
+      ]
+    },
+    {
+      "id": "activity-les-04-02",
+      "scope": {
+        "kind": "activity",
+        "moduleId": "mod-04",
+        "lessonId": "les-04-02"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "questionIds": [
+        "activity-les-04-02-q-1",
+        "activity-les-04-02-q-2"
+      ]
+    },
+    {
+      "id": "self-les-04-02",
+      "scope": {
+        "kind": "self",
+        "moduleId": "mod-04",
+        "lessonId": "les-04-02"
+      },
+      "assessmentVersion": "0.4.0-draft",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "questionIds": [
+        "self-les-04-02-q-1",
+        "self-les-04-02-q-2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "pre-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-01-1"
+      ],
+      "elementIds": [
+        "el-01-01-01",
+        "el-01-01-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-01-2"
+      ],
+      "elementIds": [
+        "el-01-01-03",
+        "el-01-01-04",
+        "el-01-01-05"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-3",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-02-1"
+      ],
+      "elementIds": [
+        "el-01-02-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-4",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-03-1"
+      ],
+      "elementIds": [
+        "el-01-03-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-5",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-03-2"
+      ],
+      "elementIds": [
+        "el-01-03-02",
+        "el-01-03-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-6",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz"
+      ],
+      "objectiveIds": [
+        "obj-02-01-1"
+      ],
+      "elementIds": [
+        "el-02-01-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-7",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz"
+      ],
+      "objectiveIds": [
+        "obj-02-01-2"
+      ],
+      "elementIds": [
+        "el-02-01-02",
+        "el-02-01-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-8",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-quiz-learning"
+      ],
+      "objectiveIds": [
+        "obj-02-02-1"
+      ],
+      "elementIds": [
+        "el-02-02-01",
+        "el-02-02-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-9",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-sharing"
+      ],
+      "objectiveIds": [
+        "obj-02-02-2"
+      ],
+      "elementIds": [
+        "el-02-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-10",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-channels"
+      ],
+      "objectiveIds": [
+        "obj-03-01-1"
+      ],
+      "elementIds": [
+        "el-03-01-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-11",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-files"
+      ],
+      "objectiveIds": [
+        "obj-03-01-2"
+      ],
+      "elementIds": [
+        "el-03-01-02",
+        "el-03-01-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-12",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat"
+      ],
+      "objectiveIds": [
+        "obj-03-02-1"
+      ],
+      "elementIds": [
+        "el-03-02-01",
+        "el-03-02-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-13",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-add"
+      ],
+      "objectiveIds": [
+        "obj-04-01-1"
+      ],
+      "elementIds": [
+        "el-04-01-01",
+        "el-04-01-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-14",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "objectiveIds": [
+        "obj-04-02-1"
+      ],
+      "elementIds": [
+        "el-04-02-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-15",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "objectiveIds": [
+        "obj-04-02-2"
+      ],
+      "elementIds": [
+        "el-04-02-02",
+        "el-04-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-16",
+      "type": "true-false",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-02-2"
+      ],
+      "elementIds": [
+        "el-01-02-02",
+        "el-01-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-17",
+      "type": "true-false",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-sharing"
+      ],
+      "objectiveIds": [
+        "obj-02-02-2"
+      ],
+      "elementIds": [
+        "el-02-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-18",
+      "type": "true-false",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat"
+      ],
+      "objectiveIds": [
+        "obj-03-02-2"
+      ],
+      "elementIds": [
+        "el-03-02-02",
+        "el-03-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-19",
+      "type": "true-false",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-organize"
+      ],
+      "objectiveIds": [
+        "obj-04-01-2"
+      ],
+      "elementIds": [
+        "el-04-01-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "pre-q-20",
+      "type": "true-false",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "objectiveIds": [
+        "obj-04-02-2"
+      ],
+      "elementIds": [
+        "el-04-02-02",
+        "el-04-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-01-1"
+      ],
+      "elementIds": [
+        "el-01-01-01",
+        "el-01-01-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-01-2"
+      ],
+      "elementIds": [
+        "el-01-01-03",
+        "el-01-01-04",
+        "el-01-01-05"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-3",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-02-1"
+      ],
+      "elementIds": [
+        "el-01-02-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-4",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-03-1"
+      ],
+      "elementIds": [
+        "el-01-03-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-5",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-03-2"
+      ],
+      "elementIds": [
+        "el-01-03-02",
+        "el-01-03-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-6",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz"
+      ],
+      "objectiveIds": [
+        "obj-02-01-1"
+      ],
+      "elementIds": [
+        "el-02-01-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-7",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz"
+      ],
+      "objectiveIds": [
+        "obj-02-01-2"
+      ],
+      "elementIds": [
+        "el-02-01-02",
+        "el-02-01-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-8",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-quiz-learning"
+      ],
+      "objectiveIds": [
+        "obj-02-02-1"
+      ],
+      "elementIds": [
+        "el-02-02-01",
+        "el-02-02-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-9",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-sharing"
+      ],
+      "objectiveIds": [
+        "obj-02-02-2"
+      ],
+      "elementIds": [
+        "el-02-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-10",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-channels"
+      ],
+      "objectiveIds": [
+        "obj-03-01-1"
+      ],
+      "elementIds": [
+        "el-03-01-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-11",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-files"
+      ],
+      "objectiveIds": [
+        "obj-03-01-2"
+      ],
+      "elementIds": [
+        "el-03-01-02",
+        "el-03-01-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-12",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat"
+      ],
+      "objectiveIds": [
+        "obj-03-02-1"
+      ],
+      "elementIds": [
+        "el-03-02-01",
+        "el-03-02-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-13",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-add"
+      ],
+      "objectiveIds": [
+        "obj-04-01-1"
+      ],
+      "elementIds": [
+        "el-04-01-01",
+        "el-04-01-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-14",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "objectiveIds": [
+        "obj-04-02-1"
+      ],
+      "elementIds": [
+        "el-04-02-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-15",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "objectiveIds": [
+        "obj-04-02-2"
+      ],
+      "elementIds": [
+        "el-04-02-02",
+        "el-04-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-16",
+      "type": "true-false",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-02-2"
+      ],
+      "elementIds": [
+        "el-01-02-02",
+        "el-01-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-17",
+      "type": "true-false",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-sharing"
+      ],
+      "objectiveIds": [
+        "obj-02-02-2"
+      ],
+      "elementIds": [
+        "el-02-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-18",
+      "type": "true-false",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat"
+      ],
+      "objectiveIds": [
+        "obj-03-02-2"
+      ],
+      "elementIds": [
+        "el-03-02-02",
+        "el-03-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-19",
+      "type": "true-false",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-organize"
+      ],
+      "objectiveIds": [
+        "obj-04-01-2"
+      ],
+      "elementIds": [
+        "el-04-01-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "post-q-20",
+      "type": "true-false",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "objectiveIds": [
+        "obj-04-02-2"
+      ],
+      "elementIds": [
+        "el-04-02-02",
+        "el-04-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-01-01-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-01-1"
+      ],
+      "elementIds": [
+        "el-01-01-01",
+        "el-01-01-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-01-01-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-01-2"
+      ],
+      "elementIds": [
+        "el-01-01-03",
+        "el-01-01-04",
+        "el-01-01-05"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-01-01-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-01-1"
+      ],
+      "elementIds": [
+        "el-01-01-01",
+        "el-01-01-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-01-01-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-01-2"
+      ],
+      "elementIds": [
+        "el-01-01-03",
+        "el-01-01-04",
+        "el-01-01-05"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-01-02-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-02-1"
+      ],
+      "elementIds": [
+        "el-01-02-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-01-02-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-02-2"
+      ],
+      "elementIds": [
+        "el-01-02-02",
+        "el-01-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-01-02-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-02-1"
+      ],
+      "elementIds": [
+        "el-01-02-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-01-02-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-02-2"
+      ],
+      "elementIds": [
+        "el-01-02-02",
+        "el-01-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-01-03-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-03-1"
+      ],
+      "elementIds": [
+        "el-01-03-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-01-03-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-03-2"
+      ],
+      "elementIds": [
+        "el-01-03-02",
+        "el-01-03-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-01-03-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-03-1"
+      ],
+      "elementIds": [
+        "el-01-03-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-01-03-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "unesco-ict-cft"
+      ],
+      "objectiveIds": [
+        "obj-01-03-2"
+      ],
+      "elementIds": [
+        "el-01-03-02",
+        "el-01-03-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-02-01-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz"
+      ],
+      "objectiveIds": [
+        "obj-02-01-1"
+      ],
+      "elementIds": [
+        "el-02-01-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-02-01-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz"
+      ],
+      "objectiveIds": [
+        "obj-02-01-2"
+      ],
+      "elementIds": [
+        "el-02-01-02",
+        "el-02-01-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-02-01-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz"
+      ],
+      "objectiveIds": [
+        "obj-02-01-1"
+      ],
+      "elementIds": [
+        "el-02-01-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-02-01-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-quiz"
+      ],
+      "objectiveIds": [
+        "obj-02-01-2"
+      ],
+      "elementIds": [
+        "el-02-01-02",
+        "el-02-01-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-02-02-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-quiz-learning"
+      ],
+      "objectiveIds": [
+        "obj-02-02-1"
+      ],
+      "elementIds": [
+        "el-02-02-01",
+        "el-02-02-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-02-02-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-sharing"
+      ],
+      "objectiveIds": [
+        "obj-02-02-2"
+      ],
+      "elementIds": [
+        "el-02-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-02-02-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-quiz-learning"
+      ],
+      "objectiveIds": [
+        "obj-02-02-1"
+      ],
+      "elementIds": [
+        "el-02-02-01",
+        "el-02-02-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-02-02-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "google-forms-sharing"
+      ],
+      "objectiveIds": [
+        "obj-02-02-2"
+      ],
+      "elementIds": [
+        "el-02-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-03-01-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-channels"
+      ],
+      "objectiveIds": [
+        "obj-03-01-1"
+      ],
+      "elementIds": [
+        "el-03-01-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-03-01-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-files"
+      ],
+      "objectiveIds": [
+        "obj-03-01-2"
+      ],
+      "elementIds": [
+        "el-03-01-02",
+        "el-03-01-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-03-01-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-channels"
+      ],
+      "objectiveIds": [
+        "obj-03-01-1"
+      ],
+      "elementIds": [
+        "el-03-01-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-03-01-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-files"
+      ],
+      "objectiveIds": [
+        "obj-03-01-2"
+      ],
+      "elementIds": [
+        "el-03-01-02",
+        "el-03-01-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-03-02-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat"
+      ],
+      "objectiveIds": [
+        "obj-03-02-1"
+      ],
+      "elementIds": [
+        "el-03-02-01",
+        "el-03-02-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-03-02-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat"
+      ],
+      "objectiveIds": [
+        "obj-03-02-2"
+      ],
+      "elementIds": [
+        "el-03-02-02",
+        "el-03-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-03-02-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat"
+      ],
+      "objectiveIds": [
+        "obj-03-02-1"
+      ],
+      "elementIds": [
+        "el-03-02-01",
+        "el-03-02-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-03-02-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "teams-meeting-chat"
+      ],
+      "objectiveIds": [
+        "obj-03-02-2"
+      ],
+      "elementIds": [
+        "el-03-02-02",
+        "el-03-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-04-01-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-add"
+      ],
+      "objectiveIds": [
+        "obj-04-01-1"
+      ],
+      "elementIds": [
+        "el-04-01-01",
+        "el-04-01-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-04-01-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-organize"
+      ],
+      "objectiveIds": [
+        "obj-04-01-2"
+      ],
+      "elementIds": [
+        "el-04-01-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-04-01-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-add"
+      ],
+      "objectiveIds": [
+        "obj-04-01-1"
+      ],
+      "elementIds": [
+        "el-04-01-01",
+        "el-04-01-02"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-04-01-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-organize"
+      ],
+      "objectiveIds": [
+        "obj-04-01-2"
+      ],
+      "elementIds": [
+        "el-04-01-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-04-02-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "objectiveIds": [
+        "obj-04-02-1"
+      ],
+      "elementIds": [
+        "el-04-02-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "activity-les-04-02-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "objectiveIds": [
+        "obj-04-02-2"
+      ],
+      "elementIds": [
+        "el-04-02-02",
+        "el-04-02-03"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-04-02-q-1",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "objectiveIds": [
+        "obj-04-02-1"
+      ],
+      "elementIds": [
+        "el-04-02-01"
+      ],
+      "review": "editorial-draft"
+    },
+    {
+      "id": "self-les-04-02-q-2",
+      "type": "single-choice",
+      "approval": {
+        "status": "draft"
+      },
+      "sourceIds": [
+        "mendeley-cite"
+      ],
+      "objectiveIds": [
+        "obj-04-02-2"
+      ],
+      "elementIds": [
+        "el-04-02-02",
+        "el-04-02-03"
+      ],
+      "review": "editorial-draft"
+    }
+  ]
+}

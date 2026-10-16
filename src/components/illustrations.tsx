@@ -3,7 +3,7 @@ import { useId } from 'react';
 /** Decorative vector, not a university logo. All instructional text is HTML. */
 export function LearningIllustration() {
   const id = useId();
-  return <svg viewBox="0 0 410 260" className="learning-illustration" aria-hidden="true">
+  return <svg width="410" height="260" viewBox="0 0 410 260" className="learning-illustration" aria-hidden="true">
     <defs><linearGradient id={id} x1="0" y1="0" x2="1" y2="1"><stop stopColor="#106b88" /><stop offset="1" stopColor="#0b3c5d" /></linearGradient></defs>
     <ellipse cx="208" cy="228" rx="150" ry="17" fill="#0b3c5d" opacity=".08" />
     <path d="M70 132C34 87 92 28 161 38c57-42 164-10 174 68 40 69-15 114-97 105-72 23-143-1-168-79Z" fill="#d8eef2" />
@@ -21,7 +21,7 @@ export function LearningIllustration() {
 }
 
 export function IntegrationDiagram() {
-  return <svg viewBox="0 0 560 180" role="img" aria-label="ثلاث دوائر مترابطة تمثل الهدف التعليمي والنشاط والأداة الرقمية، مع نقطة التقاء في المنتصف" className="integration-diagram">
+  return <svg width="560" height="180" viewBox="0 0 560 180" role="img" aria-label="ثلاث دوائر يصل بينها خط، تمثل الهدف التعليمي والنشاط والأداة الرقمية" className="integration-diagram">
     <path d="M130 90h300" stroke="#91bdc9" strokeWidth="3" strokeDasharray="6 7" />
     <circle cx="130" cy="90" r="57" fill="#e7f1f7" stroke="#aecbd8" /><circle cx="280" cy="90" r="57" fill="#e0f2f1" stroke="#95c4c7" /><circle cx="430" cy="90" r="57" fill="#fcf0e1" stroke="#dbb98f" />
     <g stroke="#0b3c5d" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round"><circle cx="130" cy="90" r="24" /><circle cx="130" cy="90" r="10" /><path d="m130 90 22-23m-9 0h9v9" /></g>
