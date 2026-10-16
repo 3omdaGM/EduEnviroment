@@ -1608,6 +1608,8 @@
       "scope": {
         "kind": "pre"
       },
+      "minimumAnsweredQuestions": 5,
+      "submitRequiresAllAnswers": false,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1652,6 +1654,8 @@
       "scope": {
         "kind": "post"
       },
+      "minimumAnsweredQuestions": 5,
+      "submitRequiresAllAnswers": false,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1698,6 +1702,8 @@
         "moduleId": "mod-01",
         "lessonId": "les-01-01"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1717,6 +1723,8 @@
         "moduleId": "mod-01",
         "lessonId": "les-01-01"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1736,6 +1744,8 @@
         "moduleId": "mod-01",
         "lessonId": "les-01-02"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1755,6 +1765,8 @@
         "moduleId": "mod-01",
         "lessonId": "les-01-02"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1774,6 +1786,8 @@
         "moduleId": "mod-01",
         "lessonId": "les-01-03"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1793,6 +1807,8 @@
         "moduleId": "mod-01",
         "lessonId": "les-01-03"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1812,6 +1828,8 @@
         "moduleId": "mod-02",
         "lessonId": "les-02-01"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1831,6 +1849,8 @@
         "moduleId": "mod-02",
         "lessonId": "les-02-01"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1850,6 +1870,8 @@
         "moduleId": "mod-02",
         "lessonId": "les-02-02"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1870,6 +1892,8 @@
         "moduleId": "mod-02",
         "lessonId": "les-02-02"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1890,6 +1914,8 @@
         "moduleId": "mod-03",
         "lessonId": "les-03-01"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1910,6 +1936,8 @@
         "moduleId": "mod-03",
         "lessonId": "les-03-01"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1930,6 +1958,8 @@
         "moduleId": "mod-03",
         "lessonId": "les-03-02"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1949,6 +1979,8 @@
         "moduleId": "mod-03",
         "lessonId": "les-03-02"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1968,6 +2000,8 @@
         "moduleId": "mod-04",
         "lessonId": "les-04-01"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -1988,6 +2022,8 @@
         "moduleId": "mod-04",
         "lessonId": "les-04-01"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -2008,6 +2044,8 @@
         "moduleId": "mod-04",
         "lessonId": "les-04-02"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"
@@ -2027,6 +2065,8 @@
         "moduleId": "mod-04",
         "lessonId": "les-04-02"
       },
+      "minimumAnsweredQuestions": 2,
+      "submitRequiresAllAnswers": true,
       "assessmentVersion": "0.4.1-draft",
       "approval": {
         "status": "draft"

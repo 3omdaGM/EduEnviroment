@@ -47,6 +47,7 @@ describe('content contract and progression', () => {
       expect(d.questionIds.map(id => fullCatalog.questions.find(q => q.id === id)!).filter(q => q.type === 'single-choice')).toHaveLength(15);
     }
     expect(fullCatalog.modules.map(m => m.lessonIds.length)).toEqual([3, 2, 2, 2]);
+    for (const d of fullCatalog.assessments) { expect(d.minimumAnsweredQuestions).toBe(Math.min(5, d.questionIds.length)); expect(d.submitRequiresAllAnswers).toBe(d.questionIds.length <= 5); }
     expect(fullCatalog.questions.every(q => q.editorial.approval.status === 'draft' && q.answerKey.rationale && q.editorial.sources.length && q.options.some(o => o.id === q.answerKey.correctOptionId))).toBe(true);
     expect(new Set(fullCatalog.questions.map(q => q.id)).size).toBe(fullCatalog.questions.length);
     expect(fullCatalog.questions.filter(q => q.id.startsWith('pre-')).map(q => q.prompt)).not.toEqual(fullCatalog.questions.filter(q => q.id.startsWith('post-')).map(q => q.prompt));
@@ -174,5 +175,43 @@ describe('adapter, drafts and durable transaction limits', () => {
       const pre = a.getSnapshot().data!.attempts.find(a => a.assessmentId === 'pre')!;
       expect(a.getAttemptView(pre.id)!.feedback).toBeNull();
     } finally { vi.useRealTimers(); }
+  });
+});
+
+describe('partial submission with a minimum answered count', () => {
+  it('rejects four answers, submits five of twenty, scores skipped questions as zero and restores durably', () => {
+    const r = runner(fullCatalog); r.execute({ type: 'login', name: 'تجربة' });
+    const id = r.execute({ type: 'start-attempt', assessmentId: 'pre' }).attemptId!;
+    const ids = r.state.attempts[0]!.questionIds;
+    for (const qid of ids.slice(0, 4)) { const q = fullCatalog.questions.find(q => q.id === qid)!; r.execute({ type: 'answer', attemptId: id, questionId: qid, optionId: q.answerKey.correctOptionId }); }
+    expect(() => r.execute({ type: 'submit', attemptId: id })).toThrow('5');
+    const q = fullCatalog.questions.find(q => q.id === ids[4])!;
+    r.execute({ type: 'answer', attemptId: id, questionId: q.id, optionId: q.answerKey.correctOptionId });
+    r.execute({ type: 'submit', attemptId: id });
+    expect(r.state.attempts[0]!.score).toEqual({ earned: 5, possible: 20 });
+    expect(Object.keys(r.state.attempts[0]!.answers)).toHaveLength(5);
+    expect(parseState(JSON.stringify(r.state), fullCatalog)).toEqual(r.state);
+    expect(r.state.rewards).toHaveLength(0);
+    expect(() => r.execute({ type: 'answer', attemptId: id, questionId: ids[5]!, optionId: 'x' })).toThrow();
+    const revision = r.state.revision; r.execute({ type: 'submit', attemptId: id }); expect(r.state.revision).toBe(revision);
+  });
+  it('requires both questions in a two-question assessment and preserves the old full-answer snapshot', () => {
+    const state = scenarioState(fullCatalog, 'completed');
+    expect(parseState(JSON.stringify(state), fullCatalog)).toEqual(state);
+    const r = runner(fullCatalog, state), assessment = fullCatalog.lessons[0]!.selfAssessmentId;
+    const id = r.execute({ type: 'start-attempt', assessmentId: assessment }).attemptId!;
+    const a = r.state.attempts.find(a => a.id === id)!, q = fullCatalog.questions.find(q => q.id === a.questionIds[0])!;
+    r.execute({ type: 'answer', attemptId: id, questionId: q.id, optionId: q.answerKey.correctOptionId });
+    expect(() => r.execute({ type: 'submit', attemptId: id })).toThrow('2');
+    const tampered = structuredClone(r.state); const attempt = tampered.attempts.find(a => a.id === id)!;
+    attempt.status = 'submitted'; attempt.score = { earned: 1, possible: 2 }; attempt.submittedAt = '2026-10-16T00:00:00Z'; attempt.sequence = tampered.attempts.filter(a => a.status === 'submitted').length;
+    expect(() => parseState(JSON.stringify(tampered), fullCatalog)).toThrow();
+  });
+  it('rejects invalid stored alternatives even when there are five answer keys', () => {
+    const r = runner(fullCatalog); r.execute({ type: 'login', name: 'تجربة' });
+    r.execute({ type: 'start-attempt', assessmentId: 'pre' });
+    const raw = structuredClone(r.state), a = raw.attempts[0]!;
+    for (const id of a.questionIds.slice(0, 5)) a.answers[id] = 'foreign-option';
+    expect(() => parseState(JSON.stringify(raw), fullCatalog)).toThrow();
   });
 });

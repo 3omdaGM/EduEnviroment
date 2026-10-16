@@ -69,7 +69,7 @@ export function MobileNav() {
         {navigation.slice(0, 3).map(item => <NavigationLink key={item.to} item={item} onNavigate={() => setOpen(false)} />)}
         <div className="drawer-nav-group"><p>التقويم</p><NavLink to="/assessment/pre/instructions" onClick={() => setOpen(false)}>التقويم القبلي <small>{preLabel}</small></NavLink><NavLink to="/assessment/post/instructions" onClick={() => setOpen(false)}>التقويم البعدي <small>{postLabel}</small></NavLink></div>
         {navigation.slice(3).map(item => <NavigationLink key={item.to} item={item} onNavigate={() => setOpen(false)} />)}
-      </nav>
+      </nav><div className="compact-question-session"><SessionControl /><p>نسخة تجريبية</p>{demoToolsEnabled && <Link to="/demo-tools">أدوات العرض</Link>}</div>
     </Drawer>
   </div>;
 }
@@ -91,7 +91,7 @@ export default function AppShell() {
     main.current?.focus({ preventScroll: true });
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [pathname]);
-  return <div className={`app-shell${pathname === '/' ? ' home-shell' : goalsPage ? ' goals-shell' : ''}`}>
+  return <div className={`app-shell${pathname === '/' ? ' home-shell' : goalsPage ? ' goals-shell' : ''}${pathname.includes('/attempt/') ? ' question-shell' : ''}`}>
     <a className="skip-link" href="#main-content">تجاوز إلى المحتوى</a>
     <header className="site-header"><BrandHeader /><div className="navigation-bar"><div className="container navigation-inner"><DesktopNav /><MobileNav /></div></div></header>
     {snapshot.celebration && <div role="status" className="celebration">{snapshot.celebration}</div>}

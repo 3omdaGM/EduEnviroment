@@ -10,3 +10,7 @@ review/goals-cards/test-artifacts/
 review/compact-pages/test-artifacts/
 review/compact-pages/regression-artifacts/
 review/compact-pages/validation-artifacts/
+review/module-preview-submit/test-artifacts/
+review/module-preview-submit/regression-artifacts/
+review/module-preview-submit/validation-artifacts/
+review/module-preview-submit/public-artifacts/

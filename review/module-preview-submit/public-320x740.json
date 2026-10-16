@@ -1,0 +1,51 @@
+[
+  {
+    "route": "/",
+    "height": 740,
+    "width": 320,
+    "pageHeight": 740,
+    "pageWidth": 320
+  },
+  {
+    "route": "/guide",
+    "height": 740,
+    "width": 320,
+    "pageHeight": 740,
+    "pageWidth": 320
+  },
+  {
+    "route": "/goals",
+    "height": 740,
+    "width": 320,
+    "pageHeight": 740,
+    "pageWidth": 320
+  },
+  {
+    "route": "/contact",
+    "height": 740,
+    "width": 320,
+    "pageHeight": 740,
+    "pageWidth": 320
+  },
+  {
+    "route": "/login",
+    "height": 740,
+    "width": 320,
+    "pageHeight": 740,
+    "pageWidth": 320
+  },
+  {
+    "route": "/register",
+    "height": 740,
+    "width": 320,
+    "pageHeight": 740,
+    "pageWidth": 320
+  },
+  {
+    "route": "/recover",
+    "height": 740,
+    "width": 320,
+    "pageHeight": 740,
+    "pageWidth": 320
+  }
+]

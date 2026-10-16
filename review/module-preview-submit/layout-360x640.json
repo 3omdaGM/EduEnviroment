@@ -1,0 +1,122 @@
+[
+  {
+    "route": "/content",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "/content",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/intro",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/objectives",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "visitor lesson lock",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/activity",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/self-assessment",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/elements/el-01-01-01",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  },
+  {
+    "route": "/assessment/pre/instructions",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640,
+    "scrollY": 0
+  }
+]

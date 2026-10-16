@@ -1,0 +1,51 @@
+[
+  {
+    "route": "/assessment/pre/attempt/exam-pre/review",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640
+  },
+  {
+    "route": "/assessment/pre/attempt/exam-pre/confirm",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640
+  },
+  {
+    "route": "/assessment/pre/attempt/exam-pre/result",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640
+  },
+  {
+    "route": "/assessment/pre/attempt/exam-pre/result",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640
+  },
+  {
+    "route": "/assessment/post/attempt/exam-post/result",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/activity/attempt/scenario-34/result",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640
+  },
+  {
+    "route": "/modules/mod-01/lessons/les-01-01/self-assessment/attempt/scenario-38/result",
+    "width": 360,
+    "height": 640,
+    "pageWidth": 360,
+    "pageHeight": 640
+  }
+]

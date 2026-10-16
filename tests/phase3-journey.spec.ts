@@ -46,7 +46,7 @@ test('demo account to post through all four stations with independent attempts a
 test('ineligible first pre remains ineligible on a later 0% attempt with zero XP', async ({ page }) => {
   await login(page); await page.goto('/assessment/pre/instructions'); await exam(page, fixture, 'pre', 2);
   await page.getByRole('link', { name: 'سجل المحاولات والتعليمات' }).click(); await exam(page, fixture, 'pre', 0);
-  await page.goto('/modules/mod-01/intro'); await expect(page.getByRole('heading', { name: 'المحتوى مقفل' })).toBeVisible();
+  await page.goto('/modules/mod-01/lessons/les-01-01/intro'); await expect(page.getByRole('heading', { name: 'المحتوى مقفل' })).toBeVisible();
   const state = await stored(page); expect(state.attempts).toHaveLength(2); expect(state.rewards).toHaveLength(0);
 });
 
@@ -55,6 +55,6 @@ test('failed self stays locked until a new 50% attempt; activity needs no passin
   const lesson = fixture.lessons[0]!, base = lessonRoute(lesson.moduleId, lesson.id);
   await page.goto(`${base}/elements/${lesson.elementIds[0]}`); await page.getByRole('button', { name: 'تم الاطلاع — التالي', exact: true }).click();
   await exam(page, fixture, lesson.activityAssessmentId, 0); await page.getByRole('link', { name: 'الانتقال إلى الخطوة التالية', exact: false }).click();
-  await exam(page, fixture, lesson.selfAssessmentId, 0); await page.goto('/modules/mod-02/intro'); await expect(page.getByRole('heading', { name: 'المحتوى مقفل' })).toBeVisible();
-  await page.goto(`${base}/self-assessment`); await exam(page, fixture, lesson.selfAssessmentId, 1); await page.goto('/modules/mod-02/intro'); await expect(page.getByRole('heading', { name: 'مقدمة الموديول', exact: true })).toBeVisible();
+  await exam(page, fixture, lesson.selfAssessmentId, 0); await page.goto('/modules/mod-02/lessons/les-02-01/intro'); await expect(page.getByRole('heading', { name: 'المحتوى مقفل' })).toBeVisible();
+  await page.goto(`${base}/self-assessment`); await exam(page, fixture, lesson.selfAssessmentId, 1); await page.goto('/modules/mod-02/lessons/les-02-01/intro'); await expect(page.getByRole('heading', { name: 'مقدمة الدرس', exact: true })).toBeVisible();
 });
