@@ -22,7 +22,7 @@ export const people: readonly PersonCard[] = [
   { id: 'researcher', displayName: 'سلوى نبوي غنيم', position: '', roleLabel: 'إعداد الباحثة', placeholder: false },
   { id: 'academic-01', displayName: 'أ.د / عبدالعزيز طلبة عبد الحميد', position: 'أستاذ تكنولوجيا التعليم\nكلية التربية - جامعة المنصورة', roleLabel: 'إشراف', placeholder: false },
   { id: 'academic-02', displayName: 'أ.د / صالح شاكر', position: 'أستاذ تكنولوجيا التعليم\nكلية التربية النوعية - جامعة المنصورة', roleLabel: 'إشراف', placeholder: false },
-  { id: 'academic-03', displayName: 'أ.م.د / أمل السيد أحمد الظاهر', position: 'أستاذ تكنولوجيا التعليم المساعد\nكلية التربية النوعية - جامعة الزقازيق', roleLabel: 'إشراف', placeholder: false },
+  { id: 'academic-03', displayName: 'أ.م.د / أمل السيد أحمد الطاهر', position: 'أستاذ تكنولوجيا التعليم المساعد\nكلية التربية النوعية - جامعة الزقازيق', roleLabel: 'إشراف', placeholder: false },
 ];
 
 export const badgeNames: Record<string, string> = {
