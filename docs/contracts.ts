@@ -1,6 +1,7 @@
 /**
- * Stage 1 design contracts only. No runtime, storage, router, auth or adapter.
- * The specification in project-spec.md defines validation and transitions.
+ * Shared authoring types and future service design from stage 1.
+ * Stage 3 uses these content types; its local runtime boundary and Zod state
+ * schemas are in src/domain/models.ts. TrainingService below is not implemented.
  */
 export type Id = string;
 export type Version = string;
@@ -97,6 +98,7 @@ export interface EnvironmentConfig {
   studyPolicy: DemoStudyPolicy; // Production policy needs an approved revision.
   gameDesign: {
     status: 'proposed';
+    activityCompletionPoints: number;
     lessonCompletionPoints: number;
     moduleCompletionPoints: number;
     publicLeaderboard: false;
@@ -264,7 +266,7 @@ export interface ElementAcknowledgement {
   // Explicit acknowledgement at end of final part, not a claim of understanding.
 }
 
-export type AchievementEvent = 'lesson-completed' | 'module-completed';
+export type AchievementEvent = 'activity-completed' | 'lesson-completed' | 'module-completed';
 
 export interface Achievement {
   id: Id;

@@ -31,7 +31,7 @@ export function ProgressIndicator({ value, max, label }: { value: number; max: n
     <progress value={value} max={safeMax} aria-label={label}>{Math.round(value / safeMax * 100)}%</progress></div>;
 }
 export function PreviewNotice() {
-  return <div className="notice"><Info size={18} aria-hidden="true" /><p><strong>نسخة للمعاينة.</strong> الموديول الأول متاح لاستكشاف الواجهة فقط؛ التدريب الفعلي يبدأ بعد التقويم القبلي عند تفعيله. لا تُسجّل درجات أو إنجازات.</p></div>;
+  return <div className="notice"><Info size={18} aria-hidden="true" /><p><strong>نسخة تدريب تجريبية.</strong> تُحفظ المحاولات والتقدم محليًا في هذا المتصفح على الجهاز نفسه، وليست حسابًا حقيقيًا أو بيانات دراسة معتمدة. حذف بيانات المتصفح يفقد التجربة.</p></div>;
 }
 export function Preparation({ title = 'قيد التجهيز', children, action = 'بدء التقويم' }: { title?: string; children: ReactNode; action?: string }) {
   const id = useId();

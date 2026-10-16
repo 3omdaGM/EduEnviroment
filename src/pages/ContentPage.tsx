@@ -1,19 +1,22 @@
-import { ArrowLeft, Award, LockKeyhole, Route, Sparkles } from 'lucide-react';
-import { badgeNames, modules } from '../data/catalog';
-import { Button, ButtonLink, Card, PageHeading, PreviewNotice, ProgressIndicator, StatusBadge } from '../components/ui';
+import { ArrowLeft, Award, Route, Sparkles } from 'lucide-react';
+import { badgeNames } from '../data/catalog';
+import { useTraining } from '../state/training-context';
+import { assessmentAccess, eligibility, lessonComplete, moduleAccess, moduleComplete } from '../domain/training';
+import { ButtonLink, Card, PageHeading, PreviewNotice, ProgressIndicator, StatusBadge } from '../components/ui';
+import { StorageProblem } from '../components/TrainingGuard';
 import { moduleIcons } from '../components/module-icons';
 
 export default function ContentPage() {
+  const { catalog, snapshot } = useTraining();
+  if (!snapshot.data) return <StorageProblem />;
+  const state = snapshot.data, active = state.learner.active;
+  const completed = active ? catalog.lessons.filter(l => lessonComplete(state, catalog, l.id)).length : 0;
+  const level = active ? catalog.modules.filter(m => moduleComplete(state, catalog, m.id)).length : 0;
+  const pre = eligibility(state, catalog), postAccess = assessmentAccess(state, catalog, 'post');
   return <><PageHeading eyebrow="خطوة تلو الأخرى" title="مسارك التدريبي">أربع محطات لبناء معرفة مهنية وتوظيفها في ممارستك التعليمية.</PageHeading><PreviewNotice />
-    <div className="journey-summary"><div className="journey-title"><span className="icon-tile"><Route size={23} aria-hidden="true" /></span><div><h2>كل خطوة تبني على سابقتها</h2><p>اقرأ، ثم مارس، ثم تأمل ما تعلمته.</p></div></div><div className="journey-meta"><span><Sparkles size={17} aria-hidden="true" />٠ نقاط إنجاز</span><span><Award size={18} aria-hidden="true" />المستوى ٠</span></div></div>
-    <div className="module-grid">{modules.map((module, index) => {
-      const Icon = moduleIcons[index] ?? Route;
-      const available = index === 0;
-      return <Card key={module.id} className={`module-card ${available ? 'module-card--available' : 'module-card--locked'}`}><div className="module-card-top"><span className={`module-symbol module-symbol--${index}`}><Icon size={28} strokeWidth={1.6} aria-hidden="true" /></span><span className="module-number">{String(module.order).padStart(2, '0')}</span><StatusBadge tone={available ? 'available' : 'locked'}>{available ? 'متاح للمعاينة' : 'مقفل'}</StatusBadge></div>
-        <p className="eyebrow">الموديول {['الأول', 'الثاني', 'الثالث', 'الرابع'][index]}</p><h2>{module.title}</h2>
-        <p className="module-note" id={`reason-${module.id}`}>{available ? '٣ دروس تبدأ بالفهم وتنتهي بالتطبيق.' : `يفتح بعد إكمال جميع دروس الموديول ${['', 'الأول', 'الثاني', 'الثالث'][index]}. المحتوى قيد التجهيز.`}</p>
-        <div className="module-badge"><Award size={17} aria-hidden="true" /><span>شارة المحطة: {badgeNames[module.badgeId]}</span></div>
-        <div className="module-card-bottom">{available ? <><ProgressIndicator value={0} max={3} label="الدروس المكتملة" /><ButtonLink to={`/modules/${module.id}/intro`}>استكشف الموديول <ArrowLeft size={17} aria-hidden="true" /></ButtonLink></> : <><span className="locked-caption"><LockKeyhole size={15} aria-hidden="true" />محطة قادمة في رحلتك</span><Button disabled variant="secondary" aria-describedby={`reason-${module.id}`}>الموديول مقفل <LockKeyhole size={16} aria-hidden="true" /></Button></>}</div>
-      </Card>;
-    })}</div><p className="quiet-note">النقاط والشارات مستقلة عن درجات التقويم، ولا تُمنح في نسخة المعاينة.</p></>;
+    {!active ? <div className="notice"><p>ابدأ تجربة بحساب تجريبي للوصول إلى القبلي وتقدمك المحلي.</p><ButtonLink to="/login">بدء التجربة</ButtonLink></div> : pre.status === 'not-assessed' ? <div className="notice"><p>ابدأ بالتقويم القبلي لتحديد أهلية المشاركة.</p><ButtonLink to="/assessment/pre/instructions">التقويم القبلي</ButtonLink></div> : pre.status === 'ineligible' ? <div className="notice"><p>وفقًا لشروط المشاركة المحددة لهذه الدراسة، لا يتاح لك المسار التدريبي. درجة أول قبلي: <bdi>{pre.attempt!.score!.earned} / {pre.attempt!.score!.possible}</bdi>.</p><ButtonLink to="/assessment/pre/instructions" variant="secondary">سجل القبلي</ButtonLink></div> : null}
+    <div className="journey-summary"><div className="journey-title"><span className="icon-tile"><Route size={23} aria-hidden="true" /></span><div><h2>كل خطوة تبني على سابقتها</h2><p>اقرأ، ثم مارس، ثم تأمل ما تعلمته.</p></div></div><div className="journey-meta"><span><Sparkles size={17} aria-hidden="true" />{active ? state.rewards.reduce((n, r) => n + r.points, 0) : 0} نقطة إنجاز</span><span><Award size={18} aria-hidden="true" />المستوى {level}</span></div></div><div className="overall-progress"><ProgressIndicator value={completed} max={catalog.lessons.length} label="الدروس المكتملة في المسار" /></div>
+    <div className="module-grid">{catalog.modules.map((module, index) => { const Icon = moduleIcons[index] ?? Route; const access = moduleAccess(state, catalog, module.id), done = active && moduleComplete(state, catalog, module.id); const count = active ? module.lessonIds.filter(id => lessonComplete(state, catalog, id)).length : 0;
+      return <Card key={module.id} className={`module-card ${access.allowed ? 'module-card--available' : 'module-card--locked'}`}><div className="module-card-top"><span className={`module-symbol module-symbol--${index}`}><Icon size={28} strokeWidth={1.6} aria-hidden="true" /></span><span className="module-number">{String(module.order).padStart(2, '0')}</span><StatusBadge tone={done ? 'complete' : access.allowed ? 'available' : 'locked'}>{done ? 'مكتمل' : access.allowed ? 'متاح' : 'مقفل'}</StatusBadge></div><p className="eyebrow">الموديول {module.order}</p><h2>{module.title}</h2><p className="module-note">{access.allowed ? `${module.lessonIds.length} دروس للقراءة والممارسة والتقويم الذاتي.` : access.reason}</p><div className="module-badge"><Award size={17} aria-hidden="true" /><span>{done ? 'اكتسبت شارة' : 'شارة المحطة'}: {badgeNames[module.badgeId]}</span></div><div className="module-card-bottom"><ProgressIndicator value={count} max={module.lessonIds.length} label="الدروس المكتملة" /><ButtonLink to={`/modules/${module.id}/intro`} variant={access.allowed ? 'primary' : 'secondary'}>{done ? 'مراجعة الموديول' : access.allowed ? 'استكشف الموديول' : 'سبب القفل'}<ArrowLeft size={17} aria-hidden="true" /></ButtonLink></div></Card>;
+    })}</div><div className="post-access"><p>{postAccess.allowed ? 'أكملت الدروس؛ أصبح التقويم البعدي متاحًا.' : postAccess.reason}</p><ButtonLink to="/assessment/post/instructions" variant="secondary">التقويم البعدي</ButtonLink></div><p className="quiet-note">النقاط مستقلة عن النسبة المئوية: 10 لإكمال نشاط، و20 لاجتياز درس، و50 لإكمال موديول؛ مرة واحدة لكل إنجاز. أعداد دروس الموديولات 2–4 وأسماءها مؤقتة.</p></>;
 }
