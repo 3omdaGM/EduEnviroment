@@ -17,7 +17,7 @@ for (const width of [1366, 390]) {
     }
     for (const module of modules) {
       await page.goto(`/goals/${module.id}`);
-      for (const objective of module.objectives) await expect(page.locator('.goals-detail')).toContainText(objective);
+      for (const objective of module.objectives) await expect(page.getByRole('region', { name: `أهداف ${module.title}`, exact: true })).toContainText(objective);
     }
     await page.goto('/contact'); await expect(page.getByRole('button', { name: /إرسال/ })).toHaveCount(0);
     await page.goto('/login'); await expect(page.locator('input[type=password]')).toHaveCount(0);

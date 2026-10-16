@@ -1,0 +1,1346 @@
+{
+  "snapshots": [
+    {
+      "phase": "closed",
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "page": {
+        "width": 320,
+        "height": 740,
+        "scrollY": 0
+      },
+      "slots": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155
+        }
+      ],
+      "tiles": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        }
+      ],
+      "active": null
+    },
+    {
+      "phase": "pinned-mod-01",
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "page": {
+        "width": 320,
+        "height": 740,
+        "scrollY": 0
+      },
+      "slots": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155
+        }
+      ],
+      "tiles": [
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 296,
+          "height": 380,
+          "bottom": 664.234375,
+          "right": 308,
+          "scrollHeight": 378,
+          "clientHeight": 378
+        },
+        {
+          "x": 13.072502136230469,
+          "y": 285.62188720703125,
+          "width": 140.85498046875,
+          "height": 182.2249755859375,
+          "bottom": 467.84686279296875,
+          "right": 153.92748260498047,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 166.072509765625,
+          "y": 480.62188720703125,
+          "width": 140.85498046875,
+          "height": 182.2249755859375,
+          "bottom": 662.8468627929688,
+          "right": 306.927490234375,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 13.072502136230469,
+          "y": 480.62188720703125,
+          "width": 140.85498046875,
+          "height": 182.2249755859375,
+          "bottom": 662.8468627929688,
+          "right": 153.92748260498047,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        }
+      ],
+      "active": {
+        "x": 12,
+        "y": 284.234375,
+        "width": 296,
+        "height": 380,
+        "bottom": 664.234375,
+        "right": 308,
+        "heading": {
+          "x": 27,
+          "y": 362.84375,
+          "width": 266,
+          "height": 72,
+          "bottom": 434.84375,
+          "right": 293
+        },
+        "objectives": {
+          "x": 27,
+          "y": 446.84375,
+          "width": 266,
+          "height": 138.78125,
+          "bottom": 585.625,
+          "right": 293
+        },
+        "items": [
+          {
+            "x": 27,
+            "y": 446.84375,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 488.4375,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 495.4375,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 537.03125,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 544.03125,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 585.625,
+            "right": 293
+          }
+        ],
+        "shadow": "rgba(140, 202, 215, 0.3) 0px 0px 0px 1px, rgba(11, 60, 93, 0.08) 0px 10px 30px 0px, rgba(8, 145, 178, 0.15) 0px 0px 26px 0px"
+      }
+    },
+    {
+      "phase": "pinned-mod-02",
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "page": {
+        "width": 320,
+        "height": 740,
+        "scrollY": 0
+      },
+      "slots": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155
+        }
+      ],
+      "tiles": [
+        {
+          "x": 166.072509765625,
+          "y": 285.62188720703125,
+          "width": 140.85498046875,
+          "height": 182.2249755859375,
+          "bottom": 467.84686279296875,
+          "right": 306.927490234375,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 296,
+          "height": 380,
+          "bottom": 664.234375,
+          "right": 308,
+          "scrollHeight": 378,
+          "clientHeight": 378
+        },
+        {
+          "x": 166.072509765625,
+          "y": 480.62188720703125,
+          "width": 140.85498046875,
+          "height": 182.2249755859375,
+          "bottom": 662.8468627929688,
+          "right": 306.927490234375,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 13.072502136230469,
+          "y": 480.62188720703125,
+          "width": 140.85498046875,
+          "height": 182.2249755859375,
+          "bottom": 662.8468627929688,
+          "right": 153.92748260498047,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        }
+      ],
+      "active": {
+        "x": 12,
+        "y": 284.234375,
+        "width": 296,
+        "height": 380,
+        "bottom": 664.234375,
+        "right": 308,
+        "heading": {
+          "x": 27,
+          "y": 373.234375,
+          "width": 266,
+          "height": 72,
+          "bottom": 445.234375,
+          "right": 293
+        },
+        "objectives": {
+          "x": 27,
+          "y": 457.234375,
+          "width": 266,
+          "height": 117.984375,
+          "bottom": 575.21875,
+          "right": 293
+        },
+        "items": [
+          {
+            "x": 27,
+            "y": 457.234375,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 498.828125,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 505.828125,
+            "width": 266,
+            "height": 20.796875,
+            "bottom": 526.625,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 533.625,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 575.21875,
+            "right": 293
+          }
+        ],
+        "shadow": "rgba(140, 202, 215, 0.3) 0px 0px 0px 1px, rgba(11, 60, 93, 0.08) 0px 10px 30px 0px, rgba(8, 145, 178, 0.15) 0px 0px 26px 0px"
+      }
+    },
+    {
+      "phase": "pinned-mod-03",
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "page": {
+        "width": 320,
+        "height": 740,
+        "scrollY": 0
+      },
+      "slots": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155
+        }
+      ],
+      "tiles": [
+        {
+          "x": 166.072509765625,
+          "y": 285.62188720703125,
+          "width": 140.85498046875,
+          "height": 182.2249755859375,
+          "bottom": 467.84686279296875,
+          "right": 306.927490234375,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 13.072502136230469,
+          "y": 285.62188720703125,
+          "width": 140.85498046875,
+          "height": 182.2249755859375,
+          "bottom": 467.84686279296875,
+          "right": 153.92748260498047,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 296,
+          "height": 380,
+          "bottom": 664.234375,
+          "right": 308,
+          "scrollHeight": 378,
+          "clientHeight": 378
+        },
+        {
+          "x": 13.072502136230469,
+          "y": 480.62188720703125,
+          "width": 140.85498046875,
+          "height": 182.2249755859375,
+          "bottom": 662.8468627929688,
+          "right": 153.92748260498047,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        }
+      ],
+      "active": {
+        "x": 12,
+        "y": 284.234375,
+        "width": 296,
+        "height": 380,
+        "bottom": 664.234375,
+        "right": 308,
+        "heading": {
+          "x": 27,
+          "y": 373.234375,
+          "width": 266,
+          "height": 72,
+          "bottom": 445.234375,
+          "right": 293
+        },
+        "objectives": {
+          "x": 27,
+          "y": 457.234375,
+          "width": 266,
+          "height": 117.984375,
+          "bottom": 575.21875,
+          "right": 293
+        },
+        "items": [
+          {
+            "x": 27,
+            "y": 457.234375,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 498.828125,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 505.828125,
+            "width": 266,
+            "height": 20.796875,
+            "bottom": 526.625,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 533.625,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 575.21875,
+            "right": 293
+          }
+        ],
+        "shadow": "rgba(140, 202, 215, 0.3) 0px 0px 0px 1px, rgba(11, 60, 93, 0.08) 0px 10px 30px 0px, rgba(8, 145, 178, 0.15) 0px 0px 26px 0px"
+      }
+    },
+    {
+      "phase": "pinned-mod-04",
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "page": {
+        "width": 320,
+        "height": 740,
+        "scrollY": 0
+      },
+      "slots": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155
+        }
+      ],
+      "tiles": [
+        {
+          "x": 166.072509765625,
+          "y": 285.62188720703125,
+          "width": 140.85498046875,
+          "height": 182.2249755859375,
+          "bottom": 467.84686279296875,
+          "right": 306.927490234375,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 13.072502136230469,
+          "y": 285.62188720703125,
+          "width": 140.85498046875,
+          "height": 182.2249755859375,
+          "bottom": 467.84686279296875,
+          "right": 153.92748260498047,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 166.072509765625,
+          "y": 480.62188720703125,
+          "width": 140.85498046875,
+          "height": 182.2249755859375,
+          "bottom": 662.8468627929688,
+          "right": 306.927490234375,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 296,
+          "height": 380,
+          "bottom": 664.234375,
+          "right": 308,
+          "scrollHeight": 378,
+          "clientHeight": 378
+        }
+      ],
+      "active": {
+        "x": 12,
+        "y": 284.234375,
+        "width": 296,
+        "height": 380,
+        "bottom": 664.234375,
+        "right": 308,
+        "heading": {
+          "x": 27,
+          "y": 362.84375,
+          "width": 266,
+          "height": 72,
+          "bottom": 434.84375,
+          "right": 293
+        },
+        "objectives": {
+          "x": 27,
+          "y": 446.84375,
+          "width": 266,
+          "height": 138.78125,
+          "bottom": 585.625,
+          "right": 293
+        },
+        "items": [
+          {
+            "x": 27,
+            "y": 446.84375,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 488.4375,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 495.4375,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 537.03125,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 544.03125,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 585.625,
+            "right": 293
+          }
+        ],
+        "shadow": "rgba(140, 202, 215, 0.3) 0px 0px 0px 1px, rgba(11, 60, 93, 0.08) 0px 10px 30px 0px, rgba(8, 145, 178, 0.15) 0px 0px 26px 0px"
+      }
+    },
+    {
+      "phase": "reduced-motion",
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "page": {
+        "width": 320,
+        "height": 740,
+        "scrollY": 0
+      },
+      "slots": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155
+        }
+      ],
+      "tiles": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 296,
+          "height": 380,
+          "bottom": 664.234375,
+          "right": 308,
+          "scrollHeight": 378,
+          "clientHeight": 378
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        }
+      ],
+      "active": {
+        "x": 12,
+        "y": 284.234375,
+        "width": 296,
+        "height": 380,
+        "bottom": 664.234375,
+        "right": 308,
+        "heading": {
+          "x": 27,
+          "y": 373.234375,
+          "width": 266,
+          "height": 72,
+          "bottom": 445.234375,
+          "right": 293
+        },
+        "objectives": {
+          "x": 27,
+          "y": 457.234375,
+          "width": 266,
+          "height": 117.984375,
+          "bottom": 575.21875,
+          "right": 293
+        },
+        "items": [
+          {
+            "x": 27,
+            "y": 457.234375,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 498.828125,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 505.828125,
+            "width": 266,
+            "height": 20.796875,
+            "bottom": 526.625,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 533.625,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 575.21875,
+            "right": 293
+          }
+        ],
+        "shadow": "rgba(140, 202, 215, 0.3) 0px 0px 0px 1px, rgba(11, 60, 93, 0.08) 0px 10px 30px 0px, rgba(8, 145, 178, 0.15) 0px 0px 26px 0px"
+      }
+    },
+    {
+      "phase": "deep-link-mod-01",
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "page": {
+        "width": 320,
+        "height": 740,
+        "scrollY": 0
+      },
+      "slots": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155
+        }
+      ],
+      "tiles": [
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 296,
+          "height": 380,
+          "bottom": 664.234375,
+          "right": 308,
+          "scrollHeight": 378,
+          "clientHeight": 378
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        }
+      ],
+      "active": {
+        "x": 12,
+        "y": 284.234375,
+        "width": 296,
+        "height": 380,
+        "bottom": 664.234375,
+        "right": 308,
+        "heading": {
+          "x": 27,
+          "y": 362.84375,
+          "width": 266,
+          "height": 72,
+          "bottom": 434.84375,
+          "right": 293
+        },
+        "objectives": {
+          "x": 27,
+          "y": 446.84375,
+          "width": 266,
+          "height": 138.78125,
+          "bottom": 585.625,
+          "right": 293
+        },
+        "items": [
+          {
+            "x": 27,
+            "y": 446.84375,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 488.4375,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 495.4375,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 537.03125,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 544.03125,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 585.625,
+            "right": 293
+          }
+        ],
+        "shadow": "rgba(140, 202, 215, 0.3) 0px 0px 0px 1px, rgba(11, 60, 93, 0.08) 0px 10px 30px 0px, rgba(8, 145, 178, 0.15) 0px 0px 26px 0px"
+      }
+    },
+    {
+      "phase": "deep-link-mod-02",
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "page": {
+        "width": 320,
+        "height": 740,
+        "scrollY": 0
+      },
+      "slots": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155
+        }
+      ],
+      "tiles": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 296,
+          "height": 380,
+          "bottom": 664.234375,
+          "right": 308,
+          "scrollHeight": 378,
+          "clientHeight": 378
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        }
+      ],
+      "active": {
+        "x": 12,
+        "y": 284.234375,
+        "width": 296,
+        "height": 380,
+        "bottom": 664.234375,
+        "right": 308,
+        "heading": {
+          "x": 27,
+          "y": 373.234375,
+          "width": 266,
+          "height": 72,
+          "bottom": 445.234375,
+          "right": 293
+        },
+        "objectives": {
+          "x": 27,
+          "y": 457.234375,
+          "width": 266,
+          "height": 117.984375,
+          "bottom": 575.21875,
+          "right": 293
+        },
+        "items": [
+          {
+            "x": 27,
+            "y": 457.234375,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 498.828125,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 505.828125,
+            "width": 266,
+            "height": 20.796875,
+            "bottom": 526.625,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 533.625,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 575.21875,
+            "right": 293
+          }
+        ],
+        "shadow": "rgba(140, 202, 215, 0.3) 0px 0px 0px 1px, rgba(11, 60, 93, 0.08) 0px 10px 30px 0px, rgba(8, 145, 178, 0.15) 0px 0px 26px 0px"
+      }
+    },
+    {
+      "phase": "deep-link-mod-03",
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "page": {
+        "width": 320,
+        "height": 740,
+        "scrollY": 0
+      },
+      "slots": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155
+        }
+      ],
+      "tiles": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 296,
+          "height": 380,
+          "bottom": 664.234375,
+          "right": 308,
+          "scrollHeight": 378,
+          "clientHeight": 378
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        }
+      ],
+      "active": {
+        "x": 12,
+        "y": 284.234375,
+        "width": 296,
+        "height": 380,
+        "bottom": 664.234375,
+        "right": 308,
+        "heading": {
+          "x": 27,
+          "y": 373.234375,
+          "width": 266,
+          "height": 72,
+          "bottom": 445.234375,
+          "right": 293
+        },
+        "objectives": {
+          "x": 27,
+          "y": 457.234375,
+          "width": 266,
+          "height": 117.984375,
+          "bottom": 575.21875,
+          "right": 293
+        },
+        "items": [
+          {
+            "x": 27,
+            "y": 457.234375,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 498.828125,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 505.828125,
+            "width": 266,
+            "height": 20.796875,
+            "bottom": 526.625,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 533.625,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 575.21875,
+            "right": 293
+          }
+        ],
+        "shadow": "rgba(140, 202, 215, 0.3) 0px 0px 0px 1px, rgba(11, 60, 93, 0.08) 0px 10px 30px 0px, rgba(8, 145, 178, 0.15) 0px 0px 26px 0px"
+      }
+    },
+    {
+      "phase": "deep-link-mod-04",
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "page": {
+        "width": 320,
+        "height": 740,
+        "scrollY": 0
+      },
+      "slots": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308
+        },
+        {
+          "x": 12,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 155
+        }
+      ],
+      "tiles": [
+        {
+          "x": 165,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 308,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 469.234375,
+          "right": 155,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 165,
+          "y": 479.234375,
+          "width": 143,
+          "height": 185,
+          "bottom": 664.234375,
+          "right": 308,
+          "scrollHeight": 183,
+          "clientHeight": 183
+        },
+        {
+          "x": 12,
+          "y": 284.234375,
+          "width": 296,
+          "height": 380,
+          "bottom": 664.234375,
+          "right": 308,
+          "scrollHeight": 378,
+          "clientHeight": 378
+        }
+      ],
+      "active": {
+        "x": 12,
+        "y": 284.234375,
+        "width": 296,
+        "height": 380,
+        "bottom": 664.234375,
+        "right": 308,
+        "heading": {
+          "x": 27,
+          "y": 362.84375,
+          "width": 266,
+          "height": 72,
+          "bottom": 434.84375,
+          "right": 293
+        },
+        "objectives": {
+          "x": 27,
+          "y": 446.84375,
+          "width": 266,
+          "height": 138.78125,
+          "bottom": 585.625,
+          "right": 293
+        },
+        "items": [
+          {
+            "x": 27,
+            "y": 446.84375,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 488.4375,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 495.4375,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 537.03125,
+            "right": 293
+          },
+          {
+            "x": 27,
+            "y": 544.03125,
+            "width": 266,
+            "height": 41.59375,
+            "bottom": 585.625,
+            "right": 293
+          }
+        ],
+        "shadow": "rgba(140, 202, 215, 0.3) 0px 0px 0px 1px, rgba(11, 60, 93, 0.08) 0px 10px 30px 0px, rgba(8, 145, 178, 0.15) 0px 0px 26px 0px"
+      }
+    }
+  ],
+  "accessibility": [],
+  "errors": []
+}
