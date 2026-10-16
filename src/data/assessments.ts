@@ -1,60 +1,73 @@
-import type { AssessmentDefinition, Question, SourceReference } from '../../docs/contracts';
+import type { AssessmentDefinition, Question } from '../../docs/contracts';
 import type { TrainingCatalog } from '../domain/models';
-import { elements, lessons, modules } from './catalog';
-import { metaFor, sources } from './course-extension';
+import { elements, lessons, modules, objectiveId } from './catalog';
+import { contentVersion, metaFor, sources } from './course-extension';
+import type { SourceKey } from './course-extension';
 
-// All items are draft. Parallel wording is illustrative, not psychometric equivalence.
-type Fact = { pre: string; post: string; answer: string; wrong: string; reason: string; source: SourceReference };
-const fact = (pre: string, post: string, answer: string, wrong: string, reason: string, source: SourceReference): Fact => ({ pre, post, answer, wrong, reason, source });
-export const facts: readonly Fact[] = [
-  fact('ما نقطة البداية المناسبة لاختيار أداة تعليمية؟', 'قبل اختيار تطبيق لنشاط، ما الذي تحدده أولًا؟', 'هدف التعلم', 'شهرة التطبيق وحدها', 'يسترشد اختيار الأداة بهدف التعلم واحتياجات الموقف.', sources.theory),
-  fact('ما الدليل المناسب على أداء المتعلم؟', 'كيف تراجع تحقق هدف يطلب تفسير مفهوم؟', 'مهمة يفسر فيها المفهوم', 'مجرد فتح الصفحة', 'ينبغي أن يرتبط دليل الأداء بالهدف المقصود.', sources.theory),
-  fact('كيف تختار موردًا رقميًا؟', 'أي معيار يساند انتقاء مورد للتعلم؟', 'ملاءمته للهدف وإمكان الوصول إليه', 'كثرة زخارفه فقط', 'المورد ينبغي أن يناسب الهدف والمتعلمين.', sources.theory),
-  fact('ماذا تفعل بعد ملاحظة صعوبة في نشاط؟', 'عندما تكشف الاستجابات التباسًا، ما الإجراء المناسب؟', 'مراجعة النشاط وتقديم دعم', 'تجاهل الاستجابات', 'تفيد مراجعة الممارسة في توجيه الدعم والتحسين.', sources.theory),
-  fact('ماذا يعني هدف قابل للملاحظة؟', 'أي صياغة تساعد على جمع دليل للأداء؟', 'أن يطبق المتعلم إجراءً محددًا', 'أن يتعلم كل شيء دون تحديد', 'يسهل وصف أداء محدد ملاحظة ما ينجزه المتعلم.', sources.theory),
-  fact('ما وظيفة مفتاح الإجابة في Google Forms؟', 'لربط السؤال بإجابته ودرجته، ما الذي تُعدّه؟', 'الإجابة الصحيحة والنقاط', 'لون خلفية النموذج فقط', 'يربط مفتاح الإجابة البديل الصحيح بنقاط السؤال.', sources.forms),
-  fact('ما دور التغذية الراجعة في اختبار Forms؟', 'ماذا تضيف لتوضيح سبب الإجابة للمتعلم؟', 'تفسير مرتبط بالإجابة', 'ملف غير متعلق بالسؤال', 'يمكن إضافة تفسير يساعد على مراجعة الإجابة.', sources.forms),
-  fact('ما طريقة مناسبة لمراجعة التقدير في Forms؟', 'كيف تراجع إجابات أفراد أو أسئلة بعينها؟', 'فحص الاستجابات والدرجات', 'الاعتماد على اسم النموذج', 'يمكن مراجعة الاستجابات وإضافة تغذية راجعة وحفظ التقدير.', sources.formsReview),
-  fact('كيف تتعامل مع إعلان نتائج Forms؟', 'إذا احتاج التقدير مراجعة، فما الخيار المناسب؟', 'تأجيل إعلان الدرجات للمراجعة', 'افتراض أن الإعلان الفوري إلزامي', 'تتيح الإعدادات إعلان الدرجات فورًا أو بعد المراجعة.', sources.formsReview),
-  fact('أين يمكن مشاركة مورد في Teams؟', 'كيف تتيح ملفًا للمشاركين في سياق مناسب؟', 'في محادثة أو قناة مناسبة', 'في رسالة بلا مستلمين', 'يمكن إرسال الملف أو رابطه في محادثة أو قناة.', sources.teams),
-  fact('ماذا تراجع قبل مشاركة ملف في Teams؟', 'ما الذي يحدد إمكان عرض ملف أو تعديله؟', 'صلاحيات الوصول للمشاركين', 'لون أيقونة الملف', 'ينبغي مراجعة الأشخاص المخولين ونوع صلاحيتهم.', sources.teams),
-  fact('ما استخدام محادثة اجتماع Teams؟', 'كيف تتبادل رابطًا أثناء الاجتماع دون مقاطعة المتحدث؟', 'المشاركة في محادثة الاجتماع', 'مقاطعة المتحدث لقراءة الرابط', 'تدعم المحادثة تبادل المعلومات والروابط أثناء الاجتماع.', sources.teamsChat),
-  fact('كيف تضيف PDF إلى Reference Manager؟', 'أي إجراء يتيح إدخال ملف مرجعي إلى المكتبة؟', 'سحب الملف وإفلاته في Reference Manager', 'تغيير عنوان مستند Word فقط', 'يمكن إضافة ملفات PDF بالسحب والإفلات في Reference Manager.', sources.mendeley),
-  fact('ماذا تفعل بعد إضافة مرجع؟', 'قبل استخدام بيانات مرجع مستورد، ما الخطوة المناسبة؟', 'مراجعة صحة بياناته', 'افتراض صحة كل حقل دائمًا', 'تبقى مراجعة البيانات المرجعية مهمة قبل استخدامها في الكتابة.', sources.mendeley),
-  fact('ما وظيفة Mendeley Cite؟', 'كيف توظف مكتبة Mendeley داخل Word؟', 'إدراج استشهادات وقائمة مراجع', 'إدارة اجتماع فيديو', 'يتيح Cite إدراج الاستشهادات وتغيير نمطها وتوليد قائمة المراجع في Word.', sources.cite),
-];
-function mcq(id: string, f: Fact, prompt: string, order: number): Question {
-  // Alternate placement by stable order; no render-time randomness.
-  const options = [{ id: `${id}-yes`, text: f.answer }, { id: `${id}-no`, text: f.wrong }];
-  return { id, prompt, order, weight: 1, type: 'single-choice', options: order % 2 ? options : [...options].reverse(), assessmentVersion: '0.3.0-draft', editorial: metaFor(f.source), answerKey: { correctOptionId: `${id}-yes`, rationale: f.reason, sourceIds: [f.source.id] } };
+interface SkillItem {
+  lessonId: string; objective: 1 | 2; elementOrders: number[]; source: SourceKey;
+  pre: string; post: string; correct: string; distractors: readonly [string, string]; rationale: string;
 }
-function tf(id: string, prompt: string, correct: boolean, source: SourceReference, order: number): Question {
-  return { id, prompt, order, weight: 1, type: 'true-false', options: [{ id: 'true', text: 'صح' }, { id: 'false', text: 'خطأ' }], assessmentVersion: '0.3.0-draft', editorial: metaFor(source), answerKey: { correctOptionId: correct ? 'true' : 'false', rationale: correct ? 'العبارة تتفق مع الاستخدام التعليمي الموضح في المرجع.' : 'العبارة لا تتفق مع الاستخدام الموضح؛ يلزم الانتباه للهدف والمراجعة والإعدادات الفعلية.', sourceIds: [source.id] } };
-}
-const statements: readonly [string, string, boolean, SourceReference][] = [
-  ['زيارة الصفحة وحدها تثبت فهم المتعلم.', 'مجرد فتح مورد رقمي يكفي للحكم على فهمه.', false, sources.theory],
-  ['يمكن تأجيل إعلان درجات Forms للمراجعة.', 'الإعلان الفوري ليس الخيار الوحيد لدرجات Forms.', true, sources.formsReview],
-  ['صلاحيات مشاركة الملف تحدد من يستطيع تعديله.', 'قد يختلف السماح بعرض الملف عن السماح بتعديله.', true, sources.teams],
-  ['Mendeley Cite مخصص لإجراء اجتماعات الفيديو.', 'إجراء مكالمات الفيديو هو الوظيفة الأساسية لـCite.', false, sources.cite],
-  ['يمكن إدراج استشهادات من المكتبة داخل Word باستخدام Cite.', 'توليد قائمة مراجع من استخدامات Mendeley Cite في Word.', true, sources.cite],
+// Original professional scenarios, with plausible alternatives. All remain drafts.
+export const skills: readonly SkillItem[] = [
+  { lessonId: 'les-01-01', objective: 1, elementOrders: [1, 2], source: 'theory', pre: 'هدف اللقاء تفسير حالة تعليمية. أي استخدام يقدم دليلًا أقرب إلى هذا الهدف؟', post: 'تريد مراجعة قدرة الطلاب على تفسير حالة. أي مهمة رقمية تختار؟', correct: 'جمع تفسير قصير للحالة ومناقشة تبريراته', distractors: ['عرض شرح للحالة ثم تسجيل عدد مرات فتحه', 'توزيع ملف الحالة ثم رصد مدة تصفحه'], rationale: 'التفسير المنتج دليل أقرب للهدف؛ فتح المورد أو وقت تصفحه لا يبين جودة التفسير.' },
+  { lessonId: 'les-01-01', objective: 2, elementOrders: [3, 4, 5], source: 'theory', pre: 'عند تخطيط نشاط رقمي لطلاب تختلف أجهزتهم، أي ترتيب تختار؟', post: 'أي خطة تربط اختيار التقنية بمتطلبات التعلم وإمكان الوصول؟', correct: 'تحديد الهدف والمهمة ثم اختيار أداة متاحة وبديل مناسب', distractors: ['اختيار أداة شائعة ثم نقل المحاضرة إليها كما هي', 'تحديد الأداة بحسب جمال عرضها ثم كتابة هدف عام'], rationale: 'يبدأ التخطيط بالأداء والمهمة، مع فحص الإتاحة والدعم؛ اختيار الأداة قبل ذلك قد يفصلها عن الهدف.' },
+  { lessonId: 'les-01-02', objective: 1, elementOrders: [1], source: 'theory', pre: 'تختار موردًا لتفسير مفهوم على هواتف واتصال محدود. أي معيار ترجح؟', post: 'أي سبب يدعم اختيار رسم نصي واضح بدل فيديو طويل لمفهوم محدود؟', correct: 'صلته بالهدف ووضوحه وإمكان الوصول إليه', distractors: ['تنوع مؤثراته ولو تعذر تشغيله على بعض الهواتف', 'حداثة تصميمه ولو لم يعالج المفهوم المقصود'], rationale: 'تُراجع صلة المورد بالمهمة ووضوحه وإتاحته؛ الإخراج الفني أو الحداثة وحدهما لا يحققان ذلك.' },
+  { lessonId: 'les-01-02', objective: 2, elementOrders: [2, 3], source: 'theory', pre: 'تظهر التفسيرات خلطًا متكررًا بين مفهومين. ما المتابعة الأنسب؟', post: 'بعد رصد التباس في استجابات النشاط، أي تعديل يخدم تعلم المفهوم؟', correct: 'مناقشة مثالين متقابلين ثم طلب تفسير جديد', distractors: ['تكرار المورد نفسه ثم الاكتفاء بإحصاء الزيارات', 'تغيير شكل العرض ثم مقارنة مدة البقاء في الصفحة'], rationale: 'المتابعة تعالج موضع الخلط وتجمع دليلًا جديدًا؛ الزيارة أو مدة العرض لا تحددان الفهم.' },
+  { lessonId: 'les-01-03', objective: 1, elementOrders: [1], source: 'theory', pre: 'أي هدف يتيح ملاحظة أداء محدد في مهمة قصيرة؟', post: 'أي صياغة تصلح لبناء دليل تقويم مباشر حول مشاركة ملف؟', correct: 'يختار صلاحية ملف ويبررها وفق جمهور المهمة', distractors: ['يتعرف إلى مزايا المشاركة خلال عرض توضيحي', 'يكتسب وعيًا واسعًا بأهمية التواصل الإلكتروني'], rationale: 'الاختيار والتبرير أداء يمكن جمعه ومراجعته، بينما التعرف أو الوعي بصيغتهما العامة لا يحددان الدليل المطلوب.' },
+  { lessonId: 'les-01-03', objective: 2, elementOrders: [2, 3], source: 'theory', pre: 'الهدف تبرير قرار، لكن النشاط يطلب نسخ تعريف. ماذا تعدل؟', post: 'أي إجراء يحسن اتساق نشاط رقمي مع هدف يتطلب تبرير اختيار؟', correct: 'إضافة موقف واختيار مع تبرير وفق معيار واضح', distractors: ['إضافة تعريف أطول ثم طلب نسخه في النموذج', 'زيادة شرائح الشرح ثم رصد مرات مشاهدة الطالب'], rationale: 'المهمة المقيسة ينبغي أن تستدعي التبرير نفسه، لا النسخ أو المشاهدة بوصفهما بديلًا عن الأداء.' },
+  { lessonId: 'les-02-01', objective: 1, elementOrders: [1], source: 'forms', pre: 'في سؤال اختيار واحد عن مورد تعليمي، أي بناء يحسن المفردة؟', post: 'أي صياغة تلائم سؤال Forms لاختيار قرار تعليمي واحد؟', correct: 'موقف محدد وبدائل متجانسة مع إجابة مقصودة واحدة', distractors: ['موقف يتضمن قرارين مستقلين وبديل يجمعهما معًا', 'موقف عام وبديل صحيح أطول يكشف التفسير كله'], rationale: 'يقل الالتباس حين يقيس السؤال قرارًا محددًا، ولا تكشف صياغة البدائل مفتاحه دون فهم المهارة.' },
+  { lessonId: 'les-02-01', objective: 2, elementOrders: [2, 3], source: 'forms', pre: 'بعد تحويل Forms إلى اختبار، ما الذي تتحقق منه في كل مفردة؟', post: 'أعطى النموذج تقديرًا لا يوافق المقصود. ما المراجعة المباشرة؟', correct: 'مفتاح البديل ونقاط السؤال وتفسير التغذية الراجعة', distractors: ['مطلوبية السؤال وتسلسله مع إبقاء المفتاح كما هو', 'توقيت إعلان الدرجة وملخص الردود مع إبقاء النقاط'], rationale: 'الدرجة تعتمد على إعداد مفتاح السؤال ونقاطه؛ والتفسير المرتبط بالخطأ يدعم المراجعة، لا مجرد تغيير العرض.' },
+  { lessonId: 'les-02-02', objective: 1, elementOrders: [1, 2], source: 'formsReview', pre: 'تحتاج بعض الإجابات تقديرًا يدويًا. ما إجراء إعلان الدرجات الأنسب؟', post: 'قبل نشر درجات إجابات تحتاج مراجعة، أي إجراء تختار؟', correct: 'تأجيل الإعلان ومراجعة التقدير وحفظ التعليقات', distractors: ['إعلان التقدير فورًا ثم اعتبار كل خطأ تقصيرًا', 'اعتماد المتوسط وحده دون مراجعة الأسئلة الصعبة'], rationale: 'تأجيل الإعلان يتيح مراجعة التقدير وتقديم دعم؛ لا يكفي المتوسط لتفسير خطأ سؤال محدد.' },
+  { lessonId: 'les-02-02', objective: 2, elementOrders: [3], source: 'formsPrivacy', pre: 'تجمع ردودًا فردية في Forms. أي مشاركة تقلل كشفها دون حاجة؟', post: 'أي إعداد تراجعه قبل توزيع نموذج يتضمن ردودًا خاصة؟', correct: 'جمهور رابط المجيب وإيقاف ملخص الردود غير المقصود', distractors: ['توسيع صلاحية تحرير النموذج لجميع المجيبين', 'إظهار ملخص الردود للجميع لتسهيل قراءة النتائج'], rationale: 'وصول المجيب يختلف عن تحرير النموذج، وإظهار الملخص قد يكشف نصوص الردود؛ راجع الحاجة والجمهور قبل النشر.' },
+  { lessonId: 'les-03-01', objective: 1, elementOrders: [1], source: 'teamsChannels', pre: 'تحتاج نقاشًا مستمرًا لوحدة داخل فريق Teams قائم. أي مساحة تفحص أولًا؟', post: 'أين تنظم حوارًا مستمرًا حول موضوع يخص أعضاء الفريق المخولين؟', correct: 'قناة موضوعية بعد التحقق من عضويتها وإتاحتها', distractors: ['محادثة فردية ثم افتراض أن جميع الأعضاء يرونها', 'قناة اسمها «خاص» دون مراجعة نوعها أو جمهورها'], rationale: 'القناة تنظم موضوعًا داخل الفريق، لكن جمهورها تحدده العضوية والنوع والسياسات، لا الاسم فقط.' },
+  { lessonId: 'les-03-01', objective: 2, elementOrders: [2, 3], source: 'teams', pre: 'تشارك ملف قراءة لا يحتاج تعديلًا في Teams. ما الإجراء المناسب؟', post: 'كيف تجهز موردًا للقراءة قبل نقاش في Teams؟', correct: 'تحديد المخولين بالعرض وإرسال رابط مع تعليمات المهمة', distractors: ['منح التعديل لكل من يحصل على الرابط دون فحص', 'إرسال الرابط وحده ثم افتراض أن الجميع يستطيع فتحه'], rationale: 'تحدد الصلاحية وفق المهمة ويُختبر الوصول المقصود؛ وجود الرابط وحده لا يضمن الإتاحة أو يوضح المطلوب.' },
+  { lessonId: 'les-03-02', objective: 1, elementOrders: [1, 2], source: 'teamsChat', pre: 'تريد جمع مثال أثناء شرح في اجتماع Teams تتاح فيه المحادثة. ماذا تفعل؟', post: 'أي استخدام للمحادثة يساند نقاش الاجتماع دون مقاطعة الشرح؟', correct: 'طلب مثال مرتبط بالسؤال ثم تخصيص وقت لمراجعته', distractors: ['نشر موارد متعددة بلا بيان صلتها بالسؤال', 'طلب رسائل عامة ثم اعتبار كثرتها دليل فهم'], rationale: 'المهمة المحددة والمراجعة المخططة تجعل المحادثة تخدم الهدف، بينما كثرة الرسائل لا تبين جودة التعلم.' },
+  { lessonId: 'les-03-02', objective: 2, elementOrders: [2, 3], source: 'teamsChat', pre: 'لم يجد مشارك محادثة اجتماع Teams بعد انتهائه. ما التفسير الذي تفحصه؟', post: 'أي متابعة تناسب تعذر وصول ضيف إلى محادثة الاجتماع؟', correct: 'فحص العضوية وإعدادات المنظم والسياسة ومسار متابعة مصرح', distractors: ['افتراض عطل لدى الضيف لأن الحضور يضمن وصولًا دائمًا', 'توزيع جميع الملفات علنًا دون مراجعة الجمهور'], rationale: 'وصول المحادثة قد يختلف قبل الاجتماع وبعده؛ تراجع الإعدادات والعضوية ثم تقدم بديلًا مناسبًا دون توسيع عشوائي.' },
+  { lessonId: 'les-04-01', objective: 1, elementOrders: [1, 2], source: 'mendeley', pre: 'أضفت PDF في Reference Manager وظهرت سنة خاطئة. ماذا تفعل؟', post: 'أي خطوة تتبع إضافة ملف مرجعي تلقائيًا إلى المكتبة؟', correct: 'مقارنة حقول السجل بالمصدر وتصحيح البيانات', distractors: ['تغيير اسم PDF ثم اعتبار سجل المرجع صحيحًا', 'تبديل نمط التوثيق مع إبقاء السنة الخاطئة'], rationale: 'البيانات المستخرجة تحتاج مراجعة؛ تغيير اسم الملف أو النمط لا يصلح سنة خاطئة في السجل.' },
+  { lessonId: 'les-04-01', objective: 2, elementOrders: [3], source: 'mendeleyOrganize', pre: 'أزلت collection من Reference Manager. أين تبحث عن مراجعها؟', post: 'مرجع أضيف لمجموعة ثم حُذفت المجموعة. ما الخطوة المناسبة لاسترجاعه؟', correct: 'البحث في All References بالعنوان أو المؤلف', distractors: ['إعادة استيراد الملفات لأن حذف المجموعة يحذف السجلات', 'تغيير نمط Cite لأن المجموعة تحدد مكان تخزين المرجع'], rationale: 'المجموعة تصنف المرجع ولا تنقله خارج All References؛ حذف المجموعة يختلف عن حذف سجل المرجع.' },
+  { lessonId: 'les-04-02', objective: 1, elementOrders: [1], source: 'cite', pre: 'تريد إدراج استشهاد من مكتبتك أثناء الكتابة في Word. أي أداة تختار؟', post: 'أي إجراء يربط فكرة في مستند Word بمرجع محفوظ في Mendeley؟', correct: 'البحث عن المرجع وإدراجه عبر إضافة Mendeley Cite', distractors: ['إنشاء collection في Reference Manager دون إدراج استشهاد', 'تغيير اسم PDF في المكتبة دون ربطه بالمستند'], rationale: 'Cite يدرج الاستشهاد في Word؛ تنظيم المكتبة في Reference Manager لا يضيف استشهادًا تلقائيًا للمستند.' },
+  { lessonId: 'les-04-02', objective: 2, elementOrders: [2, 3], source: 'cite', pre: 'بيانات المصدر صحيحة لكن شكل الاستشهاد يخالف متطلبات الجهة. ماذا تراجع؟', post: 'أي إجراء يناسب اختلاف شكل التوثيق مع صحة بيانات المرجع؟', correct: 'اختيار النمط المطلوب ومراجعة الاستشهاد والقائمة', distractors: ['تغيير سنة المرجع لتشبه أمثلة النمط المطلوب', 'إضافة كل المكتبة للقائمة دون مراجعة الاستشهادات'], rationale: 'النمط يحدد العرض، أما بيانات المرجع فتصف المصدر؛ لا تغير بيانات صحيحة لعلاج اختلاف الشكل.' },
 ];
+export interface QuestionAlignment { objectiveIds: readonly string[]; elementIds: readonly string[]; review: 'editorial-draft'; }
+export const questionAlignment: Record<string, QuestionAlignment> = {};
 const questions: Question[] = [];
 const assessments: AssessmentDefinition[] = [];
+function align(id: string, skill: SkillItem) {
+  questionAlignment[id] = { objectiveIds: [objectiveId(skill.lessonId, skill.objective)], elementIds: skill.elementOrders.map(order => `el-${skill.lessonId.slice(4)}-0${order}`), review: 'editorial-draft' };
+}
+function mcq(id: string, skill: SkillItem, prompt: string, order: number): Question {
+  const options = [{ id: `${id}-a`, text: skill.correct }, ...skill.distractors.map((text, i) => ({ id: `${id}-${i === 0 ? 'b' : 'c'}`, text }))];
+  const offset = (order + skills.indexOf(skill)) % options.length;
+  align(id, skill);
+  return { id, prompt, order, weight: 1, type: 'single-choice', options: [...options.slice(offset), ...options.slice(0, offset)], assessmentVersion: contentVersion,
+    editorial: { ...metaFor(sources[skill.source]), assessmentVersion: contentVersion }, answerKey: { correctOptionId: `${id}-a`, rationale: skill.rationale, sourceIds: [sources[skill.source].id] } };
+}
+const statements = [
+  { pre: 'تكفي زيادة عدد الرسائل للحكم على جودة مشاركة المتعلم.', post: 'يقاس فهم المشاركين في النقاش بعدد رسائلهم وحده.', correct: false, skill: 3, rationale: 'يراجع محتوى المشاركة وصلته بالهدف؛ العدد وحده لا يبين صحة التفسير أو عمق التبرير.' },
+  { pre: 'قد يكشف ملخص ردود Forms نصوص الإجابات لمن يستطيعون الإجابة.', post: 'ينبغي مراجعة خصوصية الردود قبل إتاحة ملخص Forms للمجيبين.', correct: true, skill: 9, rationale: 'إتاحة الملخص قد تعرض نصوص الردود أو الرسوم؛ لا تفعله لمجرد تسهيل عرض بيانات فردية.' },
+  { pre: 'حضور اجتماع Teams يضمن وصولًا دائمًا إلى محادثته لكل ضيف.', post: 'يحتفظ كل من حضر اجتماع Teams بوصول دائم إلى محادثته.', correct: false, skill: 13, rationale: 'قد يقيد الوصول بحسب العضوية وإعدادات المنظم وسياسات المؤسسة؛ الحضور وحده ليس ضمانًا.' },
+  { pre: 'حذف collection في Reference Manager يحذف تلقائيًا سجلات مراجعها من All References.', post: 'إزالة مجموعة تنظيمية تعني حذف مراجعها نفسها من مكتبة Reference Manager.', correct: false, skill: 15, rationale: 'تعمل المجموعة كتصنيف؛ تبقى السجلات في All References عند حذف المجموعة، بخلاف حذف المرجع نفسه.' },
+  { pre: 'يمكن أن يولد Cite قائمة للمراجع المستشهد بها في مستند Word.', post: 'إدراج الاستشهادات وإنشاء قائمتها في Word من وظائف Mendeley Cite.', correct: true, skill: 17, rationale: 'Cite يدعم إدراج الاستشهادات والقائمة؛ ويظل التحقق من بيانات المراجع وملاءمة الاستشهاد مسؤولية الكاتب.' },
+] as const;
 function addDefinition(id: string, title: string, scope: AssessmentDefinition['scope'], items: Question[]) {
   questions.push(...items);
-  assessments.push({ id, title, purpose: scope.kind === 'pre' ? 'تحديد أهلية المشاركة وفق شروط الدراسة' : scope.kind === 'post' ? 'تقدير الأداء بعد إكمال المسار' : scope.kind === 'activity' ? 'ممارسة المهارة والحصول على تغذية راجعة' : 'مراجعة تعلم الدرس وتحديد الانتقال إلى التالي', scope, contentVersion: '0.3.0-draft', assessmentVersion: '0.3.0-draft', editorial: { ...metaFor(...Object.values(sources)), assessmentVersion: '0.3.0-draft' }, questionIds: items.map(q => q.id), expectedTypes: [...new Set(items.map(q => q.type))], timeLimitSeconds: null, attemptLimit: null, submitRequiresAllAnswers: true, feedback: ['pre', 'post'].includes(scope.kind) ? 'score-only' : 'after-submit-educational' });
+  const refs = [...new Map(items.flatMap(q => q.editorial.sources).map(s => [s.id, s])).values()];
+  assessments.push({ id, title, purpose: scope.kind === 'pre' ? 'تحديد أهلية المشاركة وفق شروط الدراسة' : scope.kind === 'post' ? 'تقدير الأداء بعد إكمال المسار' : scope.kind === 'activity' ? 'تطبيق قرارات الدرس في مواقف مهنية والحصول على تغذية راجعة' : 'مراجعة هدفي الدرس وتحديد الانتقال إلى التالي', scope, contentVersion, assessmentVersion: contentVersion, editorial: { ...metaFor(...refs), assessmentVersion: contentVersion }, questionIds: items.map(q => q.id), expectedTypes: [...new Set(items.map(q => q.type))], timeLimitSeconds: null, attemptLimit: null, submitRequiresAllAnswers: true, feedback: ['pre', 'post'].includes(scope.kind) ? 'score-only' : 'after-submit-educational' });
 }
+const globalSkills = [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 17];
 for (const kind of ['pre', 'post'] as const) {
-  const items = facts.map((f, i) => mcq(`${kind}-q-${i + 1}`, f, kind === 'pre' ? f.pre : f.post, i + 1));
-  items.push(...statements.map(([pre, post, correct, source], i) => tf(`${kind}-q-${16 + i}`, kind === 'pre' ? pre : post, correct, source, 16 + i)));
+  const items = globalSkills.map((index, i) => { const skill = skills[index]!; return mcq(`${kind}-q-${i + 1}`, skill, skill[kind], i + 1); });
+  items.push(...statements.map((item, i): Question => {
+    const id = `${kind}-q-${16 + i}`, skill = skills[item.skill]!; align(id, skill);
+    return { id, prompt: item[kind], order: 16 + i, weight: 1, type: 'true-false', options: [{ id: 'true', text: 'صح' }, { id: 'false', text: 'خطأ' }], assessmentVersion: contentVersion,
+      editorial: { ...metaFor(sources[skill.source]), assessmentVersion: contentVersion }, answerKey: { correctOptionId: item.correct ? 'true' : 'false', rationale: item.rationale, sourceIds: [sources[skill.source].id] } };
+  }));
   addDefinition(kind, kind === 'pre' ? 'التقويم القبلي' : 'التقويم البعدي', { kind }, items);
 }
-const factPairs = [[0, 1], [2, 3], [4, 0], [5, 6], [7, 8], [9, 10], [11, 9], [12, 13], [14, 13]];
-lessons.forEach((lesson, index) => {
-  for (const kind of ['activity', 'self'] as const) {
-    const id = kind === 'activity' ? lesson.activityAssessmentId : lesson.selfAssessmentId;
-    const items = factPairs[index]!.map((factIndex, i) => { const f = facts[factIndex]!; return mcq(`${id}-q-${i + 1}`, f, kind === 'activity' ? `في تطبيقك للدرس: ${f.pre}` : f.post, i + 1); });
-    addDefinition(id, kind === 'activity' ? 'نشاط الدرس' : 'التقويم الذاتي', { kind, moduleId: lesson.moduleId, lessonId: lesson.id }, items);
-  }
-});
-export const fullCatalog: TrainingCatalog = { version: '0.3.0-draft', modules, lessons, elements, assessments, questions };
+for (const lesson of lessons) for (const kind of ['activity', 'self'] as const) {
+  const id = kind === 'activity' ? lesson.activityAssessmentId : lesson.selfAssessmentId;
+  const items = skills.filter(skill => skill.lessonId === lesson.id).map((skill, i) => mcq(`${id}-q-${i + 1}`, skill, kind === 'activity' ? `موقف للتطبيق: ${skill.pre}` : skill.post, i + 1));
+  addDefinition(id, kind === 'activity' ? 'نشاط الدرس' : 'التقويم الذاتي', { kind, moduleId: lesson.moduleId, lessonId: lesson.id }, items);
+}
+export const fullCatalog: TrainingCatalog = { version: contentVersion, modules, lessons, elements, assessments, questions };
