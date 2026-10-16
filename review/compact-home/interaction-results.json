@@ -1,0 +1,22 @@
+[
+  {
+    "viewport": "1366x768",
+    "cardHover": {
+      "initial": {
+        "color": "rgb(255, 255, 255)",
+        "shadow": "rgba(22, 61, 82, 0.027) 0px 3px 12px 0px"
+      },
+      "hover": {
+        "color": "rgb(237, 248, 250)",
+        "shadow": "rgba(181, 223, 231, 0.4) 0px 0px 0px 1px, rgba(8, 145, 178, 0.15) 0px 0px 24px 0px"
+      }
+    },
+    "reducedMotion": "passed",
+    "keyboardAssessmentMenu": "passed"
+  },
+  {
+    "viewport": "390x844",
+    "mobileDrawerTouchAndFocus": "passed",
+    "footerLoginAndLogout": "passed"
+  }
+]

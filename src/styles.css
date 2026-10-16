@@ -518,3 +518,58 @@ progress::-moz-progress-bar { background: var(--accent); border-radius: 8px; }
   .assessment-result .button-row > .button:first-child,
   .assessment-result .button-row > .button:last-child:nth-child(4) { grid-column: 1 / -1; }
 }
+
+/* Requested compact header and home, retaining full text and natural reflow. */
+.brand-header { grid-template-columns: 52px minmax(0, 1fr) 52px; gap: 20px; padding-block: 9px; }
+.environment-name { max-inline-size: 940px; margin-inline: auto; font-size: 18px; line-height: 1.65; }
+.brand-mark { inline-size: 42px; block-size: 42px; }
+.navigation-inner { justify-content: center; min-block-size: 44px; }
+.desktop-nav > ul { justify-content: center; gap: 0 30px; }
+.nav-link { min-block-size: 44px; }
+.footer-inner { justify-content: center; gap: 4px 22px; }
+.site-footer { padding-block: 6px; }
+.footer-session, .footer-session .session-control { display: flex; align-items: center; justify-content: center; }
+.home-shell .main-content { display: flex; align-items: center; padding-block: 14px; }
+.home-shell .page-transition { inline-size: 100%; }
+.compact-home { inline-size: 100%; max-inline-size: 900px; margin-inline: auto; text-align: center; }
+.home-welcome { margin-block-end: 12px; }
+.home-welcome h1 { font-size: 26px; line-height: 1.5; }
+.home-welcome > p { color: var(--muted); font-size: 14px; margin-block-start: 3px; }
+.researcher-card { inline-size: min(420px, 100%); margin-inline: auto; display: block; padding: 9px 16px; border-block-start: 3px solid var(--accent); }
+.researcher-card h2 { font-size: 21px; }
+.researcher-card .person-role { font-size: 12px; }
+.supervision-heading { font-size: 16px; margin-block: 8px; }
+.supervisors-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; }
+.supervisor-card { display: block; padding: 11px 16px; }
+.supervisor-card:last-child { grid-column: 1 / -1; inline-size: calc(50% - 8px); justify-self: center; }
+.supervisor-card h3 { font-size: 17px; line-height: 1.6; }
+.person-position { white-space: pre-line; font-size: 13px; line-height: 1.7; margin-block-start: 3px; }
+.person-card { transition: background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease; }
+.person-card h2, .person-card h3 { transition: color 200ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .person-card:hover { background-color: #edf8fa; border-color: #83c2cd; box-shadow: 0 0 0 1px #b5dfe766, 0 0 24px #0891b226; }
+  .person-card:hover h2, .person-card:hover h3 { color: #075e75; }
+}
+@media (max-width: 767px) {
+  .brand-header { grid-template-columns: 32px minmax(0, 1fr) 32px; gap: 9px; padding-block: 6px; }
+  .brand-mark { inline-size: 30px; block-size: 30px; }
+  .brand-mark svg { inline-size: 20px; }
+  .environment-name { font-size: 15px; line-height: 1.7; }
+  .mobile-nav .button { min-inline-size: 44px; padding: 6px; }
+  .footer-inner { flex-direction: row; align-items: center; gap: 0 14px; }
+  .footer-inner > p { flex-basis: 100%; justify-content: center; }
+  .home-shell .footer-inner > p { flex-basis: auto; }
+  .home-shell .site-footer { padding-block: 5px; }
+  .home-shell .main-content { padding-block: 4px; }
+  .home-welcome { margin-block-end: 8px; }
+  .home-welcome h1 { font-size: 23px; }
+  .home-welcome > p { font-size: 13px; }
+  .researcher-card { padding: 6px 12px; }
+  .researcher-card h2 { font-size: 19px; }
+  .researcher-card .person-role { font-size: 11px; }
+  .supervision-heading { font-size: 15px; margin-block: 6px; }
+  .supervisors-grid { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .supervisor-card, .supervisor-card:last-child { grid-column: auto; inline-size: 100%; padding: 6px 12px; }
+  .supervisor-card h3 { font-size: 16px; line-height: 1.55; }
+  .person-position { font-size: 12px; line-height: 1.6; margin-block-start: 2px; }
+}

@@ -21,9 +21,9 @@ function NavigationLink({ item, onNavigate, className = '' }: { item: { to: stri
 
 export function BrandHeader() {
   return <div className="brand-header container">
-    <div className="brand-placeholder" aria-label="موضع شعار جامعة الزقازيق"><span className="brand-mark"><Landmark size={27} aria-hidden="true" /></span><span>موضع شعار<br /><b>الجامعة</b></span></div>
-    <div className="brand-title"><p>جامعة الزقازيق <span>•</span> كلية التربية النوعية</p><Link to="/" className="environment-name">{environmentName}</Link></div>
-    <div className="brand-placeholder" aria-label="موضع شعار الكلية أو القسم"><span className="brand-mark faculty-mark"><GraduationCap size={29} aria-hidden="true" /></span><span>موضع شعار<br /><b>الكلية / القسم</b></span></div>
+    <div className="brand-placeholder" role="img" aria-label="موضع شعار جامعة الزقازيق"><span className="brand-mark"><Landmark size={27} aria-hidden="true" /></span></div>
+    <div className="brand-title"><Link to="/" className="environment-name">{environmentName}</Link></div>
+    <div className="brand-placeholder" role="img" aria-label="موضع شعار الكلية أو القسم"><span className="brand-mark faculty-mark"><GraduationCap size={29} aria-hidden="true" /></span></div>
   </div>;
 }
 
@@ -62,7 +62,7 @@ export function MobileNav() {
   const { catalog, snapshot } = useTraining();
   const preLabel = snapshot.data?.learner.active ? 'متاح' : 'يحتاج تجربة دخول';
   const postLabel = snapshot.data && assessmentAccess(snapshot.data, catalog, 'post').allowed ? 'متاح' : 'مقفل حتى إكمال المسار';
-  return <div className="mobile-nav"><Button variant="ghost" onClick={() => setOpen(true)} aria-haspopup="dialog" aria-expanded={open}><Menu size={21} aria-hidden="true" />قائمة التنقل الرئيسية</Button>
+  return <div className="mobile-nav"><Button variant="ghost" onClick={() => setOpen(true)} aria-haspopup="dialog" aria-expanded={open}><Menu size={21} aria-hidden="true" /><span className="sr-only">قائمة التنقل الرئيسية</span></Button>
     <Drawer open={open} onClose={() => setOpen(false)} title="قائمة التنقل الرئيسية">
       <nav aria-label="التنقل الرئيسي للهاتف" className="drawer-navigation">
         {navigation.slice(0, 3).map(item => <NavigationLink key={item.to} item={item} onNavigate={() => setOpen(false)} />)}
@@ -73,22 +73,27 @@ export function MobileNav() {
   </div>;
 }
 
-export default function AppShell() {
-  const { pathname } = useLocation();
+function SessionControl() {
   const { adapter, snapshot } = useTraining();
   const navigate = useNavigate();
   const [sessionError, setSessionError] = useState('');
+  return <div className="footer-session"><div className="session-control">{snapshot.data?.learner.active ? <><span className="session-name">{snapshot.data.learner.name}</span><button className="login-link" onClick={async () => { const r = await adapter.execute({ type: 'logout' }); if (r.ok) navigate('/login'); else setSessionError(r.error); }}>خروج تجريبي</button></> : <Link to="/login" className="login-link"><LogIn size={17} aria-hidden="true" /><span>دخول المتدرب</span></Link>}</div>{sessionError && <p role="alert">{sessionError}</p>}</div>;
+}
+
+export default function AppShell() {
+  const { pathname } = useLocation();
+  const { snapshot } = useTraining();
   const main = useRef<HTMLElement>(null);
   useEffect(() => {
     document.title = `${environmentName} | جامعة الزقازيق`;
     main.current?.focus({ preventScroll: true });
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [pathname]);
-  return <div className="app-shell">
+  return <div className={`app-shell${pathname === '/' ? ' home-shell' : ''}`}>
     <a className="skip-link" href="#main-content">تجاوز إلى المحتوى</a>
-    <header className="site-header"><BrandHeader /><div className="navigation-bar"><div className="container navigation-inner"><DesktopNav /><MobileNav /><div className="session-control">{snapshot.data?.learner.active ? <><span className="session-name">{snapshot.data.learner.name}</span><button className="login-link" onClick={async () => { const r = await adapter.execute({ type: 'logout' }); if (r.ok) navigate('/login'); else setSessionError(r.error); }}>خروج تجريبي</button></> : <Link to="/login" className="login-link"><LogIn size={17} aria-hidden="true" /><span>دخول المتدرب</span></Link>}</div></div></div></header>
-    {snapshot.celebration && <div role="status" className="celebration">{snapshot.celebration}</div>}{sessionError && <p role="alert" className="notice">{sessionError}</p>}
+    <header className="site-header"><BrandHeader /><div className="navigation-bar"><div className="container navigation-inner"><DesktopNav /><MobileNav /></div></div></header>
+    {snapshot.celebration && <div role="status" className="celebration">{snapshot.celebration}</div>}
     <main id="main-content" ref={main} tabIndex={-1} className="main-content container"><Suspense fallback={<div role="status" aria-busy="true" className="loading-state">جارٍ تحميل الصفحة…</div>}><div key={pathname} className="page-transition"><Outlet /></div></Suspense></main>
-    <footer className="site-footer"><div className="container footer-inner"><p><GraduationCap size={18} aria-hidden="true" />كلية التربية النوعية <span>—</span> جامعة الزقازيق</p><p>تجربة تدريب محلية <span>·</span> المحتوى بانتظار الاعتماد</p><Link to="/contact">تواصل مع الباحث</Link>{demoToolsEnabled && <Link to="/demo-tools">أدوات العرض</Link>}</div></footer>
+    <footer className="site-footer"><div className="container footer-inner"><SessionControl /><p>{pathname === '/' ? 'نسخة تجريبية' : <>تجربة تدريب محلية <span>·</span> المحتوى بانتظار الاعتماد</>}</p>{pathname !== '/' && <Link to="/contact">اتصل بنا</Link>}{demoToolsEnabled && <Link to="/demo-tools">أدوات العرض</Link>}</div></footer>
   </div>;
 }

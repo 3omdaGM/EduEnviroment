@@ -8,6 +8,40 @@
   "reviewedOn": "2026-10-16",
   "authoring": "صياغة تعليمية عربية وأمثلة مهنية أصلية لنسخة العرض، مع مراجعة الحقائق التقنية في المصادر الرسمية؛ ليست ترجمة أو اعتمادًا من الناشرين.",
   "userAssets": {
+    "suppliedPeople": [
+      {
+        "id": "researcher",
+        "displayName": "سلوى نبوي غنيم",
+        "position": "",
+        "roleLabel": "إعداد الباحثة",
+        "placeholder": false,
+        "source": "user-provided-chat"
+      },
+      {
+        "id": "academic-01",
+        "displayName": "أ.د / عبدالعزيز طلبة عبد الحميد",
+        "position": "أستاذ تكنولوجيا التعليم\nكلية التربية - جامعة المنصورة",
+        "roleLabel": "إشراف",
+        "placeholder": false,
+        "source": "user-provided-chat"
+      },
+      {
+        "id": "academic-02",
+        "displayName": "أ.د / صالح شاكر",
+        "position": "أستاذ تكنولوجيا التعليم\nكلية التربية النوعية - جامعة المنصورة",
+        "roleLabel": "إشراف",
+        "placeholder": false,
+        "source": "user-provided-chat"
+      },
+      {
+        "id": "academic-03",
+        "displayName": "أ.م.د / أمل السيد أحمد الظاهر",
+        "position": "أستاذ تكنولوجيا التعليم المساعد\nكلية التربية النوعية - جامعة الزقازيق",
+        "roleLabel": "إشراف",
+        "placeholder": false,
+        "source": "user-provided-chat"
+      }
+    ],
     "suppliedLogos": [],
     "suppliedPortraits": [],
     "suppliedContactDetails": [],
@@ -19,7 +53,7 @@
     }
   },
   "pending": [
-    "أسماء الباحث والدكاترة وأدوارهم ومناصبهم",
+    "الدرجة العلمية والانتماء المؤسسي للباحثة إن رغبت في عرضهما",
     "الشعارات الرسمية وحقوق استخدامها",
     "وسائل الاتصال المعتمدة",
     "اعتماد النصوص والأهداف والأسئلة ومخطط توزيعها",
@@ -159,32 +193,7 @@
       "officialLogo": false
     }
   ],
-  "placeholders": [
-    {
-      "id": "researcher",
-      "displayName": "اسم الباحث",
-      "roleLabel": "إعداد الباحث",
-      "placeholder": true
-    },
-    {
-      "id": "academic-01",
-      "displayName": "اسم الدكتور الأول",
-      "roleLabel": "الصفة — قيد الاعتماد",
-      "placeholder": true
-    },
-    {
-      "id": "academic-02",
-      "displayName": "اسم الدكتور الثاني",
-      "roleLabel": "الصفة — قيد الاعتماد",
-      "placeholder": true
-    },
-    {
-      "id": "academic-03",
-      "displayName": "اسم الدكتور الثالث",
-      "roleLabel": "الصفة — قيد الاعتماد",
-      "placeholder": true
-    }
-  ],
+  "placeholders": [],
   "modules": [
     {
       "id": "mod-01",
