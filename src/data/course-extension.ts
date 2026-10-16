@@ -1,6 +1,6 @@
 import type { EditorialMeta, SourceReference } from '../../docs/contracts';
 
-export const contentVersion = '0.4.0-draft';
+export const contentVersion = '0.4.1-draft';
 const reference = (id: string, title: string, publisher: string, url: string, productOrFramework: string): SourceReference => ({ id, title, publisher, url, productOrFramework, accessedOn: '2026-10-16', verification: 'verified' });
 export const sources = {
   theory: reference('unesco-ict-cft', 'ICT Competency Framework for Teachers v3', 'UNESCO', 'https://www.unesco.org/en/digital-competencies-skills/ict-cft', 'ICT-CFT v3؛ إطار مرجعي، والأمثلة التعليمية من إعداد نسخة العرض'),

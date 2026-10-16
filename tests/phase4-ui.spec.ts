@@ -5,6 +5,8 @@ import { environmentName, lessonBase } from '../src/data/catalog';
 import { STORAGE_KEY } from '../src/services/demo-adapter';
 import { login, scenario, stored } from './phase3-support';
 
+const reviewRoot = process.env.REVIEW_OUTPUT_DIR ?? 'review/phase-4';
+
 const first = `${lessonBase}/elements/el-01-01-01`;
 const screens = [['home', '/'], ['content', '/content'], ['module', '/modules/mod-01/intro'], ['lesson', `${lessonBase}/intro`], ['element', first], ['instructions', '/assessment/pre/instructions']] as const;
 for (const size of [{ width: 1366, height: 768 }, { width: 1440, height: 900 }, { width: 768, height: 1024 }, { width: 390, height: 844 }, { width: 360, height: 640 }, { width: 320, height: 740 }]) {
@@ -17,13 +19,13 @@ for (const size of [{ width: 1366, height: 768 }, { width: 1440, height: 900 }, 
       await page.goto(url); await expect(page.locator('main h1')).toBeVisible(); await page.evaluate(() => document.fonts.ready); await page.waitForTimeout(270);
       await expect(page.locator('.environment-name')).toHaveText(environmentName);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-      await page.screenshot({ path: `review/phase-4/${name}-${size.width}x${size.height}.png`, fullPage: true });
+      await page.screenshot({ path: `${reviewRoot}/${name}-${size.width}x${size.height}.png`, fullPage: true });
     }
     await page.getByRole('button', { name: 'بدء التقويم القبلي', exact: true }).click();
     await expect(page.locator('fieldset')).toBeVisible(); await expect(page.locator('.quiz-meta')).toContainText('من 20');
     await page.getByRole('radio').first().check(); await page.waitForTimeout(270);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await page.screenshot({ path: `review/phase-4/question-${size.width}x${size.height}.png`, fullPage: true });
+    await page.screenshot({ path: `${reviewRoot}/question-${size.width}x${size.height}.png`, fullPage: true });
     expect(errors).toEqual([]);
   });
 }
@@ -31,7 +33,7 @@ for (const size of [{ width: 1366, height: 768 }, { width: 1440, height: 900 }, 
 test('forms validate safe demo values, persist no credentials and reset sends no email', async ({ page }) => {
   await page.goto('/register'); await page.getByRole('button', { name: 'تجربة بحساب تجريبي' }).click();
   await page.evaluate(async () => { await document.fonts.ready; window.scrollTo(0, 0); }); await page.waitForTimeout(270);
-  await page.screenshot({ path: 'review/phase-4/register-validation.png', fullPage: true });
+  await page.screenshot({ path: `${reviewRoot}/register-validation.png`, fullPage: true });
   await expect(page.locator('#name-error')).toBeVisible(); await expect(page.locator('input[type=password]')).toHaveCount(0);
   await page.getByLabel('اسم مستعار للتجربة').fill('باحث التجربة');
   await page.getByLabel('البريد التجريبي', { exact: true }).fill('person@real.test');
@@ -70,10 +72,10 @@ test('real 20-item pre saves draft, question position and review; guards apply t
 test('five tools states and explicit corrupt-state recovery', async ({ page }) => {
   await scenario(page, 'قبل القبلي'); expect((await stored(page)).attempts).toHaveLength(0);
   await scenario(page, 'مؤهل عند 50%'); await page.goto('/modules/mod-01/intro'); await expect(page.getByRole('heading', { name: 'مقدمة الموديول', exact: true })).toBeVisible();
-  await page.goto('/assessment/pre/instructions'); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click(); await page.waitForTimeout(270); await page.screenshot({ path: 'review/phase-4/pre-result-50.png', fullPage: true });
-  await scenario(page, 'غير مؤهل فوق 50%'); await page.goto('/content'); await expect(page.locator('.notice')).toContainText(['نسخة تدريب تجريبية', 'وفقًا لشروط المشاركة']);
-  await scenario(page, 'درس غير مجتاز'); await page.goto(`${lessonBase}/self-assessment`); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click(); await expect(page.getByRole('status').filter({ hasText: 'لم تجتز' })).toBeVisible();
-  await page.waitForTimeout(270); await page.screenshot({ path: 'review/phase-4/self-failed-result.png', fullPage: true });
+  await page.goto('/assessment/pre/instructions'); await page.locator('.attempt-history summary').click(); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click(); await page.waitForTimeout(270); await page.screenshot({ path: `${reviewRoot}/pre-result-50.png`, fullPage: true });
+  await scenario(page, 'غير مؤهل فوق 50%'); await page.goto('/content'); await expect(page.locator('.notice').filter({ hasText: 'وفقًا لشروط المشاركة' })).toBeVisible();
+  await scenario(page, 'درس غير مجتاز'); await page.goto(`${lessonBase}/self-assessment`); await page.locator('.attempt-history summary').click(); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click(); await expect(page.getByRole('status').filter({ hasText: 'لم تجتز' })).toBeVisible();
+  await page.waitForTimeout(270); await page.screenshot({ path: `${reviewRoot}/self-failed-result.png`, fullPage: true });
   await scenario(page, 'إكمال البيئة'); await page.goto('/content'); await expect(page.getByText('المستوى 4', { exact: false })).toBeVisible(); expect((await stored(page)).rewards.reduce((n, r) => n + r.points, 0)).toBe(470);
   await page.setViewportSize({ width: 390, height: 844 }); await page.getByRole('button', { name: 'قائمة التنقل الرئيسية', exact: true }).click();
   await expect(page.getByRole('dialog').getByRole('link', { name: 'التقويم البعدي متاح', exact: true })).toBeVisible(); await page.keyboard.press('Escape');
@@ -90,9 +92,9 @@ test('mobile touch, keyboard, focus, long content, reduced motion and zoom', asy
   await page.locator('.skip-link').focus(); await page.keyboard.press('Enter'); await expect(page.locator('main')).toBeFocused();
   const nav = page.getByRole('button', { name: 'قائمة التنقل الرئيسية', exact: true }); await nav.tap(); await expect(page.getByRole('dialog')).toBeVisible(); await page.keyboard.press('Escape'); await expect(nav).toBeFocused();
   await page.goto(`${lessonBase}/intro`); const sections = page.getByRole('button', { name: 'أقسام الدرس', exact: true }); await sections.tap(); await page.keyboard.press('Tab'); expect(await page.getByRole('dialog').evaluate(el => el.contains(document.activeElement))).toBe(true); await page.keyboard.press('Escape'); await expect(sections).toBeFocused();
-  await page.goto(first); await page.getByRole('button', { name: 'تكبير الرسم' }).tap(); await page.keyboard.press('Escape'); await expect(page.getByRole('button', { name: 'تكبير الرسم' })).toBeFocused();
+  await page.goto(first); await page.locator('.reading-support summary').click(); await page.getByRole('button', { name: 'تكبير الرسم' }).tap(); await page.keyboard.press('Escape'); await expect(page.getByRole('button', { name: 'تكبير الرسم' })).toBeFocused();
   await page.goto(`${lessonBase}/intro`); await page.setViewportSize({ width: 1366, height: 768 }); await page.evaluate(() => { document.body.style.zoom = '2'; }); await page.locator('.reading-text').evaluate(el => { el.textContent = `${el.textContent} `.repeat(18); });
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true); await page.screenshot({ path: 'review/phase-4/long-content-200percent.png', fullPage: true });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true); await page.screenshot({ path: `${reviewRoot}/long-content-200percent.png`, fullPage: true });
   await page.evaluate(() => { document.body.style.zoom = '1'; }); await page.emulateMedia({ reducedMotion: 'reduce' }); await page.goto('/content'); expect(await page.locator('.page-transition').evaluate(el => getComputedStyle(el).animationName)).toBe('none');
   await context.close();
 });
@@ -114,7 +116,7 @@ test('automated WCAG A/AA for the extended screens', async ({ page }) => {
       const r = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze(); if (r.violations.length) violations.push({ viewport, url, issues: r.violations.map(v => ({ id: v.id, nodes: v.nodes.map(n => n.target) })) });
     }
   }
-  await mkdir('review/phase-3', { recursive: true }); await writeFile('review/phase-4/axe-results.json', JSON.stringify({ violations }, null, 2)); expect(violations).toEqual([]);
+  await mkdir(reviewRoot, { recursive: true }); await writeFile(`${reviewRoot}/axe-results.json`, JSON.stringify({ violations }, null, 2)); expect(violations).toEqual([]);
 });
 
 // Full authored content is checked independently of the reduced journey fixture.
@@ -134,7 +136,7 @@ for (const width of [1366, 390]) {
     };
     for (const module of fullCatalog.modules) {
       for (const section of ['intro', 'objectives', 'lessons']) await inspect(`/modules/${module.id}/${section}`);
-      await page.screenshot({ path: `review/phase-4/${module.id}-${width}.png`, fullPage: true, animations: 'disabled' });
+      await page.screenshot({ path: `${reviewRoot}/${module.id}-${width}.png`, fullPage: true, animations: 'disabled' });
       for (const lesson of fullCatalog.lessons.filter(l => l.moduleId === module.id)) {
         const base = `/modules/${module.id}/lessons/${lesson.id}`;
         for (const section of ['intro', 'objectives', 'elements', 'activity', 'self-assessment']) await inspect(`${base}/${section}`);
@@ -146,7 +148,7 @@ for (const width of [1366, 390]) {
           }
         }
         await page.evaluate(() => document.fonts.ready);
-        await page.screenshot({ path: `review/phase-4/${lesson.id}-${width}.png`, fullPage: true, animations: 'disabled' });
+        await page.screenshot({ path: `${reviewRoot}/${lesson.id}-${width}.png`, fullPage: true, animations: 'disabled' });
       }
     }
     expect(errors).toEqual([]);
@@ -157,17 +159,17 @@ test('presentation: full content failed self then exactly 50% opens the next les
   const { fullCatalog } = await import('../src/data/assessments');
   const { exam } = await import('./phase3-support');
   await scenario(page, 'مؤهل عند 50%');
-  await page.goto('/assessment/pre/instructions'); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click();
+  await page.goto('/assessment/pre/instructions'); await page.locator('.attempt-history summary').click(); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click();
   await expect(page.locator('.score-display strong')).toHaveText('50.00%');
   await scenario(page, 'درس غير مجتاز');
-  await page.goto(`${lessonBase}/self-assessment`); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click();
+  await page.goto(`${lessonBase}/self-assessment`); await page.locator('.attempt-history summary').click(); await page.getByRole('link', { name: 'عرض النتيجة', exact: true }).click();
   await expect(page.locator('.score-display strong')).toHaveText('0.00%');
   await page.goto(`${lessonBase}/self-assessment`); await exam(page, fullCatalog, 'self-les-01-01', 1, { refresh: true });
   await expect(page.locator('.score-display strong')).toHaveText('50.00%');
   await page.setViewportSize({ width: 390, height: 844 }); await page.waitForTimeout(270);
   await expect(page.locator('.celebration')).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await page.screenshot({ path: 'review/phase-4/researcher-self-50-mobile.png', fullPage: true });
+  await page.screenshot({ path: `${reviewRoot}/researcher-self-50-mobile.png`, fullPage: true });
   await page.setViewportSize({ width: 320, height: 740 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.getByRole('link', { name: 'الانتقال إلى الخطوة التالية', exact: false }).click();
@@ -190,7 +192,7 @@ test('presentation: full 20-item post result has no passing label, keys or extra
   expect((await stored(page)).rewards.reduce((n, r) => n + r.points, 0)).toBe(470);
   await page.setViewportSize({ width: 390, height: 844 }); await page.waitForTimeout(270);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await page.screenshot({ path: 'review/phase-4/researcher-post-result-mobile.png', fullPage: true });
+  await page.screenshot({ path: `${reviewRoot}/researcher-post-result-mobile.png`, fullPage: true });
   await page.setViewportSize({ width: 320, height: 740 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });

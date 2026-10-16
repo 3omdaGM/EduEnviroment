@@ -651,3 +651,181 @@ progress::-moz-progress-bar { background: var(--accent); border-radius: 8px; }
   .goals-deck[data-compact="true"] .goal-card-objectives ul { gap: 5px; }
   .goals-deck[data-compact="true"] .goal-card-objectives li { font-size: 12px; line-height: 1.6; }
 }
+
+/* Compact reading and assessment rhythm; long or enlarged text still reflows. */
+.main-content { padding-block: 12px 18px; }
+.brand-header { padding-block: 7px; }
+.environment-name { font-size: 16px; line-height: 1.65; }
+.page-heading { margin-block-end: 14px; }
+.page-heading h1 { font-size: 25px; line-height: 1.45; }
+.page-heading .eyebrow { font-size: 10px; margin-block-end: 2px; }
+.page-description { font-size: 14px; line-height: 1.7; margin-block-start: 3px; }
+.breadcrumbs { margin-block-end: 8px; }
+.footer-inner > p { flex-basis: auto; }
+.guide-card { max-inline-size: 780px; padding: 18px 24px; }
+.guide-step-select { display: none; }
+.guide-body { padding-block: 16px; }
+.guide-body .eyebrow { font-size: 12px; margin-block-end: 3px; }
+.guide-body h2 { font-size: 21px; margin-block-end: 6px; }
+.guide-body > p:last-child { font-size: 15px; line-height: 1.75; }
+.guide-actions { margin-block-start: 12px; }
+.reading-card, .learning-layout .reading-card { padding: 18px 20px; }
+.learning-layout { grid-template-columns: 210px minmax(0, 1fr); gap: 16px; }
+.learning-sidebar .card { padding: 12px 8px; }
+.sidebar-heading { margin-block-end: 8px; }
+.sidebar-progress { margin: 10px 8px 0; padding-block-start: 10px; }
+.section-navigation { gap: 2px; }
+.section-navigation > a { padding-block: 7px; min-block-size: 44px; }
+.reading-header { padding-block-end: 10px; margin-block-end: 12px; gap: 9px; }
+.reading-header h2 { font-size: 19px; }
+.reading-header .icon-tile { inline-size: 34px; block-size: 34px; }
+.reading-text { font-size: 15px; line-height: 1.85; }
+.reading-text h3 { font-size: 17px; margin-block-end: 6px; }
+.reading-text p + p { margin-block-start: 10px; }
+.reading-actions, .element-navigation { padding-block-start: 10px; margin-block-start: 12px; }
+.learning-callout { padding: 12px; margin-block: 12px; }
+.module-overview { margin-block: 12px; }
+.objectives-list { gap: 10px; margin-block: 12px; }
+.objectives-list p { font-size: 15px; }
+.lesson-list, .element-list { gap: 8px; }
+.element-list { margin-block-start: 12px; }
+.lesson-row, .element-row { padding: 9px 12px; gap: 10px; }
+.element-row h3 { font-size: 14px; }
+.quiet-note { margin-block-start: 10px; }
+.reading-support, .assessment-more { margin-block-start: 10px; }
+.reading-support summary, .assessment-more summary, .attempt-history summary, .feedback-list summary { min-block-size: 44px; align-content: center; cursor: pointer; color: var(--accent); font-size: 13px; font-weight: 600; }
+.assessment-instructions { max-inline-size: 900px; margin-inline: auto; padding: 16px 20px; margin-block-end: 10px; }
+.assessment-instructions > p { font-size: 14px; line-height: 1.7; margin-block-end: 8px; }
+.assessment-instructions ul { font-size: 13px; gap: 7px; }
+.assessment-count, .assessment-rule { color: var(--ink); font-weight: 600; }
+.assessment-start { max-inline-size: 900px; margin: 10px auto; padding: 10px; }
+.attempt-history { padding: 10px 16px; max-inline-size: 900px; margin: 10px auto; }
+.assessment-focus { max-inline-size: 900px; margin-inline: auto; }
+.assessment-context { color: var(--muted); font-size: 12px; margin-block-end: 6px; }
+.quiz-meta { margin-block-end: 8px; font-size: 13px; }
+.quiz-card fieldset { margin-block-start: 12px; }
+.question-prompt { font-size: 19px; line-height: 1.6; margin-block-end: 12px; }
+.answer-options { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.answer-options--single-choice { grid-template-rows: repeat(2, auto); grid-auto-flow: column; }
+.answer-option { min-inline-size: 0; min-block-size: 52px; font-size: 15px; line-height: 1.65; padding: 10px 12px; gap: 8px; align-items: flex-start; }
+.answer-option.selected { padding: 9px 11px; }
+.answer-option input { inline-size: 18px; block-size: 18px; margin-block-start: 3px; }
+.answer-letter { color: var(--accent); }
+.save-indicator { min-block-size: 20px; margin-block-start: 10px; font-size: 11px; }
+.quiz-navigation { margin-block-start: 10px; padding-block-start: 10px; }
+.question-review { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7px; margin-block: 14px; }
+.question-review .button { min-inline-size: 0; padding: 5px; }
+.question-review span { display: none; }
+.assessment-result { padding: 18px 20px; gap: 12px; }
+.assessment-result > p { font-size: 14px; }
+.score-display strong { font-size: 34px; }
+.feedback-list { padding-block-start: 8px; }
+.feedback-list[open] .feedback-card { margin-block-start: 10px; }
+.account-card, .contact-card { padding: 18px 20px; }
+.account-card { gap: 12px; }
+.account-card > p { font-size: 13px; line-height: 1.7; }
+.account-form { gap: 10px; }
+.form-field { gap: 4px; }
+.form-field label { font-size: 13px; line-height: 1.6; }
+.form-field input { min-block-size: 44px; padding: 7px 10px; }
+.form-field p:empty, .account-form > p:empty { display: none; }
+.account-card--register .account-form { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 12px; }
+.account-card--register .checkbox-label, .account-card--register .account-form > p, .account-card--register .account-form > button { grid-column: 1 / -1; }
+.contact-list { gap: 14px; margin-block: 16px; }
+.contact-list li { gap: 12px; }
+.journey-summary { margin-block: 6px 12px; gap: 12px; }
+.overall-progress { margin-block: 6px 12px; }
+.journey-title h2 { font-size: 15px; }
+.module-grid { gap: 14px; }
+.module-card { padding: 14px 16px; }
+.module-card-top { margin-block-end: 9px; gap: 10px; }
+.module-card-top .module-symbol { inline-size: 32px; block-size: 32px; border-radius: 10px; }
+.module-card-top .module-symbol svg { inline-size: 21px; block-size: 21px; }
+.module-number { font-size: 20px; }
+.module-card h2 { font-size: 17px; margin-block-end: 6px; }
+.module-note { margin-block-end: 8px; font-size: 12px; }
+.module-badge { margin-block-end: 10px; }
+.module-card-bottom { gap: 12px; padding-block-start: 10px; }
+.post-access { margin-block: 12px; padding: 12px 16px; }
+@media (max-width: 1023px) {
+  .learning-layout { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 767px) {
+  .brand-header { padding-block: 4px; }
+  .environment-name { font-size: 13.5px; line-height: 1.65; }
+  .main-content { padding-block: 8px 12px; }
+  .page-heading { margin-block-end: 10px; }
+  .page-heading h1 { font-size: 21px; }
+  .page-description { font-size: 13px; }
+  .guide-card { padding: 12px 14px; }
+  .guide-page { position: relative; }
+  .guide-page .page-heading { min-block-size: 44px; display: flex; align-items: center; padding-inline-end: 155px; }
+  .guide-steps { display: none; }
+  .guide-step-select { position: absolute; inset-block-start: 0; inset-inline-end: 0; display: block; inline-size: 145px; min-inline-size: 0; min-block-size: 44px; padding: 8px; border: 1px solid #b4cbd7; border-radius: 8px; font: inherit; font-size: 13px; color: var(--ink); background: white; }
+  .guide-progress, .guide-body > .eyebrow { display: none; }
+  .guide-body { padding-block: 12px; }
+  .guide-body h2 { font-size: 20px; }
+  .guide-body > p:last-child { font-size: 14px; line-height: 1.75; }
+  .guide-actions { gap: 8px; margin-block-start: 10px; }
+  .reading-card, .learning-layout .reading-card { padding: 12px 14px; }
+  .reading-text { font-size: 14px; line-height: 1.8; }
+  .reading-header h2 { font-size: 17px; }
+  .objectives-list p { font-size: 14px; }
+  .mobile-section-control { margin-block-end: 10px; }
+  .assessment-instructions { padding: 12px 14px; }
+  .assessment-instructions > p { font-size: 13px; }
+  .quiz-meta { font-size: 11px; gap: 7px; }
+  .quiz-meta .status { font-size: 10px; }
+  .quiz-card fieldset { margin-block-start: 10px; }
+  .question-prompt { font-size: 16px; line-height: 1.55; margin-block-end: 10px; }
+  .answer-options { gap: 8px; }
+  .answer-option { font-size: 13px; line-height: 1.6; padding: 7px 8px; gap: 6px; }
+  .answer-option.selected { padding: 6px 7px; }
+  .answer-option input { inline-size: 16px; block-size: 16px; }
+  .save-indicator { font-size: 10px; line-height: 1.6; }
+  .quiz-navigation { gap: 6px; }
+  .quiz-navigation .button { min-inline-size: 0; padding-inline: 8px; font-size: 12px; }
+  .account-card, .contact-card { padding: 12px 14px; }
+  .account-card { gap: 10px; }
+  .account-card > p { font-size: 12px; }
+  .account-links { gap: 14px; }
+  .form-field label { font-size: 12px; }
+  .account-card--register .account-form { gap: 8px; }
+  .checkbox-label { font-size: 12px; }
+  .module-card { padding: 12px 14px; }
+  .module-card h2 { font-size: 15px; }
+  .lesson-row, .element-row { padding: 8px 10px; }
+  .home-welcome > .home-thesis-title { font-size: 15px; line-height: 1.65; }
+  .researcher-card { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 4px 10px; }
+  .researcher-card h2 { font-size: 18px; line-height: 1.5; }
+  .researcher-card .person-role { margin: 0; }
+  .supervision-heading { font-size: 14px; margin-block: 4px; }
+  .supervisors-grid { gap: 6px; }
+  .supervisor-card, .supervisor-card:last-child { padding: 4px 10px; }
+  .supervisor-card h3 { font-size: 15px; }
+  .person-position { font-size: 11.5px; line-height: 1.55; }
+}
+.module-details summary, .path-policy summary { cursor: pointer; color: var(--accent); font-size: 12px; min-block-size: 44px; align-content: center; }
+.module-details .module-badge { margin: 6px 0; }
+.module-card-bottom { display: flex; padding-block-start: 6px; }
+.module-card .eyebrow { display: none; } /* Module number is already visible above. */
+.quiz-card { padding: 16px 20px; }
+@media (max-width: 767px) {
+  .quiz-card { padding: 12px 14px; }
+  .journey-title { gap: 8px; }
+  .journey-title > .icon-tile { display: none; }
+  .module-grid { gap: 10px; }
+  .module-card-top { margin-block-end: 5px; }
+  .module-card h2 { margin-block-end: 4px; }
+  .module-details summary { min-block-size: 36px; }
+  .account-form small { font-size: 10px; line-height: 1.5; }
+}
+.journey-summary { margin-block: 4px 8px; }
+.module-card-bottom { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px; align-items: start; }
+.module-details { min-inline-size: 0; }
+.module-details[open] { grid-column: 1 / -1; }
+@media (max-width: 767px) {
+  .module-card-bottom { grid-template-columns: auto minmax(0, 1fr); gap: 8px; }
+  .module-details summary { font-size: 11px; }
+}
+.module-number { color: #526a79; }

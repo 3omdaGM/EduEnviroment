@@ -24,7 +24,7 @@ test('demo account to post through all four stations with independent attempts a
       // The helper starts on instructions, so finish this explicitly entered attempt.
       for (const [qindex, id] of fixture.assessments.find(d => d.id === lesson.selfAssessmentId)!.questionIds.entries()) {
         const q = fixture.questions.find(q => q.id === id)!;
-        await page.getByRole('radio', { name: q.options.find(o => o.id !== q.answerKey.correctOptionId)!.text, exact: true }).check();
+        await page.locator(`input[type="radio"][value="${q.options.find(o => o.id !== q.answerKey.correctOptionId)!.id}"]`).check();
         if (qindex === 0) await page.getByRole('button', { name: 'التالي', exact: true }).click();
       }
       await page.getByRole('button', { name: 'مراجعة الإجابات' }).click(); await page.getByRole('button', { name: 'الانتقال إلى تأكيد التسليم' }).click(); await page.getByRole('button', { name: 'تأكيد وتسليم المحاولة' }).click();

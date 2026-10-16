@@ -1,0 +1,322 @@
+[
+  {
+    "viewport": "1280x620",
+    "guideStepsWithoutScrolling": 9,
+    "horizontalOverflow": 0,
+    "naturalVerticalPages": [
+      {
+        "route": "/",
+        "height": 624
+      },
+      {
+        "route": "/contact",
+        "height": 624
+      },
+      {
+        "route": "/register",
+        "height": 626
+      },
+      {
+        "route": "/content",
+        "height": 869
+      },
+      {
+        "route": "/content",
+        "height": 788
+      },
+      {
+        "route": "/modules/mod-01/intro",
+        "height": 635
+      },
+      {
+        "route": "/modules/mod-01/objectives",
+        "height": 656
+      },
+      {
+        "route": "/modules/mod-01/lessons",
+        "height": 635
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/intro",
+        "height": 727
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/objectives",
+        "height": 727
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/elements",
+        "height": 896
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/elements/el-01-01-01",
+        "height": 733
+      },
+      {
+        "route": "/assessment/pre/instructions",
+        "height": 723
+      },
+      {
+        "route": "/assessment/pre/attempt/responsive-pre/review",
+        "height": 633
+      }
+    ]
+  },
+  {
+    "viewport": "1366x768",
+    "guideStepsWithoutScrolling": 9,
+    "horizontalOverflow": 0,
+    "naturalVerticalPages": [
+      {
+        "route": "/content",
+        "height": 869
+      },
+      {
+        "route": "/content",
+        "height": 788
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/elements",
+        "height": 896
+      }
+    ]
+  },
+  {
+    "viewport": "1920x910",
+    "guideStepsWithoutScrolling": 9,
+    "horizontalOverflow": 0,
+    "naturalVerticalPages": []
+  },
+  {
+    "viewport": "320x568",
+    "guideStepsWithoutScrolling": 9,
+    "horizontalOverflow": 0,
+    "naturalVerticalPages": [
+      {
+        "route": "/",
+        "height": 646
+      },
+      {
+        "route": "/contact",
+        "height": 650
+      },
+      {
+        "route": "/login",
+        "height": 644
+      },
+      {
+        "route": "/register",
+        "height": 654
+      },
+      {
+        "route": "/content",
+        "height": 1330
+      },
+      {
+        "route": "/content",
+        "height": 1217
+      },
+      {
+        "route": "/modules/mod-01/intro",
+        "height": 760
+      },
+      {
+        "route": "/modules/mod-01/objectives",
+        "height": 828
+      },
+      {
+        "route": "/modules/mod-01/lessons",
+        "height": 979
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/intro",
+        "height": 833
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/objectives",
+        "height": 707
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/elements",
+        "height": 1001
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/elements/el-01-01-01",
+        "height": 898
+      },
+      {
+        "route": "/assessment/pre/instructions",
+        "height": 763
+      },
+      {
+        "route": "/assessment/pre/attempt/responsive-pre?question=pre-q-1",
+        "height": 685
+      },
+      {
+        "route": "/assessment/pre/attempt/responsive-pre/review",
+        "height": 728
+      }
+    ]
+  },
+  {
+    "viewport": "320x740",
+    "guideStepsWithoutScrolling": 9,
+    "horizontalOverflow": 0,
+    "naturalVerticalPages": [
+      {
+        "route": "/content",
+        "height": 1330
+      },
+      {
+        "route": "/content",
+        "height": 1217
+      },
+      {
+        "route": "/modules/mod-01/intro",
+        "height": 760
+      },
+      {
+        "route": "/modules/mod-01/objectives",
+        "height": 828
+      },
+      {
+        "route": "/modules/mod-01/lessons",
+        "height": 979
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/intro",
+        "height": 833
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/elements",
+        "height": 1001
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/elements/el-01-01-01",
+        "height": 898
+      },
+      {
+        "route": "/assessment/pre/instructions",
+        "height": 763
+      }
+    ]
+  },
+  {
+    "viewport": "360x640",
+    "guideStepsWithoutScrolling": 9,
+    "horizontalOverflow": 0,
+    "naturalVerticalPages": [
+      {
+        "route": "/contact",
+        "height": 650
+      },
+      {
+        "route": "/login",
+        "height": 644
+      },
+      {
+        "route": "/register",
+        "height": 654
+      },
+      {
+        "route": "/content",
+        "height": 1306
+      },
+      {
+        "route": "/content",
+        "height": 1193
+      },
+      {
+        "route": "/modules/mod-01/intro",
+        "height": 735
+      },
+      {
+        "route": "/modules/mod-01/objectives",
+        "height": 798
+      },
+      {
+        "route": "/modules/mod-01/lessons",
+        "height": 979
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/intro",
+        "height": 808
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/objectives",
+        "height": 707
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/elements",
+        "height": 1001
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/elements/el-01-01-01",
+        "height": 884
+      },
+      {
+        "route": "/assessment/pre/instructions",
+        "height": 763
+      },
+      {
+        "route": "/assessment/pre/attempt/responsive-pre?question=pre-q-1",
+        "height": 661
+      },
+      {
+        "route": "/assessment/pre/attempt/responsive-pre/review",
+        "height": 728
+      }
+    ]
+  },
+  {
+    "viewport": "390x844",
+    "guideStepsWithoutScrolling": 9,
+    "horizontalOverflow": 0,
+    "naturalVerticalPages": [
+      {
+        "route": "/content",
+        "height": 1243
+      },
+      {
+        "route": "/content",
+        "height": 1171
+      },
+      {
+        "route": "/modules/mod-01/lessons",
+        "height": 1018
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/elements",
+        "height": 978
+      },
+      {
+        "route": "/modules/mod-01/lessons/les-01-01/elements/el-01-01-01",
+        "height": 862
+      }
+    ]
+  },
+  {
+    "viewport": "768x1024",
+    "guideStepsWithoutScrolling": 9,
+    "horizontalOverflow": 0,
+    "naturalVerticalPages": []
+  },
+  {
+    "viewport": "390x844",
+    "questions": 76,
+    "naturalVerticalQuestions": 0,
+    "maxHeight": 844
+  },
+  {
+    "viewport": "360x640",
+    "questions": 76,
+    "naturalVerticalQuestions": 66,
+    "maxHeight": 727
+  },
+  {
+    "viewport": "1366x768",
+    "questions": 76,
+    "naturalVerticalQuestions": 0,
+    "maxHeight": 768
+  }
+]

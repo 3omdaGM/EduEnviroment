@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useParams, useSearchParams } from 'react-router';
-import { ArrowLeft, ArrowRight, BookOpen, Check, CircleHelp, Mail, MapPin, Phone, Target, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, CircleHelp, Mail, MapPin, Phone, Target, X } from 'lucide-react';
 import { guideSteps, modules } from '../data/catalog';
 import { moduleIcons } from '../components/module-icons';
 import { Button, ButtonLink, Card, PageHeading, ProgressIndicator, StatusBadge } from '../components/ui';
@@ -69,8 +69,10 @@ function GuidePage() {
   const raw = Number(search.get('step') ?? '1');
   const index = Number.isInteger(raw) && raw >= 1 && raw <= guideSteps.length ? raw - 1 : 0;
   const step = guideSteps[index]!;
-  return <><PageHeading eyebrow="تعرف إلى رحلتك" title="دليل المتدرب">خطوات واضحة من بداية الرحلة إلى إكمال المسار التدريبي.</PageHeading>
-    <Card className="guide-card"><div className="guide-steps" aria-label="خطوات الدليل">{guideSteps.map((item, i) => <button key={item.title} onClick={() => setSearch({ step: String(i + 1) })} aria-label={`الخطوة ${i + 1}: ${item.title}`} aria-current={index === i ? 'step' : undefined}>{i < index ? <Check size={16} aria-hidden="true" /> : i + 1}</button>)}</div><div className="guide-body"><span className="icon-tile"><BookOpen size={30} aria-hidden="true" /></span><p className="eyebrow">الخطوة {index + 1} من {guideSteps.length}</p><h2>{step.title}</h2><p>{step.text}</p></div><ProgressIndicator value={index + 1} max={guideSteps.length} label="تقدم قراءة الدليل" /><div className="guide-actions"><Button variant="secondary" disabled={index === 0} onClick={() => setSearch({ step: String(index) })}><ArrowRight size={17} aria-hidden="true" />السابق</Button>{index < guideSteps.length - 1 ? <Button onClick={() => setSearch({ step: String(index + 2) })}>التالي <ArrowLeft size={17} aria-hidden="true" /></Button> : <ButtonLink to="/content">استعرض المحتوى <ArrowLeft size={17} aria-hidden="true" /></ButtonLink>}</div></Card></>;
+  return <section className="guide-page"><PageHeading title="دليل المتدرب" />
+    <Card className="guide-card"><div className="guide-steps" aria-label="خطوات الدليل">{guideSteps.map((item, i) => <button key={item.title} onClick={() => setSearch({ step: String(i + 1) })} aria-label={`الخطوة ${i + 1}: ${item.title}`} aria-current={index === i ? 'step' : undefined}>{i < index ? <Check size={16} aria-hidden="true" /> : i + 1}</button>)}</div>
+      <select className="guide-step-select" aria-label="اختر خطوة دليل المتدرب" value={index + 1} onChange={event => setSearch({ step: event.target.value })}>{guideSteps.map((item, i) => <option key={item.title} value={i + 1}>الخطوة {i + 1} من {guideSteps.length}: {item.title}</option>)}</select>
+      <div className="guide-body"><p className="eyebrow">الخطوة {index + 1} من {guideSteps.length}</p><h2>{step.title}</h2><p>{step.text}</p></div><div className="guide-progress"><ProgressIndicator value={index + 1} max={guideSteps.length} label="تقدم قراءة الدليل" /></div><div className="guide-actions"><Button variant="secondary" disabled={index === 0} onClick={() => setSearch({ step: String(index) })}><ArrowRight size={17} aria-hidden="true" />السابق</Button>{index < guideSteps.length - 1 ? <Button onClick={() => setSearch({ step: String(index + 2) })}>التالي <ArrowLeft size={17} aria-hidden="true" /></Button> : <ButtonLink to="/content">استعرض المحتوى <ArrowLeft size={17} aria-hidden="true" /></ButtonLink>}</div></Card></section>;
 }
 
 function ContactPage() {

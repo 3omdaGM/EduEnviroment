@@ -84,7 +84,6 @@ function SessionControl() {
 export default function AppShell() {
   const { pathname } = useLocation();
   const goalsPage = pathname === '/goals' || pathname.startsWith('/goals/');
-  const compactPage = pathname === '/' || goalsPage;
   const { snapshot } = useTraining();
   const main = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -97,6 +96,6 @@ export default function AppShell() {
     <header className="site-header"><BrandHeader /><div className="navigation-bar"><div className="container navigation-inner"><DesktopNav /><MobileNav /></div></div></header>
     {snapshot.celebration && <div role="status" className="celebration">{snapshot.celebration}</div>}
     <main id="main-content" ref={main} tabIndex={-1} className="main-content container"><Suspense fallback={<div role="status" aria-busy="true" className="loading-state">جارٍ تحميل الصفحة…</div>}><div key={pathname} className="page-transition"><Outlet /></div></Suspense></main>
-    <footer className="site-footer"><div className="container footer-inner"><SessionControl /><p>{compactPage ? 'نسخة تجريبية' : <>تجربة تدريب محلية <span>·</span> المحتوى بانتظار الاعتماد</>}</p>{!compactPage && <Link to="/contact">اتصل بنا</Link>}{demoToolsEnabled && <Link to="/demo-tools">أدوات العرض</Link>}</div></footer>
+    <footer className="site-footer"><div className="container footer-inner"><SessionControl /><p>نسخة تجريبية</p>{demoToolsEnabled && <Link to="/demo-tools">أدوات العرض</Link>}</div></footer>
   </div>;
 }

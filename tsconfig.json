@@ -34,6 +34,7 @@
     "playwright.journey.config.ts",
     "playwright.production.config.ts",
     "vitest.config.ts",
-    "playwright.phase4*.ts"
+    "playwright.phase4*.ts",
+    "playwright.compact*.ts"
   ]
 }
