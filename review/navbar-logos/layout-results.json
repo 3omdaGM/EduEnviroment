@@ -1,0 +1,597 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "pageHeight": 900,
+    "pageWidth": 1440,
+    "header": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 124.375,
+      "bottom": 124.375
+    },
+    "nav": {
+      "x": 428.34375,
+      "y": 79.375,
+      "width": 583.328125,
+      "height": 44,
+      "bottom": 123.375
+    },
+    "cards": [
+      {
+        "text": "إعداد الباحثة\n\nسلوى نبوي غنيم",
+        "x": 510,
+        "y": 382.375,
+        "width": 420,
+        "height": 77.78125,
+        "bottom": 460.15625
+      },
+      {
+        "text": "أ.د / عبدالعزيز طلبة عبد الحميد\n\nأستاذ تكنولوجيا التعليم\nكلية التربية - جامعة المنصورة",
+        "x": 728,
+        "y": 501.75,
+        "width": 442,
+        "height": 98.375,
+        "bottom": 600.125
+      },
+      {
+        "text": "أ.د / صالح شاكر\n\nأستاذ تكنولوجيا التعليم\nكلية التربية النوعية - جامعة المنصورة",
+        "x": 270,
+        "y": 501.75,
+        "width": 442,
+        "height": 98.375,
+        "bottom": 600.125
+      },
+      {
+        "text": "أ.م.د / أمل السيد أحمد الظاهر\n\nأستاذ تكنولوجيا التعليم المساعد\nكلية التربية النوعية - جامعة الزقازيق",
+        "x": 499,
+        "y": 610.125,
+        "width": 442,
+        "height": 98.375,
+        "bottom": 708.5
+      }
+    ],
+    "footer": {
+      "x": 0,
+      "y": 855,
+      "width": 1440,
+      "height": 45,
+      "bottom": 900
+    },
+    "logos": [
+      {
+        "alt": "شعار جامعة الزقازيق",
+        "src": "/images/branding/zagazig-university.jpg",
+        "complete": true,
+        "naturalWidth": 148,
+        "naturalHeight": 148,
+        "objectFit": "contain",
+        "width": 52,
+        "height": 52
+      },
+      {
+        "alt": "شعار كلية التربية النوعية - جامعة الزقازيق",
+        "src": "/images/branding/specific-education-faculty.png",
+        "complete": true,
+        "naturalWidth": 620,
+        "naturalHeight": 539,
+        "objectFit": "contain",
+        "width": 52,
+        "height": 52
+      }
+    ],
+    "errors": [],
+    "failedAssets": []
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "pageHeight": 768,
+    "pageWidth": 1366,
+    "header": {
+      "x": 0,
+      "y": 0,
+      "width": 1366,
+      "height": 124.375,
+      "bottom": 124.375
+    },
+    "nav": {
+      "x": 391.34375,
+      "y": 79.375,
+      "width": 583.328125,
+      "height": 44,
+      "bottom": 123.375
+    },
+    "cards": [
+      {
+        "text": "إعداد الباحثة\n\nسلوى نبوي غنيم",
+        "x": 473,
+        "y": 316.375,
+        "width": 420,
+        "height": 77.78125,
+        "bottom": 394.15625
+      },
+      {
+        "text": "أ.د / عبدالعزيز طلبة عبد الحميد\n\nأستاذ تكنولوجيا التعليم\nكلية التربية - جامعة المنصورة",
+        "x": 691,
+        "y": 435.75,
+        "width": 442,
+        "height": 98.375,
+        "bottom": 534.125
+      },
+      {
+        "text": "أ.د / صالح شاكر\n\nأستاذ تكنولوجيا التعليم\nكلية التربية النوعية - جامعة المنصورة",
+        "x": 233,
+        "y": 435.75,
+        "width": 442,
+        "height": 98.375,
+        "bottom": 534.125
+      },
+      {
+        "text": "أ.م.د / أمل السيد أحمد الظاهر\n\nأستاذ تكنولوجيا التعليم المساعد\nكلية التربية النوعية - جامعة الزقازيق",
+        "x": 462,
+        "y": 544.125,
+        "width": 442,
+        "height": 98.375,
+        "bottom": 642.5
+      }
+    ],
+    "footer": {
+      "x": 0,
+      "y": 723,
+      "width": 1366,
+      "height": 45,
+      "bottom": 768
+    },
+    "logos": [
+      {
+        "alt": "شعار جامعة الزقازيق",
+        "src": "/images/branding/zagazig-university.jpg",
+        "complete": true,
+        "naturalWidth": 148,
+        "naturalHeight": 148,
+        "objectFit": "contain",
+        "width": 52,
+        "height": 52
+      },
+      {
+        "alt": "شعار كلية التربية النوعية - جامعة الزقازيق",
+        "src": "/images/branding/specific-education-faculty.png",
+        "complete": true,
+        "naturalWidth": 620,
+        "naturalHeight": 539,
+        "objectFit": "contain",
+        "width": 52,
+        "height": 52
+      }
+    ],
+    "errors": [],
+    "failedAssets": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "pageHeight": 1024,
+    "pageWidth": 768,
+    "header": {
+      "x": 0,
+      "y": 0,
+      "width": 768,
+      "height": 124.375,
+      "bottom": 124.375
+    },
+    "nav": {
+      "x": 120.15625,
+      "y": 79.375,
+      "width": 527.703125,
+      "height": 44,
+      "bottom": 123.375
+    },
+    "cards": [
+      {
+        "text": "إعداد الباحثة\n\nسلوى نبوي غنيم",
+        "x": 174,
+        "y": 458.375,
+        "width": 420,
+        "height": 77.78125,
+        "bottom": 536.15625
+      },
+      {
+        "text": "أ.د / عبدالعزيز طلبة عبد الحميد\n\nأستاذ تكنولوجيا التعليم\nكلية التربية - جامعة المنصورة",
+        "x": 392,
+        "y": 577.75,
+        "width": 344,
+        "height": 98.375,
+        "bottom": 676.125
+      },
+      {
+        "text": "أ.د / صالح شاكر\n\nأستاذ تكنولوجيا التعليم\nكلية التربية النوعية - جامعة المنصورة",
+        "x": 32,
+        "y": 577.75,
+        "width": 344,
+        "height": 98.375,
+        "bottom": 676.125
+      },
+      {
+        "text": "أ.م.د / أمل السيد أحمد الظاهر\n\nأستاذ تكنولوجيا التعليم المساعد\nكلية التربية النوعية - جامعة الزقازيق",
+        "x": 212,
+        "y": 686.125,
+        "width": 344,
+        "height": 98.375,
+        "bottom": 784.5
+      }
+    ],
+    "footer": {
+      "x": 0,
+      "y": 979,
+      "width": 768,
+      "height": 45,
+      "bottom": 1024
+    },
+    "logos": [
+      {
+        "alt": "شعار جامعة الزقازيق",
+        "src": "/images/branding/zagazig-university.jpg",
+        "complete": true,
+        "naturalWidth": 148,
+        "naturalHeight": 148,
+        "objectFit": "contain",
+        "width": 52,
+        "height": 52
+      },
+      {
+        "alt": "شعار كلية التربية النوعية - جامعة الزقازيق",
+        "src": "/images/branding/specific-education-faculty.png",
+        "complete": true,
+        "naturalWidth": 620,
+        "naturalHeight": 539,
+        "objectFit": "contain",
+        "width": 52,
+        "height": 52
+      }
+    ],
+    "errors": [],
+    "failedAssets": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "pageHeight": 844,
+    "pageWidth": 390,
+    "header": {
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 163,
+      "bottom": 163
+    },
+    "nav": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "bottom": 0
+    },
+    "cards": [
+      {
+        "text": "إعداد الباحثة\n\nسلوى نبوي غنيم",
+        "x": 18,
+        "y": 372.75,
+        "width": 354,
+        "height": 66.734375,
+        "bottom": 439.484375
+      },
+      {
+        "text": "أ.د / عبدالعزيز طلبة عبد الحميد\n\nأستاذ تكنولوجيا التعليم\nكلية التربية - جامعة المنصورة",
+        "x": 18,
+        "y": 475.484375,
+        "width": 354,
+        "height": 79.171875,
+        "bottom": 554.65625
+      },
+      {
+        "text": "أ.د / صالح شاكر\n\nأستاذ تكنولوجيا التعليم\nكلية التربية النوعية - جامعة المنصورة",
+        "x": 18,
+        "y": 562.65625,
+        "width": 354,
+        "height": 79.171875,
+        "bottom": 641.828125
+      },
+      {
+        "text": "أ.م.د / أمل السيد أحمد الظاهر\n\nأستاذ تكنولوجيا التعليم المساعد\nكلية التربية النوعية - جامعة الزقازيق",
+        "x": 18,
+        "y": 649.828125,
+        "width": 354,
+        "height": 79.171875,
+        "bottom": 729
+      }
+    ],
+    "footer": {
+      "x": 0,
+      "y": 801,
+      "width": 390,
+      "height": 43,
+      "bottom": 844
+    },
+    "logos": [
+      {
+        "alt": "شعار جامعة الزقازيق",
+        "src": "/images/branding/zagazig-university.jpg",
+        "complete": true,
+        "naturalWidth": 148,
+        "naturalHeight": 148,
+        "objectFit": "contain",
+        "width": 32,
+        "height": 32
+      },
+      {
+        "alt": "شعار كلية التربية النوعية - جامعة الزقازيق",
+        "src": "/images/branding/specific-education-faculty.png",
+        "complete": true,
+        "naturalWidth": 620,
+        "naturalHeight": 539,
+        "objectFit": "contain",
+        "width": 32,
+        "height": 32
+      }
+    ],
+    "errors": [],
+    "failedAssets": []
+  },
+  {
+    "width": 360,
+    "height": 640,
+    "pageHeight": 735,
+    "pageWidth": 360,
+    "header": {
+      "x": 0,
+      "y": 0,
+      "width": 360,
+      "height": 163,
+      "bottom": 163
+    },
+    "nav": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "bottom": 0
+    },
+    "cards": [
+      {
+        "text": "إعداد الباحثة\n\nسلوى نبوي غنيم",
+        "x": 18,
+        "y": 331.9375,
+        "width": 324,
+        "height": 66.734375,
+        "bottom": 398.671875
+      },
+      {
+        "text": "أ.د / عبدالعزيز طلبة عبد الحميد\n\nأستاذ تكنولوجيا التعليم\nكلية التربية - جامعة المنصورة",
+        "x": 18,
+        "y": 434.671875,
+        "width": 324,
+        "height": 79.171875,
+        "bottom": 513.84375
+      },
+      {
+        "text": "أ.د / صالح شاكر\n\nأستاذ تكنولوجيا التعليم\nكلية التربية النوعية - جامعة المنصورة",
+        "x": 18,
+        "y": 521.84375,
+        "width": 324,
+        "height": 79.171875,
+        "bottom": 601.015625
+      },
+      {
+        "text": "أ.م.د / أمل السيد أحمد الظاهر\n\nأستاذ تكنولوجيا التعليم المساعد\nكلية التربية النوعية - جامعة الزقازيق",
+        "x": 18,
+        "y": 609.015625,
+        "width": 324,
+        "height": 79.171875,
+        "bottom": 688.1875
+      }
+    ],
+    "footer": {
+      "x": 0,
+      "y": 692.1875,
+      "width": 360,
+      "height": 43,
+      "bottom": 735.1875
+    },
+    "logos": [
+      {
+        "alt": "شعار جامعة الزقازيق",
+        "src": "/images/branding/zagazig-university.jpg",
+        "complete": true,
+        "naturalWidth": 148,
+        "naturalHeight": 148,
+        "objectFit": "contain",
+        "width": 32,
+        "height": 32
+      },
+      {
+        "alt": "شعار كلية التربية النوعية - جامعة الزقازيق",
+        "src": "/images/branding/specific-education-faculty.png",
+        "complete": true,
+        "naturalWidth": 620,
+        "naturalHeight": 539,
+        "objectFit": "contain",
+        "width": 32,
+        "height": 32
+      }
+    ],
+    "errors": [],
+    "failedAssets": []
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "pageHeight": 761,
+    "pageWidth": 320,
+    "header": {
+      "x": 0,
+      "y": 0,
+      "width": 320,
+      "height": 188.5,
+      "bottom": 188.5
+    },
+    "nav": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "bottom": 0
+    },
+    "cards": [
+      {
+        "text": "إعداد الباحثة\n\nسلوى نبوي غنيم",
+        "x": 12,
+        "y": 357.4375,
+        "width": 296,
+        "height": 66.734375,
+        "bottom": 424.171875
+      },
+      {
+        "text": "أ.د / عبدالعزيز طلبة عبد الحميد\n\nأستاذ تكنولوجيا التعليم\nكلية التربية - جامعة المنصورة",
+        "x": 12,
+        "y": 460.171875,
+        "width": 296,
+        "height": 79.171875,
+        "bottom": 539.34375
+      },
+      {
+        "text": "أ.د / صالح شاكر\n\nأستاذ تكنولوجيا التعليم\nكلية التربية النوعية - جامعة المنصورة",
+        "x": 12,
+        "y": 547.34375,
+        "width": 296,
+        "height": 79.171875,
+        "bottom": 626.515625
+      },
+      {
+        "text": "أ.م.د / أمل السيد أحمد الظاهر\n\nأستاذ تكنولوجيا التعليم المساعد\nكلية التربية النوعية - جامعة الزقازيق",
+        "x": 12,
+        "y": 634.515625,
+        "width": 296,
+        "height": 79.171875,
+        "bottom": 713.6875
+      }
+    ],
+    "footer": {
+      "x": 0,
+      "y": 717.6875,
+      "width": 320,
+      "height": 43,
+      "bottom": 760.6875
+    },
+    "logos": [
+      {
+        "alt": "شعار جامعة الزقازيق",
+        "src": "/images/branding/zagazig-university.jpg",
+        "complete": true,
+        "naturalWidth": 148,
+        "naturalHeight": 148,
+        "objectFit": "contain",
+        "width": 32,
+        "height": 32
+      },
+      {
+        "alt": "شعار كلية التربية النوعية - جامعة الزقازيق",
+        "src": "/images/branding/specific-education-faculty.png",
+        "complete": true,
+        "naturalWidth": 620,
+        "naturalHeight": 539,
+        "objectFit": "contain",
+        "width": 32,
+        "height": 32
+      }
+    ],
+    "errors": [],
+    "failedAssets": []
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "pageHeight": 761,
+    "pageWidth": 320,
+    "header": {
+      "x": 0,
+      "y": 0,
+      "width": 320,
+      "height": 188.5,
+      "bottom": 188.5
+    },
+    "nav": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "bottom": 0
+    },
+    "cards": [
+      {
+        "text": "إعداد الباحثة\n\nسلوى نبوي غنيم",
+        "x": 12,
+        "y": 357.4375,
+        "width": 296,
+        "height": 66.734375,
+        "bottom": 424.171875
+      },
+      {
+        "text": "أ.د / عبدالعزيز طلبة عبد الحميد\n\nأستاذ تكنولوجيا التعليم\nكلية التربية - جامعة المنصورة",
+        "x": 12,
+        "y": 460.171875,
+        "width": 296,
+        "height": 79.171875,
+        "bottom": 539.34375
+      },
+      {
+        "text": "أ.د / صالح شاكر\n\nأستاذ تكنولوجيا التعليم\nكلية التربية النوعية - جامعة المنصورة",
+        "x": 12,
+        "y": 547.34375,
+        "width": 296,
+        "height": 79.171875,
+        "bottom": 626.515625
+      },
+      {
+        "text": "أ.م.د / أمل السيد أحمد الظاهر\n\nأستاذ تكنولوجيا التعليم المساعد\nكلية التربية النوعية - جامعة الزقازيق",
+        "x": 12,
+        "y": 634.515625,
+        "width": 296,
+        "height": 79.171875,
+        "bottom": 713.6875
+      }
+    ],
+    "footer": {
+      "x": 0,
+      "y": 717.6875,
+      "width": 320,
+      "height": 43,
+      "bottom": 760.6875
+    },
+    "logos": [
+      {
+        "alt": "شعار جامعة الزقازيق",
+        "src": "/images/branding/zagazig-university.jpg",
+        "complete": true,
+        "naturalWidth": 148,
+        "naturalHeight": 148,
+        "objectFit": "contain",
+        "width": 32,
+        "height": 32
+      },
+      {
+        "alt": "شعار كلية التربية النوعية - جامعة الزقازيق",
+        "src": "/images/branding/specific-education-faculty.png",
+        "complete": true,
+        "naturalWidth": 620,
+        "naturalHeight": 539,
+        "objectFit": "contain",
+        "width": 32,
+        "height": 32
+      }
+    ],
+    "errors": [],
+    "failedAssets": []
+  }
+]

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { contentManifest } from './content-manifest';
 import { fullCatalog, questionAlignment } from './assessments';
 import { learningObjectives, lessons } from './catalog';
@@ -9,7 +10,12 @@ describe('phase 4 editorial integrity', () => {
   it('keeps the researcher manifest reproducible and without inferred approval', () => {
     expect(JSON.parse(readFileSync('docs/content-manifest.json', 'utf8'))).toEqual(contentManifest);
     expect(contentManifest.approval.researcherApproved).toBe(false);
-    for (const asset of contentManifest.assets) expect(asset.officialLogo).toBe(false);
+    expect(contentManifest.assets.filter(asset => asset.officialLogo).map(asset => asset.path).sort())
+      .toEqual(contentManifest.userAssets.suppliedLogos.map(logo => `public${logo.src}`).sort());
+    for (const logo of contentManifest.userAssets.suppliedLogos) {
+      expect(logo.source).toBe('user-uploaded-archive');
+      expect(createHash('sha256').update(readFileSync(`public${logo.src}`)).digest('hex')).toBe(logo.sha256);
+    }
     for (const person of contentManifest.placeholders) expect(person.placeholder).toBe(true);
     for (const asset of contentManifest.assets) expect(readFileSync(asset.path).length).toBeGreaterThan(0);
   });

@@ -1,6 +1,7 @@
 import { elements, learningObjectives, lessons, modules, people } from './catalog';
 import { fullCatalog, questionAlignment } from './assessments';
 import { contentVersion, sources, temporaryLessonCounts } from './course-extension';
+import { brandLogos } from './branding';
 
 /** Editorial inventory, not a learner route or researcher approval. */
 export const contentManifest = {
@@ -9,11 +10,12 @@ export const contentManifest = {
   approval: { status: 'draft', researcherApproved: false },
   reviewedOn: '2026-10-16',
   authoring: 'صياغة تعليمية عربية وأمثلة مهنية أصلية لنسخة العرض، مع مراجعة الحقائق التقنية في المصادر الرسمية؛ ليست ترجمة أو اعتمادًا من الناشرين.',
-  userAssets: { suppliedPeople: people.filter(person => !person.placeholder).map(person => ({ ...person, source: 'user-provided-chat' })), suppliedLogos: [], suppliedPortraits: [], suppliedContactDetails: [], suppliedApprovedQuestions: [], requestFile: { name: 'Pasted text.txt', bytes: 26681, stage: 4 } },
-  pending: ['الدرجة العلمية والانتماء المؤسسي للباحثة إن رغبت في عرضهما', 'الشعارات الرسمية وحقوق استخدامها', 'وسائل الاتصال المعتمدة', 'اعتماد النصوص والأهداف والأسئلة ومخطط توزيعها', 'اعتماد أعداد وعناوين دروس الموديولات2–4', 'السياسات البحثية للقبلي والبعدي والشهادة', 'اعتماد محفزات الألعاب وقيمها'],
+  userAssets: { suppliedPeople: people.filter(person => !person.placeholder).map(person => ({ ...person, source: 'user-provided-chat' })), suppliedLogos: Object.values(brandLogos).map(logo => ({ ...logo, source: 'user-uploaded-archive', archive: 'انفوجرافيك للبرامج.rar' })), suppliedPortraits: [], suppliedContactDetails: [], suppliedApprovedQuestions: [], requestFile: { name: 'Pasted text.txt', bytes: 26681, stage: 4 } },
+  pending: ['الدرجة العلمية والانتماء المؤسسي للباحثة إن رغبت في عرضهما', 'وسائل الاتصال المعتمدة', 'اعتماد النصوص والأهداف والأسئلة ومخطط توزيعها', 'اعتماد أعداد وعناوين دروس الموديولات2–4', 'السياسات البحثية للقبلي والبعدي والشهادة', 'اعتماد محفزات الألعاب وقيمها'],
   temporaryLessonCounts,
   sourceReferences: Object.values(sources),
   assets: [
+    ...Object.entries(brandLogos).map(([id, logo]) => ({ id: `${id}-logo`, path: `public${logo.src}`, kind: 'user-supplied-logo', origin: `انفوجرافيك للبرامج.rar / ${logo.originalFile}`, license: 'قدم المستخدم الملف للاستخدام في المشروع؛ لا ترخيص عام مفترض', officialLogo: true })),
     { id: 'cairo', path: 'public/fonts/Cairo-OFL.txt', kind: 'font-license', origin: '@fontsource/cairo', license: 'SIL OFL 1.1', officialLogo: false },
     { id: 'lucide', path: 'public/licenses/lucide-LICENSE.txt', kind: 'icon-license', origin: 'lucide-react', license: 'ISC؛ وأيقونات مشتقة من Feather تحت MIT كما في الترخيص', officialLogo: false },
     { id: 'favicon', path: 'public/favicon.svg', kind: 'original-vector', origin: 'رسم مجرد للمشروع', license: 'أصل مؤلف للمشروع، دون اقتباس شعار رسمي', officialLogo: false },

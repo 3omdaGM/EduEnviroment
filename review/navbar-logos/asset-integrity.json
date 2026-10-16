@@ -1,0 +1,18 @@
+[
+  {
+    "originalFile": "zagUni.jpg",
+    "publicPath": "public/images/branding/zagazig-university.jpg",
+    "bytes": 10152,
+    "sha256": "7c1f118388f8d9e12773d5904cc334c69f77ff6fcd5d051ba84d45607012cb57",
+    "matchesArchiveBytes": true,
+    "matchesBuildBytes": true
+  },
+  {
+    "originalFile": "تربية+نوعية.png",
+    "publicPath": "public/images/branding/specific-education-faculty.png",
+    "bytes": 529582,
+    "sha256": "d240a21cddb161920a84ad4962cf9fba43e58e5dec2b111ef732c3d5654fb108",
+    "matchesArchiveBytes": true,
+    "matchesBuildBytes": true
+  }
+]
