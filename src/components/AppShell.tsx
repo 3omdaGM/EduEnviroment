@@ -1,7 +1,8 @@
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router';
-import { ChevronDown, GraduationCap, Landmark, LogIn, Menu } from 'lucide-react';
+import { ChevronDown, LogIn, Menu } from 'lucide-react';
 import { environmentName } from '../data/catalog';
+import { brandLogos } from '../data/branding';
 import { Button, Drawer } from './ui';
 import { useTraining } from '../state/training-context';
 import { assessmentAccess } from '../domain/training';
@@ -21,9 +22,9 @@ function NavigationLink({ item, onNavigate, className = '' }: { item: { to: stri
 
 export function BrandHeader() {
   return <div className="brand-header container">
-    <div className="brand-placeholder" role="img" aria-label="موضع شعار جامعة الزقازيق"><span className="brand-mark"><Landmark size={27} aria-hidden="true" /></span></div>
+    <div className="brand-logo-slot"><img className="brand-logo" src={brandLogos.university.src} alt={brandLogos.university.alt} width={brandLogos.university.width} height={brandLogos.university.height} decoding="async" /></div>
     <div className="brand-title"><Link to="/" className="environment-name">{environmentName}</Link></div>
-    <div className="brand-placeholder" role="img" aria-label="موضع شعار الكلية أو القسم"><span className="brand-mark faculty-mark"><GraduationCap size={29} aria-hidden="true" /></span></div>
+    <div className="brand-logo-slot"><img className="brand-logo" src={brandLogos.faculty.src} alt={brandLogos.faculty.alt} width={brandLogos.faculty.width} height={brandLogos.faculty.height} decoding="async" /></div>
   </div>;
 }
 

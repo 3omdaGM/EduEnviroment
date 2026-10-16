@@ -521,6 +521,8 @@ progress::-moz-progress-bar { background: var(--accent); border-radius: 8px; }
 
 /* Requested compact header and home, retaining full text and natural reflow. */
 .brand-header { grid-template-columns: 52px minmax(0, 1fr) 52px; gap: 20px; padding-block: 9px; }
+.brand-logo-slot { display: grid; place-items: center; min-inline-size: 0; }
+.brand-logo { display: block; inline-size: 52px; block-size: 52px; object-fit: contain; }
 .environment-name { max-inline-size: 940px; margin-inline: auto; font-size: 18px; line-height: 1.65; }
 .brand-mark { inline-size: 42px; block-size: 42px; }
 .navigation-inner { justify-content: center; min-block-size: 44px; }
@@ -553,6 +555,7 @@ progress::-moz-progress-bar { background: var(--accent); border-radius: 8px; }
 @media (max-width: 767px) {
   .brand-header { grid-template-columns: 32px minmax(0, 1fr) 32px; gap: 9px; padding-block: 6px; }
   .brand-mark { inline-size: 30px; block-size: 30px; }
+  .brand-logo { inline-size: 32px; block-size: 32px; }
   .brand-mark svg { inline-size: 20px; }
   .environment-name { font-size: 15px; line-height: 1.7; }
   .mobile-nav .button { min-inline-size: 44px; padding: 6px; }

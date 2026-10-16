@@ -42,7 +42,28 @@
         "source": "user-provided-chat"
       }
     ],
-    "suppliedLogos": [],
+    "suppliedLogos": [
+      {
+        "src": "/images/branding/zagazig-university.jpg",
+        "alt": "شعار جامعة الزقازيق",
+        "width": 148,
+        "height": 148,
+        "originalFile": "zagUni.jpg",
+        "sha256": "7c1f118388f8d9e12773d5904cc334c69f77ff6fcd5d051ba84d45607012cb57",
+        "source": "user-uploaded-archive",
+        "archive": "انفوجرافيك للبرامج.rar"
+      },
+      {
+        "src": "/images/branding/specific-education-faculty.png",
+        "alt": "شعار كلية التربية النوعية - جامعة الزقازيق",
+        "width": 620,
+        "height": 539,
+        "originalFile": "تربية+نوعية.png",
+        "sha256": "d240a21cddb161920a84ad4962cf9fba43e58e5dec2b111ef732c3d5654fb108",
+        "source": "user-uploaded-archive",
+        "archive": "انفوجرافيك للبرامج.rar"
+      }
+    ],
     "suppliedPortraits": [],
     "suppliedContactDetails": [],
     "suppliedApprovedQuestions": [],
@@ -54,7 +75,6 @@
   },
   "pending": [
     "الدرجة العلمية والانتماء المؤسسي للباحثة إن رغبت في عرضهما",
-    "الشعارات الرسمية وحقوق استخدامها",
     "وسائل الاتصال المعتمدة",
     "اعتماد النصوص والأهداف والأسئلة ومخطط توزيعها",
     "اعتماد أعداد وعناوين دروس الموديولات2–4",
@@ -160,6 +180,22 @@
     }
   ],
   "assets": [
+    {
+      "id": "university-logo",
+      "path": "public/images/branding/zagazig-university.jpg",
+      "kind": "user-supplied-logo",
+      "origin": "انفوجرافيك للبرامج.rar / zagUni.jpg",
+      "license": "قدم المستخدم الملف للاستخدام في المشروع؛ لا ترخيص عام مفترض",
+      "officialLogo": true
+    },
+    {
+      "id": "faculty-logo",
+      "path": "public/images/branding/specific-education-faculty.png",
+      "kind": "user-supplied-logo",
+      "origin": "انفوجرافيك للبرامج.rar / تربية+نوعية.png",
+      "license": "قدم المستخدم الملف للاستخدام في المشروع؛ لا ترخيص عام مفترض",
+      "officialLogo": true
+    },
     {
       "id": "cairo",
       "path": "public/fonts/Cairo-OFL.txt",
