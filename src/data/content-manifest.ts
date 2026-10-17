@@ -1,4 +1,4 @@
-import { elements, learningObjectives, lessons, modules, people } from './catalog';
+import { environmentGoals, elements, learningObjectives, lessons, modules, people } from './catalog';
 import { fullCatalog, questionAlignment } from './assessments';
 import { contentVersion, sources, temporaryLessonCounts } from './course-extension';
 import { brandLogos } from './branding';
@@ -12,6 +12,7 @@ export const contentManifest = {
   authoring: 'صياغة تعليمية عربية وأمثلة مهنية أصلية لنسخة العرض، مع مراجعة الحقائق التقنية في المصادر الرسمية؛ ليست ترجمة أو اعتمادًا من الناشرين.',
   userAssets: { suppliedPeople: people.filter(person => !person.placeholder).map(person => ({ ...person, source: 'user-provided-chat' })), suppliedLogos: Object.values(brandLogos).map(logo => ({ ...logo, source: 'user-uploaded-archive', archive: 'انفوجرافيك للبرامج.rar' })), suppliedPortraits: [], suppliedContactDetails: [], suppliedApprovedQuestions: [], requestFile: { name: 'Pasted text.txt', bytes: 26681, stage: 4 } },
   pending: ['الدرجة العلمية والانتماء المؤسسي للباحثة إن رغبت في عرضهما', 'وسائل الاتصال المعتمدة', 'اعتماد النصوص والأهداف والأسئلة ومخطط توزيعها', 'اعتماد أعداد وعناوين دروس الموديولات2–4', 'السياسات البحثية للقبلي والبعدي والشهادة', 'اعتماد محفزات الألعاب وقيمها'],
+  environmentGoals: { source: 'user-provided-reference-image', items: environmentGoals },
   temporaryLessonCounts,
   sourceReferences: Object.values(sources),
   assets: [

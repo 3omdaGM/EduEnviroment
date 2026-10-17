@@ -61,7 +61,8 @@ export interface DemoStudyPolicy {
   preEligibilityAttempt: 'first-submitted-pre';
   preEligibilityThreshold: { operator: 'lte'; percent: 50 };
   selfPassThreshold: { operator: 'gte'; percent: 50 };
-  submitRequiresAllAnswers: true;
+  minimumAnsweredQuestions: { pre: 0; post: 5; activity: 'all'; self: 'all' };
+  navigation: 'free-after-pre-eligibility';
   postAnalysisAttempt: 'unresolved';
   postPassThreshold: null;
   certificate: 'unresolved';
@@ -74,7 +75,8 @@ export const DEMO_STUDY_POLICY: DemoStudyPolicy = {
   preEligibilityAttempt: 'first-submitted-pre',
   preEligibilityThreshold: { operator: 'lte', percent: 50 },
   selfPassThreshold: { operator: 'gte', percent: 50 },
-  submitRequiresAllAnswers: true,
+  minimumAnsweredQuestions: { pre: 0, post: 5, activity: 'all', self: 'all' },
+  navigation: 'free-after-pre-eligibility',
   postAnalysisAttempt: 'unresolved',
   postPassThreshold: null,
   certificate: 'unresolved',
@@ -201,7 +203,7 @@ export interface AssessmentDefinition {
   timeLimitSeconds: null;
   attemptLimit: number | null; // null = unlimited; pre/post/self initially null.
   submitRequiresAllAnswers: boolean;
-  minimumAnsweredQuestions: number; // min(5, question count) in the current demo policy.
+  minimumAnsweredQuestions: number; // Pre: 0; other assessments: min(5, question count).
   feedback: 'after-submit-educational' | 'score-only';
 }
 
@@ -352,7 +354,7 @@ export interface AssessmentInstructions {
   timeLimitSeconds: null;
   attemptLimit: number | null;
   submitRequiresAllAnswers: boolean;
-  minimumAnsweredQuestions: number; // min(5, question count) in the current demo policy.
+  minimumAnsweredQuestions: number; // Pre: 0; other assessments: min(5, question count).
   feedbackPolicyLabel: string;
   actualSavePolicyLabel: string;
   startAccess: Access;

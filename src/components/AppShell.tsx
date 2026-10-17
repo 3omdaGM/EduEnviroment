@@ -35,7 +35,7 @@ function AssessmentMenu() {
   const { pathname } = useLocation();
   const { catalog, snapshot } = useTraining();
   const preLabel = snapshot.data?.learner.active ? 'متاح' : 'يحتاج تجربة دخول';
-  const postLabel = snapshot.data && assessmentAccess(snapshot.data, catalog, 'post').allowed ? 'متاح' : 'مقفل حتى إكمال المسار';
+  const postLabel = snapshot.data && assessmentAccess(snapshot.data, catalog, 'post').allowed ? 'متاح' : 'يتطلب التأهل بالقبلي';
   useEffect(() => {
     if (!open) return;
     const escape = (event: KeyboardEvent) => { if (event.key === 'Escape') { setOpen(false); button.current?.focus(); } };
@@ -62,7 +62,7 @@ export function MobileNav() {
   const [open, setOpen] = useState(false);
   const { catalog, snapshot } = useTraining();
   const preLabel = snapshot.data?.learner.active ? 'متاح' : 'يحتاج تجربة دخول';
-  const postLabel = snapshot.data && assessmentAccess(snapshot.data, catalog, 'post').allowed ? 'متاح' : 'مقفل حتى إكمال المسار';
+  const postLabel = snapshot.data && assessmentAccess(snapshot.data, catalog, 'post').allowed ? 'متاح' : 'يتطلب التأهل بالقبلي';
   return <div className="mobile-nav"><Button variant="ghost" onClick={() => setOpen(true)} aria-haspopup="dialog" aria-expanded={open}><Menu size={21} aria-hidden="true" /><span className="sr-only">قائمة التنقل الرئيسية</span></Button>
     <Drawer open={open} onClose={() => setOpen(false)} title="قائمة التنقل الرئيسية">
       <nav aria-label="التنقل الرئيسي للهاتف" className="drawer-navigation">
