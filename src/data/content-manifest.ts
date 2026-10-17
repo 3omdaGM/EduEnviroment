@@ -17,6 +17,7 @@ export const contentManifest = {
   sourceReferences: Object.values(sources),
   assets: [
     ...Object.entries(brandLogos).map(([id, logo]) => ({ id: `${id}-logo`, path: `public${logo.src}`, kind: 'user-supplied-logo', origin: `انفوجرافيك للبرامج.rar / ${logo.originalFile}`, license: 'قدم المستخدم الملف للاستخدام في المشروع؛ لا ترخيص عام مفترض', officialLogo: true })),
+    { id: 'university-logo-display-mask', path: 'public/images/branding/zagazig-university-mask.svg', kind: 'display-mask', origin: 'حدود شعار الجامعة المقدم من المستخدم؛ تفريغ الخلفية بطلبه دون تغيير ملف الشعار', license: 'قناع عرض للمشروع؛ أصل الشعار المقدم محفوظ', officialLogo: false },
     { id: 'cairo', path: 'public/fonts/Cairo-OFL.txt', kind: 'font-license', origin: '@fontsource/cairo', license: 'SIL OFL 1.1', officialLogo: false },
     { id: 'lucide', path: 'public/licenses/lucide-LICENSE.txt', kind: 'icon-license', origin: 'lucide-react', license: 'ISC؛ وأيقونات مشتقة من Feather تحت MIT كما في الترخيص', officialLogo: false },
     { id: 'favicon', path: 'public/favicon.svg', kind: 'original-vector', origin: 'رسم مجرد للمشروع', license: 'أصل مؤلف للمشروع، دون اقتباس شعار رسمي', officialLogo: false },

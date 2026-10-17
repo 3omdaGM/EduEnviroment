@@ -1,0 +1,135 @@
+{
+  "reviewedOn": "2026-10-18",
+  "browser": "Chromium viewport emulation",
+  "sourceImagesUnchanged": true,
+  "results": [
+    {
+      "width": 1366,
+      "height": 768,
+      "uni": {
+        "x": 1215,
+        "y": 8,
+        "width": 52,
+        "height": 52,
+        "right": 1267,
+        "bottom": 60
+      },
+      "faculty": {
+        "x": 95,
+        "y": 8,
+        "width": 60,
+        "height": 52,
+        "right": 155,
+        "bottom": 60
+      },
+      "title": {
+        "x": 175,
+        "y": 20.796875,
+        "width": 1016,
+        "height": 26.390625,
+        "right": 1191,
+        "bottom": 47.1875
+      },
+      "mask": "url(\"http://127.0.0.1:4185/images/branding/zagazig-university-mask.svg\")",
+      "facultyFit": "contain",
+      "pageWidth": 1366,
+      "viewportWidth": 1366
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "uni": {
+        "x": 677,
+        "y": 8.390625,
+        "width": 52,
+        "height": 52,
+        "right": 729,
+        "bottom": 60.390625
+      },
+      "faculty": {
+        "x": 35,
+        "y": 8.390625,
+        "width": 60,
+        "height": 52,
+        "right": 95,
+        "bottom": 60.390625
+      },
+      "title": {
+        "x": 115,
+        "y": 8,
+        "width": 538,
+        "height": 52.78125,
+        "right": 653,
+        "bottom": 60.78125
+      },
+      "mask": "url(\"http://127.0.0.1:4185/images/branding/zagazig-university-mask.svg\")",
+      "facultyFit": "contain",
+      "pageWidth": 768,
+      "viewportWidth": 768
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "uni": {
+        "x": 333,
+        "y": 31.53125,
+        "width": 36,
+        "height": 36,
+        "right": 369,
+        "bottom": 67.53125
+      },
+      "faculty": {
+        "x": 19,
+        "y": 31.53125,
+        "width": 40,
+        "height": 36,
+        "right": 59,
+        "bottom": 67.53125
+      },
+      "title": {
+        "x": 66,
+        "y": 5,
+        "width": 258,
+        "height": 89.0625,
+        "right": 324,
+        "bottom": 94.0625
+      },
+      "mask": "url(\"http://127.0.0.1:4185/images/branding/zagazig-university-mask.svg\")",
+      "facultyFit": "contain",
+      "pageWidth": 390,
+      "viewportWidth": 390
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "uni": {
+        "x": 269,
+        "y": 24.5,
+        "width": 36,
+        "height": 36,
+        "right": 305,
+        "bottom": 60.5
+      },
+      "faculty": {
+        "x": 13,
+        "y": 24.5,
+        "width": 40,
+        "height": 36,
+        "right": 53,
+        "bottom": 60.5
+      },
+      "title": {
+        "x": 60,
+        "y": 5,
+        "width": 200,
+        "height": 75,
+        "right": 260,
+        "bottom": 80
+      },
+      "mask": "url(\"http://127.0.0.1:4185/images/branding/zagazig-university-mask.svg\")",
+      "facultyFit": "contain",
+      "pageWidth": 320,
+      "viewportWidth": 320
+    }
+  ]
+}
