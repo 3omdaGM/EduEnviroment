@@ -4,7 +4,7 @@
   --font-sans: "Cairo", "Tahoma", sans-serif;
   --color-petrol: #0b3c5d;
   --color-cyan-dark: #0e7490;
-  --color-canvas: #f3f8fc;
+  --color-canvas: #ffffff;
 }
 
 :root {
@@ -965,9 +965,9 @@ progress::-moz-progress-bar { background: var(--accent); border-radius: 8px; }
   .question-shell .compact-question-session > p { display: none; }
 }
 
-/* Clear blue canvas and white content surfaces; no viewport-driven pagination. */
-:root { --color-canvas: #d1e8f6; --ink: #103f66; --text: #203e55; --muted: #425f75; --line: #aac9df; --accent: #066a94; --accent-soft: #e3f2fc; --shadow: 0 5px 22px #103f6612; }
-body { background: linear-gradient(145deg, #c7e2f3, #dceef9); color: var(--text); }
+/* White canvas and dark readable content; no viewport-driven pagination. */
+:root { --color-canvas: #ffffff; --ink: #122e49; --text: #1d2e3f; --muted: #3b4e60; --line: #aac9df; --accent: #066a94; --accent-soft: #e3f2fc; --shadow: 0 5px 22px #103f6612; }
+body { background: #ffffff; color: var(--text); }
 .site-header { border-color: #8cb9d7; box-shadow: 0 3px 16px #103f6614; }
 .card { border-color: var(--line); box-shadow: var(--shadow); }
 .main-content { padding-block: clamp(8px, 1.5vh, 18px); }
@@ -1055,3 +1055,15 @@ body { background: linear-gradient(145deg, #c7e2f3, #dceef9); color: var(--text)
 @media (min-width:768px) and (max-height:700px) {
   .element-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* Blue shared navbar with a light foreground; menus retain dark text on white. */
+.site-header { background: #145da0; color: #ffffff; border-color: #104d86; }
+.site-header .environment-name, .site-header .nav-link, .site-header .nav-link.active { color: #ffffff; }
+.site-header .navigation-bar { border-block-start-color: #ffffff38; }
+.site-header .nav-link::after { background: #d9eeff; }
+.site-header .nav-link.active { font-weight: 700; }
+.site-header .mobile-nav > .button { color: #ffffff; }
+.site-header .assessment-dropdown, .site-header .drawer { color: var(--text); background: #ffffff; }
+.site-header .environment-name:focus-visible, .site-header .nav-link:focus-visible, .site-header .mobile-nav > .button:focus-visible { outline-color: #ffe08a; }
+.reading-text { color: var(--text); }
+.site-footer { background: #ffffff; }

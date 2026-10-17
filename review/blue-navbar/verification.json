@@ -1,0 +1,222 @@
+{
+  "reviewedOn": "2026-10-18",
+  "browser": "Chromium; viewport emulation",
+  "results": [
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "route": "/",
+      "css": {
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "header": "rgb(20, 93, 160)",
+        "title": "rgb(255, 255, 255)",
+        "pageWidth": 1366,
+        "width": 1366
+      },
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "route": "/goals",
+      "css": {
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "header": "rgb(20, 93, 160)",
+        "title": "rgb(255, 255, 255)",
+        "pageWidth": 1366,
+        "width": 1366
+      },
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "route": "/content",
+      "css": {
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "header": "rgb(20, 93, 160)",
+        "title": "rgb(255, 255, 255)",
+        "pageWidth": 1366,
+        "width": 1366
+      },
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "route": "/modules/mod-01/intro",
+      "css": {
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "header": "rgb(20, 93, 160)",
+        "title": "rgb(255, 255, 255)",
+        "pageWidth": 1366,
+        "width": 1366
+      },
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "state": "assessment-dropdown",
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/",
+      "css": {
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "header": "rgb(20, 93, 160)",
+        "title": "rgb(255, 255, 255)",
+        "pageWidth": 390,
+        "width": 390
+      },
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/goals",
+      "css": {
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "header": "rgb(20, 93, 160)",
+        "title": "rgb(255, 255, 255)",
+        "pageWidth": 390,
+        "width": 390
+      },
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/content",
+      "css": {
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "header": "rgb(20, 93, 160)",
+        "title": "rgb(255, 255, 255)",
+        "pageWidth": 390,
+        "width": 390
+      },
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/modules/mod-01/intro",
+      "css": {
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "header": "rgb(20, 93, 160)",
+        "title": "rgb(255, 255, 255)",
+        "pageWidth": 390,
+        "width": 390
+      },
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": "mobile-menu",
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "route": "/",
+      "css": {
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "header": "rgb(20, 93, 160)",
+        "title": "rgb(255, 255, 255)",
+        "pageWidth": 320,
+        "width": 320
+      },
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "route": "/goals",
+      "css": {
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "header": "rgb(20, 93, 160)",
+        "title": "rgb(255, 255, 255)",
+        "pageWidth": 320,
+        "width": 320
+      },
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "route": "/content",
+      "css": {
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "header": "rgb(20, 93, 160)",
+        "title": "rgb(255, 255, 255)",
+        "pageWidth": 320,
+        "width": 320
+      },
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "route": "/modules/mod-01/intro",
+      "css": {
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "header": "rgb(20, 93, 160)",
+        "title": "rgb(255, 255, 255)",
+        "pageWidth": 320,
+        "width": 320
+      },
+      "axeViolations": 0
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "state": "mobile-menu",
+      "axeViolations": 0
+    }
+  ]
+}
