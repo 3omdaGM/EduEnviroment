@@ -81,6 +81,15 @@
     "السياسات البحثية للقبلي والبعدي والشهادة",
     "اعتماد محفزات الألعاب وقيمها"
   ],
+  "environmentGoals": {
+    "source": "user-provided-reference-image",
+    "items": [
+      "تنمية المعارف النظرية المرتبطة بمفهوم الدروس التفاعلية والتعرف على خصائصها ومميزاتها.",
+      "تنمية المعارف والمهارات المرتبطة بمراحل التصميم التعليمي للدروس التفاعلية.",
+      "تنمية المعارف والمهارات المرتبطة بإنتاج الدروس التفاعلية باستخدام برنامج CourseLab.",
+      "تنمية المعارف والمهارات المرتبطة بنشر وتطبيق وتقويم الدروس التفاعلية."
+    ]
+  },
   "temporaryLessonCounts": {
     "mod-01": 3,
     "mod-02": 2,
@@ -1608,7 +1617,7 @@
       "scope": {
         "kind": "pre"
       },
-      "minimumAnsweredQuestions": 5,
+      "minimumAnsweredQuestions": 0,
       "submitRequiresAllAnswers": false,
       "assessmentVersion": "0.4.1-draft",
       "approval": {

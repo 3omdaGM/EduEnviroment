@@ -1,0 +1,97 @@
+{
+  "reviewedOn": "2026-10-18",
+  "contentVersion": "0.4.1-draft",
+  "unitTestsPassed": 28,
+  "uniqueBrowserTestsPassed": 15,
+  "browserReports": {
+    "test-results.json": {
+      "startTime": "2026-10-17T22:30:48.054Z",
+      "duration": 203724.592,
+      "expected": 13,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "focused-results.json": {
+      "startTime": "2026-10-17T22:34:37.550Z",
+      "duration": 50678.027,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "production-results.json": {
+      "startTime": "2026-10-17T22:34:27.990Z",
+      "duration": 4257.687,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "layout": [
+    {
+      "viewport": "1280x620",
+      "routes": 62,
+      "horizontalOverflowRoutes": 0,
+      "verticalOverflowRoutes": 0,
+      "maxVerticalOverflow": 0
+    },
+    {
+      "viewport": "1366x768",
+      "routes": 62,
+      "horizontalOverflowRoutes": 0,
+      "verticalOverflowRoutes": 0,
+      "maxVerticalOverflow": 0
+    },
+    {
+      "viewport": "1920x1080",
+      "routes": 62,
+      "horizontalOverflowRoutes": 0,
+      "verticalOverflowRoutes": 0,
+      "maxVerticalOverflow": 0
+    },
+    {
+      "viewport": "320x568",
+      "routes": 62,
+      "horizontalOverflowRoutes": 0,
+      "verticalOverflowRoutes": 26,
+      "maxVerticalOverflow": 94
+    },
+    {
+      "viewport": "360x640",
+      "routes": 62,
+      "horizontalOverflowRoutes": 0,
+      "verticalOverflowRoutes": 4,
+      "maxVerticalOverflow": 10
+    },
+    {
+      "viewport": "390x844",
+      "routes": 62,
+      "horizontalOverflowRoutes": 0,
+      "verticalOverflowRoutes": 0,
+      "maxVerticalOverflow": 0
+    },
+    {
+      "viewport": "768x1024",
+      "routes": 62,
+      "horizontalOverflowRoutes": 0,
+      "verticalOverflowRoutes": 0,
+      "maxVerticalOverflow": 0
+    }
+  ],
+  "readingPartsChecked": 58,
+  "readingPartViewportCount": 7,
+  "guideStepChecks": 63,
+  "higherResolutionWidths": [
+    1366,
+    1920,
+    2560,
+    3840
+  ],
+  "limitations": [
+    "Chromium with viewport and touch emulation, not physical devices or Safari.",
+    "Natural vertical scrolling remains when complete readable content exceeds the screen, explicitly accepted by the user.",
+    "Demo browser storage and client guards are not production authentication."
+  ]
+}

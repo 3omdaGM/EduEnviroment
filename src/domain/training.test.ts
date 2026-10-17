@@ -47,12 +47,12 @@ describe('content contract and progression', () => {
       expect(d.questionIds.map(id => fullCatalog.questions.find(q => q.id === id)!).filter(q => q.type === 'single-choice')).toHaveLength(15);
     }
     expect(fullCatalog.modules.map(m => m.lessonIds.length)).toEqual([3, 2, 2, 2]);
-    for (const d of fullCatalog.assessments) { expect(d.minimumAnsweredQuestions).toBe(Math.min(5, d.questionIds.length)); expect(d.submitRequiresAllAnswers).toBe(d.questionIds.length <= 5); }
+    for (const d of fullCatalog.assessments) { expect(d.minimumAnsweredQuestions).toBe(d.scope.kind === 'pre' ? 0 : Math.min(5, d.questionIds.length)); expect(d.submitRequiresAllAnswers).toBe(d.scope.kind !== 'pre' && d.questionIds.length <= 5); }
     expect(fullCatalog.questions.every(q => q.editorial.approval.status === 'draft' && q.answerKey.rationale && q.editorial.sources.length && q.options.some(o => o.id === q.answerKey.correctOptionId))).toBe(true);
     expect(new Set(fullCatalog.questions.map(q => q.id)).size).toBe(fullCatalog.questions.length);
     expect(fullCatalog.questions.filter(q => q.id.startsWith('pre-')).map(q => q.prompt)).not.toEqual(fullCatalog.questions.filter(q => q.id.startsWith('post-')).map(q => q.prompt));
   });
-  it('requires login, submitted pre, previous lesson and previous module', () => {
+  it('requires login and eligible submitted pre, then opens every lesson and module', () => {
     const r = runner();
     expect(moduleAccess(r.state, small, 'mod-01').allowed).toBe(false);
     r.execute({ type: 'login', name: 'عرض' });
@@ -60,9 +60,9 @@ describe('content contract and progression', () => {
     expect(moduleAccess(r.state, small, 'mod-01').allowed).toBe(false);
     r.take('pre', 1);
     expect(moduleAccess(r.state, small, 'mod-01').allowed).toBe(true);
-    expect(moduleAccess(r.state, small, 'mod-02').allowed).toBe(false);
+    expect(moduleAccess(r.state, small, 'mod-02').allowed).toBe(true);
     const full = runner(fullCatalog, scenarioState(fullCatalog, 'eligible-50'));
-    expect(lessonAccess(full.state, fullCatalog, 'les-01-02').allowed).toBe(false);
+    for (const lesson of fullCatalog.lessons) expect(lessonAccess(full.state, fullCatalog, lesson.id).allowed).toBe(true);
   });
   it('uses first submitted pre and never gives pre XP', () => {
     const r = runner(fullCatalog); r.execute({ type: 'login', name: 'عرض' });
@@ -72,24 +72,25 @@ describe('content contract and progression', () => {
     const yes = runner(fullCatalog); yes.execute({ type: 'login', name: 'عرض' }); yes.take('pre', 10); yes.take('pre', 20);
     expect(moduleAccess(yes.state, fullCatalog, 'mod-01').allowed).toBe(true);
   });
-  it('prevents skipping elements and parts, including direct command calls', () => {
+  it('opens every element and part out of order after eligibility, without losing validation', () => {
     const r = runner(fullCatalog, scenarioState(fullCatalog, 'eligible-50'));
-    const e = fullCatalog.elements[0]!;
-    expect(elementAccess(r.state, fullCatalog, fullCatalog.elements[1]!.id).allowed).toBe(false);
-    expect(partAccess(r.state, fullCatalog, e.id, e.parts[1]!.id).allowed).toBe(false);
-    expect(() => r.execute({ type: 'read-part', elementId: e.id, partId: e.parts[1]!.id })).toThrow();
-    r.execute({ type: 'read-part', elementId: e.id, partId: e.parts[0]!.id });
-    expect(elementAccess(r.state, fullCatalog, fullCatalog.elements[1]!.id).allowed).toBe(false);
-    r.execute({ type: 'read-part', elementId: e.id, partId: e.parts[1]!.id });
-    expect(elementAccess(r.state, fullCatalog, fullCatalog.elements[1]!.id).allowed).toBe(true);
+    for (const e of [...fullCatalog.elements].reverse()) {
+      expect(elementAccess(r.state, fullCatalog, e.id).allowed).toBe(true);
+      for (const p of [...e.parts].reverse()) {
+        expect(partAccess(r.state, fullCatalog, e.id, p.id).allowed).toBe(true);
+        r.execute({ type: 'read-part', elementId: e.id, partId: p.id });
+      }
+    }
+    expect(parseState(JSON.stringify(r.state), fullCatalog)).toEqual(r.state);
+    expect(() => r.execute({ type: 'read-part', elementId: fullCatalog.elements[0]!.id, partId: 'foreign' })).toThrow();
   });
-  it('requires activity submission but accepts 0%, and requires 50% in self', () => {
+  it('opens activity and self independently; 50% still records lesson achievement', () => {
     const r = runner(small, scenarioState(small, 'eligible-50')), lesson = small.lessons[0]!;
-    expect(assessmentAccess(r.state, small, lesson.activityAssessmentId).allowed).toBe(false);
+    expect(assessmentAccess(r.state, small, lesson.activityAssessmentId).allowed).toBe(true);
     prepareFirstLesson(r);
-    expect(assessmentAccess(r.state, small, lesson.selfAssessmentId).allowed).toBe(false);
+    expect(assessmentAccess(r.state, small, lesson.selfAssessmentId).allowed).toBe(true);
     r.execute({ type: 'start-attempt', assessmentId: lesson.activityAssessmentId });
-    expect(assessmentAccess(r.state, small, lesson.selfAssessmentId).allowed).toBe(false);
+    expect(assessmentAccess(r.state, small, lesson.selfAssessmentId).allowed).toBe(true);
     r.take(lesson.activityAssessmentId, 0);
     expect(assessmentAccess(r.state, small, lesson.selfAssessmentId).allowed).toBe(true);
     r.take(lesson.selfAssessmentId, 0);
@@ -111,7 +112,8 @@ describe('content contract and progression', () => {
     expect(r.state.rewards.reduce((sum, r) => sum + r.points, 0)).toBe(total);
     expect(() => r.execute({ type: 'answer', attemptId: passedId, questionId: 'x', optionId: 'x' })).toThrow(/لا يمكن تعديل/);
   });
-  it('opens post after all modules, without an intermediate or certificate test', () => {
+  it('opens post immediately after eligibility and preserves completed achievements', () => {
+    expect(assessmentAccess(scenarioState(fullCatalog, 'eligible-50'), fullCatalog, 'post').allowed).toBe(true);
     const state = scenarioState(fullCatalog, 'completed');
     expect(fullCatalog.modules.every(m => moduleComplete(state, fullCatalog, m.id))).toBe(true);
     expect(assessmentAccess(state, fullCatalog, 'post').allowed).toBe(true);
@@ -122,10 +124,11 @@ describe('content contract and progression', () => {
 });
 describe('adapter, drafts and durable transaction limits', () => {
   it('restores draft answers and navigation and forbids incomplete submit', async () => {
-    const port = memory(), a = new DemoAdapter(port, small);
+    const port = memory(), a = new DemoAdapter(port, small, true);
+    await a.replaceFromTools(scenarioState(small, 'eligible-50'));
     await a.execute({ type: 'login', name: 'تجربة' });
-    const start = await a.execute({ type: 'start-attempt', assessmentId: 'pre' }); expect(start.ok).toBe(true);
-    const id = a.getSnapshot().data!.attempts[0]!.id, q = small.questions.find(q => q.id === small.assessments[0]!.questionIds[0])!;
+    const start = await a.execute({ type: 'start-attempt', assessmentId: 'post' }); expect(start.ok).toBe(true);
+    const id = a.getSnapshot().data!.attempts.find(a => a.assessmentId === 'post')!.id, q = small.questions.find(q => q.id === small.assessments.find(d => d.id === 'post')!.questionIds[0])!;
     await a.execute({ type: 'answer', attemptId: id, questionId: q.id, optionId: q.options[0]!.id });
     await a.execute({ type: 'position', attemptId: id, position: 1 });
     expect((await a.execute({ type: 'submit', attemptId: id })).ok).toBe(false);
@@ -180,16 +183,16 @@ describe('adapter, drafts and durable transaction limits', () => {
 
 describe('partial submission with a minimum answered count', () => {
   it('rejects four answers, submits five of twenty, scores skipped questions as zero and restores durably', () => {
-    const r = runner(fullCatalog); r.execute({ type: 'login', name: 'تجربة' });
-    const id = r.execute({ type: 'start-attempt', assessmentId: 'pre' }).attemptId!;
-    const ids = r.state.attempts[0]!.questionIds;
+    const r = runner(fullCatalog, scenarioState(fullCatalog, 'eligible-50'));
+    const id = r.execute({ type: 'start-attempt', assessmentId: 'post' }).attemptId!;
+    const ids = r.state.attempts.find(a => a.id === id)!.questionIds;
     for (const qid of ids.slice(0, 4)) { const q = fullCatalog.questions.find(q => q.id === qid)!; r.execute({ type: 'answer', attemptId: id, questionId: qid, optionId: q.answerKey.correctOptionId }); }
     expect(() => r.execute({ type: 'submit', attemptId: id })).toThrow('5');
     const q = fullCatalog.questions.find(q => q.id === ids[4])!;
     r.execute({ type: 'answer', attemptId: id, questionId: q.id, optionId: q.answerKey.correctOptionId });
     r.execute({ type: 'submit', attemptId: id });
-    expect(r.state.attempts[0]!.score).toEqual({ earned: 5, possible: 20 });
-    expect(Object.keys(r.state.attempts[0]!.answers)).toHaveLength(5);
+    expect(r.state.attempts.find(a => a.id === id)!.score).toEqual({ earned: 5, possible: 20 });
+    expect(Object.keys(r.state.attempts.find(a => a.id === id)!.answers)).toHaveLength(5);
     expect(parseState(JSON.stringify(r.state), fullCatalog)).toEqual(r.state);
     expect(r.state.rewards).toHaveLength(0);
     expect(() => r.execute({ type: 'answer', attemptId: id, questionId: ids[5]!, optionId: 'x' })).toThrow();
@@ -213,5 +216,25 @@ describe('partial submission with a minimum answered count', () => {
     const raw = structuredClone(r.state), a = raw.attempts[0]!;
     for (const id of a.questionIds.slice(0, 5)) a.answers[id] = 'foreign-option';
     expect(() => parseState(JSON.stringify(raw), fullCatalog)).toThrow();
+  });
+});
+
+
+describe('empty pre submission', () => {
+  it('submits zero answers as 0/20, restores it, and opens all content without XP', () => {
+    const r = runner(fullCatalog); r.execute({ type: 'login', name: 'تجربة' });
+    const id = r.execute({ type: 'start-attempt', assessmentId: 'pre' }).attemptId!;
+    expect(lessonAccess(r.state, fullCatalog, fullCatalog.lessons.at(-1)!.id).allowed).toBe(false);
+    r.execute({ type: 'submit', attemptId: id });
+    expect(r.state.attempts[0]!.score).toEqual({ earned: 0, possible: 20 });
+    expect(r.state.attempts[0]!.answers).toEqual({});
+    expect(r.state.rewards).toEqual([]);
+    expect(parseState(JSON.stringify(r.state), fullCatalog)).toEqual(r.state);
+    for (const lesson of fullCatalog.lessons) {
+      expect(lessonAccess(r.state, fullCatalog, lesson.id).allowed).toBe(true);
+      expect(assessmentAccess(r.state, fullCatalog, lesson.selfAssessmentId).allowed).toBe(true);
+    }
+    r.execute({ type: 'logout' });
+    expect(lessonAccess(r.state, fullCatalog, fullCatalog.lessons[0]!.id).allowed).toBe(false);
   });
 });

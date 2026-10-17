@@ -1,3 +1,4 @@
+import type { AssessmentDefinition } from '../../docs/contracts';
 import type { Access, Command, CommandOutput, DemoAttempt, DemoPolicy, DemoState, Score, ProgressCatalog, TrainingCatalog } from './models';
 import { demoPolicy, stateSchema } from './models';
 export class TrainingError extends Error {}
@@ -43,51 +44,32 @@ export function moduleAccess(state: DemoState, catalog: ProgressCatalog, moduleI
   const base = trainingAccess(state, catalog); if (!base.allowed) return base;
   const index = catalog.modules.findIndex(m => m.id === moduleId);
   if (index < 0) return deny('الموديول غير موجود.');
-  const prior = catalog.modules.slice(0, index).find(m => !moduleComplete(state, catalog, m.id));
-  return prior ? deny('أكمل جميع دروس الموديول السابق أولًا.', `/modules/${prior.id}/lessons`) : allow;
+  return allow;
 }
 export function lessonAccess(state: DemoState, catalog: ProgressCatalog, lessonId: string): Access {
   const lesson = catalog.lessons.find(l => l.id === lessonId);
-  if (!lesson) return deny('الدرس غير موجود.');
-  const base = moduleAccess(state, catalog, lesson.moduleId); if (!base.allowed) return base;
-  const module = catalog.modules.find(m => m.id === lesson.moduleId)!;
-  const prior = module.lessonIds.slice(0, module.lessonIds.indexOf(lessonId)).find(id => !lessonComplete(state, catalog, id));
-  return prior ? deny('اجتز التقويم الذاتي للدرس السابق لفتح هذا الدرس.', `${lessonRoute(lesson.moduleId, prior)}/self-assessment`) : allow;
+  return lesson ? moduleAccess(state, catalog, lesson.moduleId) : deny('الدرس غير موجود.');
 }
 export function elementAccess(state: DemoState, catalog: ProgressCatalog, elementId: string): Access {
   const element = catalog.elements.find(e => e.id === elementId);
-  if (!element) return deny('العنصر غير موجود.');
-  const base = lessonAccess(state, catalog, element.lessonId); if (!base.allowed) return base;
-  const lesson = catalog.lessons.find(l => l.id === element.lessonId)!;
-  const prior = lesson.elementIds.slice(0, lesson.elementIds.indexOf(elementId)).find(id => !elementComplete(state, catalog, id));
-  return prior ? deny('أكمل أجزاء العنصر السابق بالترتيب أولًا.', `${lessonRoute(element.moduleId, element.lessonId)}/elements/${prior}`) : allow;
+  return element ? lessonAccess(state, catalog, element.lessonId) : deny('العنصر غير موجود.');
 }
 export function partAccess(state: DemoState, catalog: ProgressCatalog, elementId: string, partId: string): Access {
   const base = elementAccess(state, catalog, elementId); if (!base.allowed) return base;
-  const element = catalog.elements.find(e => e.id === elementId)!;
-  const index = element.parts.findIndex(p => p.id === partId);
-  if (index < 0) return deny('الجزء غير موجود.');
-  const prior = element.parts.slice(0, index).find(p => !state.readPartIds.includes(p.id));
-  return prior ? deny('أكمل الجزء السابق قبل الانتقال إلى هذا الجزء.', `${lessonRoute(element.moduleId, element.lessonId)}/elements/${elementId}?part=${prior.id}`) : allow;
+  return catalog.elements.find(e => e.id === elementId)!.parts.some(p => p.id === partId) ? allow : deny('الجزء غير موجود.');
 }
 export function assessmentAccess(state: DemoState, catalog: ProgressCatalog, assessmentId: string): Access {
   const definition = catalog.assessments.find(a => a.id === assessmentId);
   if (!definition) return deny('التقويم غير موجود.');
   if (!state.learner.active) return deny('ابدأ تجربة بحساب تجريبي أولًا.', '/login');
   if (definition.scope.kind === 'pre') return allow;
-  if (definition.scope.kind === 'post') {
-    const base = trainingAccess(state, catalog); if (!base.allowed) return base;
-    return catalog.modules.length > 0 && catalog.modules.every(m => moduleComplete(state, catalog, m.id)) ? allow : deny('التقويم البعدي مقفل حتى إكمال جميع الدروس.');
-  }
-  const lesson = catalog.lessons.find(l => l.id === ('lessonId' in definition.scope ? definition.scope.lessonId : ''));
-  if (!lesson) return deny('الدرس غير موجود.');
-  const base = lessonAccess(state, catalog, lesson.id); if (!base.allowed) return base;
-  if (definition.scope.kind === 'activity') return lesson.elementIds.length > 0 && lesson.elementIds.every(id => elementComplete(state, catalog, id)) ? allow : deny('أكمل جميع أجزاء عناصر الدرس لفتح النشاط.', `${lessonRoute(lesson.moduleId, lesson.id)}/elements`);
-  return submittedFor(state, lesson.activityAssessmentId).length ? allow : deny('أجب عن جميع أسئلة النشاط وسلمه أولًا؛ لا تُشترط درجة نجاح.', `${lessonRoute(lesson.moduleId, lesson.id)}/activity`);
+  if (definition.scope.kind === 'post') return trainingAccess(state, catalog);
+  return 'lessonId' in definition.scope ? lessonAccess(state, catalog, definition.scope.lessonId) : deny('الدرس غير موجود.');
 }
-export function submissionReadiness(attempt: Pick<DemoAttempt, 'questionIds' | 'answers'>) {
+
+export function submissionReadiness(attempt: Pick<DemoAttempt, 'questionIds' | 'answers'>, definition: Pick<AssessmentDefinition, 'minimumAnsweredQuestions'>) {
   const answered = attempt.questionIds.filter(id => attempt.answers[id] !== undefined).length;
-  const minimum = Math.min(demoPolicy.minimumAnswers, attempt.questionIds.length);
+  const minimum = definition.minimumAnsweredQuestions;
   return { answered, minimum, missing: attempt.questionIds.length - answered, canSubmit: answered >= minimum };
 }
 export function grade(catalog: TrainingCatalog, attempt: Pick<DemoAttempt, 'questionIds' | 'answers'>): Score {
@@ -138,7 +120,7 @@ export function reduceCommand(state: DemoState, catalog: TrainingCatalog, comman
       if (!Number.isInteger(command.position) || command.position < 0 || command.position >= attempt.questionIds.length) throw new TrainingError('موضع السؤال غير صالح.');
       attempt.position = command.position;
     } else if (command.type === 'submit') {
-      const readiness = submissionReadiness(attempt);
+      const readiness = submissionReadiness(attempt, catalog.assessments.find(d => d.id === attempt.assessmentId)!);
       if (!readiness.canSubmit) throw new TrainingError(`أجب عن ${readiness.minimum} أسئلة على الأقل قبل التسليم؛ أجبت عن ${readiness.answered}.`);
       attempt.score = grade(catalog, attempt); attempt.status = 'submitted'; attempt.submittedAt = now;
       attempt.sequence = state.attempts.filter(a => a.status === 'submitted').length + 1;
@@ -167,7 +149,7 @@ export function parseState(raw: string, catalog: TrainingCatalog): DemoState {
     if (!d || attempt.contentVersion !== catalog.version || attempt.assessmentVersion !== d.assessmentVersion || JSON.stringify(attempt.questionIds) !== JSON.stringify(d.questionIds) || attempt.position >= attempt.questionIds.length) throw new TrainingError('نسخة أو أسئلة المحاولة غير صالحة.');
     for (const [id, answer] of Object.entries(attempt.answers)) if (!attempt.questionIds.includes(id) || !catalog.questions.find(q => q.id === id)?.options.some(o => o.id === answer)) throw new TrainingError('إجابة غير صالحة.');
     if (attempt.status === 'submitted') {
-      if (!submissionReadiness(attempt).canSubmit || !attempt.submittedAt || !attempt.score || JSON.stringify(grade(catalog, attempt)) !== JSON.stringify(attempt.score)) throw new TrainingError('نتيجة المحاولة غير صالحة.');
+      if (!submissionReadiness(attempt, d).canSubmit || !attempt.submittedAt || !attempt.score || JSON.stringify(grade(catalog, attempt)) !== JSON.stringify(attempt.score)) throw new TrainingError('نتيجة المحاولة غير صالحة.');
     } else if (attempt.score || attempt.submittedAt || attempt.sequence) throw new TrainingError('المسودة تحتوي نتيجة غير مسلّمة.');
   }
   for (const partId of state.readPartIds) {

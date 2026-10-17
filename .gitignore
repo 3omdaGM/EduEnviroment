@@ -14,3 +14,6 @@ review/module-preview-submit/test-artifacts/
 review/module-preview-submit/regression-artifacts/
 review/module-preview-submit/validation-artifacts/
 review/module-preview-submit/public-artifacts/
+
+review/open-learning/test-artifacts/
+review/open-learning/production-artifacts/

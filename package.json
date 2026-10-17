@@ -31,7 +31,9 @@
     "test:module:regression": "playwright test --config=playwright.module-regression.config.ts",
     "test:module:journey": "playwright test --config=playwright.module-validation.config.ts",
     "test:module:production": "playwright test --config=playwright.module-production.config.ts",
-    "test:module:public": "playwright test --config=playwright.module-public.config.ts"
+    "test:module:public": "playwright test --config=playwright.module-public.config.ts",
+    "test:open-learning": "playwright test --config=playwright.open-learning.config.ts",
+    "test:open-learning:production": "playwright test --config=playwright.open-learning-production.config.ts"
   },
   "dependencies": {
     "@fontsource/cairo": "5.3.0",
