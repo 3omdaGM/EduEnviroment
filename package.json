@@ -41,7 +41,8 @@
     "test:four-modules:production": "playwright test --config=playwright.four-modules-production.config.ts",
     "test:lesson-entry": "playwright test --config=playwright.lesson-entry.config.ts",
     "test:sidebar-height": "playwright test --config=playwright.sidebar-height.config.ts",
-    "test:compact-reading": "playwright test --config=playwright.compact-reading.config.ts"
+    "test:compact-reading": "playwright test --config=playwright.compact-reading.config.ts",
+    "test:content-frame": "playwright test --config=playwright.content-frame.config.ts"
   },
   "dependencies": {
     "@fontsource/cairo": "5.3.0",

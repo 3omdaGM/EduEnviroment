@@ -98,7 +98,7 @@ export default function AppShell() {
     <a className="skip-link" href="#main-content">تجاوز إلى المحتوى</a>
     <header className="site-header"><BrandHeader /><div className="navigation-bar"><div className="container navigation-inner"><DesktopNav /><MobileNav /></div></div></header>
     {snapshot.celebration && <div role="status" className="celebration">{snapshot.celebration}</div>}
-    <main id="main-content" ref={main} tabIndex={-1} className="main-content container"><Suspense fallback={<div role="status" aria-busy="true" className="loading-state">جارٍ تحميل الصفحة…</div>}><div key={pathname} className="page-transition"><Outlet /></div></Suspense></main>
+    <main id="main-content" ref={main} tabIndex={-1} className="main-content container"><Suspense fallback={<div role="status" aria-busy="true" className="loading-state">جارٍ تحميل الصفحة…</div>}><div key={pathname} className="page-transition content-frame"><Outlet /></div></Suspense></main>
     <footer className="site-footer"><div className="container footer-inner"><SessionControl /><p>نسخة تجريبية</p>{demoToolsEnabled && <Link to="/demo-tools">أدوات العرض</Link>}</div></footer>
   </div>;
 }

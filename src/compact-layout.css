@@ -120,3 +120,24 @@
 @media (pointer: coarse) {
   .workspace-lesson-toggle, .workspace-lesson-sections a, .workspace-module-links a { min-block-size: 44px; }
 }
+
+/* One shared inset on all four sides; content grows naturally inside the frame. */
+.app-shell { --content-gutter: clamp(8px, 1vw, 16px); --content-radius: 18px; }
+.app-shell > .main-content {
+  display: flex; flex-direction: column; align-items: stretch;
+  inline-size: 100%; max-inline-size: none; margin: 0; padding: var(--content-gutter);
+}
+.main-content > .content-frame {
+  flex: 1; min-inline-size: 0; inline-size: 100%; padding: 12px;
+  border: 1px solid #c5dbed; border-radius: var(--content-radius);
+  background: #ffffff; box-shadow: 0 3px 12px #145da00a;
+}
+.main-content > .content-frame:has(.reference-workspace) { display: flex; flex-direction: column; padding: 0; }
+.content-frame > .reference-workspace { border-radius: calc(var(--content-radius) - 1px); }
+.workspace-sidebar { border-start-start-radius: calc(var(--content-radius) - 1px); border-end-start-radius: calc(var(--content-radius) - 1px); }
+.workspace-sidebar .workspace-module-title { border-start-start-radius: calc(var(--content-radius) - 1px); }
+.home-shell .content-frame, .goals-shell .content-frame { display: grid; align-content: center; }
+@media (max-width: 767px) {
+  .app-shell { --content-radius: 14px; }
+  .main-content > .content-frame { padding: 8px; }
+}
