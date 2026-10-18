@@ -13,10 +13,10 @@ function completedStyle(score: number) { const r = runner(eligible()), id = r.ru
 const memory = (raw: string | null = null) => ({ raw, fail: false, read() { return this.raw; }, write(value: string) { if (this.fail) throw new Error('quota exceeded'); this.raw = value; } });
 describe('reference content transfer', () => {
   it('preserves 7+3 lessons and both 160-question banks with original option counts', () => {
-    expect(courseCatalog.modules.map(m => m.lessons.length)).toEqual([7, 3]);
-    expect(courseCatalog.modules.map(m => m.order)).toEqual([3, 4]);
+    expect(courseCatalog.modules.map(m => m.lessons.length)).toEqual([7, 3, 3, 3]);
+    expect(courseCatalog.modules.map(m => m.order)).toEqual([1, 2, 3, 4]);
     for (const qs of Object.values(courseCatalog.exams)) { expect(qs).toHaveLength(160); for (const q of qs) { expect(q.options).toHaveLength(q.type === 'mcq' ? 4 : 2); expect(q.options[q.correct]).toBeDefined(); } }
-    const original = courseCatalog.modules.map(module => Object.fromEntries(module.lessons.map((lesson) => { const { id, order, ...data } = lesson; expect(id).toBeTruthy(); return [order, data]; })));
+    const original = courseCatalog.modules.slice(0,2).map(module => Object.fromEntries(module.lessons.map((lesson) => { const { id, order, ...data } = lesson; expect(id).toBeTruthy(); return [order, data]; })));
     for (const [i, value] of original.entries()) { const raw = JSON.stringify(value).replaceAll('/course-reference/img/', 'img/'); const hash = createHash('sha256').update(raw).digest('hex'); expect(hash).toBe(['82d90baa510fa1687bcba48b6843f08efff1ea60b328185d71b1059b4d7ee937', '113d2c027e7329c70854ed73569c223114137cab6fecb85e921eb325c2d1f4a4'][i]); }
     for (const qs of Object.values(courseCatalog.exams)) {
       const source = qs.map(q => q.type === 'mcq' ? { type: q.type, text: q.prompt, options: q.options, correct: q.correct } : { type: q.type, text: q.prompt, correct: q.correct === 0 ? 'true' : 'false' });
@@ -94,8 +94,22 @@ describe('reference manifest and restoration integrity', () => {
 });
 
 it('matches the reference asset and content manifest without changing legacy data files', () => {
-  const manifest = JSON.parse(readFileSync('docs/course-reference-manifest.json', 'utf8')) as { contentSha256: string; drawingsSha256: string; assets: { path: string; sha256: string }[] };
+  const manifest = JSON.parse(readFileSync('docs/course-reference-manifest.json', 'utf8')) as { contentSha256: string; authoredContentSha256: string; drawingsSha256: string; assets: { path: string; sha256: string }[]; modules: { id: string; displayNumber: number }[] };
   const hash = (path: string) => createHash('sha256').update(readFileSync(path)).digest('hex');
-  expect(hash('src/course/imported-content.json')).toBe(manifest.contentSha256); expect(hash('src/course/embedded-figures.ts')).toBe(manifest.drawingsSha256);
-  expect(manifest.assets).toHaveLength(11); for (const asset of manifest.assets) expect(hash(asset.path)).toBe(asset.sha256);
+  expect(hash('src/course/imported-content.json')).toBe(manifest.contentSha256); expect(hash('src/course/authored-content.json')).toBe(manifest.authoredContentSha256); expect(hash('src/course/embedded-figures.ts')).toBe(manifest.drawingsSha256);
+  expect(manifest.modules.map(m => [m.id,m.displayNumber])).toEqual(courseCatalog.modules.map(m => [m.id,m.order])); expect(manifest.assets).toHaveLength(11); for (const asset of manifest.assets) expect(hash(asset.path)).toBe(asset.sha256);
+});
+
+it('adds six authored lessons while retaining all existing IDs, submissions, questions and storage version', () => {
+  const previous = courseScenario('g2'); const oldLesson = 'cl-les-03-02';
+  previous.activityDrafts[oldLesson] = 'مسودة قديمة';
+  const restored = parseCourse(JSON.stringify(previous)); expect(restored).toEqual(previous);
+  expect(courseCatalog.modules[0]!.id).toBe('cl-mod-03'); expect(courseCatalog.modules[1]!.id).toBe('cl-mod-04');
+  const ids = courseCatalog.modules.flatMap(m => m.lessons.map(l => l.id)); expect(new Set(ids).size).toBe(16);
+  for (const m of courseCatalog.modules.slice(2)) for (const l of m.lessons) {
+    expect(l.referenceIds!.length).toBeGreaterThan(0); expect(l.sections.content.stages).toHaveLength(3);
+    expect(l.sections.objectives.content).toContain('<obj'); expect(l.sections.activity.content).toContain('المطلوب تسليمه');
+    const r = runner(restored); r.run({ type: 'activity-draft', lessonId: l.id, text: 'إجابة في الدرس الجديد' }); r.run({ type: 'submit-activity', lessonId: l.id });
+    expect(r.state.activitySubmissions.at(-1)!.lessonId).toBe(l.id); expect(r.state.activityDrafts[oldLesson]).toBe('مسودة قديمة'); expect(parseCourse(JSON.stringify(r.state))).toEqual(r.state);
+  }
 });

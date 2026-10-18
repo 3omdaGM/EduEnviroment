@@ -1,10 +1,10 @@
 import { useCourseSession } from './hooks';
 import { useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router';
-import { BookOpen, Maximize2 } from 'lucide-react';
-import { Button, ButtonLink, Drawer } from '../components/ui';
+import { Maximize2 } from 'lucide-react';
+import { Button, Drawer } from '../components/ui';
 import { NotFound } from '../pages/UtilityPages';
-import { courseCatalog, courseRoute, groups } from './catalog';
+import { authoredReferences, courseCatalog, courseRoute, groups } from './catalog';
 import type { CourseLesson, CourseSection, CourseStage } from './catalog';
 import { CourseCard, CourseGuard, CourseHtml, CourseProblem } from './ui';
 import Workspace from './Workspace';
@@ -17,7 +17,7 @@ function stages(section: CourseSection): CourseStage[] {
 function LessonContent({ lesson, section }: { lesson: CourseLesson; section: 'objectives' | 'content' | 'activity' }) {
   const { snapshot } = useCourseSession(); const [search, setSearch] = useSearchParams(); const [zoom, setZoom] = useState<string | null>(null);
   const group = groups[snapshot.data!.assignment!.group], data = lesson.sections[section];
-  if (section === 'objectives') return <CourseCard title="أهداف الدرس"><CourseHtml raw={data.content ?? ''} /></CourseCard>;
+  if (section === 'objectives') return <CourseCard title="أهداف الدرس" className="course-objectives-card"><CourseHtml raw={data.content ?? ''} />{lesson.referenceIds && <details className="course-lesson-references"><summary>مصادر الدرس ومراجعة المحتوى</summary><p>مصادر للاستزادة ومراجعة مبادئ التصميم والإتاحة.</p><ul>{authoredReferences.filter(r => lesson.referenceIds!.includes(r.id)).map(r => <li key={r.id}><a href={r.url} target="_blank" rel="noreferrer">{r.title}</a></li>)}</ul></details>}</CourseCard>;
   if (section === 'activity') return <Activity key={lesson.id} lesson={lesson} mode={group.support} />;
   const all = stages(data), rawIndex = Number(search.get('stage') ?? '0'), index = Number.isInteger(rawIndex) && rawIndex >= 0 && rawIndex < all.length ? rawIndex : 0, current = all[index];
   const videos = current?.video ? [current.video] : data.videos ? data.videos.filter(v => v.stage === undefined || v.stage === index) : data.videoSrc ? [{ title: 'الفيديو التعليمي', videoSrc: data.videoSrc, videoType: data.videoType }] : [];
@@ -36,5 +36,5 @@ export default function CourseWorkspacePage() {
   if (!snapshot.data) return <CourseProblem />;
   const module = courseCatalog.modules.find(m => m.id === moduleId), lesson = module?.lessons.find(l => l.id === lessonId);
   if (!module || (lessonId && !lesson) || (lesson && !['objectives', 'content', 'activity'].includes(section ?? ''))) return <NotFound />;
-  return <Workspace moduleId={module.id} lessonId={lesson?.id} section={section ?? 'overview'}>{lesson ? <CourseGuard><LessonContent key={`${lesson.id}:${section}`} lesson={lesson} section={section as 'objectives' | 'content' | 'activity'} /></CourseGuard> : <><div className="workspace-welcome"><BookOpen size={42} aria-hidden="true" /><h2>مرحبًا بك في المحتوى التعليمي</h2><p>اختر درسًا من القائمة، ثم اضغط على القسم المطلوب لعرض المادة العلمية.</p><span>{module.lessons.length} دروس في هذا الموديول</span></div><CourseCard title="دروس الموديول"><div className="workspace-lesson-cards">{module.lessons.map(l => <Link key={l.id} className="workspace-lesson-card" to={courseRoute(module.id, l.id, 'objectives')}><span className="workspace-lesson-number">{l.order}</span><div><h3>{l.title}</h3><p>أهداف الدرس · المحتوى والوسائط · النشاط التعليمي</p></div></Link>)}</div><ButtonLink variant="ghost" to="/learning-style">أسلوب التعلم ومجموعتك</ButtonLink></CourseCard></>}</Workspace>;
+  return <Workspace moduleId={module.id} lessonId={lesson?.id} section={section ?? 'overview'}>{lesson ? <CourseGuard><LessonContent key={`${lesson.id}:${section}`} lesson={lesson} section={section as 'objectives' | 'content' | 'activity'} /></CourseGuard> : <CourseCard title="دروس الموديول"><p className="workspace-hint">اختر درسًا ثم افتح الأهداف أو المحتوى أو النشاط.</p><div className="workspace-lesson-cards">{module.lessons.map(l => <Link key={l.id} className="workspace-lesson-card" to={courseRoute(module.id, l.id, 'objectives')}><span className="workspace-lesson-number">{l.order}</span><div><h3>{l.title}</h3><p>الأهداف · المحتوى · النشاط</p></div></Link>)}</div></CourseCard>}</Workspace>;
 }

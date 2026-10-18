@@ -8,7 +8,7 @@ import { COURSE_STORAGE_KEY, freshCourse } from '../src/course/store';
 import type { CourseState } from '../src/course/store';
 import { embeddedFigures } from '../src/course/embedded-figures';
 import { mkdirSync, writeFileSync } from 'node:fs';
-const root = 'review/course-reference';
+const root = process.env.COURSE_REVIEW_DIR ?? 'review/course-reference';
 mkdirSync(root, { recursive: true });
 const lesson = courseCatalog.modules[0]!.lessons[0]!;
 const url = (section = 'content') => courseRoute(courseCatalog.modules[0]!.id, lesson.id, section);
@@ -20,7 +20,7 @@ test.beforeEach(async ({ page }) => {
   await page.route('**/*', route => { const u = new URL(route.request().url()); return ['127.0.0.1', 'localhost'].includes(u.hostname) || ['data:', 'blob:'].includes(u.protocol) ? route.continue() : route.fulfill({ status: 200, contentType: 'text/html', body: '<!doctype html><title>External playback not tested</title>' }); });
 });
 test('public module metadata and deep-link guards retain old data; empty pre confirms and persists', async ({ page }) => {
-  await page.goto('/content'); await expect(page.locator('.reference-module-card')).toHaveCount(2);
+  await page.goto('/content'); await expect(page.locator('.reference-module-card')).toHaveCount(4);
   await page.locator('.reference-module-card').first().click(); await expect(page.locator('.workspace-lesson-card')).toHaveCount(7);
   await page.goto(url()); await expect(page.getByText('ابدأ التجربة بحساب تجريبي أولًا.', { exact: true })).toBeVisible();
   await login(page); const legacy = await page.evaluate(() => localStorage.getItem('edu-training-demo:v1'));
@@ -49,7 +49,7 @@ test('25 real canvas drawings classify and allocate a dependent fixed group; dea
     await page.getByRole('button', { name: i === 24 ? 'إظهار النتيجة وتحديد المجموعة' : 'السؤال التالي', exact: true }).click();
   }
   expect((await state(page)).assignment).toMatchObject({ group: 'g1', score: 5 }); await expect(page.getByRole('heading', { name: 'نتيجة أسلوب التعلم والمجموعة' })).toBeVisible();
-  await page.screenshot({ path: `${root}/style-group-result.png`, fullPage: true }); await page.goto('/content'); await expect(page.getByText('المجموعة الأولى — الدعم الثابت', { exact: true })).toBeVisible();
+  await page.screenshot({ path: `${root}/style-group-result.png`, fullPage: true }); await page.goto('/content'); await page.getByRole('button', { name: 'معلومات المسار', exact: true }).click(); await expect(page.getByText('المجموعة الأولى — الدعم الثابت', { exact: true })).toBeVisible();
 });
 for (const group of ['g1', 'g2', 'g3', 'g4'] as const) test(`${group}: content, support, free lessons, activity autosave and actual download`, async ({ page }) => {
   await login(page); await seed(page, courseScenario(group)); const legacy = await page.evaluate(() => localStorage.getItem('edu-training-demo:v1'));
