@@ -41,6 +41,7 @@
     "playwright.four-modules*.ts",
     "playwright.lesson-entry*.ts",
     "playwright.sidebar-height*.ts",
-    "playwright.compact-reading*.ts"
+    "playwright.compact-reading*.ts",
+    "playwright.content-frame*.ts"
   ]
 }

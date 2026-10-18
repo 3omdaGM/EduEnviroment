@@ -22,7 +22,7 @@ async function visit(page:Page,path:string) {
 }
 async function measure(page:Page) {return page.evaluate(()=>{
  const rect=(s:string)=>{const el=document.querySelector(s);if(!el)return null;const r=el.getBoundingClientRect();return {top:r.top+scrollY,bottom:r.bottom+scrollY,height:r.height};};
- return {width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth,scrollHeight:document.documentElement.scrollHeight,header:rect('.site-header'),footer:rect('.site-footer'),sidebar:rect('.workspace-sidebar'),panel:rect('.workspace-panel'),media:rect('.course-video-card iframe')};
+ return {width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth,scrollHeight:document.documentElement.scrollHeight,header:rect('.site-header'),footer:rect('.site-footer'),sidebar:rect('.workspace-sidebar'),frame:rect('.content-frame'),panel:rect('.workspace-panel'),media:rect('.course-video-card iframe')};
 });}
 const sizes=baseline?[[1920,910],[1366,768],[1280,620],[390,844]]:[[1920,910],[1536,728],[1366,768],[1280,620],[1024,768],[768,1024],[390,844],[320,568],[960,455],[3840,2160]];
 for(const [width,height] of sizes) test(`page layout at ${width}×${height}`,async({page})=>{
@@ -34,7 +34,7 @@ for(const [width,height] of sizes) test(`page layout at ${width}×${height}`,asy
   for(const path of paths) {
    await visit(page,path); const g=await measure(page); records.push({path,...g}); saveMeasurements(`${root}/${baseline?'before':'after'}-measurements-${width}.json`,records);
    expect(g.scrollWidth,JSON.stringify({path,...g})).toBeLessThanOrEqual(g.width);
-   if(g.sidebar && width!>900) {expect(Math.abs(g.sidebar.top-g.header!.bottom)).toBeLessThanOrEqual(1);expect(Math.abs(g.sidebar.bottom-g.footer!.top)).toBeLessThanOrEqual(1);expect(g.panel!.bottom).toBeLessThanOrEqual(g.footer!.top+1);}
+   if(g.sidebar && width!>900) {expect(Math.abs(g.sidebar.top-g.frame!.top-1)).toBeLessThanOrEqual(1);expect(Math.abs(g.sidebar.bottom-g.frame!.bottom+1)).toBeLessThanOrEqual(1);expect(g.panel!.bottom).toBeLessThanOrEqual(g.footer!.top+1);}
    if(!path.startsWith('/assessment/')) await expect(page.getByRole('button',{name:/^(السابق|التالي)$/})).toHaveCount(0);
   }
   await visit(page,courseRoute('cl-mod-03','cl-les-03-03','content')); await page.screenshot({path:`${root}/${baseline?'before':'after'}-content-${width}.png`,fullPage:true});
@@ -69,7 +69,7 @@ test('expanded support, activity save and phone lesson selection stay usable',as
  await prepare(page);const m=courseCatalog.modules[0]!,l=m.lessons[2]!;
  await visit(page,courseRoute(m.id,l.id,'activity'));await page.locator('textarea').fill('إجابة نشاط محفوظة بعد ضغط التخطيط');await page.reload();await expect(page.locator('textarea')).toHaveValue('إجابة نشاط محفوظة بعد ضغط التخطيط');
  await page.getByRole('button',{name:'تسليم الإجابة',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'حُفظ تسليم النشاط'})).toBeVisible();await page.getByText(/^كل الإرشادات/).click();
- await page.locator('.site-footer').scrollIntoViewIfNeeded();const g=await measure(page);expect(g.panel!.bottom).toBeLessThanOrEqual(g.footer!.top+1);expect(g.sidebar!.bottom).toBe(g.footer!.top);
+ await page.locator('.site-footer').scrollIntoViewIfNeeded();const g=await measure(page);expect(g.panel!.bottom).toBeLessThanOrEqual(g.footer!.top+1);expect(Math.abs(g.sidebar!.bottom-g.frame!.bottom+1)).toBeLessThanOrEqual(1);
  await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:`${root}/expanded-activity-desktop.png`,fullPage:true});
  await page.setViewportSize({width:390,height:844});await page.goto(courseRoute(m.id));await page.getByRole('button',{name:'عرض قائمة الدروس',exact:true}).click();const dialog=page.getByRole('dialog',{name:'قائمة الدروس',exact:true});await dialog.getByRole('button',{name:`الدرس ${l.order}: ${l.title}`,exact:true}).click();await expect(page).toHaveURL(courseRoute(m.id,l.id,'objectives'));await expect(dialog).not.toBeVisible();
  const flex=courseScenario('g3');await page.evaluate(({key,data})=>localStorage.setItem(key,JSON.stringify(data)),{key:COURSE_STORAGE_KEY,data:flex});await page.reload();await visit(page,courseRoute(m.id,l.id,'activity'));await expect(page.locator('.course-support-message')).toHaveCount(0);await page.getByRole('button',{name:'عرض الدعم',exact:true}).click();await expect(page.locator('.course-support-message')).toBeVisible();await page.screenshot({path:`${root}/activity-phone.png`,fullPage:true});

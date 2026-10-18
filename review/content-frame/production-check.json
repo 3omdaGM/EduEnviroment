@@ -1,0 +1,5 @@
+{
+  "productionBuild": "passed",
+  "demoToolChunks": [],
+  "scope": "Static artifact check; browser checks use the demo build."
+}
