@@ -22,9 +22,9 @@ function NavigationLink({ item, onNavigate, className = '' }: { item: { to: stri
 
 export function BrandHeader() {
   return <div className="brand-header container">
-    <div className="brand-logo-slot"><img className="brand-logo" src={brandLogos.university.src} alt={brandLogos.university.alt} width={brandLogos.university.width} height={brandLogos.university.height} decoding="async" /></div>
+    <div className="brand-logo-slot"><img className="brand-logo brand-logo--university" src={brandLogos.university.src} alt={brandLogos.university.alt} width={brandLogos.university.width} height={brandLogos.university.height} decoding="async" /></div>
     <div className="brand-title"><Link to="/" className="environment-name">{environmentName}</Link></div>
-    <div className="brand-logo-slot"><img className="brand-logo" src={brandLogos.faculty.src} alt={brandLogos.faculty.alt} width={brandLogos.faculty.width} height={brandLogos.faculty.height} decoding="async" /></div>
+    <div className="brand-logo-slot"><img className="brand-logo brand-logo--faculty" src={brandLogos.faculty.src} alt={brandLogos.faculty.alt} width={brandLogos.faculty.width} height={brandLogos.faculty.height} decoding="async" /></div>
   </div>;
 }
 

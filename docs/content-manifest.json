@@ -206,6 +206,14 @@
       "officialLogo": true
     },
     {
+      "id": "university-logo-display-mask",
+      "path": "public/images/branding/zagazig-university-mask.svg",
+      "kind": "display-mask",
+      "origin": "حدود شعار الجامعة المقدم من المستخدم؛ تفريغ الخلفية بطلبه دون تغيير ملف الشعار",
+      "license": "قناع عرض للمشروع؛ أصل الشعار المقدم محفوظ",
+      "officialLogo": false
+    },
+    {
       "id": "cairo",
       "path": "public/fonts/Cairo-OFL.txt",
       "kind": "font-license",

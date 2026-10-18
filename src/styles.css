@@ -1067,3 +1067,13 @@ body { background: #ffffff; color: var(--text); }
 .site-header .environment-name:focus-visible, .site-header .nav-link:focus-visible, .site-header .mobile-nav > .button:focus-visible { outline-color: #ffe08a; }
 .reading-text { color: var(--text); }
 .site-footer { background: #ffffff; }
+
+/* Optical balance for the supplied logos; preserve the source artwork. */
+.brand-header { grid-template-columns: 64px minmax(0, 1fr) 64px; gap: 18px; }
+.brand-logo--university { mask-image: url('/images/branding/zagazig-university-mask.svg'); -webkit-mask-image: url('/images/branding/zagazig-university-mask.svg'); mask-size: 100% 100%; -webkit-mask-size: 100% 100%; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; filter: drop-shadow(0 1px 2px #001a3833); }
+.brand-logo--faculty { inline-size: 60px; block-size: 52px; border-radius: 6px; outline: 1px solid #ffffff40; }
+@media (max-width:767px) {
+  .brand-header { grid-template-columns: 40px minmax(0, 1fr) 40px; gap: 7px; }
+  .brand-logo--university { inline-size: 36px; block-size: 36px; }
+  .brand-logo--faculty { inline-size: 40px; block-size: 36px; border-radius: 4px; }
+}
