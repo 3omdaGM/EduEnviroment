@@ -5,7 +5,7 @@ import { useCourse } from './context';
 import { useCourseSession } from './hooks';
 import { courseAccess } from './store';
 import { ButtonLink } from '../components/ui';
-export function CourseCard({ title, children, className = '' }: { title: string; children: ReactNode; className?: string }) { return <Card className={`workspace-card ${className}`}><div className="workspace-card-header"><span aria-hidden="true" /><h2>{title}</h2></div><div className="workspace-card-body">{children}</div></Card>; }
+export function CourseCard({ title, children, className = '', actions }: { title: string; children: ReactNode; className?: string; actions?: ReactNode }) { return <Card className={`workspace-card ${className}`}><div className="workspace-card-header"><span aria-hidden="true" /><h2>{title}</h2>{actions && <div className="workspace-card-actions">{actions}</div>}</div><div className="workspace-card-body">{children}</div></Card>; }
 export function CourseProblem() { const { snapshot, store } = useCourse(); return <Card className="preparation" role="alert"><h1>تعذر استعادة بيانات CourseLab</h1><p>{snapshot.error}</p><Button onClick={store.reload}>إعادة المحاولة</Button></Card>; }
 export function CourseGuard({ children }: { children: ReactNode }) { const { snapshot, active } = useCourseSession(); if (!snapshot.data) return <CourseProblem />; const a = courseAccess(snapshot.data, active); return a.allowed ? <>{children}</> : <Card className="preparation"><h2>قبل فتح الدرس</h2><p>{a.reason}</p><ButtonLink to={a.route}>الانتقال إلى الخطوة المطلوبة</ButtonLink></Card>; }
 export function CourseHtml({ raw }: { raw: string }) {
