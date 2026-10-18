@@ -5,7 +5,8 @@ import { environmentName } from '../data/catalog';
 import { brandLogos } from '../data/branding';
 import { Button, Drawer } from './ui';
 import { useTraining } from '../state/training-context';
-import { assessmentAccess } from '../domain/training';
+import { useCourse } from '../course/context';
+import { courseEligibility } from '../course/store';
 import { demoToolsEnabled } from '../demo/flags';
 
 const navigation = [
@@ -16,7 +17,7 @@ const navigation = [
 
 function NavigationLink({ item, onNavigate, className = '' }: { item: { to: string; label: string }; onNavigate?: () => void; className?: string }) {
   const { pathname } = useLocation();
-  const active = item.to === '/' ? pathname === '/' : pathname === item.to || pathname.startsWith(`${item.to}/`) || (item.to === '/content' && pathname.startsWith('/modules/'));
+  const active = item.to === '/' ? pathname === '/' : pathname === item.to || pathname.startsWith(`${item.to}/`) || (item.to === '/content' && (pathname.startsWith('/modules/') || pathname.startsWith('/course/')));
   return <Link to={item.to} onClick={onNavigate} aria-current={active ? 'page' : undefined} className={`${className} ${active ? 'active' : ''}`}>{item.label}</Link>;
 }
 
@@ -33,9 +34,10 @@ function AssessmentMenu() {
   const root = useRef<HTMLLIElement>(null);
   const button = useRef<HTMLButtonElement>(null);
   const { pathname } = useLocation();
-  const { catalog, snapshot } = useTraining();
+  const { snapshot } = useTraining();
+  const course = useCourse().snapshot;
   const preLabel = snapshot.data?.learner.active ? 'متاح' : 'يحتاج تجربة دخول';
-  const postLabel = snapshot.data && assessmentAccess(snapshot.data, catalog, 'post').allowed ? 'متاح' : 'يتطلب التأهل بالقبلي';
+  const postLabel = snapshot.data?.learner.active && course.data && courseEligibility(course.data) === 'eligible' ? 'متاح' : 'يتطلب التأهل بالقبلي';
   useEffect(() => {
     if (!open) return;
     const escape = (event: KeyboardEvent) => { if (event.key === 'Escape') { setOpen(false); button.current?.focus(); } };
@@ -47,7 +49,7 @@ function AssessmentMenu() {
     onPointerEnter={event => { if (event.pointerType === 'mouse' && matchMedia('(hover:hover) and (pointer:fine)').matches) setOpen(true); }}
     onPointerLeave={() => { if (!root.current?.contains(document.activeElement)) setOpen(false); }}>
     <button ref={button} className={`nav-link ${pathname.startsWith('/assessment') ? 'active' : ''}`} aria-expanded={open} aria-controls="assessment-navigation" onClick={() => setOpen(!open)}>التقويم <ChevronDown size={14} aria-hidden="true" /></button>
-    {open && <ul id="assessment-navigation" className="assessment-dropdown"><li><NavLink to="/assessment/pre/instructions" onClick={() => setOpen(false)}>التقويم القبلي <span>{preLabel}</span></NavLink></li><li><NavLink to="/assessment/post/instructions" onClick={() => setOpen(false)}>التقويم البعدي <span>{postLabel}</span></NavLink></li></ul>}
+    {open && <ul id="assessment-navigation" className="assessment-dropdown"><li><NavLink to="/assessment/pre/instructions" onClick={() => setOpen(false)}>التقويم القبلي <span>{preLabel}</span></NavLink></li><li><NavLink to="/assessment/post/instructions" onClick={() => setOpen(false)}>التقويم البعدي <span>{postLabel}</span></NavLink></li><li><NavLink to="/learning-style" onClick={() => setOpen(false)}>اختبار أسلوب التعلم<span>تحديد المجموعة ونمط الدعم</span></NavLink></li></ul>}
   </li>;
 }
 
@@ -60,14 +62,15 @@ export function DesktopNav() {
 }
 export function MobileNav() {
   const [open, setOpen] = useState(false);
-  const { catalog, snapshot } = useTraining();
+  const { snapshot } = useTraining();
+  const course = useCourse().snapshot;
   const preLabel = snapshot.data?.learner.active ? 'متاح' : 'يحتاج تجربة دخول';
-  const postLabel = snapshot.data && assessmentAccess(snapshot.data, catalog, 'post').allowed ? 'متاح' : 'يتطلب التأهل بالقبلي';
+  const postLabel = snapshot.data?.learner.active && course.data && courseEligibility(course.data) === 'eligible' ? 'متاح' : 'يتطلب التأهل بالقبلي';
   return <div className="mobile-nav"><Button variant="ghost" onClick={() => setOpen(true)} aria-haspopup="dialog" aria-expanded={open}><Menu size={21} aria-hidden="true" /><span className="sr-only">قائمة التنقل الرئيسية</span></Button>
     <Drawer open={open} onClose={() => setOpen(false)} title="قائمة التنقل الرئيسية">
       <nav aria-label="التنقل الرئيسي للهاتف" className="drawer-navigation">
         {navigation.slice(0, 3).map(item => <NavigationLink key={item.to} item={item} onNavigate={() => setOpen(false)} />)}
-        <div className="drawer-nav-group"><p>التقويم</p><NavLink to="/assessment/pre/instructions" onClick={() => setOpen(false)}>التقويم القبلي <small>{preLabel}</small></NavLink><NavLink to="/assessment/post/instructions" onClick={() => setOpen(false)}>التقويم البعدي <small>{postLabel}</small></NavLink></div>
+        <div className="drawer-nav-group"><p>التقويم</p><NavLink to="/assessment/pre/instructions" onClick={() => setOpen(false)}>التقويم القبلي <small>{preLabel}</small></NavLink><NavLink to="/assessment/post/instructions" onClick={() => setOpen(false)}>التقويم البعدي <small>{postLabel}</small></NavLink><NavLink to="/learning-style" onClick={() => setOpen(false)}>اختبار أسلوب التعلم <small>المجموعة ونمط الدعم</small></NavLink></div>
         {navigation.slice(3).map(item => <NavigationLink key={item.to} item={item} onNavigate={() => setOpen(false)} />)}
       </nav><div className="compact-question-session"><SessionControl /><p>نسخة تجريبية</p>{demoToolsEnabled && <Link to="/demo-tools">أدوات العرض</Link>}</div>
     </Drawer>

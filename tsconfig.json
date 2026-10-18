@@ -36,6 +36,7 @@
     "vitest.config.ts",
     "playwright.phase4*.ts",
     "playwright.compact*.ts",
-    "playwright.module*.ts"
+    "playwright.module*.ts",
+    "playwright.course-reference*.ts"
   ]
 }

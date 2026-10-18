@@ -6,6 +6,7 @@ import '@fontsource/cairo/arabic-600.css';
 import '@fontsource/cairo/arabic-700.css';
 import '@fontsource/cairo/latin-400.css';
 import './styles.css';
+import './learning-workspace.css';
 import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

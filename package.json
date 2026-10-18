@@ -33,7 +33,10 @@
     "test:module:production": "playwright test --config=playwright.module-production.config.ts",
     "test:module:public": "playwright test --config=playwright.module-public.config.ts",
     "test:open-learning": "playwright test --config=playwright.open-learning.config.ts",
-    "test:open-learning:production": "playwright test --config=playwright.open-learning-production.config.ts"
+    "test:open-learning:production": "playwright test --config=playwright.open-learning-production.config.ts",
+    "course:manifest": "node scripts/write-course-reference-manifest.mjs",
+    "test:course": "playwright test --config=playwright.course-reference.config.ts",
+    "test:course:production": "playwright test --config=playwright.course-reference-production.config.ts"
   },
   "dependencies": {
     "@fontsource/cairo": "5.3.0",

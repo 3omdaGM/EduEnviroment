@@ -1,0 +1,2233 @@
+{
+  "manifestVersion": 1,
+  "contentVersion": "courselab-reference-1.0.0-draft",
+  "approval": "draft — transferred at the user’s request; not a research validation",
+  "reviewedOn": "2026-10-18",
+  "sources": [
+    {
+      "id": "gateway",
+      "url": "https://github.com/worledtecnology-spec/Salwa-Nabawi---Blended-Learning-Environment",
+      "commit": "b508ec64598940a479476ab91e73a0846e16806f"
+    },
+    {
+      "id": "g1",
+      "url": "https://github.com/worledtecnology-spec/Fixed-Support--g1",
+      "commit": "1205e3d1a56b641ddff245a5d9674df4e887e745"
+    },
+    {
+      "id": "g2",
+      "url": "https://github.com/worledtecnology-spec/Fixed-Support--g2",
+      "commit": "32b094db5329037cfcac71fd42ba05c704c7e565"
+    },
+    {
+      "id": "g3",
+      "url": "https://github.com/worledtecnology-spec/Flexible-Support---g3",
+      "commit": "cd297f8d1af3de20d08d2f7fb16a42b9c1fb5456"
+    },
+    {
+      "id": "g4",
+      "url": "https://github.com/worledtecnology-spec/Flexible-Support---g4",
+      "commit": "94aa5dedaebf4adeebcca3f2487e9717a310b6c4"
+    }
+  ],
+  "contentSha256": "95dcf84998fafea50d4022ef70997f80a54ccb80bc807ea8cab80171ebb1086a",
+  "drawingsSha256": "6dbf3133ff389834560d5c849ba18c58fccd9c9aa35d02f788d8cfc2f5b1f112",
+  "activeRoutes": [
+    "/content",
+    "/course/modules/:moduleId",
+    "/course/modules/:moduleId/lessons/:lessonId/:section",
+    "/learning-style",
+    "/assessment/:kind/instructions"
+  ],
+  "modules": [
+    {
+      "id": "cl-mod-03",
+      "originalNumber": 3,
+      "title": "مرحلة إنتاج الدروس التفاعلية باستخدام برنامج CourseLab",
+      "lessons": [
+        {
+          "id": "cl-les-03-01",
+          "originalNumber": 1,
+          "title": "خلفية نظرية عن برنامج CourseLab",
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        },
+        {
+          "id": "cl-les-03-02",
+          "originalNumber": 2,
+          "title": "تحميل وتثبيت برنامج CourseLab وإنشاء درس جديد",
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        },
+        {
+          "id": "cl-les-03-03",
+          "originalNumber": 3,
+          "title": "تحرير الدرس التفاعلي باستخدام CourseLab",
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        },
+        {
+          "id": "cl-les-03-04",
+          "originalNumber": 4,
+          "title": "التعامل مع الكائنات في برنامج CourseLab",
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        },
+        {
+          "id": "cl-les-03-05",
+          "originalNumber": 5,
+          "title": "التعامل مع الكائنات المركبة في CourseLab",
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        },
+        {
+          "id": "cl-les-03-06",
+          "originalNumber": 6,
+          "title": "ضبط خصائص الكائنات في برنامج CourseLab",
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        },
+        {
+          "id": "cl-les-03-07",
+          "originalNumber": 7,
+          "title": "إدراج الأسئلة والاختبارات في الدرس التفاعلي",
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        }
+      ]
+    },
+    {
+      "id": "cl-mod-04",
+      "originalNumber": 4,
+      "title": "مرحلة نشر وتطبيق وتقويم الدروس التفاعلية",
+      "lessons": [
+        {
+          "id": "cl-les-04-01",
+          "originalNumber": 1,
+          "title": "نشر الدرس التفاعلي في برنامج CourseLab",
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        },
+        {
+          "id": "cl-les-04-02",
+          "originalNumber": 2,
+          "title": "التغذية الراجعة لمرحلة الإنتاج ومرحلة التنفيذ",
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        },
+        {
+          "id": "cl-les-04-03",
+          "originalNumber": 3,
+          "title": "مرحلة التقويم Evaluation",
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        }
+      ]
+    }
+  ],
+  "exams": {
+    "pre": {
+      "total": 160,
+      "multipleChoice": 80,
+      "trueFalse": 80,
+      "durationMinutes": 90,
+      "minimumManualAnswers": 0,
+      "unansweredScore": 0,
+      "questions": [
+        {
+          "id": "cl-pre-001",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-002",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-003",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-004",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-005",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-006",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-007",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-008",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-009",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-010",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-011",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-012",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-013",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-014",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-015",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-016",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-017",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-018",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-019",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-020",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-021",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-022",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-023",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-024",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-025",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-026",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-027",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-028",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-029",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-030",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-031",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-032",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-033",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-034",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-035",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-036",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-037",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-038",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-039",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-040",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-041",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-042",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-043",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-044",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-045",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-046",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-047",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-048",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-049",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-050",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-051",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-052",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-053",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-054",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-055",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-056",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-057",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-058",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-059",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-060",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-061",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-062",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-063",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-064",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-065",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-066",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-067",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-068",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-069",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-070",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-071",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-072",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-073",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-074",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-075",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-pre-076",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-077",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-pre-078",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-079",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-080",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-081",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-082",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-083",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-084",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-085",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-086",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-087",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-088",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-089",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-090",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-091",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-092",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-093",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-094",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-095",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-096",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-097",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-098",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-099",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-100",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-101",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-102",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-103",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-104",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-105",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-106",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-107",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-108",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-109",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-110",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-111",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-112",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-113",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-114",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-115",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-116",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-117",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-118",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-119",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-120",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-121",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-122",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-123",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-124",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-125",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-126",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-127",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-128",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-129",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-130",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-131",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-132",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-133",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-134",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-135",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-136",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-137",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-138",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-139",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-140",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-141",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-142",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-143",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-144",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-145",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-146",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-147",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-148",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-149",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-150",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-151",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-152",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-153",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-154",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-155",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-156",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-157",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-pre-158",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-159",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-pre-160",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        }
+      ]
+    },
+    "post": {
+      "total": 160,
+      "multipleChoice": 80,
+      "trueFalse": 80,
+      "durationMinutes": 90,
+      "minimumManualAnswers": 5,
+      "unansweredScore": 0,
+      "questions": [
+        {
+          "id": "cl-post-001",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-002",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-003",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-004",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-005",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-006",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-007",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-008",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-009",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-010",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-011",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-012",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-013",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-014",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-015",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-016",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-017",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-018",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-019",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-020",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-021",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-022",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-023",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-024",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-025",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-026",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-027",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-028",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-029",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-030",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-031",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-032",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-033",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-034",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-035",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-036",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-037",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-038",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-039",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-040",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-041",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-042",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-043",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-044",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-045",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-046",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-047",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-048",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-049",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-050",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-051",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-052",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-053",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-054",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-055",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-056",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-057",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-058",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-059",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-060",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-061",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-062",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-063",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-064",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-065",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-066",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-067",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-068",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-069",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-070",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-071",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-072",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-073",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-074",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-075",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 2
+        },
+        {
+          "id": "cl-post-076",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-077",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 3
+        },
+        {
+          "id": "cl-post-078",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-079",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-080",
+          "type": "mcq",
+          "options": 4,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-081",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-082",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-083",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-084",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-085",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-086",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-087",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-088",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-089",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-090",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-091",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-092",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-093",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-094",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-095",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-096",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-097",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-098",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-099",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-100",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-101",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-102",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-103",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-104",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-105",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-106",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-107",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-108",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-109",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-110",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-111",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-112",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-113",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-114",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-115",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-116",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-117",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-118",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-119",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-120",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-121",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-122",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-123",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-124",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-125",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-126",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-127",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-128",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-129",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-130",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-131",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-132",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-133",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-134",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-135",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-136",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-137",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-138",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-139",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-140",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-141",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-142",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-143",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-144",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-145",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-146",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-147",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-148",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-149",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-150",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-151",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-152",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-153",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-154",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-155",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-156",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-157",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 1
+        },
+        {
+          "id": "cl-post-158",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-159",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        },
+        {
+          "id": "cl-post-160",
+          "type": "tf",
+          "options": 2,
+          "correctIndex": 0
+        }
+      ]
+    }
+  },
+  "learningStyle": {
+    "figures": 25,
+    "sections": [
+      {
+        "count": 7,
+        "seconds": 120,
+        "scored": false
+      },
+      {
+        "count": 9,
+        "seconds": 300,
+        "scored": true
+      },
+      {
+        "count": 9,
+        "seconds": 300,
+        "scored": true
+      }
+    ],
+    "classification": {
+      "dependent": [
+        1,
+        8
+      ],
+      "independent": [
+        9,
+        17
+      ],
+      "retry": 0,
+      "supervisorReview": 18
+    },
+    "grading": "reference bounding-box approximation, not a newly validated instrument"
+  },
+  "groups": {
+    "g1": [
+      "dependent",
+      "fixed"
+    ],
+    "g2": [
+      "independent",
+      "fixed"
+    ],
+    "g3": [
+      "dependent",
+      "flex"
+    ],
+    "g4": [
+      "independent",
+      "flex"
+    ]
+  },
+  "persistence": {
+    "activeKey": "edu-courselab-reference:v1",
+    "legacyKeyUntouched": "edu-training-demo:v1",
+    "legacyContentVersion": "0.4.1-draft",
+    "migration": "none; new content starts separately",
+    "allocation": "per-device local counters only, not synchronized or globally balanced",
+    "activitySubmission": "local storage plus user-triggered text download; no external recipient"
+  },
+  "access": "Demo session, first submitted pre <=50%, then learning-style assignment; all lessons/sections freely selectable. Module metadata public. No per-module passwords.",
+  "notImported": [
+    "reference participant accounts or passwords",
+    "Firebase configuration and shared database",
+    "WhatsApp destination",
+    "module access passwords"
+  ],
+  "assets": [
+    {
+      "path": "public/course-reference/img/module4_lesson1_runtime_01.png",
+      "sha256": "a3da49a260a3f0dd7185823cc13ec00b529d9481d00bf3e4a2bddf571cbfeef8",
+      "source": "g1/img/module4_lesson1_runtime_01.png"
+    },
+    {
+      "path": "public/course-reference/img/module4_lesson1_runtime_02.png",
+      "sha256": "47dd25bb3b1c2374dd008aa3ac4c988f76033bcfd8897aae2858f8599a527455",
+      "source": "g1/img/module4_lesson1_runtime_02.png"
+    },
+    {
+      "path": "public/course-reference/img/module4_lesson1_runtime_03.png",
+      "sha256": "13b1277db007b0fff0bc45d6f3aaf9bdb3951c507194c3e4cad4e740b960e2c2",
+      "source": "g1/img/module4_lesson1_runtime_03.png"
+    },
+    {
+      "path": "public/course-reference/img/module4_lesson1_runtime_04.png",
+      "sha256": "42bbf3df44cc824db9e157a3e44c898500c4c49a55a0030a1154435753ecfc75",
+      "source": "g1/img/module4_lesson1_runtime_04.png"
+    },
+    {
+      "path": "public/course-reference/img/mod4-l2-production-feedback.png",
+      "sha256": "269185ad07f0208855f77e74307b98ce6f387a8755c49fa977637ff3e8cb2e79",
+      "source": "g1/img/mod4-l2-production-feedback.png"
+    },
+    {
+      "path": "public/course-reference/img/mod4-l2-implementation.png",
+      "sha256": "95d04ed7408ff61b7750312d15767aa50afa4055399cc5b1f59dc15884b4e60f",
+      "source": "g1/img/mod4-l2-implementation.png"
+    },
+    {
+      "path": "public/course-reference/img/mod4-l3-evaluation.png",
+      "sha256": "b9f57709ace136d81f57328d25b68946c95d5070b585072a639ef85452e93893",
+      "source": "g1/img/mod4-l3-evaluation.png"
+    },
+    {
+      "path": "public/course-reference/img/mod4-l3-learning-outcomes-tools.png",
+      "sha256": "2535a5d8af480beafa89cd49c8dd94df10455aa78a008ab2827c0ee12e132c40",
+      "source": "g1/img/mod4-l3-learning-outcomes-tools.png"
+    },
+    {
+      "path": "public/course-reference/img/mod4-l3-rubrics.png",
+      "sha256": "711a1bd01da83f92c79039c87085a76875ec6ecf70f7c6d63d534adfe9b8e3f3",
+      "source": "g1/img/mod4-l3-rubrics.png"
+    },
+    {
+      "path": "public/course-reference/img/mod4-l3-summative.png",
+      "sha256": "fdfbd4de037b8a0800472c83535b10feb5a8c8d909ca627ce6ae595252f2b752",
+      "source": "g1/img/mod4-l3-summative.png"
+    },
+    {
+      "path": "public/course-reference/files/w1.docx",
+      "sha256": "0aecca063aa66917b46260204cc1eb95027216d97dad1d7fda29748a762b32a1",
+      "source": "g1/files/w1.docx"
+    }
+  ]
+}
