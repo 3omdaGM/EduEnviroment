@@ -1,7 +1,37 @@
 {
-  "manifestVersion": 1,
+  "manifestVersion": 2,
   "contentVersion": "courselab-reference-1.0.0-draft",
-  "approval": "draft — transferred at the user’s request; not a research validation",
+  "catalogRevision": "four-modules-1.0.0-draft",
+  "authoredContentSha256": "6931813255a43ad89e50bfd1408db2a7a1d5b39ae113ca1fdf08701f7ddb141f",
+  "authoring": "محتوى تعليمي أصلي أضيف بطلب المستخدم؛ ليس منقولًا من المرجع ولا معتمدًا بحثيًا. روابط المصادر للقراءة والمراجعة، وليست وسائط مرفوعة أو حسابات خدمات.",
+  "additionalReferences": [
+    {
+      "id": "alignment",
+      "title": "مواءمة الأهداف والأنشطة والتقويم — مركز التدريس بجامعة كارنيجي ميلون",
+      "url": "https://www.cmu.edu/teaching/assessment/basics/alignment.html"
+    },
+    {
+      "id": "wai-design",
+      "title": "W3C WAI — إرشادات التصميم للإتاحة",
+      "url": "https://www.w3.org/WAI/tips/designing/"
+    },
+    {
+      "id": "wai-writing",
+      "title": "W3C WAI — كتابة محتوى متاح",
+      "url": "https://www.w3.org/WAI/tips/writing/"
+    },
+    {
+      "id": "wcag22",
+      "title": "W3C — إرشادات إتاحة محتوى الويب WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/"
+    },
+    {
+      "id": "wai-evaluate",
+      "title": "W3C WAI — المراجعات الأولية للإتاحة",
+      "url": "https://www.w3.org/WAI/test-evaluate/preliminary/"
+    }
+  ],
+  "approval": "draft — reference content and authored additions pending researcher review",
   "reviewedOn": "2026-10-18",
   "sources": [
     {
@@ -42,13 +72,16 @@
   "modules": [
     {
       "id": "cl-mod-03",
+      "displayNumber": 1,
       "originalNumber": 3,
+      "origin": "reference",
       "title": "مرحلة إنتاج الدروس التفاعلية باستخدام برنامج CourseLab",
       "lessons": [
         {
           "id": "cl-les-03-01",
           "originalNumber": 1,
           "title": "خلفية نظرية عن برنامج CourseLab",
+          "referenceIds": [],
           "sections": [
             "objectives",
             "content",
@@ -60,6 +93,7 @@
           "id": "cl-les-03-02",
           "originalNumber": 2,
           "title": "تحميل وتثبيت برنامج CourseLab وإنشاء درس جديد",
+          "referenceIds": [],
           "sections": [
             "objectives",
             "content",
@@ -71,6 +105,7 @@
           "id": "cl-les-03-03",
           "originalNumber": 3,
           "title": "تحرير الدرس التفاعلي باستخدام CourseLab",
+          "referenceIds": [],
           "sections": [
             "objectives",
             "content",
@@ -82,6 +117,7 @@
           "id": "cl-les-03-04",
           "originalNumber": 4,
           "title": "التعامل مع الكائنات في برنامج CourseLab",
+          "referenceIds": [],
           "sections": [
             "objectives",
             "content",
@@ -93,6 +129,7 @@
           "id": "cl-les-03-05",
           "originalNumber": 5,
           "title": "التعامل مع الكائنات المركبة في CourseLab",
+          "referenceIds": [],
           "sections": [
             "objectives",
             "content",
@@ -104,6 +141,7 @@
           "id": "cl-les-03-06",
           "originalNumber": 6,
           "title": "ضبط خصائص الكائنات في برنامج CourseLab",
+          "referenceIds": [],
           "sections": [
             "objectives",
             "content",
@@ -115,6 +153,7 @@
           "id": "cl-les-03-07",
           "originalNumber": 7,
           "title": "إدراج الأسئلة والاختبارات في الدرس التفاعلي",
+          "referenceIds": [],
           "sections": [
             "objectives",
             "content",
@@ -126,13 +165,16 @@
     },
     {
       "id": "cl-mod-04",
+      "displayNumber": 2,
       "originalNumber": 4,
+      "origin": "reference",
       "title": "مرحلة نشر وتطبيق وتقويم الدروس التفاعلية",
       "lessons": [
         {
           "id": "cl-les-04-01",
           "originalNumber": 1,
           "title": "نشر الدرس التفاعلي في برنامج CourseLab",
+          "referenceIds": [],
           "sections": [
             "objectives",
             "content",
@@ -144,6 +186,7 @@
           "id": "cl-les-04-02",
           "originalNumber": 2,
           "title": "التغذية الراجعة لمرحلة الإنتاج ومرحلة التنفيذ",
+          "referenceIds": [],
           "sections": [
             "objectives",
             "content",
@@ -155,6 +198,114 @@
           "id": "cl-les-04-03",
           "originalNumber": 3,
           "title": "مرحلة التقويم Evaluation",
+          "referenceIds": [],
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        }
+      ]
+    },
+    {
+      "id": "cl-mod-design",
+      "displayNumber": 3,
+      "originalNumber": null,
+      "origin": "authored",
+      "title": "التصميم التعليمي للدروس التفاعلية",
+      "lessons": [
+        {
+          "id": "cl-les-design-01",
+          "originalNumber": 1,
+          "title": "تحليل المتعلمين وصياغة الأهداف",
+          "referenceIds": [
+            "alignment"
+          ],
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        },
+        {
+          "id": "cl-les-design-02",
+          "originalNumber": 2,
+          "title": "بناء السيناريو التعليمي",
+          "referenceIds": [
+            "alignment",
+            "wai-design"
+          ],
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        },
+        {
+          "id": "cl-les-design-03",
+          "originalNumber": 3,
+          "title": "تصميم التفاعل والتغذية الراجعة",
+          "referenceIds": [
+            "alignment",
+            "wai-writing"
+          ],
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        }
+      ]
+    },
+    {
+      "id": "cl-mod-quality",
+      "displayNumber": 4,
+      "originalNumber": null,
+      "origin": "authored",
+      "title": "جودة الدروس التفاعلية وإتاحتها",
+      "lessons": [
+        {
+          "id": "cl-les-quality-01",
+          "originalNumber": 1,
+          "title": "إتاحة المحتوى ووضوح الوسائط",
+          "referenceIds": [
+            "wcag22",
+            "wai-design",
+            "wai-writing"
+          ],
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        },
+        {
+          "id": "cl-les-quality-02",
+          "originalNumber": 2,
+          "title": "اختبار الاستخدام والتوافق",
+          "referenceIds": [
+            "wai-evaluate"
+          ],
+          "sections": [
+            "objectives",
+            "content",
+            "activity"
+          ],
+          "textActivities": 1
+        },
+        {
+          "id": "cl-les-quality-03",
+          "originalNumber": 3,
+          "title": "التحسين المبني على أدلة التعلم",
+          "referenceIds": [
+            "alignment",
+            "wai-evaluate"
+          ],
           "sections": [
             "objectives",
             "content",

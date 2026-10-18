@@ -1,0 +1,56 @@
+[
+  {
+    "width": 1920,
+    "height": 910,
+    "scrollWidth": 1920,
+    "scrollHeight": 910
+  },
+  {
+    "width": 1536,
+    "height": 728,
+    "scrollWidth": 1536,
+    "scrollHeight": 728
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "scrollWidth": 1366,
+    "scrollHeight": 768
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "scrollWidth": 1280,
+    "scrollHeight": 620
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "scrollWidth": 768,
+    "scrollHeight": 1024
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "scrollWidth": 390,
+    "scrollHeight": 844
+  },
+  {
+    "width": 360,
+    "height": 640,
+    "scrollWidth": 360,
+    "scrollHeight": 640
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "scrollWidth": 320,
+    "scrollHeight": 568
+  },
+  {
+    "width": 3840,
+    "height": 2160,
+    "scrollWidth": 3840,
+    "scrollHeight": 2160
+  }
+]
