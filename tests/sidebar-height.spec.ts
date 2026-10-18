@@ -17,7 +17,7 @@ test('sidebar fills the framed workspace for every module at five desktop sizes'
     await page.setViewportSize({width:width!,height:height!});
     for(const module of courseCatalog.modules) for(const path of [courseRoute(module.id),courseRoute(module.id,module.lessons[0]!.id,'objectives')]) {
       await page.goto(path); await expect(page.locator('.workspace-sidebar')).toBeVisible(); await expect(page.locator('.workspace-panel-header h1')).toBeVisible(); const g=await geometry(page); records.push({path,height,...g});
-      expect(Math.abs(g.sidebar.top-g.frame.top-1),JSON.stringify(g)).toBeLessThanOrEqual(1); expect(Math.abs(g.sidebar.bottom-g.frame.bottom+1),JSON.stringify(g)).toBeLessThanOrEqual(1); expect(g.scrollWidth).toBeLessThanOrEqual(g.width);
+      expect(Math.abs(g.sidebar.top-g.frame.top),JSON.stringify(g)).toBeLessThanOrEqual(1); expect(Math.abs(g.sidebar.bottom-g.frame.bottom),JSON.stringify(g)).toBeLessThanOrEqual(1); expect(g.scrollWidth).toBeLessThanOrEqual(g.width);
     }
     await page.screenshot({path:`${root}/sidebar-${width}.png`,fullPage:true});
   }
@@ -26,8 +26,8 @@ test('sidebar fills the framed workspace for every module at five desktop sizes'
 test('long content stretches the framed column and lesson selection still opens objectives',async({page})=>{
   await prepare(page); const module=courseCatalog.modules[0]!,lesson=module.lessons[0]!;
   await page.goto(courseRoute(module.id,lesson.id,'content')); await expect(page.locator('.course-stage-picker')).toBeVisible(); await page.getByText(/^كل الإرشادات/).click();
-  const g=await geometry(page); expect(Math.abs(g.sidebar.bottom-g.frame.bottom+1)).toBeLessThanOrEqual(1);
-  await page.locator('.site-footer').scrollIntoViewIfNeeded(); const after=await geometry(page); expect(Math.abs(after.sidebar.bottom-after.frame.bottom+1)).toBeLessThanOrEqual(1);
+  const g=await geometry(page); expect(Math.abs(g.sidebar.bottom-g.frame.bottom)).toBeLessThanOrEqual(1);
+  await page.locator('.site-footer').scrollIntoViewIfNeeded(); const after=await geometry(page); expect(Math.abs(after.sidebar.bottom-after.frame.bottom)).toBeLessThanOrEqual(1);
   const panelBottom=await page.locator('.workspace-panel').evaluate(el=>el.getBoundingClientRect().bottom+scrollY); expect(panelBottom).toBeLessThanOrEqual(after.footer.top+1);
   await page.evaluate(()=>scrollTo(0,0)); await page.screenshot({path:`${root}/long-content.png`,fullPage:true});
   await page.locator('.workspace-sidebar .workspace-lesson-toggle').filter({hasText:lesson.title}).click(); await expect(page).toHaveURL(courseRoute(module.id,lesson.id,'objectives'));

@@ -132,10 +132,19 @@
   border: 1px solid #c5dbed; border-radius: var(--content-radius);
   background: #ffffff; box-shadow: 0 3px 12px #145da00a;
 }
-.main-content > .content-frame:has(.reference-workspace) { display: flex; flex-direction: column; padding: 0; }
-.content-frame > .reference-workspace { border-radius: calc(var(--content-radius) - 1px); }
-.workspace-sidebar { border-start-start-radius: calc(var(--content-radius) - 1px); border-end-start-radius: calc(var(--content-radius) - 1px); }
-.workspace-sidebar .workspace-module-title { border-start-start-radius: calc(var(--content-radius) - 1px); }
+.main-content > .content-frame:has(.reference-workspace) {
+  display: flex; flex-direction: column; padding: 0;
+  border: 0; background: transparent; box-shadow: none;
+}
+.content-frame > .reference-workspace { column-gap: clamp(8px, 1vw, 14px); background: transparent; }
+.reference-workspace > .workspace-sidebar, .reference-workspace > .workspace-panel {
+  border: 1px solid #b8d0e5; border-radius: var(--content-radius); background: #ffffff;
+}
+.reference-workspace > .workspace-sidebar { border-inline-end: 1px solid #b8d0e5; }
+.workspace-sidebar .workspace-module-title {
+  border-start-start-radius: calc(var(--content-radius) - 1px);
+  border-start-end-radius: calc(var(--content-radius) - 1px);
+}
 .home-shell .content-frame, .goals-shell .content-frame { display: grid; align-content: center; }
 @media (max-width: 767px) {
   .app-shell { --content-radius: 14px; }
