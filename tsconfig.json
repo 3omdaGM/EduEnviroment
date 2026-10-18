@@ -38,6 +38,7 @@
     "playwright.compact*.ts",
     "playwright.module*.ts",
     "playwright.course-reference*.ts",
-    "playwright.four-modules*.ts"
+    "playwright.four-modules*.ts",
+    "playwright.lesson-entry*.ts"
   ]
 }
