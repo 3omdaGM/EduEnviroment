@@ -1,0 +1,272 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/EduEnviroment/node_modules/.bin/playwright",
+      "test",
+      "--config=playwright.lesson-entry.config.ts"
+    ],
+    "configFile": "/workspace/EduEnviroment/playwright.lesson-entry.config.ts",
+    "rootDir": "/workspace/EduEnviroment/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/EduEnviroment/review/lesson-entry/test-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/EduEnviroment/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "lesson-entry.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/EduEnviroment/review/lesson-entry/test-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "",
+        "testDir": "/workspace/EduEnviroment/tests",
+        "snapshotDir": "/workspace/EduEnviroment/tests",
+        "testIgnore": [],
+        "testMatch": "lesson-entry.spec.ts",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4192",
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": [
+              "--no-sandbox"
+            ]
+          },
+          "trace": "retain-on-failure",
+          "reducedMotion": "reduce"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "review/lesson-entry/test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 2,
+    "webServer": {
+      "command": "npm run preview -- --host 127.0.0.1 --port 4192",
+      "url": "http://127.0.0.1:4192",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "lesson-entry.spec.ts",
+      "file": "lesson-entry.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "desktop: one click on every lesson opens its objectives and sections without writing progress",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7702,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T10:35:39.610Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3309410c013101b7dcda-d3d37ad7623db252a579",
+          "file": "lesson-entry.spec.ts",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "keyboard and repeat selection return to objectives without collapsing or adding duplicate history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3284,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T10:35:47.705Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3309410c013101b7dcda-7203727b9efc23e5181f",
+          "file": "lesson-entry.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "direct entry still respects the existing session guard",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1188,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T10:35:50.566Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3309410c013101b7dcda-1827a368b3e28361c79f",
+          "file": "lesson-entry.spec.ts",
+          "line": 46,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "phone touch",
+          "file": "lesson-entry.spec.ts",
+          "line": 35,
+          "column": 6,
+          "specs": [
+            {
+              "title": "every lesson opens objectives and closes the drawer; reopening shows the selected sections",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 10562,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-18T10:35:39.623Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3309410c013101b7dcda-0b54419ddf1b74f1647e",
+              "file": "lesson-entry.spec.ts",
+              "line": 37,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-18T10:35:37.965Z",
+    "duration": 13908.529,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

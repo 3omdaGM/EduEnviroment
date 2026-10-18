@@ -38,7 +38,8 @@
     "test:course": "playwright test --config=playwright.course-reference.config.ts",
     "test:course:production": "playwright test --config=playwright.course-reference-production.config.ts",
     "test:four-modules": "playwright test --config=playwright.four-modules.config.ts",
-    "test:four-modules:production": "playwright test --config=playwright.four-modules-production.config.ts"
+    "test:four-modules:production": "playwright test --config=playwright.four-modules-production.config.ts",
+    "test:lesson-entry": "playwright test --config=playwright.lesson-entry.config.ts"
   },
   "dependencies": {
     "@fontsource/cairo": "5.3.0",
