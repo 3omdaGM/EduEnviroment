@@ -1,0 +1,1442 @@
+[
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/",
+    "scrollWidth": 390,
+    "scrollHeight": 844,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/goals",
+    "scrollWidth": 390,
+    "scrollHeight": 844,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/guide",
+    "scrollWidth": 390,
+    "scrollHeight": 844,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/content",
+    "scrollWidth": 390,
+    "scrollHeight": 844,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03",
+    "scrollWidth": 390,
+    "scrollHeight": 1303,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/objectives",
+    "scrollWidth": 390,
+    "scrollHeight": 872,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/content",
+    "scrollWidth": 390,
+    "scrollHeight": 1105,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/activity",
+    "scrollWidth": 390,
+    "scrollHeight": 1287,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/objectives",
+    "scrollWidth": 390,
+    "scrollHeight": 872,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/content",
+    "scrollWidth": 390,
+    "scrollHeight": 1179,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/activity",
+    "scrollWidth": 390,
+    "scrollHeight": 1207,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/objectives",
+    "scrollWidth": 390,
+    "scrollHeight": 872,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/content",
+    "scrollWidth": 390,
+    "scrollHeight": 1077,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/activity",
+    "scrollWidth": 390,
+    "scrollHeight": 1328,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/objectives",
+    "scrollWidth": 390,
+    "scrollHeight": 872,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/content",
+    "scrollWidth": 390,
+    "scrollHeight": 1118,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/activity",
+    "scrollWidth": 390,
+    "scrollHeight": 1355,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/objectives",
+    "scrollWidth": 390,
+    "scrollHeight": 976,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/content",
+    "scrollWidth": 390,
+    "scrollHeight": 1077,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/activity",
+    "scrollWidth": 390,
+    "scrollHeight": 1410,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/objectives",
+    "scrollWidth": 390,
+    "scrollHeight": 872,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/content",
+    "scrollWidth": 390,
+    "scrollHeight": 1163,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/activity",
+    "scrollWidth": 390,
+    "scrollHeight": 1328,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/objectives",
+    "scrollWidth": 390,
+    "scrollHeight": 872,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/content",
+    "scrollWidth": 390,
+    "scrollHeight": 1048,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/activity",
+    "scrollWidth": 390,
+    "scrollHeight": 1355,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-04",
+    "scrollWidth": 390,
+    "scrollHeight": 957,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/objectives",
+    "scrollWidth": 390,
+    "scrollHeight": 872,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/content",
+    "scrollWidth": 390,
+    "scrollHeight": 989,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/activity",
+    "scrollWidth": 390,
+    "scrollHeight": 1344,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/objectives",
+    "scrollWidth": 390,
+    "scrollHeight": 872,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/content",
+    "scrollWidth": 390,
+    "scrollHeight": 1274,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/activity",
+    "scrollWidth": 390,
+    "scrollHeight": 1302,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/objectives",
+    "scrollWidth": 390,
+    "scrollHeight": 872,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/content",
+    "scrollWidth": 390,
+    "scrollHeight": 1196,
+    "viewportHeight": 844
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/activity",
+    "scrollWidth": 390,
+    "scrollHeight": 1302,
+    "viewportHeight": 844
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/",
+    "scrollWidth": 320,
+    "scrollHeight": 612,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/goals",
+    "scrollWidth": 320,
+    "scrollHeight": 650,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/guide",
+    "scrollWidth": 320,
+    "scrollHeight": 618,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/content",
+    "scrollWidth": 320,
+    "scrollHeight": 898,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03",
+    "scrollWidth": 320,
+    "scrollHeight": 1580,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/objectives",
+    "scrollWidth": 320,
+    "scrollHeight": 833,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/content",
+    "scrollWidth": 320,
+    "scrollHeight": 1153,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/activity",
+    "scrollWidth": 320,
+    "scrollHeight": 1349,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/objectives",
+    "scrollWidth": 320,
+    "scrollHeight": 807,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/content",
+    "scrollWidth": 320,
+    "scrollHeight": 1178,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/activity",
+    "scrollWidth": 320,
+    "scrollHeight": 1241,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/objectives",
+    "scrollWidth": 320,
+    "scrollHeight": 792,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/content",
+    "scrollWidth": 320,
+    "scrollHeight": 1077,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/activity",
+    "scrollWidth": 320,
+    "scrollHeight": 1441,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/objectives",
+    "scrollWidth": 320,
+    "scrollHeight": 874,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/content",
+    "scrollWidth": 320,
+    "scrollHeight": 1090,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/activity",
+    "scrollWidth": 320,
+    "scrollHeight": 1387,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/objectives",
+    "scrollWidth": 320,
+    "scrollHeight": 1008,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/content",
+    "scrollWidth": 320,
+    "scrollHeight": 1126,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/activity",
+    "scrollWidth": 320,
+    "scrollHeight": 1414,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/objectives",
+    "scrollWidth": 320,
+    "scrollHeight": 699,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/content",
+    "scrollWidth": 320,
+    "scrollHeight": 1184,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/activity",
+    "scrollWidth": 320,
+    "scrollHeight": 1387,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/objectives",
+    "scrollWidth": 320,
+    "scrollHeight": 779,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/content",
+    "scrollWidth": 320,
+    "scrollHeight": 1075,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/activity",
+    "scrollWidth": 320,
+    "scrollHeight": 1359,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-04",
+    "scrollWidth": 320,
+    "scrollHeight": 1068,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/objectives",
+    "scrollWidth": 320,
+    "scrollHeight": 916,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/content",
+    "scrollWidth": 320,
+    "scrollHeight": 1021,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/activity",
+    "scrollWidth": 320,
+    "scrollHeight": 1403,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/objectives",
+    "scrollWidth": 320,
+    "scrollHeight": 794,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/content",
+    "scrollWidth": 320,
+    "scrollHeight": 1270,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/activity",
+    "scrollWidth": 320,
+    "scrollHeight": 1306,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/objectives",
+    "scrollWidth": 320,
+    "scrollHeight": 889,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/content",
+    "scrollWidth": 320,
+    "scrollHeight": 1155,
+    "viewportHeight": 568
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/activity",
+    "scrollWidth": 320,
+    "scrollHeight": 1306,
+    "viewportHeight": 568
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/goals",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/guide",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/content",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03",
+    "scrollWidth": 768,
+    "scrollHeight": 1298,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/objectives",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/content",
+    "scrollWidth": 768,
+    "scrollHeight": 1238,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/activity",
+    "scrollWidth": 768,
+    "scrollHeight": 1237,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/objectives",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/content",
+    "scrollWidth": 768,
+    "scrollHeight": 1311,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/activity",
+    "scrollWidth": 768,
+    "scrollHeight": 1156,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/objectives",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/content",
+    "scrollWidth": 768,
+    "scrollHeight": 1210,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/activity",
+    "scrollWidth": 768,
+    "scrollHeight": 1277,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/objectives",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/content",
+    "scrollWidth": 768,
+    "scrollHeight": 1228,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/activity",
+    "scrollWidth": 768,
+    "scrollHeight": 1277,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/objectives",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/content",
+    "scrollWidth": 768,
+    "scrollHeight": 1210,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/activity",
+    "scrollWidth": 768,
+    "scrollHeight": 1277,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/objectives",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/content",
+    "scrollWidth": 768,
+    "scrollHeight": 1269,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/activity",
+    "scrollWidth": 768,
+    "scrollHeight": 1277,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/objectives",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/content",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/activity",
+    "scrollWidth": 768,
+    "scrollHeight": 1277,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-04",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/objectives",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/content",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/activity",
+    "scrollWidth": 768,
+    "scrollHeight": 1237,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/objectives",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/content",
+    "scrollWidth": 768,
+    "scrollHeight": 1279,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/activity",
+    "scrollWidth": 768,
+    "scrollHeight": 1197,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/objectives",
+    "scrollWidth": 768,
+    "scrollHeight": 1024,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/content",
+    "scrollWidth": 768,
+    "scrollHeight": 1284,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/activity",
+    "scrollWidth": 768,
+    "scrollHeight": 1197,
+    "viewportHeight": 1024
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/",
+    "scrollWidth": 1280,
+    "scrollHeight": 620,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/goals",
+    "scrollWidth": 1280,
+    "scrollHeight": 620,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/guide",
+    "scrollWidth": 1280,
+    "scrollHeight": 620,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/content",
+    "scrollWidth": 1280,
+    "scrollHeight": 701,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03",
+    "scrollWidth": 1280,
+    "scrollHeight": 1244,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/objectives",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/content",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/activity",
+    "scrollWidth": 1280,
+    "scrollHeight": 1064,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/objectives",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/content",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/activity",
+    "scrollWidth": 1280,
+    "scrollHeight": 984,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/objectives",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/content",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/activity",
+    "scrollWidth": 1280,
+    "scrollHeight": 1105,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/objectives",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/content",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/activity",
+    "scrollWidth": 1280,
+    "scrollHeight": 1105,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/objectives",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/content",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/activity",
+    "scrollWidth": 1280,
+    "scrollHeight": 1105,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/objectives",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/content",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/activity",
+    "scrollWidth": 1280,
+    "scrollHeight": 1105,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/objectives",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/content",
+    "scrollWidth": 1280,
+    "scrollHeight": 935,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/activity",
+    "scrollWidth": 1280,
+    "scrollHeight": 1105,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-04",
+    "scrollWidth": 1280,
+    "scrollHeight": 914,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/objectives",
+    "scrollWidth": 1280,
+    "scrollHeight": 683,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/content",
+    "scrollWidth": 1280,
+    "scrollHeight": 775,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/activity",
+    "scrollWidth": 1280,
+    "scrollHeight": 1094,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/objectives",
+    "scrollWidth": 1280,
+    "scrollHeight": 673,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/content",
+    "scrollWidth": 1280,
+    "scrollHeight": 1042,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/activity",
+    "scrollWidth": 1280,
+    "scrollHeight": 1024,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/objectives",
+    "scrollWidth": 1280,
+    "scrollHeight": 683,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/content",
+    "scrollWidth": 1280,
+    "scrollHeight": 956,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1280,
+    "height": 620,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/activity",
+    "scrollWidth": 1280,
+    "scrollHeight": 1024,
+    "viewportHeight": 620
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/",
+    "scrollWidth": 1366,
+    "scrollHeight": 768,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/goals",
+    "scrollWidth": 1366,
+    "scrollHeight": 768,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/guide",
+    "scrollWidth": 1366,
+    "scrollHeight": 768,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/content",
+    "scrollWidth": 1366,
+    "scrollHeight": 768,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03",
+    "scrollWidth": 1366,
+    "scrollHeight": 1244,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/objectives",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/content",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/activity",
+    "scrollWidth": 1366,
+    "scrollHeight": 1064,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/objectives",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/content",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-02/activity",
+    "scrollWidth": 1366,
+    "scrollHeight": 984,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/objectives",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/content",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-03/activity",
+    "scrollWidth": 1366,
+    "scrollHeight": 1105,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/objectives",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/content",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-04/activity",
+    "scrollWidth": 1366,
+    "scrollHeight": 1105,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/objectives",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/content",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-05/activity",
+    "scrollWidth": 1366,
+    "scrollHeight": 1105,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/objectives",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/content",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-06/activity",
+    "scrollWidth": 1366,
+    "scrollHeight": 1105,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/objectives",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/content",
+    "scrollWidth": 1366,
+    "scrollHeight": 935,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-07/activity",
+    "scrollWidth": 1366,
+    "scrollHeight": 1105,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-04",
+    "scrollWidth": 1366,
+    "scrollHeight": 914,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/objectives",
+    "scrollWidth": 1366,
+    "scrollHeight": 768,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/content",
+    "scrollWidth": 1366,
+    "scrollHeight": 775,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/activity",
+    "scrollWidth": 1366,
+    "scrollHeight": 1094,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/objectives",
+    "scrollWidth": 1366,
+    "scrollHeight": 768,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/content",
+    "scrollWidth": 1366,
+    "scrollHeight": 1042,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-02/activity",
+    "scrollWidth": 1366,
+    "scrollHeight": 1024,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/objectives",
+    "scrollWidth": 1366,
+    "scrollHeight": 768,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/content",
+    "scrollWidth": 1366,
+    "scrollHeight": 956,
+    "viewportHeight": 768
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-03/activity",
+    "scrollWidth": 1366,
+    "scrollHeight": 1024,
+    "viewportHeight": 768
+  }
+]

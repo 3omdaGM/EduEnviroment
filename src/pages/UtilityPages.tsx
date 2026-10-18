@@ -1,6 +1,7 @@
 import { useLocation, useParams, useSearchParams } from 'react-router';
 import { ArrowLeft, BookOpen, CircleHelp, ClipboardList, Mail, MapPin, Monitor, Phone, Rocket, Target } from 'lucide-react';
-import { environmentGoals, guideSteps, modules } from '../data/catalog';
+import { environmentGoals, modules } from '../data/catalog';
+import { courseGuideSteps as guideSteps } from '../course/catalog';
 import { ButtonLink, Card, PageHeading, ProgressIndicator, StatusBadge } from '../components/ui';
 
 export function NotFound() {
