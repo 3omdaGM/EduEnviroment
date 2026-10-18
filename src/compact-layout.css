@@ -1,0 +1,122 @@
+/* Spend the viewport on content. Long text remains in normal document flow. */
+.brand-header { padding-block: 4px; }
+.main-content { padding-block: 6px; }
+.page-heading { margin-block-end: 8px; }
+.page-heading h1 { font-size: clamp(19px, 2vw, 23px); }
+.site-footer { padding-block: 3px; }
+.preparation { gap: 8px; padding: 14px; font-size: 14px; line-height: 1.75; }
+.preparation h2 { font-size: 20px; }
+.guide-card { padding: 12px 18px; }
+.guide-number-hint { margin-block-start: 6px; }
+.guide-body { padding-block: 10px; }
+.guide-actions { margin-block-start: 8px; }
+.environment-goals-heading { margin-block-end: 12px; }
+.environment-goals-grid { gap: 12px; }
+.environment-goal { padding: 14px; gap: 12px; }
+.environment-goal h2 { font-size: 14px; line-height: 1.75; margin-block-start: 4px; }
+.course-exam .assessment-instructions, .course-style .assessment-instructions {
+  padding: 14px 18px; gap: 6px; font-size: 14px; line-height: 1.75;
+}
+.course-exam .assessment-instructions > p, .course-style .assessment-instructions > p { margin: 0; }
+.course-exam .assessment-instructions h2, .course-style .assessment-instructions h2 { font-size: 19px; }
+.course-exam .assessment-instructions > .button, .course-style .assessment-instructions > .button { justify-self: start; }
+.course-exam-history { margin-block-start: 8px; padding: 8px 12px; font-size: 13px; }
+.course-style-test { padding: 12px 16px; }
+.course-figures { margin-block: 8px; gap: 12px; }
+.course-figures figcaption { margin-block-end: 4px; }
+.course-drawing-hint { margin-block-end: 6px; }
+
+/* Give the main text a little more width by removing redundant vertical rhythm. */
+.workspace-panel { padding: 8px 10px; }
+.workspace-panel .breadcrumbs { margin-block-end: 4px; line-height: 1.65; }
+.workspace-panel-header { padding: 8px 12px; gap: 9px; margin-block-end: 7px; }
+.workspace-panel-header h1 { font-size: 16px; line-height: 1.5; }
+.workspace-panel-header p { margin-block-start: 1px; line-height: 1.6; }
+.workspace-panel-icon { inline-size: 36px; block-size: 36px; }
+.workspace-panel-content, .course-media-column, .course-activity-main { gap: 7px; }
+.workspace-card-header { padding: 6px 10px; }
+.workspace-card-actions { margin-inline-start: auto; flex-shrink: 0; }
+.workspace-card-actions .button { min-block-size: 36px; padding: 3px 6px; font-size: 11px; }
+.workspace-card-body { padding: 10px; }
+.course-html { font-size: 14px; line-height: 1.75; overflow-wrap: anywhere; }
+.course-html p { margin-block-end: 4px; }
+.course-html h4 { margin-block: 3px 5px; }
+.course-objective { padding-block: 4px; }
+.course-stage-picker { gap: 6px; }
+.course-stage-picker select { padding-block: 5px; }
+.course-media-split { align-items: start; }
+.course-support-strip { padding: 8px 10px; }
+.course-support-strip:not(:has(details[open])) { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4px 8px; }
+.course-support-strip:not(:has(details[open])) .course-support-message { grid-column: 1 / -1; grid-row: 2; margin: 0; }
+.course-support-strip:not(:has(details[open])) details { grid-column: 2; grid-row: 1; }
+.course-support-message { line-height: 1.7; margin-block: 5px; }
+.course-support-strip ul, .course-support-card ul { gap: 5px; }
+.course-note { padding: 6px 9px; line-height: 1.7; }
+.workspace-hint { margin-block-end: 7px; }
+.workspace-lesson-cards { gap: 7px; }
+.workspace-lesson-card { padding: 8px; }
+.course-lesson-references { margin-block-start: 6px; }
+.course-activity-main .workspace-card-body > p { font-size: 14px; line-height: 1.75; }
+.course-activity-label { margin-block-end: 6px; line-height: 1.7; }
+.course-activity-main textarea { min-block-size: 112px; block-size: 112px; }
+.course-activity-actions { margin-block-start: 7px; gap: 6px; }
+.course-activity-main [role="status"] { margin-block-start: 4px; line-height: 1.65; }
+
+/* Bound the player, not the page or its text. YouTube retains its own fullscreen control. */
+.course-video-card .workspace-card-body { background: #0d1117; border-radius: 0 0 12px 12px; }
+.course-video-card iframe {
+  inline-size: min(100%, max(288px, 48dvh)); block-size: auto;
+  aspect-ratio: 16 / 9; min-block-size: 0; margin-inline: auto; border-radius: 0;
+}
+.course-image img { max-block-size: clamp(180px, 28dvh, 300px); }
+.course-image figcaption { margin-block: 4px; }
+
+@media (min-width: 768px) {
+  .course-media-split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .course-activity-main > .workspace-card:first-child { grid-column: auto; }
+  .supervisors-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .supervisor-card:last-child { grid-column: auto; inline-size: 100%; }
+  .supervisor-card { padding: 8px 10px; }
+  .supervisor-card h3 { font-size: 15px; }
+  .person-position { font-size: 12px; line-height: 1.6; }
+}
+@media (min-width: 901px) {
+  .reference-workspace { grid-template-columns: 280px minmax(0, 1fr); }
+  .course-media-split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .workspace-module-title { padding: 5px 8px; }
+  .workspace-module-title p { margin-block-start: 0; }
+  .course-group-label { padding: 3px 5px; }
+  .workspace-module-links { padding: 4px; }
+  .workspace-lessons { gap: 3px; padding: 5px; }
+  .workspace-lesson-toggle { min-block-size: 36px; padding: 4px 6px; line-height: 1.45; gap: 5px; }
+  .workspace-lesson-sections { padding: 3px; gap: 1px; }
+  .workspace-lesson-sections a { min-block-size: 30px; padding: 3px 6px; }
+  .contact-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+}
+@media (min-width: 901px) and (max-width: 1100px) {
+  .reference-workspace { grid-template-columns: 250px minmax(0, 1fr); }
+}
+@media (min-width: 768px) and (pointer: fine) {
+  .navigation-inner, .nav-link { min-block-size: 40px; }
+  .site-footer .login-link { min-block-size: 36px; }
+}
+@media (max-width: 767px) {
+  /* Keep readable type and 44px touch controls; accept natural flow on short phones. */
+  .workspace-panel { padding: 7px; }
+  .workspace-panel-header { padding: 8px; }
+  .workspace-panel-header h1 { font-size: 15px; }
+  .workspace-card-body { padding: 9px; }
+  .workspace-mobile-control { margin-block-end: 6px; }
+  .course-video-card iframe { inline-size: min(100%, 420px); }
+  .environment-goals-grid { gap: 6px; }
+  .environment-goal { padding: 8px 10px; gap: 9px; }
+  .environment-goal h2 { font-size: 13px; line-height: 1.7; margin: 0; }
+  .guide-card { padding: 10px; }
+  .guide-number-hint { font-size: 12px; }
+  .course-exam .assessment-instructions, .course-style .assessment-instructions { padding: 12px; }
+  .course-support-strip:not(:has(details[open])) { display: block; }
+  .course-support-controls .button, .workspace-card-actions .button { min-block-size: 44px; }
+}
+@media (pointer: coarse) {
+  .workspace-lesson-toggle, .workspace-lesson-sections a, .workspace-module-links a { min-block-size: 44px; }
+}

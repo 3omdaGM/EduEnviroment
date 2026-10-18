@@ -1,0 +1,6 @@
+{
+  "productionBuild": "passed",
+  "demoToolChunks": [],
+  "workspaceBundlePresent": true,
+  "note": "Static production artifact check; browser layout checks ran against the demo build."
+}

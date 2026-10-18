@@ -1,0 +1,137 @@
+{
+  "baselineCommit": "ba18e44",
+  "routeVisits": 620,
+  "scope": "62 public/main course routes; default content stage; fixed-support g2 demo state",
+  "viewports": [
+    {
+      "width": 1920,
+      "height": 910,
+      "after": {
+        "pages": 62,
+        "scrollingPages": 0,
+        "totalOverflowPixels": 0,
+        "horizontalOverflowPages": 0
+      },
+      "before": {
+        "pages": 62,
+        "scrollingPages": 24,
+        "totalOverflowPixels": 3485,
+        "horizontalOverflowPages": 0
+      }
+    },
+    {
+      "width": 1536,
+      "height": 728,
+      "after": {
+        "pages": 62,
+        "scrollingPages": 0,
+        "totalOverflowPixels": 0,
+        "horizontalOverflowPages": 0
+      },
+      "before": null
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "after": {
+        "pages": 62,
+        "scrollingPages": 0,
+        "totalOverflowPixels": 0,
+        "horizontalOverflowPages": 0
+      },
+      "before": {
+        "pages": 62,
+        "scrollingPages": 33,
+        "totalOverflowPixels": 6484,
+        "horizontalOverflowPages": 0
+      }
+    },
+    {
+      "width": 1280,
+      "height": 620,
+      "after": {
+        "pages": 62,
+        "scrollingPages": 34,
+        "totalOverflowPixels": 1882,
+        "horizontalOverflowPages": 0
+      },
+      "before": {
+        "pages": 62,
+        "scrollingPages": 42,
+        "totalOverflowPixels": 11749,
+        "horizontalOverflowPages": 0
+      }
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "after": {
+        "pages": 62,
+        "scrollingPages": 0,
+        "totalOverflowPixels": 0,
+        "horizontalOverflowPages": 0
+      },
+      "before": null
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "after": {
+        "pages": 62,
+        "scrollingPages": 0,
+        "totalOverflowPixels": 0,
+        "horizontalOverflowPages": 0
+      },
+      "before": null
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "after": {
+        "pages": 62,
+        "scrollingPages": 30,
+        "totalOverflowPixels": 6977,
+        "horizontalOverflowPages": 0
+      },
+      "before": {
+        "pages": 62,
+        "scrollingPages": 34,
+        "totalOverflowPixels": 14674,
+        "horizontalOverflowPages": 0
+      }
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "after": {
+        "pages": 62,
+        "scrollingPages": 58,
+        "totalOverflowPixels": 19101,
+        "horizontalOverflowPages": 0
+      },
+      "before": null
+    },
+    {
+      "width": 960,
+      "height": 455,
+      "after": {
+        "pages": 62,
+        "scrollingPages": 60,
+        "totalOverflowPixels": 11695,
+        "horizontalOverflowPages": 0
+      },
+      "before": null
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "after": {
+        "pages": 62,
+        "scrollingPages": 0,
+        "totalOverflowPixels": 0,
+        "horizontalOverflowPages": 0
+      },
+      "before": null
+    }
+  ]
+}
