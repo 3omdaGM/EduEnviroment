@@ -1,0 +1,1042 @@
+[
+  {
+    "path": "/course/modules/cl-mod-03",
+    "height": 910,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "footer": {
+      "top": 853,
+      "bottom": 910,
+      "height": 57
+    },
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/objectives",
+    "height": 910,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "footer": {
+      "top": 853,
+      "bottom": 910,
+      "height": 57
+    },
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "path": "/course/modules/cl-mod-04",
+    "height": 910,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "footer": {
+      "top": 853,
+      "bottom": 910,
+      "height": 57
+    },
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/objectives",
+    "height": 910,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "footer": {
+      "top": 853,
+      "bottom": 910,
+      "height": 57
+    },
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "path": "/course/modules/cl-mod-design",
+    "height": 910,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "footer": {
+      "top": 853,
+      "bottom": 910,
+      "height": 57
+    },
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "path": "/course/modules/cl-mod-design/lessons/cl-les-design-01/objectives",
+    "height": 910,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "footer": {
+      "top": 853,
+      "bottom": 910,
+      "height": 57
+    },
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "path": "/course/modules/cl-mod-quality",
+    "height": 910,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "footer": {
+      "top": 853,
+      "bottom": 910,
+      "height": 57
+    },
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "path": "/course/modules/cl-mod-quality/lessons/cl-les-quality-01/objectives",
+    "height": 910,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 853,
+      "height": 740
+    },
+    "footer": {
+      "top": 853,
+      "bottom": 910,
+      "height": 57
+    },
+    "width": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "path": "/course/modules/cl-mod-03",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1366,
+    "scrollWidth": 1366
+  },
+  {
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/objectives",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 720.390625,
+      "height": 607.390625
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 720.390625,
+      "height": 607.390625
+    },
+    "footer": {
+      "top": 720.390625,
+      "bottom": 777.390625,
+      "height": 57
+    },
+    "width": 1366,
+    "scrollWidth": 1366
+  },
+  {
+    "path": "/course/modules/cl-mod-04",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1366,
+    "scrollWidth": 1366
+  },
+  {
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/objectives",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1366,
+    "scrollWidth": 1366
+  },
+  {
+    "path": "/course/modules/cl-mod-design",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1366,
+    "scrollWidth": 1366
+  },
+  {
+    "path": "/course/modules/cl-mod-design/lessons/cl-les-design-01/objectives",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1366,
+    "scrollWidth": 1366
+  },
+  {
+    "path": "/course/modules/cl-mod-quality",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1366,
+    "scrollWidth": 1366
+  },
+  {
+    "path": "/course/modules/cl-mod-quality/lessons/cl-les-quality-01/objectives",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 711,
+      "height": 598
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1366,
+    "scrollWidth": 1366
+  },
+  {
+    "path": "/course/modules/cl-mod-03",
+    "height": 620,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 676.34375,
+      "height": 563.34375
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 676.34375,
+      "height": 563.34375
+    },
+    "footer": {
+      "top": 676.34375,
+      "bottom": 733.34375,
+      "height": 57
+    },
+    "width": 1280,
+    "scrollWidth": 1280
+  },
+  {
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/objectives",
+    "height": 620,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 720.390625,
+      "height": 607.390625
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 720.390625,
+      "height": 607.390625
+    },
+    "footer": {
+      "top": 720.390625,
+      "bottom": 777.390625,
+      "height": 57
+    },
+    "width": 1280,
+    "scrollWidth": 1280
+  },
+  {
+    "path": "/course/modules/cl-mod-04",
+    "height": 620,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 563,
+      "height": 450
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 563,
+      "height": 450
+    },
+    "footer": {
+      "top": 563,
+      "bottom": 620,
+      "height": 57
+    },
+    "width": 1280,
+    "scrollWidth": 1280
+  },
+  {
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/objectives",
+    "height": 620,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 563,
+      "height": 450
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 563,
+      "height": 450
+    },
+    "footer": {
+      "top": 563,
+      "bottom": 620,
+      "height": 57
+    },
+    "width": 1280,
+    "scrollWidth": 1280
+  },
+  {
+    "path": "/course/modules/cl-mod-design",
+    "height": 620,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 563,
+      "height": 450
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 563,
+      "height": 450
+    },
+    "footer": {
+      "top": 563,
+      "bottom": 620,
+      "height": 57
+    },
+    "width": 1280,
+    "scrollWidth": 1280
+  },
+  {
+    "path": "/course/modules/cl-mod-design/lessons/cl-les-design-01/objectives",
+    "height": 620,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 563,
+      "height": 450
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 563,
+      "height": 450
+    },
+    "footer": {
+      "top": 563,
+      "bottom": 620,
+      "height": 57
+    },
+    "width": 1280,
+    "scrollWidth": 1280
+  },
+  {
+    "path": "/course/modules/cl-mod-quality",
+    "height": 620,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 563,
+      "height": 450
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 563,
+      "height": 450
+    },
+    "footer": {
+      "top": 563,
+      "bottom": 620,
+      "height": 57
+    },
+    "width": 1280,
+    "scrollWidth": 1280
+  },
+  {
+    "path": "/course/modules/cl-mod-quality/lessons/cl-les-quality-01/objectives",
+    "height": 620,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 563,
+      "height": 450
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 563,
+      "height": 450
+    },
+    "footer": {
+      "top": 563,
+      "bottom": 620,
+      "height": 57
+    },
+    "width": 1280,
+    "scrollWidth": 1280
+  },
+  {
+    "path": "/course/modules/cl-mod-03",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113.78125,
+      "height": 113.78125
+    },
+    "sidebar": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "workspace": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1024,
+    "scrollWidth": 1024
+  },
+  {
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/objectives",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113.78125,
+      "height": 113.78125
+    },
+    "sidebar": {
+      "top": 113.78125,
+      "bottom": 721.171875,
+      "height": 607.390625
+    },
+    "workspace": {
+      "top": 113.78125,
+      "bottom": 721.171875,
+      "height": 607.390625
+    },
+    "footer": {
+      "top": 721.171875,
+      "bottom": 778.171875,
+      "height": 57
+    },
+    "width": 1024,
+    "scrollWidth": 1024
+  },
+  {
+    "path": "/course/modules/cl-mod-04",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113.78125,
+      "height": 113.78125
+    },
+    "sidebar": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "workspace": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1024,
+    "scrollWidth": 1024
+  },
+  {
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/objectives",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113.78125,
+      "height": 113.78125
+    },
+    "sidebar": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "workspace": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1024,
+    "scrollWidth": 1024
+  },
+  {
+    "path": "/course/modules/cl-mod-design",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113.78125,
+      "height": 113.78125
+    },
+    "sidebar": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "workspace": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1024,
+    "scrollWidth": 1024
+  },
+  {
+    "path": "/course/modules/cl-mod-design/lessons/cl-les-design-01/objectives",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113.78125,
+      "height": 113.78125
+    },
+    "sidebar": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "workspace": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1024,
+    "scrollWidth": 1024
+  },
+  {
+    "path": "/course/modules/cl-mod-quality",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113.78125,
+      "height": 113.78125
+    },
+    "sidebar": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "workspace": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1024,
+    "scrollWidth": 1024
+  },
+  {
+    "path": "/course/modules/cl-mod-quality/lessons/cl-les-quality-01/objectives",
+    "height": 768,
+    "header": {
+      "top": 0,
+      "bottom": 113.78125,
+      "height": 113.78125
+    },
+    "sidebar": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "workspace": {
+      "top": 113.78125,
+      "bottom": 711,
+      "height": 597.21875
+    },
+    "footer": {
+      "top": 711,
+      "bottom": 768,
+      "height": 57
+    },
+    "width": 1024,
+    "scrollWidth": 1024
+  },
+  {
+    "path": "/course/modules/cl-mod-03",
+    "height": 2160,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "footer": {
+      "top": 2103,
+      "bottom": 2160,
+      "height": 57
+    },
+    "width": 3840,
+    "scrollWidth": 3840
+  },
+  {
+    "path": "/course/modules/cl-mod-03/lessons/cl-les-03-01/objectives",
+    "height": 2160,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "footer": {
+      "top": 2103,
+      "bottom": 2160,
+      "height": 57
+    },
+    "width": 3840,
+    "scrollWidth": 3840
+  },
+  {
+    "path": "/course/modules/cl-mod-04",
+    "height": 2160,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "footer": {
+      "top": 2103,
+      "bottom": 2160,
+      "height": 57
+    },
+    "width": 3840,
+    "scrollWidth": 3840
+  },
+  {
+    "path": "/course/modules/cl-mod-04/lessons/cl-les-04-01/objectives",
+    "height": 2160,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "footer": {
+      "top": 2103,
+      "bottom": 2160,
+      "height": 57
+    },
+    "width": 3840,
+    "scrollWidth": 3840
+  },
+  {
+    "path": "/course/modules/cl-mod-design",
+    "height": 2160,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "footer": {
+      "top": 2103,
+      "bottom": 2160,
+      "height": 57
+    },
+    "width": 3840,
+    "scrollWidth": 3840
+  },
+  {
+    "path": "/course/modules/cl-mod-design/lessons/cl-les-design-01/objectives",
+    "height": 2160,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "footer": {
+      "top": 2103,
+      "bottom": 2160,
+      "height": 57
+    },
+    "width": 3840,
+    "scrollWidth": 3840
+  },
+  {
+    "path": "/course/modules/cl-mod-quality",
+    "height": 2160,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "footer": {
+      "top": 2103,
+      "bottom": 2160,
+      "height": 57
+    },
+    "width": 3840,
+    "scrollWidth": 3840
+  },
+  {
+    "path": "/course/modules/cl-mod-quality/lessons/cl-les-quality-01/objectives",
+    "height": 2160,
+    "header": {
+      "top": 0,
+      "bottom": 113,
+      "height": 113
+    },
+    "sidebar": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "workspace": {
+      "top": 113,
+      "bottom": 2103,
+      "height": 1990
+    },
+    "footer": {
+      "top": 2103,
+      "bottom": 2160,
+      "height": 57
+    },
+    "width": 3840,
+    "scrollWidth": 3840
+  }
+]

@@ -25,9 +25,10 @@
   .reference-module-card:hover { background: #fbfdff; border-color: #5398d6; box-shadow: 0 10px 26px #145da025; transform: translateY(-2px); }
 }
 .reference-module-card:focus-visible { outline-color: var(--work-primary); }
-.main-content:has(.reference-workspace) { inline-size: 100%; padding: 0; }
-.reference-workspace { display: grid; grid-template-columns: 260px minmax(0, 1fr); min-block-size: calc(100dvh - 175px); background: #ffffff; align-items: start; }
-.workspace-sidebar { position: sticky; inset-block-start: 113px; background: white; border-inline-end: 3px solid var(--work-primary); }
+.main-content:has(.reference-workspace) { display: flex; flex-direction: column; inline-size: 100%; padding: 0; }
+.main-content:has(.reference-workspace) > .page-transition { display: flex; flex-direction: column; flex: 1; }
+.reference-workspace { display: grid; flex: 1; grid-template-columns: 260px minmax(0, 1fr); min-block-size: 0; background: #ffffff; align-items: stretch; }
+.workspace-sidebar { align-self: stretch; background: white; border-inline-end: 3px solid var(--work-primary); }
 .workspace-module-title { display: flex; align-items: center; justify-content: center; gap: 9px; padding: 13px 10px; background: linear-gradient(135deg, var(--work-dark), var(--work-teal)); color: white; text-align: center; }
 .workspace-module-title h2 { color: white; font-size: 14px; }
 .workspace-module-title p { font-size: 11px; line-height: 1.65; margin-block-start: 3px; }

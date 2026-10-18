@@ -39,6 +39,7 @@
     "playwright.module*.ts",
     "playwright.course-reference*.ts",
     "playwright.four-modules*.ts",
-    "playwright.lesson-entry*.ts"
+    "playwright.lesson-entry*.ts",
+    "playwright.sidebar-height*.ts"
   ]
 }
