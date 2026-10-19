@@ -202,6 +202,9 @@
   .course-media-split .course-html:has(> .course-objective:nth-of-type(5)) > :not(.course-objective) { grid-column: 1 / -1; }
 }
 
-/* A direct lesson-list entry below every module overview, on all screens. */
-.workspace-overview-actions { display: flex; justify-content: flex-start; margin-block-start: 1px; }
+/* Match the sidebar's collapsed layout: show this entry only when it is hidden. */
+.workspace-overview-actions { display: none; justify-content: flex-start; margin-block-start: 1px; }
 .workspace-overview-actions .button { min-block-size: 44px; padding-block: 6px; font-size: 13px; }
+@media (max-width: 900px) {
+  .workspace-overview-actions { display: flex; }
+}
