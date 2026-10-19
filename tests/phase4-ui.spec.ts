@@ -44,7 +44,7 @@ test('forms validate safe demo values, persist no credentials and reset sends no
   await page.getByLabel('البريد التجريبي', { exact: true }).fill('demo@example.com');
   await page.getByRole('button', { name: 'تجربة بحساب تجريبي' }).click(); await expect(page).toHaveURL('/content');
   expect(JSON.stringify(await stored(page))).not.toMatch(/email|password|DEMO|confirmation/);
-  await page.getByRole('button', { name: 'خروج تجريبي' }).click();
+  await page.getByRole('button', { name: 'تسجيل الخروج' }).click();
   await page.goto('/recover'); await page.getByRole('button', { name: 'عرض إرشادات الاستعادة' }).click();
   await expect(page.getByRole('status')).toContainText('لم يُرسل أي بريد');
 });

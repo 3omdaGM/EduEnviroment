@@ -81,7 +81,7 @@ function SessionControl() {
   const { adapter, snapshot } = useTraining();
   const navigate = useNavigate();
   const [sessionError, setSessionError] = useState('');
-  return <div className="footer-session"><div className="session-control">{snapshot.data?.learner.active ? <><span className="session-name">{snapshot.data.learner.name}</span><button className="login-link" onClick={async () => { const r = await adapter.execute({ type: 'logout' }); if (r.ok) navigate('/login'); else setSessionError(r.error); }}>خروج تجريبي</button></> : <Link to="/login" className="login-link"><LogIn size={17} aria-hidden="true" /><span>دخول المتدرب</span></Link>}</div>{sessionError && <p role="alert">{sessionError}</p>}</div>;
+  return <div className="footer-session"><div className="session-control">{snapshot.data?.learner.active ? <button className="login-link" onClick={async () => { const r = await adapter.execute({ type: 'logout' }); if (r.ok) navigate('/login'); else setSessionError(r.error); }}>تسجيل الخروج</button> : <Link to="/login" className="login-link"><LogIn size={17} aria-hidden="true" /><span>تسجيل الدخول</span></Link>}</div>{sessionError && <p role="alert">{sessionError}</p>}</div>;
 }
 
 export default function AppShell() {
@@ -99,6 +99,6 @@ export default function AppShell() {
     <header className="site-header"><BrandHeader /><div className="navigation-bar"><div className="container navigation-inner"><DesktopNav /><MobileNav /></div></div></header>
     {pathname.startsWith('/modules/') && snapshot.celebration && <div role="status" className="celebration">{snapshot.celebration}</div>}
     <main id="main-content" ref={main} tabIndex={-1} className="main-content container"><Suspense fallback={<div role="status" aria-busy="true" className="loading-state">جارٍ تحميل الصفحة…</div>}><div key={pathname} className="page-transition content-frame"><Outlet /></div></Suspense></main>
-    <footer className="site-footer"><div className="container footer-inner"><SessionControl /><p>نسخة تجريبية</p>{demoToolsEnabled && <Link to="/demo-tools">أدوات العرض</Link>}</div></footer>
+    <footer className="site-footer"><div className="container footer-inner"><SessionControl /></div></footer>
   </div>;
 }

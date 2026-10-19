@@ -48,7 +48,9 @@
     "test:blue-objectives": "playwright test --config=playwright.blue-objectives.config.ts",
     "test:separated-panels": "playwright test --config=playwright.separated-panels.config.ts",
     "test:figures-guide": "playwright test --config=playwright.figures-guide.config.ts",
-    "test:figures-guide:production": "playwright test --config=playwright.figures-guide-production.config.ts"
+    "test:figures-guide:production": "playwright test --config=playwright.figures-guide-production.config.ts",
+    "test:module-actions": "playwright test --config=playwright.module-actions.config.ts",
+    "test:module-actions:production": "playwright test --config=playwright.module-actions-production.config.ts"
   },
   "dependencies": {
     "@fontsource/cairo": "5.3.0",
