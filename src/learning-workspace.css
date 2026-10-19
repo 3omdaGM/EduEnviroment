@@ -303,3 +303,15 @@
  .course-activity-main > .workspace-card:first-child { grid-column: 1 / -1; }
  .course-activity-main textarea { min-block-size: 120px; }
 }
+
+/* The study combines a learner classification with a support condition. */
+.support-study-info { display: grid; gap: 10px; font-size: 14px; line-height: 1.8; }
+.support-study-definitions { display: grid; gap: 8px; }
+.support-study-definitions dt { color: #145da0; font-weight: 700; }
+.support-study-definitions dd { margin: 0; }
+.support-study-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; list-style: none; padding: 0; }
+.support-study-groups li { display: grid; gap: 3px; padding: 9px; border: 1px solid #aac9df; border-radius: 10px; background: #edf4fb; }
+.support-study-groups .is-selected { border-color: #145da0; background: #dcebf8; }
+.support-study-groups span { font-size: 12px; }
+.course-hub-status > span, .course-group-label { overflow-wrap: anywhere; }
+@media (max-width: 480px) { .support-study-groups { grid-template-columns: minmax(0, 1fr); } }

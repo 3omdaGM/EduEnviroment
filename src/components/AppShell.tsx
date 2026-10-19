@@ -49,7 +49,7 @@ function AssessmentMenu() {
     onPointerEnter={event => { if (event.pointerType === 'mouse' && matchMedia('(hover:hover) and (pointer:fine)').matches) setOpen(true); }}
     onPointerLeave={() => { if (!root.current?.contains(document.activeElement)) setOpen(false); }}>
     <button ref={button} className={`nav-link ${pathname.startsWith('/assessment') ? 'active' : ''}`} aria-expanded={open} aria-controls="assessment-navigation" onClick={() => setOpen(!open)}>التقويم <ChevronDown size={14} aria-hidden="true" /></button>
-    {open && <ul id="assessment-navigation" className="assessment-dropdown"><li><NavLink to="/assessment/pre/instructions" onClick={() => setOpen(false)}>التقويم القبلي <span>{preLabel}</span></NavLink></li><li><NavLink to="/assessment/post/instructions" onClick={() => setOpen(false)}>التقويم البعدي <span>{postLabel}</span></NavLink></li><li><NavLink to="/learning-style" onClick={() => setOpen(false)}>اختبار أسلوب التعلم<span>تحديد المجموعة ونمط الدعم</span></NavLink></li></ul>}
+    {open && <ul id="assessment-navigation" className="assessment-dropdown"><li><NavLink to="/assessment/pre/instructions" onClick={() => setOpen(false)}>التقويم القبلي <span>{preLabel}</span></NavLink></li><li><NavLink to="/assessment/post/instructions" onClick={() => setOpen(false)}>التقويم البعدي <span>{postLabel}</span></NavLink></li><li><NavLink to="/learning-style" onClick={() => setOpen(false)}>اختبار أسلوب التعلم<span>تحديد الأسلوب المعرفي ونمط الدعم</span></NavLink></li></ul>}
   </li>;
 }
 
@@ -70,7 +70,7 @@ export function MobileNav() {
     <Drawer open={open} onClose={() => setOpen(false)} title="قائمة التنقل الرئيسية">
       <nav aria-label="التنقل الرئيسي للهاتف" className="drawer-navigation">
         {navigation.slice(0, 3).map(item => <NavigationLink key={item.to} item={item} onNavigate={() => setOpen(false)} />)}
-        <div className="drawer-nav-group"><p>التقويم</p><NavLink to="/assessment/pre/instructions" onClick={() => setOpen(false)}>التقويم القبلي <small>{preLabel}</small></NavLink><NavLink to="/assessment/post/instructions" onClick={() => setOpen(false)}>التقويم البعدي <small>{postLabel}</small></NavLink><NavLink to="/learning-style" onClick={() => setOpen(false)}>اختبار أسلوب التعلم <small>المجموعة ونمط الدعم</small></NavLink></div>
+        <div className="drawer-nav-group"><p>التقويم</p><NavLink to="/assessment/pre/instructions" onClick={() => setOpen(false)}>التقويم القبلي <small>{preLabel}</small></NavLink><NavLink to="/assessment/post/instructions" onClick={() => setOpen(false)}>التقويم البعدي <small>{postLabel}</small></NavLink><NavLink to="/learning-style" onClick={() => setOpen(false)}>اختبار أسلوب التعلم <small>الأسلوب المعرفي ونمط الدعم</small></NavLink></div>
         {navigation.slice(3).map(item => <NavigationLink key={item.to} item={item} onNavigate={() => setOpen(false)} />)}
       </nav><div className="compact-question-session"><SessionControl /><p>نسخة تجريبية</p>{demoToolsEnabled && <Link to="/demo-tools">أدوات العرض</Link>}</div>
     </Drawer>
@@ -97,7 +97,7 @@ export default function AppShell() {
   return <div className={`app-shell${pathname === '/' ? ' home-shell' : goalsPage ? ' goals-shell' : ''}${pathname.includes('/attempt/') ? ' question-shell' : ''}`}>
     <a className="skip-link" href="#main-content">تجاوز إلى المحتوى</a>
     <header className="site-header"><BrandHeader /><div className="navigation-bar"><div className="container navigation-inner"><DesktopNav /><MobileNav /></div></div></header>
-    {snapshot.celebration && <div role="status" className="celebration">{snapshot.celebration}</div>}
+    {pathname.startsWith('/modules/') && snapshot.celebration && <div role="status" className="celebration">{snapshot.celebration}</div>}
     <main id="main-content" ref={main} tabIndex={-1} className="main-content container"><Suspense fallback={<div role="status" aria-busy="true" className="loading-state">جارٍ تحميل الصفحة…</div>}><div key={pathname} className="page-transition content-frame"><Outlet /></div></Suspense></main>
     <footer className="site-footer"><div className="container footer-inner"><SessionControl /><p>نسخة تجريبية</p>{demoToolsEnabled && <Link to="/demo-tools">أدوات العرض</Link>}</div></footer>
   </div>;

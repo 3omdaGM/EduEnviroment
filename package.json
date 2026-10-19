@@ -43,6 +43,8 @@
     "test:sidebar-height": "playwright test --config=playwright.sidebar-height.config.ts",
     "test:compact-reading": "playwright test --config=playwright.compact-reading.config.ts",
     "test:content-frame": "playwright test --config=playwright.content-frame.config.ts",
+    "test:support-study": "playwright test --config=playwright.support-study.config.ts",
+    "test:support-study:production": "playwright test --config=playwright.support-study-production.config.ts",
     "test:blue-objectives": "playwright test --config=playwright.blue-objectives.config.ts",
     "test:separated-panels": "playwright test --config=playwright.separated-panels.config.ts"
   },

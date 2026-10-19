@@ -94,9 +94,10 @@ describe('reference manifest and restoration integrity', () => {
 });
 
 it('matches the reference asset and content manifest without changing legacy data files', () => {
-  const manifest = JSON.parse(readFileSync('docs/course-reference-manifest.json', 'utf8')) as { contentSha256: string; authoredContentSha256: string; drawingsSha256: string; moduleOverviews: { sha256: string; approval: string; modules: { id: string; basedOnLessonIds: string[]; objectives: string[] }[] }; assets: { path: string; sha256: string }[]; modules: { id: string; displayNumber: number }[] };
+  const manifest = JSON.parse(readFileSync('docs/course-reference-manifest.json', 'utf8')) as { contentSha256: string; authoredContentSha256: string; drawingsSha256: string; studyIdentity: { sha256: string }; moduleOverviews: { sha256: string; approval: string; modules: { id: string; basedOnLessonIds: string[]; objectives: string[] }[] }; assets: { path: string; sha256: string }[]; modules: { id: string; displayNumber: number }[] };
   const hash = (path: string) => createHash('sha256').update(readFileSync(path)).digest('hex');
   expect(hash('src/course/imported-content.json')).toBe(manifest.contentSha256); expect(hash('src/course/authored-content.json')).toBe(manifest.authoredContentSha256); expect(hash('src/course/embedded-figures.ts')).toBe(manifest.drawingsSha256);
+  expect(hash('src/course/study.json')).toBe(manifest.studyIdentity.sha256);
   expect(hash('src/course/module-overviews.json')).toBe(manifest.moduleOverviews.sha256);
   expect(manifest.moduleOverviews.approval).toBe('draft');
   expect(manifest.moduleOverviews.modules.map(m => m.id)).toEqual(courseCatalog.modules.map(m => m.id));
