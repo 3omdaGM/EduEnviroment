@@ -46,6 +46,7 @@
     "playwright.separated-panels*.ts",
     "playwright.blue-objectives*.ts",
     "playwright.support-study*.ts",
-    "playwright.figures-guide*.ts"
+    "playwright.figures-guide*.ts",
+    "playwright.mobile-flow*.ts"
   ]
 }

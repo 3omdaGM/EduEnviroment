@@ -9,6 +9,7 @@ import type { CourseLesson, CourseSection, CourseStage } from './catalog';
 import { CourseCard, CourseGuard, CourseHtml, CourseProblem } from './ui';
 import Workspace from './Workspace';
 import Support from './Support';
+import LessonFlow from './LessonFlow';
 function youtube(url: string) { try { const u = new URL(url); const id = u.hostname === 'youtu.be' ? u.pathname.slice(1) : u.hostname.endsWith('youtube.com') ? u.pathname.startsWith('/embed/') ? u.pathname.split('/')[2] : u.searchParams.get('v') : null; return id && /^[\w-]{11}$/.test(id) ? `https://www.youtube-nocookie.com/embed/${id}` : null; } catch { return null; } }
 function stages(section: CourseSection): CourseStage[] {
   if (section.stages) return section.stages;
@@ -36,5 +37,5 @@ export default function CourseWorkspacePage() {
   if (!snapshot.data) return <CourseProblem />;
   const module = courseCatalog.modules.find(m => m.id === moduleId), lesson = module?.lessons.find(l => l.id === lessonId);
   if (!module || (lessonId && !lesson) || (lesson && !['objectives', 'content', 'activity'].includes(section ?? ''))) return <NotFound />;
-  return <Workspace moduleId={module.id} lessonId={lesson?.id} section={section ?? 'overview'}>{lesson ? <CourseGuard><LessonContent key={`${lesson.id}:${section}`} lesson={lesson} section={section as 'objectives' | 'content' | 'activity'} /></CourseGuard> : <CourseCard title="أهداف الموديول" className="course-module-objectives"><p className="workspace-hint">بعد إتمام هذا الموديول، يُتوقع أن يكون المتعلم قادرًا على أن:</p><ol className="course-html module-objectives-list">{module.objectives.map((objective, index) => <li key={objective} className="course-objective"><span aria-hidden="true">{index + 1}</span><p>{objective}</p></li>)}</ol></CourseCard>}</Workspace>;
+  return <Workspace moduleId={module.id} lessonId={lesson?.id} section={section ?? 'overview'}>{lesson ? <CourseGuard><LessonContent key={`${lesson.id}:${section}`} lesson={lesson} section={section as 'objectives' | 'content' | 'activity'} /><LessonFlow moduleId={module.id} lessonId={lesson.id} section={section!} /></CourseGuard> : <CourseCard title="أهداف الموديول" className="course-module-objectives"><p className="workspace-hint">بعد إتمام هذا الموديول، يُتوقع أن يكون المتعلم قادرًا على أن:</p><ol className="course-html module-objectives-list">{module.objectives.map((objective, index) => <li key={objective} className="course-objective"><span aria-hidden="true">{index + 1}</span><p>{objective}</p></li>)}</ol></CourseCard>}</Workspace>;
 }

@@ -50,7 +50,9 @@
     "test:figures-guide": "playwright test --config=playwright.figures-guide.config.ts",
     "test:figures-guide:production": "playwright test --config=playwright.figures-guide-production.config.ts",
     "test:module-actions": "playwright test --config=playwright.module-actions.config.ts",
-    "test:module-actions:production": "playwright test --config=playwright.module-actions-production.config.ts"
+    "test:module-actions:production": "playwright test --config=playwright.module-actions-production.config.ts",
+    "test:mobile-flow": "playwright test --config=playwright.mobile-flow.config.ts",
+    "test:mobile-flow:production": "playwright test --config=playwright.mobile-flow-production.config.ts"
   },
   "dependencies": {
     "@fontsource/cairo": "5.3.0",

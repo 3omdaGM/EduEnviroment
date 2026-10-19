@@ -208,3 +208,11 @@
 @media (max-width: 900px) {
   .workspace-overview-actions { display: flex; }
 }
+
+/* Forward shortcuts complement the lesson drawer in the collapsed layout. */
+.course-lesson-flow { display: none; }
+@media (max-width: 900px) {
+  .course-lesson-flow { display: flex; justify-content: flex-start; margin-block-start: 1px; }
+  .course-lesson-flow .button { min-block-size: 44px; max-inline-size: 100%; padding-block: 6px; font-size: 13px; text-align: start; }
+  .course-lesson-flow .button > span { min-inline-size: 0; overflow-wrap: anywhere; }
+}
