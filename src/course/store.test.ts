@@ -94,9 +94,18 @@ describe('reference manifest and restoration integrity', () => {
 });
 
 it('matches the reference asset and content manifest without changing legacy data files', () => {
-  const manifest = JSON.parse(readFileSync('docs/course-reference-manifest.json', 'utf8')) as { contentSha256: string; authoredContentSha256: string; drawingsSha256: string; assets: { path: string; sha256: string }[]; modules: { id: string; displayNumber: number }[] };
+  const manifest = JSON.parse(readFileSync('docs/course-reference-manifest.json', 'utf8')) as { contentSha256: string; authoredContentSha256: string; drawingsSha256: string; moduleOverviews: { sha256: string; approval: string; modules: { id: string; basedOnLessonIds: string[]; objectives: string[] }[] }; assets: { path: string; sha256: string }[]; modules: { id: string; displayNumber: number }[] };
   const hash = (path: string) => createHash('sha256').update(readFileSync(path)).digest('hex');
   expect(hash('src/course/imported-content.json')).toBe(manifest.contentSha256); expect(hash('src/course/authored-content.json')).toBe(manifest.authoredContentSha256); expect(hash('src/course/embedded-figures.ts')).toBe(manifest.drawingsSha256);
+  expect(hash('src/course/module-overviews.json')).toBe(manifest.moduleOverviews.sha256);
+  expect(manifest.moduleOverviews.approval).toBe('draft');
+  expect(manifest.moduleOverviews.modules.map(m => m.id)).toEqual(courseCatalog.modules.map(m => m.id));
+  for (const module of courseCatalog.modules) {
+    const overview = manifest.moduleOverviews.modules.find(m => m.id === module.id)!;
+    expect(overview.basedOnLessonIds).toEqual(module.lessons.map(l => l.id));
+    expect(module.objectives).toEqual(overview.objectives);
+    expect(module.objectives.length).toBeGreaterThanOrEqual(4);
+  }
   expect(manifest.modules.map(m => [m.id,m.displayNumber])).toEqual(courseCatalog.modules.map(m => [m.id,m.order])); expect(manifest.assets).toHaveLength(11); for (const asset of manifest.assets) expect(hash(asset.path)).toBe(asset.sha256);
 });
 

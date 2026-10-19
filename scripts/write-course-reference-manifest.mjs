@@ -3,12 +3,14 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 const data = JSON.parse(readFileSync('src/course/imported-content.json', 'utf8'));
 const authored = JSON.parse(readFileSync('src/course/authored-content.json', 'utf8'));
+const overviews = JSON.parse(readFileSync('src/course/module-overviews.json', 'utf8'));
 const modules = [...data.modules.map((m, index) => ({ ...m, order: index + 1, referenceOrder: m.order, origin: 'reference' })), ...authored.modules.map(m => ({ ...m, origin: 'authored' }))];
 const hash = path => createHash('sha256').update(readFileSync(path)).digest('hex');
 const images = [...new Set(data.modules.flatMap(m => m.lessons.flatMap(l => Object.values(l.sections).flatMap(s => (s.images ?? []).map(i => i.src)))))];
 const files = [...images.map(src => `public${src}`), 'public/course-reference/files/w1.docx'];
 const manifest = {
-  manifestVersion: 2, contentVersion: data.version, catalogRevision: authored.revision, authoredContentSha256: hash('src/course/authored-content.json'), authoring: authored.authoring, additionalReferences: authored.references, approval: 'draft — reference content and authored additions pending researcher review', reviewedOn: '2026-10-18',
+  manifestVersion: 2, contentVersion: data.version, catalogRevision: authored.revision, authoredContentSha256: hash('src/course/authored-content.json'), authoring: authored.authoring, additionalReferences: authored.references, approval: 'draft — reference content and authored additions pending researcher review', reviewedOn: '2026-10-19',
+  moduleOverviews: { revision: overviews.revision, approval: overviews.approval, authoring: overviews.authoring, sha256: hash('src/course/module-overviews.json'), modules: overviews.modules },
   sources: data.sources, contentSha256: hash('src/course/imported-content.json'), drawingsSha256: hash('src/course/embedded-figures.ts'),
   activeRoutes: ['/content', '/course/modules/:moduleId', '/course/modules/:moduleId/lessons/:lessonId/:section', '/learning-style', '/assessment/:kind/instructions'],
   modules: modules.map(m => ({ id: m.id, displayNumber: m.order, originalNumber: m.referenceOrder ?? null, origin: m.origin, title: m.title, lessons: m.lessons.map(l => ({ id: l.id, originalNumber: l.order, title: l.title, referenceIds: l.referenceIds ?? [], sections: Object.keys(l.sections), textActivities: 1 })) })),

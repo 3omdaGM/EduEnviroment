@@ -1,10 +1,10 @@
 import { useCourseSession } from './hooks';
 import { useState } from 'react';
-import { Link, useParams, useSearchParams } from 'react-router';
+import { useParams, useSearchParams } from 'react-router';
 import { Maximize2 } from 'lucide-react';
 import { Button, Drawer } from '../components/ui';
 import { NotFound } from '../pages/UtilityPages';
-import { authoredReferences, courseCatalog, courseRoute, groups } from './catalog';
+import { authoredReferences, courseCatalog, groups } from './catalog';
 import type { CourseLesson, CourseSection, CourseStage } from './catalog';
 import { CourseCard, CourseGuard, CourseHtml, CourseProblem } from './ui';
 import Workspace from './Workspace';
@@ -36,5 +36,5 @@ export default function CourseWorkspacePage() {
   if (!snapshot.data) return <CourseProblem />;
   const module = courseCatalog.modules.find(m => m.id === moduleId), lesson = module?.lessons.find(l => l.id === lessonId);
   if (!module || (lessonId && !lesson) || (lesson && !['objectives', 'content', 'activity'].includes(section ?? ''))) return <NotFound />;
-  return <Workspace moduleId={module.id} lessonId={lesson?.id} section={section ?? 'overview'}>{lesson ? <CourseGuard><LessonContent key={`${lesson.id}:${section}`} lesson={lesson} section={section as 'objectives' | 'content' | 'activity'} /></CourseGuard> : <CourseCard title="دروس الموديول"><p className="workspace-hint">اختر درسًا ثم افتح الأهداف أو المحتوى أو النشاط.</p><div className="workspace-lesson-cards">{module.lessons.map(l => <Link key={l.id} className="workspace-lesson-card" to={courseRoute(module.id, l.id, 'objectives')}><span className="workspace-lesson-number">{l.order}</span><div><h3>{l.title}</h3><p>الأهداف · المحتوى · النشاط</p></div></Link>)}</div></CourseCard>}</Workspace>;
+  return <Workspace moduleId={module.id} lessonId={lesson?.id} section={section ?? 'overview'}>{lesson ? <CourseGuard><LessonContent key={`${lesson.id}:${section}`} lesson={lesson} section={section as 'objectives' | 'content' | 'activity'} /></CourseGuard> : <CourseCard title="أهداف الموديول" className="course-module-objectives"><p className="workspace-hint">بعد إتمام هذا الموديول، يُتوقع أن يكون المتعلم قادرًا على أن:</p><ol className="course-html module-objectives-list">{module.objectives.map((objective, index) => <li key={objective} className="course-objective"><span aria-hidden="true">{index + 1}</span><p>{objective}</p></li>)}</ol></CourseCard>}</Workspace>;
 }

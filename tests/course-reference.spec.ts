@@ -21,7 +21,7 @@ test.beforeEach(async ({ page }) => {
 });
 test('public module metadata and deep-link guards retain old data; empty pre confirms and persists', async ({ page }) => {
   await page.goto('/content'); await expect(page.locator('.reference-module-card')).toHaveCount(4);
-  await page.locator('.reference-module-card').first().click(); await expect(page.locator('.workspace-lesson-card')).toHaveCount(7);
+  await page.locator('.reference-module-card').first().click(); await expect(page.locator('.course-module-objectives li')).toHaveCount(6); await expect(page.locator('.workspace-sidebar .workspace-lesson-toggle')).toHaveCount(7);
   await page.goto(url()); await expect(page.getByText('ابدأ التجربة بحساب تجريبي أولًا.', { exact: true })).toBeVisible();
   await login(page); const legacy = await page.evaluate(() => localStorage.getItem('edu-training-demo:v1'));
   await page.goto('/assessment/pre/instructions'); await axe(page);

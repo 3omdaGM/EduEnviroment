@@ -1,0 +1,6 @@
+{
+  "mode": "production",
+  "demoToolsChunks": false,
+  "workspaceChunkPresent": true,
+  "validation": "static chunk inspection after successful npm run build"
+}
