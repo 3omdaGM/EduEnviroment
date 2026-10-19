@@ -1,13 +1,14 @@
 import imported from './imported-content.json' with { type: 'json' };
 import authored from './authored-content.json' with { type: 'json' };
+import overviews from './module-overviews.json' with { type: 'json' };
 export interface CourseVideo { title: string; videoSrc: string; videoType: string; stage?: number; }
 export interface CourseImage { src: string; alt: string; caption?: string; stage?: number; }
 export interface CourseStage { title: string; body: string; badge?: string; video?: CourseVideo | null; }
 export interface CourseSection { content?: string; desc?: string; note: string; support: string[]; videoSrc: string; videoType: string; videos?: CourseVideo[]; images?: CourseImage[]; stages?: CourseStage[]; }
 export interface CourseLesson { id: string; order: number; title: string; referenceIds?: string[]; sections: { objectives: CourseSection; content: CourseSection; activity: CourseSection }; }
-export interface CourseModule { id: string; origin?: 'reference' | 'authored'; referenceOrder?: number; order: number; title: string; lessons: CourseLesson[]; }
+export interface CourseModule { id: string; origin?: 'reference' | 'authored'; referenceOrder?: number; order: number; title: string; objectives: string[]; lessons: CourseLesson[]; }
 export interface CourseQuestion { id: string; type: string; prompt: string; options: string[]; correct: number; }
-export const courseCatalog: { version: string; sources: typeof imported.sources; modules: CourseModule[]; exams: Record<'pre' | 'post', CourseQuestion[]> } = { ...imported, modules: [...imported.modules.map((module, index) => ({ ...module, order: index + 1, referenceOrder: module.order, origin: 'reference' as const })), ...authored.modules.map(module => ({ ...module, origin: 'authored' as const }))] };
+export const courseCatalog: { version: string; sources: typeof imported.sources; modules: CourseModule[]; exams: Record<'pre' | 'post', CourseQuestion[]> } = { ...imported, modules: [...imported.modules.map((module, index) => ({ ...module, order: index + 1, referenceOrder: module.order, origin: 'reference' as const })), ...authored.modules.map(module => ({ ...module, origin: 'authored' as const }))].map(module => ({ ...module, objectives: overviews.modules.find(overview => overview.id === module.id)!.objectives })) };
 export const courseRevision = authored.revision;
 export const authoredReferences = authored.references;
 export const courseLesson = (id: string) => courseCatalog.modules.flatMap(m => m.lessons).find(l => l.id === id);

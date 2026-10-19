@@ -43,6 +43,7 @@
     "playwright.sidebar-height*.ts",
     "playwright.compact-reading*.ts",
     "playwright.content-frame*.ts",
-    "playwright.separated-panels*.ts"
+    "playwright.separated-panels*.ts",
+    "playwright.blue-objectives*.ts"
   ]
 }

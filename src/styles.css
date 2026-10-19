@@ -4,7 +4,7 @@
   --font-sans: "Cairo", "Tahoma", sans-serif;
   --color-petrol: #0b3c5d;
   --color-cyan-dark: #0e7490;
-  --color-canvas: #ffffff;
+  --color-canvas: #ccdeef;
 }
 
 :root {
@@ -965,9 +965,9 @@ progress::-moz-progress-bar { background: var(--accent); border-radius: 8px; }
   .question-shell .compact-question-session > p { display: none; }
 }
 
-/* White canvas and dark readable content; no viewport-driven pagination. */
-:root { --color-canvas: #ffffff; --ink: #122e49; --text: #1d2e3f; --muted: #3b4e60; --line: #aac9df; --accent: #066a94; --accent-soft: #e3f2fc; --shadow: 0 5px 22px #103f6612; }
-body { background: #ffffff; color: var(--text); }
+/* Cool blue canvas and dark readable content; no viewport-driven pagination. */
+:root { --color-canvas: #ccdeef; --ink: #122e49; --text: #1d2e3f; --muted: #3b4e60; --line: #aac9df; --accent: #066a94; --accent-soft: #e3f2fc; --shadow: 0 5px 22px #103f6612; }
+body { background: var(--color-canvas); color: var(--text); }
 .site-header { border-color: #8cb9d7; box-shadow: 0 3px 16px #103f6614; }
 .card { border-color: var(--line); box-shadow: var(--shadow); }
 .main-content { padding-block: clamp(8px, 1.5vh, 18px); }
@@ -1076,4 +1076,20 @@ body { background: #ffffff; color: var(--text); }
   .brand-header { grid-template-columns: 40px minmax(0, 1fr) 40px; gap: 7px; }
   .brand-logo--university { inline-size: 36px; block-size: 36px; }
   .brand-logo--faculty { inline-size: 40px; block-size: 36px; border-radius: 4px; }
+}
+
+/* Muted blue team cards stand out from the pale blue page surface. */
+.compact-home .person-card {
+  background: #bfd5e9; border-color: #638bb0;
+  box-shadow: 0 3px 12px #145da021;
+}
+.compact-home .researcher-card { background: #b4cfe5; border-block-start-color: #4779a6; }
+.compact-home .person-card h2, .compact-home .person-card h3 { color: #123655; }
+.compact-home .person-role, .compact-home .person-position { color: #294760; }
+@media (hover: hover) {
+  .compact-home .person-card:hover {
+    background: #b8d1e7; border-color: #4779a6;
+    box-shadow: 0 0 0 1px #4779a633, 0 0 20px #145da02b;
+  }
+  .compact-home .person-card:hover h2, .compact-home .person-card:hover h3 { color: #103657; }
 }

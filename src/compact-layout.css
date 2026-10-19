@@ -130,7 +130,7 @@
 .main-content > .content-frame {
   flex: 1; min-inline-size: 0; inline-size: 100%; padding: 12px;
   border: 1px solid #c5dbed; border-radius: var(--content-radius);
-  background: #ffffff; box-shadow: 0 3px 12px #145da00a;
+  background: #dfebf6; box-shadow: 0 3px 12px #145da00a;
 }
 .main-content > .content-frame:has(.reference-workspace) {
   display: flex; flex-direction: column; padding: 0;
@@ -149,4 +149,11 @@
 @media (max-width: 767px) {
   .app-shell { --content-radius: 14px; }
   .main-content > .content-frame { padding: 8px; }
+}
+
+/* Module summaries are objectives; lesson navigation stays in the sidebar/drawer. */
+.module-objectives-list { list-style: none; margin: 0; padding: 0; }
+.module-objectives-list p { margin: 0; }
+@media (min-width: 768px) {
+  .module-objectives-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
 }
