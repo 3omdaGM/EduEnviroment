@@ -6,9 +6,9 @@
 .site-footer { padding-block: 3px; }
 .preparation { gap: 8px; padding: 14px; font-size: 14px; line-height: 1.75; }
 .preparation h2 { font-size: 20px; }
-.guide-card { padding: 12px 18px; }
-.guide-number-hint { margin-block-start: 6px; }
-.guide-body { padding-block: 10px; }
+.guide-card { padding: 10px 18px; }
+.guide-number-hint { margin-block-start: 4px; }
+.guide-body { padding-block: 6px; }
 .guide-actions { margin-block-start: 8px; }
 .environment-goals-heading { margin-block-end: 12px; }
 .environment-goals-grid { gap: 12px; }
@@ -21,10 +21,45 @@
 .course-exam .assessment-instructions h2, .course-style .assessment-instructions h2 { font-size: 19px; }
 .course-exam .assessment-instructions > .button, .course-style .assessment-instructions > .button { justify-self: start; }
 .course-exam-history { margin-block-start: 8px; padding: 8px 12px; font-size: 13px; }
-.course-style-test { padding: 12px 16px; }
+.course-style-test { padding: 10px 14px; }
 .course-figures { margin-block: 8px; gap: 12px; }
 .course-figures figcaption { margin-block-end: 4px; }
 .course-drawing-hint { margin-block-end: 6px; }
+
+/* Keep both figures and the response controls together, including on phones.
+   Bitmap coordinates and aspect ratios stay unchanged for drawing/scoring. */
+.course-figures {
+  grid-template-columns: minmax(52px, 170px) minmax(0, 420px);
+  max-inline-size: 610px; margin-inline: auto; gap: 10px;
+}
+.course-figures figure:last-child canvas {
+  inline-size: min(100%, calc(var(--figure-height, 300px) * 1.2));
+}
+.course-figures figure:first-child canvas {
+  inline-size: min(100%, calc(var(--figure-height, 300px) * .49));
+}
+.course-style-test > .course-figure-correct,
+.course-style-test > .course-figure-wrong,
+.course-drawing-hint { font-size: 13px; line-height: 1.65; }
+.course-style-test > .button { margin-block-start: 6px; }
+.course-style-test .quiz-meta { margin-block-end: 5px; }
+
+/* Descriptive topics replace numbered circles; all remain directly reachable. */
+.guide-card { max-inline-size: 1000px; }
+.guide-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+.guide-steps button {
+  block-size: auto; min-block-size: 38px; padding: 4px 8px;
+  font-size: 12px; line-height: 1.6; overflow-wrap: anywhere;
+}
+.guide-steps button:hover { border-color: #145da0; }
+.guide-body h2 { font-size: 20px; }
+.guide-body > p:last-child { max-inline-size: 850px; }
+@media (max-width: 767px) {
+  .course-figures { grid-template-columns: minmax(52px, .4fr) minmax(0, 1fr); gap: 7px; }
+  .course-figures figcaption { font-size: 11px; line-height: 1.55; }
+  .guide-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .guide-steps button { min-block-size: 44px; }
+}
 
 /* Give the main text a little more width by removing redundant vertical rhythm. */
 .workspace-panel { padding: 8px 10px; }
@@ -81,6 +116,8 @@
   .person-position { font-size: 12px; line-height: 1.6; }
 }
 @media (min-width: 901px) {
+  /* Keep complete infographic previews and their support within short desktops. */
+  .course-media-column .course-image img { max-block-size: clamp(150px, 23dvh, 250px); }
   .reference-workspace { grid-template-columns: 280px minmax(0, 1fr); }
   .course-media-split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .workspace-module-title { padding: 5px 8px; }
@@ -128,7 +165,7 @@
   inline-size: 100%; max-inline-size: none; margin: 0; padding: var(--content-gutter);
 }
 .main-content > .content-frame {
-  flex: 1; min-inline-size: 0; inline-size: 100%; padding: 12px;
+  flex: 1; min-inline-size: 0; inline-size: 100%; padding: 10px;
   border: 1px solid #c5dbed; border-radius: var(--content-radius);
   background: #dfebf6; box-shadow: 0 3px 12px #145da00a;
 }
@@ -156,4 +193,11 @@
 .module-objectives-list p { margin: 0; }
 @media (min-width: 768px) {
   .module-objectives-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
+}
+@media (min-width: 1200px) {
+  /* Long numbered reading lists use the available width without changing order. */
+  .course-media-split .course-html:has(> .course-objective:nth-of-type(5)) {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 12px;
+  }
+  .course-media-split .course-html:has(> .course-objective:nth-of-type(5)) > :not(.course-objective) { grid-column: 1 / -1; }
 }

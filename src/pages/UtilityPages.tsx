@@ -27,8 +27,8 @@ function GuidePage() {
   const index = Number.isInteger(raw) && raw >= 1 && raw <= guideSteps.length ? raw - 1 : 0;
   const step = guideSteps[index]!;
   return <section className="guide-page"><PageHeading title="دليل المتدرب" />
-    <Card className="guide-card"><div className="guide-steps" aria-label="خطوات الدليل">{guideSteps.map((item, i) => <button key={item.title} onClick={() => setSearch({ step: String(i + 1) })} aria-label={`الخطوة ${i + 1}: ${item.title}`} aria-current={index === i ? 'step' : undefined}>{i + 1}</button>)}</div>
-      <p className="guide-number-hint">اضغط على رقم الخطوة لعرضها مباشرة؛ مثلًا اضغط على 8 لعرض الخطوة الثامنة.</p>
+    <Card className="guide-card"><div className="guide-steps" aria-label="موضوعات الدليل">{guideSteps.map((item, i) => <button key={item.title} onClick={() => setSearch({ step: String(i + 1) })} aria-current={index === i ? 'step' : undefined}>{item.title}</button>)}</div>
+      <p className="guide-number-hint">اضغط على عنوان الموضوع لعرض إرشاداته؛ مثل «التقويم القبلي» أو «الموديولات والدروس».</p>
       <div className="guide-body"><p className="eyebrow">الخطوة {index + 1} من {guideSteps.length}</p><h2>{step.title}</h2><p>{step.text}</p></div><div className="guide-progress"><ProgressIndicator value={index + 1} max={guideSteps.length} label="تقدم قراءة الدليل" /></div><div className="guide-actions"><ButtonLink to="/content">استعرض المحتوى</ButtonLink></div></Card></section>;
 }
 

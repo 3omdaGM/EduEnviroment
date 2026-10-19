@@ -45,6 +45,7 @@
     "playwright.content-frame*.ts",
     "playwright.separated-panels*.ts",
     "playwright.blue-objectives*.ts",
-    "playwright.support-study*.ts"
+    "playwright.support-study*.ts",
+    "playwright.figures-guide*.ts"
   ]
 }
