@@ -1,0 +1,30 @@
+[
+  {
+    "module": "cl-mod-03",
+    "width": 1536,
+    "height": 728,
+    "scrollWidth": 1536,
+    "scrollHeight": 728
+  },
+  {
+    "module": "cl-mod-04",
+    "width": 1536,
+    "height": 728,
+    "scrollWidth": 1536,
+    "scrollHeight": 728
+  },
+  {
+    "module": "cl-mod-design",
+    "width": 1536,
+    "height": 728,
+    "scrollWidth": 1536,
+    "scrollHeight": 728
+  },
+  {
+    "module": "cl-mod-quality",
+    "width": 1536,
+    "height": 728,
+    "scrollWidth": 1536,
+    "scrollHeight": 728
+  }
+]
