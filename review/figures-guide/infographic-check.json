@@ -1,0 +1,58 @@
+[
+  {
+    "width": 1536,
+    "id": "02",
+    "height": 728,
+    "scrollHeight": 728,
+    "imageHeight": 167.4375
+  },
+  {
+    "width": 1536,
+    "id": "03",
+    "height": 728,
+    "scrollHeight": 728,
+    "imageHeight": 167.4375
+  },
+  {
+    "width": 1366,
+    "id": "02",
+    "height": 768,
+    "scrollHeight": 768,
+    "imageHeight": 176.625
+  },
+  {
+    "width": 1366,
+    "id": "03",
+    "height": 768,
+    "scrollHeight": 768,
+    "imageHeight": 176.625
+  },
+  {
+    "width": 1920,
+    "id": "02",
+    "height": 910,
+    "scrollHeight": 910,
+    "imageHeight": 209.296875
+  },
+  {
+    "width": 1920,
+    "id": "03",
+    "height": 910,
+    "scrollHeight": 910,
+    "imageHeight": 209.296875
+  },
+  {
+    "width": 1280,
+    "id": "02",
+    "height": 620,
+    "scrollHeight": 701,
+    "imageHeight": 150
+  },
+  {
+    "width": 1280,
+    "id": "03",
+    "height": 620,
+    "scrollHeight": 701,
+    "imageHeight": 150
+  }
+]

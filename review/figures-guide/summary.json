@@ -1,0 +1,82 @@
+[
+  {
+    "width": 1280,
+    "height": 620,
+    "sampleChecks": 28,
+    "sampleScrolling": 3,
+    "styleDrawingScrolling": false,
+    "lessonChecks": 48,
+    "lessonScrolling": 33,
+    "horizontalOverflow": 0
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "sampleChecks": 28,
+    "sampleScrolling": 0,
+    "styleDrawingScrolling": false,
+    "lessonChecks": 48,
+    "lessonScrolling": 0,
+    "horizontalOverflow": 0
+  },
+  {
+    "width": 1536,
+    "height": 728,
+    "sampleChecks": 28,
+    "sampleScrolling": 0,
+    "styleDrawingScrolling": false,
+    "lessonChecks": 48,
+    "lessonScrolling": 0,
+    "horizontalOverflow": 0
+  },
+  {
+    "width": 1920,
+    "height": 910,
+    "sampleChecks": 28,
+    "sampleScrolling": 0,
+    "styleDrawingScrolling": false,
+    "lessonChecks": 48,
+    "lessonScrolling": 0,
+    "horizontalOverflow": 0
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "sampleChecks": 28,
+    "sampleScrolling": 27,
+    "styleDrawingScrolling": true,
+    "lessonChecks": 48,
+    "lessonScrolling": 48,
+    "horizontalOverflow": 0
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "sampleChecks": 28,
+    "sampleScrolling": 2,
+    "styleDrawingScrolling": false,
+    "lessonChecks": 48,
+    "lessonScrolling": 30,
+    "horizontalOverflow": 0
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "sampleChecks": 28,
+    "sampleScrolling": 0,
+    "styleDrawingScrolling": false,
+    "lessonChecks": 48,
+    "lessonScrolling": 0,
+    "horizontalOverflow": 0
+  },
+  {
+    "width": 960,
+    "height": 455,
+    "sampleChecks": 28,
+    "sampleScrolling": 27,
+    "styleDrawingScrolling": true,
+    "lessonChecks": 48,
+    "lessonScrolling": 48,
+    "horizontalOverflow": 0
+  }
+]
