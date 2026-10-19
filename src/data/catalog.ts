@@ -1,13 +1,14 @@
+import study from '../course/study.json' with { type: 'json' };
 import type { ContentBlock, Element, Lesson, Module, PersonCard } from '../../docs/contracts';
 import { contentVersion, metaFor, sources } from './course-extension';
 import type { SourceKey } from './course-extension';
 import { lessonContent, moduleContent } from './course-content';
 
-export const environmentName = 'بيئة تدريبية قائمة على محفزات الألعاب الرقمية لتنمية بعض مهارات دمج التكنولوجيا في التعليم لدى أعضاء الهيئة المعاونة بالكلية';
-/** Homepage introduction supplied verbatim by the user; independent of the existing environment name. */
+export const environmentName = study.title;
+/** User-provided thesis title is shared with the active support-study identity. */
 export const homeIntroduction = {
   description: 'بيئة تعلم الجانب التطبيقي لرسالة دكتوراه الفلسفة في التربية النوعية تخصص تكنولوجيا التعليم بعنوان',
-  thesisTitle: 'أثر التفاعل بين أنماط الدعم وأساليب التعلم في بيئة التعلم المدمج على تنمية مهارات إنتاج الدروس التفاعلية لدى طلاب كلية التربية النوعية',
+  thesisTitle: study.title,
 };
 /** General environment goals transcribed from the user's supplied reference image. */
 export const environmentGoals = [
